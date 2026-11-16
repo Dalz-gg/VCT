@@ -1,0 +1,211 @@
+{
+  "slug": "t1",
+  "name": "T1",
+  "name_kana": "ティーワン",
+  "short": "T1",
+  "region": "Pacific",
+  "country": "韓国",
+  "base": {
+    "text": "韓国",
+    "status": "confirmed",
+    "sources": [
+      "https://valorantesports.com/en-SG/news/introducing-vct-pacific-partnered-teams-for-2027-and-beyond",
+      "https://liquipedia.net/valorant/T1"
+    ]
+  },
+  "team_color": "#E2012D",
+  "partner": {
+    "text": "2027〜2028年 VCT Pacific パートナー",
+    "status": "confirmed",
+    "sources": [
+      "https://valorantesports.com/news/introducing-the-vct-2027-partner-teams",
+      "https://valorantesports.com/en-SG/news/introducing-vct-pacific-partnered-teams-for-2027-and-beyond",
+      "https://www.thespike.gg/valorant/news/riot-officially-reveals-all-vct-2027-partner-teams/9080"
+    ]
+  },
+  "history": {
+    "text": "T1は、リーグ・オブ・レジェンドなど多くのタイトルで知られる韓国の名門eスポーツチームで、SK TelecomとComcast Spectacorが共同で運営しています。VALORANT部門は2020年に始まり、当初は北米の選手中心のチームでした。2023年シーズンからVCT Pacificのパートナーチーム(Riotと長期契約を結んだチーム)として韓国を拠点に戦っています。",
+    "status": "confirmed",
+    "sources": [
+      "https://valorantesports.com/en-SG/news/introducing-vct-pacific-partnered-teams-for-2027-and-beyond",
+      "https://liquipedia.net/valorant/T1"
+    ]
+  },
+  "achievements": [
+    {
+      "text": "VALORANT Masters Bangkok 2025 優勝(T1にとって初の国際大会タイトル)",
+      "status": "confirmed",
+      "sources": [
+        "https://valorantesports.com/en-SG/news/introducing-vct-pacific-partnered-teams-for-2027-and-beyond",
+        "https://liquipedia.net/valorant/T1",
+        "https://www.thespike.gg/valorant/news/t1-executes-massive-roster-overhaul-ahead-of-2027-season/9162"
+      ]
+    },
+    {
+      "text": "VCT 2025 Pacific Kickoff 準優勝",
+      "status": "reported",
+      "sources": [
+        "https://liquipedia.net/valorant/T1",
+        "https://www.thespike.gg/valorant/news/t1-executes-massive-roster-overhaul-ahead-of-2027-season/9162"
+      ]
+    },
+    {
+      "text": "VCT 2026 Pacific Kickoff 準優勝",
+      "status": "reported",
+      "sources": [
+        "https://liquipedia.net/valorant/T1",
+        "https://www.thespike.gg/valorant/news/t1-executes-massive-roster-overhaul-ahead-of-2027-season/9162",
+        "https://www.strafe.com/news/read/t1-re-signs-crashies-after-six-years-for-vct-2027/"
+      ]
+    },
+    {
+      "text": "VCT 2026 Pacific Stage 2 3位",
+      "status": "reported",
+      "sources": [
+        "https://liquipedia.net/valorant/T1",
+        "https://www.strafe.com/news/read/t1-re-signs-crashies-after-six-years-for-vct-2027/"
+      ]
+    },
+    {
+      "text": "VALORANT Champions 2026(上海)5〜6位(チーム初のChampionsプレーオフ進出)",
+      "status": "reported",
+      "sources": [
+        "https://liquipedia.net/valorant/T1",
+        "https://www.strafe.com/news/read/buzz-re-signs-with-t1-through-2028-amid-2027-roster-rebuild/",
+        "https://www.strafe.com/news/read/t1-re-signs-crashies-after-six-years-for-vct-2027/",
+        "https://www.thespike.gg/valorant/news/t1-executes-massive-roster-overhaul-ahead-of-2027-season/9162"
+      ]
+    }
+  ],
+  "roster": {
+    "as_of": "2026-11-16",
+    "status": "confirmed",
+    "sources": [
+      "https://x.com/T1/status/2120713200475750401",
+      "https://x.com/T1/status/2120350808248397831",
+      "https://x.com/T1/status/2118236873957183861",
+      "https://x.com/T1/status/2118538867091312687",
+      "https://x.com/T1/status/1949069658210078742",
+      "https://x.com/T1/status/2117814105478484195",
+      "https://liquipedia.net/valorant/T1",
+      "https://www.vlr.gg/team/14/t1",
+      "https://www.thespike.gg/valorant/news/t1-executes-massive-roster-overhaul-ahead-of-2027-season/9162",
+      "https://www.vlr.gg/790063/t1-goes-all-in-on-fusion-roster-welcoming-sacy-as-head-coach"
+    ],
+    "players": [
+      {
+        "ign": "stax",
+        "name": "キム・グテク(Kim Gu-taek)",
+        "country": "韓国",
+        "role": "イニシエーター/コントローラー(IGL経験あり)",
+        "photo": null,
+        "note": "2026年11月5日、2028年までの契約延長をチームが発表。2027年の担当ロールは未発表(VLRはコントローラー兼IGLへの移行の可能性に言及)"
+      },
+      {
+        "ign": "BuZz",
+        "name": "ユ・ビョンチョル(Yu Byung-chul)",
+        "country": "韓国",
+        "role": "デュエリスト",
+        "photo": null,
+        "note": "2026年11月6日、2028年までの契約延長をチームが発表"
+      },
+      {
+        "ign": "iZu",
+        "name": "ハム・ウジュ(Ham Woo-ju)",
+        "country": "韓国",
+        "role": "イニシエーター(以前はデュエリストも担当)",
+        "photo": null,
+        "note": "2025年7月に2027年シーズンまでの契約延長をチームが発表"
+      },
+      {
+        "ign": "crashies",
+        "name": "オースティン・ロバーツ(Austin Roberts)",
+        "country": "アメリカ",
+        "role": "イニシエーター/センチネル",
+        "photo": null,
+        "note": "2026年11月11日に加入をチームが発表(2020年以来のT1復帰)。前所属はFNATIC。海外からの加入選手(インポート枠)"
+      },
+      {
+        "ign": "TenZ",
+        "name": "タイソン・ゴー(Tyson Ngo)",
+        "country": "カナダ",
+        "role": "デュエリスト(2027年の担当は未発表)",
+        "photo": "assets/img/teams/t1/tenz.jpg",
+        "note": "2024年に競技シーンを引退後、2026年5月からT1のコンテンツクリエイター。2026年11月12日に選手としての復帰をチームが発表。インポート枠。掲載写真は2023年(Sentinels在籍時)のもの 写真は2023年のSentinels在籍時のものです。"
+      }
+    ],
+    "staff": [
+      {
+        "ign": "Sacy",
+        "role": "ヘッドコーチ(2026年11月13日加入と報道。チーム公式投稿は未確認)"
+      },
+      {
+        "ign": "sungmin",
+        "role": "コーチ(2026年11月4日にチームが発表)"
+      },
+      {
+        "ign": "Norman",
+        "role": "ゼネラルマネージャー"
+      }
+    ]
+  },
+  "featured_players": [
+    {
+      "ign": "TenZ",
+      "why": "世界的な人気を誇るスター選手が、引退から約2年ぶりに選手として復帰します。",
+      "draft": true
+    },
+    {
+      "ign": "stax",
+      "why": "Masters Bangkok 2025優勝メンバーで、チームの作戦面を支えてきたベテランです。",
+      "draft": true
+    }
+  ],
+  "playstyle": {
+    "text": "2027年は韓国の選手3人に、北米出身のTenZとcrashies、ブラジル出身のSacyコーチが加わる「多国籍チーム」になります。コミュニケーションの言語や役割分担をどう組み立てるかが注目点です。",
+    "draft": true
+  },
+  "highlights_2027": {
+    "text": "Masters Bangkok 2025優勝メンバー3人と、新たに加わった実績ある海外勢がどのようにかみ合うかが見どころです。2027年1月のVCT Pacific Kickoffが新体制の初陣になる予定です。",
+    "draft": true
+  },
+  "beginner_tip": {
+    "text": "TenZの復帰で世界中から注目が集まるチーム。まずは彼のプレーを追ってみましょう。",
+    "draft": true
+  },
+  "links": {
+    "official": "https://t1.gg/",
+    "x": "https://x.com/T1",
+    "youtube": "https://www.youtube.com/@T1Valorant"
+  },
+  "images": {
+    "hero": "assets/img/teams/t1/hero.jpg",
+    "logo": null
+  },
+  "image_credits": [
+    {
+      "file": "assets/img/teams/t1/tenz.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:SEN_TENZ_2023.jpg",
+      "author": "Billgatenguyen",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "file": "assets/img/teams/t1/hero.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Valorant_Champions_Los_Angeles_2023.jpg",
+      "author": "David Jiang",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+    }
+  ],
+  "open_questions": [
+    "ヘッドコーチSacyの加入は VLR.gg(2026年11月13日)と Liquipedia で確認しましたが、T1公式Xの発表投稿そのものは開けていません。公式投稿を確認できたら status を confirmed にしてください。",
+    "2027年の各選手の担当ロール(特にstax・TenZ・crashies)とIGL(司令塔)はチームから発表されていません。表のロールは2026年までの実績にもとづく目安です。",
+    "6人目(控え)の選手は2026年11月16日時点で未発表です。",
+    "TenZの写真(Wikimedia Commons)は2023年のSentinels在籍時のもので、T1のユニフォームではありません。キャプションでその旨を表示することを推奨します。",
+    "ヒーロー画像は VALORANT Champions 2023(ロサンゼルス)会場の写真で、写っている試合は NAVI 対 Team Liquid です(T1は同大会に出場していますが、写真には写っていません)。他チームのページと同じ写真になる可能性があります。",
+    "stax・BuZz・iZu・crashies・Sacy・sungmin の再利用可能な写真は Wikimedia Commons・Flickr(CCライセンス)で見つかりませんでした。",
+    "達成歴のうち Kickoff・Stage 2・Champions 2026 の順位は Liquipedia と大手メディアで確認したもので、Riot公式の結果ページは開けていません(status: reported)。"
+  ],
+  "researched_at": "2026-11-16"
+}
