@@ -90,3 +90,52 @@ content/              原稿
 
 ## 大会システムの原稿
 `content/format.md` を参照(運営者が確認済みのDocから転記)。日程・数字の「確定/未確定」の表示を必ず残す。
+
+---
+## 追加仕様(2026-11-16 第2弾)
+
+### 運営者が提供する写真
+運営者(サイトの持ち主)が写真を送ってくれる。それを入れる仕組みにする。
+- 置き場所：`assets/img/teams/<slug>/<ign小文字>.jpg`(選手)、`hero.jpg`(チーム)、`assets/img/news/<id>.jpg`(ニュース)
+- `image_credits` の記録：`{"file": "...", "source_url": null, "author": "撮影者やチーム名(わかれば)", "license": "運営提供", "license_url": null, "provided_by_owner": true}`
+- 表示：クレジット欄に「写真：<author>(運営提供)」。author が空なら「写真：運営提供」
+- 選手の写真がまだない場合は今まで通りイニシャル表示
+- エージェントは、ライセンス不明の写真を自分で拾ってこないこと(従来通り)
+
+### 日本(旧VCJ)
+- 2026年までの VALORANT Challengers Japan(VCJ)は、2027年からオープン予選(日本)に変わる。日本のオープン予選からPacific Kickoffへの直接枠がある(報道)
+- データ：`data/japan.json`(日本の予選の仕組み・日程・枠・招待チーム・VCJの歴史)と、日本チームは `data/teams/<slug>.json`(スキーマは同じ。`"region": "Japan"`、`"tier": "open"` を追加。`partner` 欄の代わりに `"path_2027": {"text": "日本オープン予選から出場/プレーオフ招待 など", "status": ..., "sources": [...]}`)
+- `data/japan.json` のスキーマ：
+```json
+{
+  "as_of": "2026-11-16",
+  "summary": {"text": "...", "status": "...", "sources": []},
+  "path": [{"step": "日本オープン予選", "text": "...", "dates": "...", "status": "...", "sources": []}],
+  "slots": {"text": "日本からKickoffへ○枠 など", "status": "...", "sources": []},
+  "invited_teams": [{"name": "...", "slug": "...", "reason": "...", "status": "...", "sources": []}],
+  "teams": [{"name": "...", "slug": "...", "roster_status": "announced|partial|unannounced|disbanded", "note": "..."}],
+  "vcj_history": [{"year": 2026, "text": "...", "winners": "...", "sources": []}],
+  "open_questions": []
+}
+```
+
+### ニュース
+- データ：`data/news/<YYYY-MM-DD>-<短い英字id>.json`、1件1ファイル。新しい順に表示
+```json
+{
+  "id": "2026-10-22-vct-2027-partners",
+  "date": "2026-10-22",
+  "title": "VCT 2027〜2028のパートナー32チームが発表",
+  "category": "公式発表|移籍・ロスター|大会・日程|結果|日本|その他",
+  "regions": ["Pacific", "Japan"],
+  "teams": ["zeta-division"],
+  "summary": "2〜3文。です・ます",
+  "body": ["段落1", "段落2"],
+  "status": "confirmed|reported|unverified",
+  "sources": [{"title": "...", "url": "https://..."}],
+  "image": null,
+  "image_credit": null
+}
+```
+- 噂(関係者筋の報道)は `"status": "reported"` とし、本文で「〜と報じられています」と書く。公式発表で確定したら confirmed に更新
+- 開いて読めなかった記事を唯一の出典にしない。読めなかった場合は status を unverified にする
