@@ -651,7 +651,8 @@ function teamPage(t) {
     const staffHtml = staff.length
       ? `<h3 class="h3" style="margin:28px 0 12px">スタッフ</h3><div class="staff">${staff.map((s) => `<span><b>${esc(s.ign || s.name)}</b>${esc(s.role || '')}</span>`).join('')}</div>`
       : '';
-    const empty = players.length ? '' : '<p class="muted">ロスター情報は準備中です。</p>';
+    const rNote = typeof roster.note === 'string' && roster.note.trim() ? `<p class="soft" style="margin-bottom:12px">${esc(roster.note)}</p>` : '';
+    const empty = rNote + (players.length ? '' : '<p class="muted">ロスター情報は準備中です。</p>');
     parts.push(sec('roster', 'ROSTER', '選手・スタッフ', `${empty}<div class="roster">${cards}</div>${staffHtml}`, head));
   }
 
