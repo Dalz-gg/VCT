@@ -1,0 +1,123 @@
+{
+  "slug": "detonation-focusme",
+  "name": "DetonatioN FocusMe",
+  "name_kana": "デトネーション フォーカスミー",
+  "short": "DFM",
+  "region": "Japan",
+  "tier": "open",
+  "country": "日本",
+  "base": {
+    "text": "日本（拠点の都市は未確認です）",
+    "status": "unverified",
+    "sources": [
+      "https://liquipedia.net/valorant/DetonatioN_FocusMe"
+    ]
+  },
+  "team_color": "#1E3A8A",
+  "path_2027": {
+    "text": "2027 VCT Pacific Kickoff Japan Qualifier のプレーオフ（Playoffs）に招待されています。2026年に VCT Pacific に参加したことが理由で、オープン予選は免除されます。",
+    "status": "confirmed",
+    "sources": [
+      "https://valorantesports.com/ja-JP/news/2027-vct-pacific-kickoff-japan-qualifier"
+    ]
+  },
+  "history": {
+    "text": "2012年創設の日本のゲーミングチームで、VALORANT部門は2020年6月に始まりました。2023〜2026年は VCT Pacific（アジア太平洋のトップリーグ）のパートナーチームでしたが、2027年のパートナーには選ばれませんでした。チームは「来季に向けた新体制は決定次第報告する」としています。",
+    "status": "confirmed",
+    "sources": [
+      "https://liquipedia.net/valorant/DetonatioN_FocusMe",
+      "https://team-detonation.net/news/52654"
+    ]
+  },
+  "achievements": [
+    {
+      "text": "VCT 2026 Pacific Kickoff 5位",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/team/278/detonation-focusme",
+        "https://www.vlr.gg/784043/detonation-focusme-resets-roster-ssees-remains"
+      ]
+    },
+    {
+      "text": "VCT 2026 Pacific Stage 1 プレーオフ 7〜8位",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/team/278/detonation-focusme"
+      ]
+    },
+    {
+      "text": "VCT 2026 Pacific Stage 2 Play-Ins 5〜6位",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/team/278/detonation-focusme"
+      ]
+    },
+    {
+      "text": "2026年は VCT Pacific に参戦していたため、VALORANT Challengers Japan 2026 には出場していません",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/team/278/detonation-focusme",
+        "https://valorantesports.com/ja-JP/news/2027-vct-pacific-kickoff-japan-qualifier"
+      ]
+    }
+  ],
+  "roster": {
+    "as_of": "2026-11-16",
+    "status": "confirmed",
+    "sources": [
+      "https://x.com/DFM_VALORANT/status/2117179918169813452",
+      "https://team-detonation.net/news/52654",
+      "https://x.com/DFM_VALORANT/status/1980227571007865280",
+      "https://www.vlr.gg/784043/detonation-focusme-resets-roster-ssees-remains"
+    ],
+    "players": [
+      {
+        "ign": "SSeeS",
+        "name": "Tomonori Okimura",
+        "country": "日本",
+        "role": "コントローラー（推定）／キャプテン",
+        "photo": null,
+        "note": "2025年10月に2026年シーズンの再契約が発表されています。2026年11月2日の契約終了の発表に名前がなく、チームに残る唯一の選手と報じられています。2027年の契約は個別には発表されていません。"
+      }
+    ],
+    "staff": []
+  },
+  "featured_players": [
+    {
+      "ign": "SSeeS",
+      "why": "Pacific を経験したキャプテンで、新しいチームの中心になるとみられる選手です。",
+      "draft": true
+    }
+  ],
+  "playstyle": {
+    "text": "2027年のロスターがまだ発表されていないため、戦い方は未定です。新メンバーが発表されてから書き直します。",
+    "draft": true
+  },
+  "highlights_2027": {
+    "text": "Pacific のパートナーから外れた後、どんなメンバーで日本の予選に挑むのかが最初の注目点です。",
+    "draft": true
+  },
+  "beginner_tip": {
+    "text": "2026年まで Pacific で戦った日本の古豪。新体制の発表を待ちましょう。",
+    "draft": true
+  },
+  "links": {
+    "official": "https://team-detonation.net/",
+    "x": "https://x.com/DFM_VALORANT",
+    "youtube": "https://www.youtube.com/DetonatioNGaming"
+  },
+  "images": {
+    "hero": null,
+    "logo": null
+  },
+  "image_credits": [],
+  "open_questions": [
+    "2026年11月2日に Meiy・Akame・Caedye・yatsuka の4選手と Vorz・NorthernLights・Melofovia の3コーチとの契約終了が発表されました。11月16日時点で残る選手は SSeeS のみで、新しい選手・コーチは発表されていません。",
+    "予選の規定では、プレーオフ出場チームはメイン5人のうち3人以上を日本在住にする必要があります。DFM がどう選手をそろえるかは未発表です。",
+    "Meiy と Akame が Crazy Raccoon に加わるという報道（Sheep Esports）がありますが、記事を開けなかったため未確認です。",
+    "2026年の Pacific での順位は VLR.gg の大会成績欄によるもので、Riot 公式の記録とは照合していません。",
+    "SSeeS のロールは VLR.gg の通算使用エージェント（Omen・Astra など）からの推定です。",
+    "team_color（#1E3A8A）は仮の値です。運営者の確認が必要です。"
+  ],
+  "researched_at": "2026-11-16"
+}

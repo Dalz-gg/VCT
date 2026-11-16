@@ -1,0 +1,164 @@
+{
+  "slug": "scarz",
+  "name": "SCARZ",
+  "name_kana": "スカーズ",
+  "short": "SZ",
+  "region": "Japan",
+  "tier": "open",
+  "country": "日本",
+  "base": {
+    "text": "東京都渋谷区（運営会社 XENOZ のオフィス）",
+    "status": "confirmed",
+    "sources": [
+      "https://www.scarz.net/news/26101001/"
+    ]
+  },
+  "team_color": "#C8102E",
+  "path_2027": {
+    "text": "2027 VCT Pacific Kickoff Japan Qualifier への出場を前提とした発表（Kellan 選手の出場見送り）をしています。招待チームではないため、オープン予選から出場する見込みです。",
+    "status": "confirmed",
+    "sources": [
+      "https://x.com/SCARZ5/status/2117081764380189128",
+      "https://valorantesports.com/ja-JP/news/2027-vct-pacific-kickoff-japan-qualifier"
+    ]
+  },
+  "history": {
+    "text": "2012年創設の日本のチームで、VALORANT 部門は2020年6月に始まりました。2023年には Challengers League Japan Split 2 で優勝し、Ascension Pacific で準優勝しています。2026年6月に選手の多くが退団し、コーチの Art を中心に若手を集めて部門を立て直す様子をドキュメンタリー「THE ART OF WAR」で公開しています。",
+    "status": "confirmed",
+    "sources": [
+      "https://liquipedia.net/valorant/SCARZ",
+      "https://www.vlr.gg/team/282/scarz",
+      "https://www.scarz.net/news/26062201/",
+      "https://www.scarz.net/news/26071502/"
+    ]
+  },
+  "achievements": [
+    {
+      "text": "VALORANT Challengers Japan 2026 Split 1 Advance Stage（グループC）3位",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/team/282/scarz"
+      ]
+    },
+    {
+      "text": "Challengers League 2023 Japan Split 2 プレーオフ 優勝",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/team/282/scarz"
+      ]
+    },
+    {
+      "text": "VCT 2023 Ascension Pacific 準優勝",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/team/282/scarz"
+      ]
+    }
+  ],
+  "roster": {
+    "as_of": "2026-11-16",
+    "status": "reported",
+    "sources": [
+      "https://liquipedia.net/valorant/SCARZ",
+      "https://www.vlr.gg/team/282/scarz",
+      "https://www.scarz.net/news/26041002/",
+      "https://x.com/SCARZ5/status/2117081764380189128",
+      "https://www.scarz.net/news/26101001/",
+      "https://youtu.be/DJ_Bs5n0xvU"
+    ],
+    "players": [
+      {
+        "ign": "gray",
+        "name": null,
+        "country": "日本",
+        "role": "未確認（Omen・Jett・Raze などを使用）",
+        "photo": null,
+        "note": "2026年4月加入（公式発表）。公式大会の経験がない若手として紹介されています。"
+      },
+      {
+        "ign": "thiefy",
+        "name": "Masato Tsujita",
+        "country": "日本",
+        "role": "デュエリスト／イニシエーター（推定）・IGL（Liquipedia の記載）",
+        "photo": null,
+        "note": "新体制のメンバー（2026年9月、チームの YouTube 動画で発表されたと Liquipedia が記載）。直前は NOEZ FOXX に所属していました。"
+      },
+      {
+        "ign": "SacrificE",
+        "name": null,
+        "country": "韓国",
+        "role": "デュエリスト（推定）",
+        "photo": null,
+        "note": "新体制のメンバー（2026年9月、Liquipedia・VLR.gg の記載）。DRX Academy・T1 Academy などでのプレー経験があります。"
+      },
+      {
+        "ign": "Yamada",
+        "name": null,
+        "country": "日本",
+        "role": "イニシエーター（推定）",
+        "photo": null,
+        "note": "新体制のメンバー（2026年9月、Liquipedia・VLR.gg の記載）。直前は AGELITE に所属していました。"
+      },
+      {
+        "ign": "Kellan",
+        "name": "Kim Ji-ho（김지호）",
+        "country": "韓国",
+        "role": "デュエリスト（推定）",
+        "photo": null,
+        "note": "チームに所属を続けますが、日本予選の出場年齢の条件により、2027 VCT Pacific Kickoff Japan Qualifier への出場を見送ると公式発表されています。"
+      }
+    ],
+    "staff": [
+      {
+        "ign": "Art",
+        "role": "コーチ"
+      },
+      {
+        "ign": "NoriseN",
+        "role": "コーチ（Liquipedia・VLR.gg の記載）"
+      },
+      {
+        "ign": "mutoatu",
+        "role": "マネージャー（Liquipedia の記載）"
+      }
+    ]
+  },
+  "featured_players": [
+    {
+      "ign": "gray",
+      "why": "公式大会の経験がないところからチームに加わった若手で、どこまで伸びるかに注目です。",
+      "draft": true
+    }
+  ],
+  "playstyle": {
+    "text": "コーチ Art のもとで若手を中心に作り直した新しいチームです。新体制での公式戦はこれからなので、戦い方はオープン予選で見えてきます。",
+    "draft": true
+  },
+  "highlights_2027": {
+    "text": "ドキュメンタリーで追いかけてきた新チームが、初めての公式戦でどんな姿を見せるかが見どころです。",
+    "draft": true
+  },
+  "beginner_tip": {
+    "text": "再建の様子を YouTube で公開中。試合の前に見ると選手を覚えやすいです。",
+    "draft": true
+  },
+  "links": {
+    "official": "https://www.scarz.net/",
+    "x": "https://x.com/SCARZ5",
+    "youtube": "https://www.youtube.com/@SCARZChannel"
+  },
+  "images": {
+    "hero": null,
+    "logo": null
+  },
+  "image_credits": [],
+  "open_questions": [
+    "thiefy・SacrificE・Yamada・Kellan の加入は、Liquipedia と VLR.gg がチームの YouTube 動画（THE ART OF WAR Ep.04）を出典に記載しているもので、公式のテキスト発表は確認できませんでした。動画の中身も確認できていません。",
+    "Kellan が出場を見送るため、日本予選に出られる選手は gray・thiefy・SacrificE・Yamada の4人です。5人目（または控え）の発表は確認できませんでした。11月2日の公式投稿の続き（画像部分）は読めていません。",
+    "Kellan の生年月日は確認できていません（予選は初戦の時点で17歳以上が条件）。",
+    "VCJ 2026 Split 2 の成績を確認できませんでした。チームは Split 1・Split 2 に出場したと発表しています。",
+    "選手のロールは公式発表に記載がなく、VLR.gg の通算使用エージェントからの推定です。",
+    "team_color（#C8102E）は仮の値です。運営者の確認が必要です。"
+  ],
+  "researched_at": "2026-11-16"
+}
