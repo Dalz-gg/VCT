@@ -886,13 +886,15 @@ ${changes.length ? '' : '<p class="note" style="margin-top:12px">くわしい規
   if (!steps.length) steps = DEFAULT_PATH;
   if (!steps.some((s) => /kickoff/i.test(s.step))) steps = steps.concat([{ step: 'Pacific Kickoff', text: 'シーズン最初の大会です。', status: 'unverified' }]);
   const slots = asField(j.slots);
+  // Kickoff の段階を「ゴール」として強調し、その手前の矢印に日本からの枠数を表示する
+  const goalIdx = Math.max(0, steps.findIndex((s) => /kickoff/i.test(s.step)));
   const nodes = steps.map((s, i) => {
-    const last = i === steps.length - 1;
+    const last = i === goalIdx;
     const slotLine = str(s.slots) ? `<div class="jp-slot">${esc(s.slots)}</div>` : '';
     return `<li class="jp-node${last ? ' goal' : ''}">
-    <div class="jp-num">${String(i + 1).padStart(2, '0')}</div>
+    <div class="jp-h"><div class="jp-num">${String(i + 1).padStart(2, '0')}</div>
     <div class="jp-t">${esc(s.step)}</div>
-    ${str(s.dates) ? `<div class="jp-d mono">${esc(s.dates)}</div>` : ''}
+    ${str(s.dates) ? `<div class="jp-d mono">${esc(s.dates)}</div>` : ''}</div>
     ${str(s.text) ? `<p class="jp-x">${esc(s.text)}</p>` : ''}
     ${slotLine}
     <div class="jp-b">${badgeShort(s.status)}${cite(s.sources)}</div>
@@ -902,12 +904,12 @@ ${changes.length ? '' : '<p class="note" style="margin-top:12px">くわしい規
   const slotText = slots ? `${esc(slots.text)}` : '日本からの枠数は未確定です';
   const flow = nodes.map((n, i) => {
     if (i === 0) return n;
-    const isLast = i === nodes.length - 1;
+    const isLast = i === goalIdx;
     const arrow = `<li class="jp-arrow${isLast ? ' slot' : ''}" aria-hidden="${isLast ? 'false' : 'true'}"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M5 12h12M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square"/></svg>${isLast ? `<span class="jp-slotlabel">${slotText} ${badgeShort(slots?.status)}${slots ? cite(slots.sources) : ''}</span>` : ''}</li>`;
     return arrow + n;
   });
   parts.push(sec('path', 'ROAD TO PACIFIC', '日本からKickoffへの道', `<p class="lead">日本のチームがPacific Kickoff(2027年シーズン最初の地域大会)に出るまでの流れです。印は <span class="badge ok">確定</span> <span class="badge rep">報道</span> <span class="badge unk">未確定</span> の3種類です。</p>
-<ol class="jpath">
+<ol class="jpath${steps.length > 4 ? ' long' : ''}">
 ${flow.join('\n')}
 </ol>
 <p class="note" style="margin-top:14px">Pacific Kickoffは12チーム(パートナー8+オープン4)で行われ、オープン4枠は韓国・日本・東南アジアの各予選と敗者復活戦(LCQ)から決まります(<a href="format.html#pacific">大会システム</a>)。</p>`));

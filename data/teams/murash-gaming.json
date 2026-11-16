@@ -1,0 +1,171 @@
+{
+  "slug": "murash-gaming",
+  "name": "MURASH GAMING",
+  "name_kana": "ムラッシュゲーミング",
+  "short": "MRG",
+  "region": "Japan",
+  "tier": "open",
+  "country": "日本",
+  "base": {
+    "text": "日本（拠点の都市は未確認です）",
+    "status": "unverified",
+    "sources": [
+      "https://liquipedia.net/valorant/MURASH_GAMING"
+    ]
+  },
+  "team_color": "#F5A300",
+  "path_2027": {
+    "text": "2027 VCT Pacific Kickoff Japan Qualifier に出場するロスターを公式に発表しています。招待枠ではないため、オープン予選（Open Qualifiers）から出場する見込みです。",
+    "status": "confirmed",
+    "sources": [
+      "https://murashgaming.co.jp/news/valorant_007/",
+      "https://valorantesports.com/ja-JP/news/2027-vct-pacific-kickoff-japan-qualifier"
+    ]
+  },
+  "history": {
+    "text": "YouTuber・配信者の加藤純一さんが2023年1月に立ち上げたチームで、VALORANT部門は同年からVALORANT Challengers Japan（VCJ、日本の2部リーグ）に参戦しています。2026年シーズンはVCJ Split 1に出場し、オフシーズンの11月に2027年に向けたロスターを2回に分けて発表しました。",
+    "status": "confirmed",
+    "sources": [
+      "https://liquipedia.net/valorant/MURASH_GAMING",
+      "https://murashgaming.co.jp/news/valorant_007/"
+    ]
+  },
+  "achievements": [
+    {
+      "text": "VALORANT Challengers Japan 2026 Split 1 Phase 2 5〜6位",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/team/11490/murash-gaming"
+      ]
+    },
+    {
+      "text": "Red Bull Home Ground 2025 Japan Qualifiers 準優勝",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/team/11490/murash-gaming"
+      ]
+    },
+    {
+      "text": "VALORANT Challengers Japan 2025 Stage 3 Advance Stage 4位",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/team/11490/murash-gaming"
+      ]
+    },
+    {
+      "text": "Challengers League 2024 Japan Split 2 プレーオフ 4位",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/team/11490/murash-gaming"
+      ]
+    }
+  ],
+  "roster": {
+    "as_of": "2026-11-16",
+    "status": "confirmed",
+    "sources": [
+      "https://murashgaming.co.jp/news/valorant_007/",
+      "https://x.com/MURASHeSports/status/2119701532774126066",
+      "https://x.com/MURASHeSports/status/2120425041766883677",
+      "https://www.vlr.gg/789977/murash-finalizes-roster-with-caedye-seoldam-xdll-and-mltdwn"
+    ],
+    "players": [
+      {
+        "ign": "HoneyBunny",
+        "name": "Fumiya Tanimatsu",
+        "country": "日本",
+        "role": "デュエリスト（推定）",
+        "photo": null,
+        "note": "在籍継続（11月9日の発表 Part.1）。2025年12月に ZETA DIVISION から期間限定移籍（レンタル）で加入しました。2027年の契約形態は発表されていません。"
+      },
+      {
+        "ign": "MrTenzouEz",
+        "name": "Yuzuki Inada",
+        "country": "日本",
+        "role": "イニシエーター（推定）／IGL（司令塔）",
+        "photo": null,
+        "note": "在籍継続（11月9日の発表 Part.1）。2025年12月に FENNEL から移籍加入しました。IGLは Liquipedia の記載です。"
+      },
+      {
+        "ign": "Caedye",
+        "name": "Amon Mateus Okakura",
+        "country": "日本",
+        "role": "センチネル（VLR.gg の報道）",
+        "photo": null,
+        "note": "新加入（11月11日の発表 Part.2）。2026年は DetonatioN FocusMe で VCT Pacific に出場していました。"
+      },
+      {
+        "ign": "Seoldam",
+        "name": "Park Sang-min（박상민）",
+        "country": "韓国",
+        "role": "デュエリスト（VLR.gg の報道）",
+        "photo": null,
+        "note": "新加入（11月11日の発表 Part.2）。直前は RIDDLE ORDER に所属していました。"
+      },
+      {
+        "ign": "Xdll",
+        "name": "Yuto Mizomori",
+        "country": "日本",
+        "role": "イニシエーター（VLR.gg の報道）",
+        "photo": null,
+        "note": "新加入（11月11日の発表 Part.2）。直前は ZETA DIVISION に所属していました。"
+      }
+    ],
+    "staff": [
+      {
+        "ign": "Reita",
+        "role": "コーチ（在籍継続）"
+      },
+      {
+        "ign": "mltdwn",
+        "role": "コーチ（新加入）"
+      },
+      {
+        "ign": "Lefiedot",
+        "role": "アナリスト（在籍継続）"
+      }
+    ]
+  },
+  "featured_players": [
+    {
+      "ign": "Caedye",
+      "why": "2026年に VCT Pacific を経験した選手で、その経験をチームにどう持ち込むかが注目点です。",
+      "draft": true
+    },
+    {
+      "ign": "Seoldam",
+      "why": "長くデュエリストを務めてきたベテランで、攻めの起点となるプレーに注目です。",
+      "draft": true
+    }
+  ],
+  "playstyle": {
+    "text": "2026年からの3人（HoneyBunny・MrTenzouEz と新加入選手）を組み合わせた新しい体制です。新ロスターでの公式戦はまだないため、戦い方はオープン予選で見えてきます。",
+    "draft": true
+  },
+  "highlights_2027": {
+    "text": "Pacific でプレーした選手と、日本で長く戦ってきた選手が合流した新チームが、オープン予選でどんな連携を見せるかが見どころです。",
+    "draft": true
+  },
+  "beginner_tip": {
+    "text": "人気配信者が立ち上げたチーム。配信や動画から入ると選手を覚えやすいです。",
+    "draft": true
+  },
+  "links": {
+    "official": "https://murashgaming.co.jp/",
+    "x": "https://x.com/MURASHeSports",
+    "youtube": "https://www.youtube.com/@MURASH_GAMING"
+  },
+  "images": {
+    "hero": null,
+    "logo": null
+  },
+  "image_credits": [],
+  "open_questions": [
+    "HoneyBunny は ZETA DIVISION からのレンタル移籍（2025年12月）で加入しています。2027年もレンタルのままなのか、完全移籍なのかは公式発表で確認できませんでした。",
+    "VCJ 2026 Split 2 の成績を確認できませんでした（VLR.gg の大会成績欄には Split 1 のみ表示）。",
+    "拠点（都市）と運営会社の所在地は未確認です。公式サイトは Liquipedia では murashgaming.jp、ニュースは murashgaming.co.jp にあります。",
+    "選手のロールは公式発表に記載がありません。Caedye・Seoldam・Xdll は VLR.gg の記事、他は VLR.gg の通算使用エージェントからの推定です。",
+    "team_color（#F5A300）は仮の値です。運営者の確認が必要です。"
+  ],
+  "researched_at": "2026-11-16"
+}

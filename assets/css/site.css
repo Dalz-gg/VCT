@@ -566,3 +566,13 @@ a.ntag:hover{background:var(--bg4);color:var(--text)}
 .rnews a:hover{color:var(--cyan-soft);text-decoration:underline}
 /* .wrap の左右余白を、ヒーロー内の padding 指定で消さない */
 .thero-inner,.nhead-inner{padding-left:var(--gutter);padding-right:var(--gutter)}
+.jp-h{display:flex;flex-direction:column;gap:4px;min-width:0}
+/* 段階が多いときは、PCでも縦に並べる(左に段階名、右に説明) */
+@media (min-width:900px){
+  .jpath.long{flex-direction:column;gap:6px}
+  .jpath.long .jp-node{display:grid;grid-template-columns:280px 1fr;column-gap:28px;row-gap:6px;align-items:start}
+  .jpath.long .jp-h{grid-row:1 / span 3}
+  .jpath.long .jp-arrow{flex-direction:row;max-width:none;width:auto}
+  .jpath.long .jp-arrow svg{transform:rotate(90deg)}
+}
+.jpath.long .jp-slotlabel{max-width:880px;text-align:left;justify-content:flex-start}
