@@ -1,0 +1,15 @@
+{
+  "_comment": "【テスト用の架空ニュース】",
+  "id": "2099-01-03-fixture-japan",
+  "date": "2099-01-03",
+  "title": "【テスト】日本オープン予選の日程が発表(架空)",
+  "category": "日本",
+  "regions": ["Japan"],
+  "teams": ["sample-jp-team", "zeta-division", "no-such-team"],
+  "summary": "テンプレート確認用の架空ニュースです。画像とクレジット(CC BY)の表示を確認します。",
+  "body": ["テスト用の本文1段落目です。<b>タグ</b>は文字として表示されます。", "テスト用の本文2段落目です。"],
+  "status": "confirmed",
+  "sources": [{"title": "テスト出典", "url": "https://example.com/news-1"}, "https://example.com/news-1b", {"title": "不正なURL", "url": "javascript:alert(1)"}],
+  "image": "assets/img/site/city-tokyo.jpg",
+  "image_credit": {"file": "assets/img/site/city-tokyo.jpg", "source_url": "https://commons.wikimedia.org/wiki/File:Minato_City,_Tokyo,_Japan_(Night).jpg", "author": "David Kernan", "license": "CC BY 4.0", "license_url": "https://creativecommons.org/licenses/by/4.0/"}
+}

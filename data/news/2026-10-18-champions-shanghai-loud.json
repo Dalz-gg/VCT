@@ -1,0 +1,31 @@
+{
+  "id": "2026-10-18-champions-shanghai-loud",
+  "date": "2026-10-18",
+  "title": "Champions Shanghai 2026はLOUDが優勝、Pacific勢はT1とPaper Rexがプレイオフ進出",
+  "category": "結果",
+  "regions": [
+    "Pacific"
+  ],
+  "teams": [
+    "t1",
+    "paper-rex"
+  ],
+  "summary": "2026年の世界大会「Champions Shanghai」は、ブラジルのLOUDがTeam Vitalityを3-1で破って優勝しました。LOUDはChampionsを2回制した初めてのチームになったと報じられています。Pacificからは、T1とPaper Rexなどがプレイオフに進みました。",
+  "body": [
+    "大会は9月24日から10月18日まで行われました。報道によると、Pacific勢ではT1、Paper Rex、Nongshim RedForceがプレイオフに進みましたが、いずれも敗者側のトーナメントで敗退しました。Paper Rexは敗者側1回戦でT1に1-2で敗れています。",
+    "この大会で2026年のVCTシーズンは終わり、各チームは2027年に向けたロスターの入れ替えに入っています。"
+  ],
+  "status": "reported",
+  "sources": [
+    {
+      "title": "Americas representative LOUD becomes first two-time champion at Champions Shanghai(Inven Global)",
+      "url": "https://www.invenglobal.com/datalab/articles/27339/americas-representative-loud-becomes-first-two-time-champion-at-champions-shanghai"
+    },
+    {
+      "title": "Champions Shanghai results(The Spike)",
+      "url": "https://www.thespike.gg/events/results/valorant-champions-tour-2026-champions-shanghai/4233"
+    }
+  ],
+  "image": null,
+  "image_credit": null
+}

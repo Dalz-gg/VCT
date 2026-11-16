@@ -73,4 +73,40 @@
     var fromHash = document.getElementById('tab-' + (location.hash || '').slice(1));
     if (fromHash && tabs.indexOf(fromHash) >= 0) select(fromHash, false);
   }
+
+  /* スマホ用メニュー(<details>)：外側クリック・Esc・リンクで閉じる */
+  var mnav = document.querySelector('.mnav');
+  if (mnav) {
+    document.addEventListener('click', function (e) {
+      if (mnav.open && !mnav.contains(e.target)) mnav.open = false;
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && mnav.open) { mnav.open = false; mnav.querySelector('summary').focus(); }
+    });
+    mnav.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { mnav.open = false; });
+    });
+  }
+
+  /* ニュースのカテゴリ絞り込み(JSなしではすべて表示) */
+  var chips = document.querySelectorAll('.fchip');
+  var nlist = document.querySelector('[data-filter-list]');
+  if (chips.length && nlist) {
+    var cards = Array.prototype.slice.call(nlist.querySelectorAll('.ncard'));
+    var count = document.querySelector('.fcount');
+    var apply = function (cat) {
+      var n = 0;
+      cards.forEach(function (c) {
+        var show = !cat || c.getAttribute('data-cat') === cat;
+        c.hidden = !show;
+        if (c.parentElement && c.parentElement !== nlist) c.parentElement.hidden = !show;
+        if (show) { n++; c.classList.add('in'); }
+      });
+      chips.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-cat') === cat ? 'true' : 'false'); });
+      if (count) count.textContent = (cat ? '「' + cat + '」' : 'すべて') + '：' + n + '件';
+    };
+    chips.forEach(function (b) {
+      b.addEventListener('click', function () { apply(b.getAttribute('data-cat') || ''); });
+    });
+  }
 })();

@@ -452,3 +452,117 @@ a.tcard:hover{translate:0 -6px;background:var(--bg4);color:var(--text)}
 
 .nw{white-space:nowrap}
 @media (max-width:639px){.hero-radar{max-width:240px}}
+
+/* =========================================================
+   第2弾：メニュー(スマホ)・日本ページ・ニュース
+   ========================================================= */
+/* ---------- スマホ用メニュー(768px未満) ---------- */
+.mnav{display:none;margin-left:auto}
+.mnav summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--bg3);color:var(--text);font-family:var(--f-en);font-weight:800;font-size:16px;letter-spacing:.1em;line-height:1;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px))}
+.mnav summary::-webkit-details-marker{display:none}
+.mnav[open] summary{background:var(--red);color:var(--bg)}
+.mnav-ic{display:flex;flex-direction:column;gap:3px;width:16px}
+.mnav-ic i{display:block;height:2px;background:currentColor}
+.mnav-panel{position:absolute;left:0;right:0;top:100%;background:rgba(13,17,23,.98);border-bottom:2px solid var(--red);padding:8px var(--gutter) 14px;display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.mnav-panel a{display:block;padding:12px 14px;background:var(--bg2);color:var(--soft);text-decoration:none;font-weight:700;font-size:15px;border-left:3px solid transparent}
+.mnav-panel a[aria-current="page"]{color:var(--text);border-left-color:var(--red)}
+.mnav-panel a:hover{color:var(--text);background:var(--bg3)}
+@media (max-width:767px){
+  .gnav{display:none}
+  .mnav{display:block}
+}
+
+/* ---------- 日本ページ：道のり図 ---------- */
+.jpath{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px}
+.jp-node{background:var(--bg2);padding:18px 20px;border-top:3px solid var(--cyan);display:flex;flex-direction:column;gap:6px;min-width:0;clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px))}
+.jp-node.goal{background:var(--red);color:var(--bg);border-top-color:var(--text)}
+.jp-node.goal .jp-x,.jp-node.goal .jp-d,.jp-node.goal .badge,.jp-node.goal .jp-num,.jp-node.goal sup a{color:var(--bg)}
+.jp-num{font-family:var(--f-en);font-weight:800;font-size:15px;letter-spacing:.14em;color:var(--cyan)}
+.jp-t{font-weight:900;font-size:clamp(20px,4.6vw,24px);line-height:1.3}
+.jp-d{font-size:13px;color:var(--cyan-soft)}
+.jp-x{font-size:14px;color:var(--soft);line-height:1.7}
+.jp-slot{font-weight:700;font-size:14px}
+.jp-b{margin-top:auto;padding-top:4px}
+.jp-arrow{display:flex;align-items:center;justify-content:center;gap:10px;color:var(--red);flex-wrap:wrap;text-align:center;padding:2px 0}
+.jp-arrow svg{transform:rotate(90deg);flex:none}
+.jp-slotlabel{font-weight:900;font-size:15px;color:var(--text);background:var(--bg3);padding:6px 12px;display:inline-flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:center}
+@media (min-width:900px){
+  .jpath{flex-direction:row;align-items:stretch;gap:10px}
+  .jp-node{flex:1 1 0}
+  .jp-arrow{flex-direction:column;flex:none;max-width:150px}
+  .jp-arrow svg{transform:none}
+  .jp-arrow:not(.slot){width:28px}
+}
+
+/* ---------- 日本ページ：招待チーム・年表・カード補足 ---------- */
+.inv{background:var(--bg2);padding:18px 20px;border-left:3px solid var(--tca,var(--cyan));display:flex;flex-direction:column;gap:8px;height:100%}
+.inv-n{font-family:var(--f-en);font-weight:800;font-size:26px;line-height:1.05}
+.inv-n a{color:var(--text)}
+.tcard-note{font-size:13px;color:var(--muted);line-height:1.6;margin-top:4px}
+.tcard-meta .badge{align-self:center}
+.tag-open{background:var(--cyan);color:var(--bg)}
+.badge.end{color:var(--red-soft)}
+.tline{list-style:none;padding:0;margin:0;position:relative;display:flex;flex-direction:column;gap:2px}
+.tline li{display:grid;grid-template-columns:72px 1fr;gap:14px;background:var(--bg2);padding:16px 18px}
+@media (min-width:640px){.tline li{grid-template-columns:110px 1fr;gap:22px}}
+.tl-y{font-family:var(--f-en);font-weight:800;font-size:clamp(30px,7vw,44px);line-height:1;color:var(--red)}
+.tl-b{min-width:0;display:flex;flex-direction:column;gap:6px;color:var(--soft)}
+.tl-w{color:var(--text);font-weight:700}
+
+/* ---------- 選手写真のクレジット(運営提供) ---------- */
+.pl-ph .phcredit{position:absolute;left:0;right:0;bottom:0;padding:16px 8px 5px;font-size:10px;line-height:1.4;color:var(--soft);background:linear-gradient(0deg,rgba(13,17,23,.85),rgba(13,17,23,0))}
+
+/* ---------- ニュース ---------- */
+.fchips{display:none;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.js .fchips{display:flex}
+.fchip{appearance:none;border:1px solid var(--line2);background:var(--bg2);color:var(--soft);font-family:var(--f-jp);font-weight:700;font-size:14px;padding:7px 14px;cursor:pointer;line-height:1.3}
+.fchip small{font-family:var(--f-mono);font-size:11px;color:var(--muted);margin-left:4px}
+.fchip:hover{color:var(--text);border-color:var(--muted)}
+.fchip[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:var(--bg)}
+.fchip[aria-pressed="true"] small{color:var(--bg)}
+.fcount{margin-bottom:16px;min-height:1em}
+.nlist{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(min(340px,100%),1fr))}
+.nstrip{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(min(250px,100%),1fr))}
+.ncard{background:var(--bg2);display:flex;flex-direction:column;height:100%;border-top:3px solid var(--red);min-width:0}
+.ncard[hidden]{display:none}
+.ncard-img{display:block;aspect-ratio:16/9;overflow:hidden;background:var(--bg3)}
+.ncard-img img{width:100%;height:100%;object-fit:cover}
+.ncard-b{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;flex:1;min-width:0}
+.nmeta{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-size:13px;color:var(--muted)}
+.nmeta time{font-family:var(--f-mono);font-weight:700;color:var(--soft)}
+.ncat{font-size:12px;font-weight:700;color:var(--cyan);border-left:2px solid var(--cyan);padding-left:8px;line-height:1.3}
+.ntitle{margin:0;font-size:18px;font-weight:900;line-height:1.5}
+.ncard.compact .ntitle{font-size:16px}
+.ntitle a{color:var(--text);text-decoration:none}
+.ntitle a:hover{color:var(--cyan-soft);text-decoration:underline}
+.nsum{font-size:14px;color:var(--soft);line-height:1.75}
+.ntags{display:flex;flex-wrap:wrap;gap:6px}
+.ntag{font-size:12px;font-weight:700;padding:3px 9px;background:var(--bg3);color:var(--soft);text-decoration:none}
+a.ntag:hover{background:var(--bg4);color:var(--text)}
+.nmore{margin-top:auto;display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:14px;color:var(--red);text-decoration:none}
+.nmore:hover{color:var(--red-soft)}
+.nhead{position:relative;overflow:hidden;background:var(--bg2);border-bottom:4px solid var(--red)}
+.nhead-inner{position:relative;padding:40px 0 32px;display:flex;flex-direction:column;gap:14px;max-width:calc(860px + var(--gutter)*2)}
+@media (min-width:768px){.nhead-inner{padding:56px var(--gutter) 40px}}
+.nhead h1{margin:0;font-size:clamp(26px,5.6vw,40px);font-weight:900;line-height:1.4}
+.nlead{color:var(--soft);font-size:17px;font-weight:500}
+.nbody{max-width:calc(860px + var(--gutter)*2);padding-top:32px;display:flex;flex-direction:column;gap:18px}
+.nbody > p{color:var(--soft)}
+.nfig{margin:0;background:var(--bg3)}
+.nfig img{width:100%;max-height:520px;object-fit:cover}
+.nfig figcaption{font-size:12px;color:var(--muted);padding:8px 14px}
+.nfig figcaption a{color:var(--muted)}
+.nnote{background:rgba(245,185,66,.08);border-left:3px solid var(--amber);padding:10px 14px;font-size:14px;color:var(--soft)}
+.nsrc{margin-top:18px;padding-top:18px;border-top:1px solid var(--line)}
+.nsrc .label{margin:0 0 10px}
+.npagers{display:grid;gap:8px;grid-template-columns:1fr;margin-top:18px}
+@media (min-width:640px){.npagers{grid-template-columns:1fr 1fr}}
+.npager{display:flex;flex-direction:column;gap:4px;background:var(--bg2);padding:14px 16px;color:var(--text);text-decoration:none;font-weight:700;font-size:14px;line-height:1.5}
+.npager:hover{background:var(--bg4);color:var(--text)}
+.rnews{list-style:none;padding:0;display:flex;flex-direction:column;gap:2px}
+.rnews li{background:var(--bg2);padding:12px 16px;display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-size:13px;color:var(--muted)}
+.rnews time{font-family:var(--f-mono);font-weight:700;color:var(--soft)}
+.rnews a{flex:1 1 100%;color:var(--text);font-weight:700;font-size:15px;text-decoration:none;line-height:1.5}
+.rnews a:hover{color:var(--cyan-soft);text-decoration:underline}
+/* .wrap の左右余白を、ヒーロー内の padding 指定で消さない */
+.thero-inner,.nhead-inner{padding-left:var(--gutter);padding-right:var(--gutter)}

@@ -1,0 +1,38 @@
+{
+  "id": "2026-11-02-t1-departures",
+  "date": "2026-11-02",
+  "title": "T1がKDGヘッドコーチ、Meteor選手らとの別れを発表",
+  "category": "移籍・ロスター",
+  "regions": [
+    "Pacific"
+  ],
+  "teams": [
+    "t1"
+  ],
+  "summary": "T1が、ヘッドコーチのKDGさん、Masters Bangkok優勝メンバーのMeteor選手、Munchkin選手、DH選手との別れを発表しました。10月26日にはアカデミー(育成)チームの選手とコーチも全員退団しています。",
+  "body": [
+    "T1はKDGさんについて、チーム初のChampionsプレイオフ進出に導いたと感謝を伝えました。Meteor選手は契約満了による退団です。",
+    "11月4日には、以前T1で指導していたsungminコーチの復帰を発表しました。iZu選手、stax選手、BuZz選手はチームに残っています。"
+  ],
+  "status": "confirmed",
+  "sources": [
+    {
+      "title": "Thank you 'KDG'(T1 公式X)",
+      "url": "https://x.com/T1/status/2117090067562815659"
+    },
+    {
+      "title": "Thank you 'Meteor'(T1 公式X)",
+      "url": "https://x.com/T1/status/2117089318820823120"
+    },
+    {
+      "title": "Welcome Back, 'sungmin'(T1 公式X)",
+      "url": "https://x.com/T1/status/2117814105478484195"
+    },
+    {
+      "title": "VCT 2027 roster changes(The Spike)",
+      "url": "https://www.thespike.gg/valorant/news/vct-2027-roster-changes/9236"
+    }
+  ],
+  "image": null,
+  "image_credit": null
+}

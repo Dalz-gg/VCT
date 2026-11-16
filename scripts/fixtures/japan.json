@@ -1,0 +1,29 @@
+{
+  "_comment": "【テスト用の架空データ】日本ページのテンプレート確認専用です。内容は事実ではありません。",
+  "as_of": "2099-01-01",
+  "summary": {"text": "テスト用の概要文です。2027年から日本のチームはオープン予選を勝ち上がってPacificを目指します(テスト)。", "status": "reported", "sources": ["https://example.com/jp-summary"]},
+  "changes": [
+    {"label": "テスト項目", "before": "以前の形(テスト)", "after": "新しい形(テスト)", "status": "unverified"}
+  ],
+  "path": [
+    {"step": "日本オープン予選", "text": "テスト：オンライン予選です。", "dates": "2099年1月〜2月(テスト)", "status": "confirmed", "sources": ["https://example.com/jp-path"]},
+    {"step": "プレーオフ", "text": "テスト：上位で戦います。", "dates": "2099年2月(テスト)", "slots": "上位4チーム(テスト)", "status": "reported", "sources": []},
+    {"step": "Pacific Kickoff", "text": "テスト：シーズン最初の大会です。", "status": "unverified"}
+  ],
+  "slots": {"text": "日本からKickoffへ1枠(テスト)", "status": "reported", "sources": ["https://example.com/jp-slots"]},
+  "invited_teams": [
+    {"name": "Sample Japan (テスト用)", "slug": "sample-jp-team", "reason": "テスト：前年の成績による招待", "status": "unverified", "sources": []},
+    {"name": "Unknown Team (テスト)", "slug": "unknown-team", "reason": "チームページがない場合の表示", "status": "reported", "sources": []}
+  ],
+  "teams": [
+    {"name": "Sample Japan (テスト用)", "slug": "sample-jp-team", "roster_status": "partial", "note": "テスト：一部の選手を発表済み"},
+    {"name": "Page-less Team (テスト)", "slug": "pageless-team", "roster_status": "unannounced", "note": "チームページがない場合の表示"},
+    {"name": "Ended Team (テスト)", "slug": "", "roster_status": "disbanded", "note": "活動終了の表示確認"},
+    {"name": "ZETA DIVISION", "slug": "zeta-division", "roster_status": "announced", "note": "パートナーはこの一覧から除外されます"}
+  ],
+  "vcj_history": [
+    {"year": 2022, "text": "テスト：2022年の文章です。", "winners": "テスト優勝チームB", "status": "unverified", "sources": []},
+    {"year": 2021, "text": "テスト：2021年の文章です。", "winners": "テスト優勝チームA", "status": "unverified", "sources": ["https://example.com/vcj-2021"]}
+  ],
+  "open_questions": ["テスト：まだわからないことの表示確認です。"]
+}

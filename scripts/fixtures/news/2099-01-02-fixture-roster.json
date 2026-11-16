@@ -1,0 +1,15 @@
+{
+  "_comment": "【テスト用の架空ニュース】",
+  "id": "2099-01-02-fixture-roster",
+  "date": "2099-01-02",
+  "title": "【テスト】架空チームが新ロスターを発表したと報じられる",
+  "category": "移籍・ロスター",
+  "regions": ["Japan"],
+  "teams": ["sample-jp-team"],
+  "summary": "報道ベース(reported)の表示確認と、運営提供写真のクレジット表示を確認します。",
+  "body": ["関係者の話として、と報じられています(テスト)。"],
+  "status": "reported",
+  "sources": [{"title": "テスト記事", "url": "https://example.com/news-2"}],
+  "image": "assets/img/site/city-seoul.jpg",
+  "image_credit": {"file": "assets/img/site/city-seoul.jpg", "source_url": null, "author": "", "license": "運営提供", "license_url": null, "provided_by_owner": true}
+}
