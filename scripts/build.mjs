@@ -26,6 +26,8 @@ import { fileURLToPath } from 'node:url';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const args = new Set(process.argv.slice(2));
 const FIXTURE = args.has('--fixture');
+const TABBAR = !args.has('--no-tabbar'); // スマホ下部のタブバー(すりガラスの浮いたピル型)。--no-tabbar で外せます
+const pad2 = (n) => String(n).padStart(2, '0');
 const DATA = path.join(ROOT, 'data');
 const FIX = path.join(ROOT, 'scripts', 'fixtures');
 const GENERATOR = 'vct-fan-build';
@@ -323,18 +325,36 @@ function newPage(rel) {
 // ---------------------------------------------------------------- layout
 const FONTS = 'https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+JP:wght@400;700;900&display=swap';
 
+// サイトの地図。items は [href, メニューでの名前, サブナビでの短い名前, 1行の説明]。
+// series:true のセクション(大会システム・日本)は「02 / 05」の進み具合と前後リンクを出します。
 const MENU = [
-  { key: 'home', en: 'Home', jp: 'ホーム', href: 'index.html' },
-  { key: 'format', en: 'Format', jp: '大会システム', href: 'format/index.html', items: [
-    ['format/index.html', '概要'], ['format/season.html', '1年の流れ'], ['format/events.html', '大会の種類'],
-    ['format/rules.html', 'ルールと支援金'], ['format/glossary.html', '用語集・FAQ']] },
+  { key: 'home', en: 'Home', jp: 'ホーム', href: 'index.html', items: [
+    ['index.html', 'ホーム', 'ホーム', 'VCTってなに？ から最新ニュースまで']] },
+  { key: 'format', en: 'Format', jp: '大会システム', href: 'format/index.html', series: true, items: [
+    ['format/index.html', '概要', '概要', '2027年に変わること、全体の流れ'],
+    ['format/season.html', '1年の流れ', '1年の流れ', '予選→地域大会→世界大会を3回'],
+    ['format/events.html', '大会の種類', '大会の種類', 'Open・Kickoff・Cup・Masters・Champions'],
+    ['format/rules.html', 'ルールと支援金', 'ルールと支援金', '2つの出場ルートと、チームへの支援金'],
+    ['format/glossary.html', '用語集・FAQ', '用語集・FAQ', 'わからない言葉と、よくある質問']] },
   { key: 'teams', en: 'Teams', jp: 'チーム', href: 'teams/index.html', items: [
-    ['teams/pacific.html', 'Pacific パートナー'], ['teams/japan.html', '日本チーム']] },
-  { key: 'japan', en: 'Japan', jp: '日本', href: 'japan/index.html', items: [
-    ['japan/index.html', '日本予選'], ['japan/history.html', 'VCJの歴史']] },
-  { key: 'news', en: 'News', jp: 'ニュース', href: 'news/index.html' },
+    ['teams/index.html', 'チームトップ', 'トップ', 'Pacific と日本、2つの入口'],
+    ['teams/pacific.html', 'Pacific パートナー', 'Pacific', 'Pacific リーグで戦う8チーム'],
+    ['teams/japan.html', '日本チーム', '日本チーム', '日本のチームと2027年のロスター']] },
+  { key: 'japan', en: 'Japan', jp: '日本', href: 'japan/index.html', series: true, items: [
+    ['japan/index.html', '日本予選', '日本予選', 'Kickoff までの道、日程、招待チーム'],
+    ['japan/history.html', 'VCJの歴史', 'VCJの歴史', '2021年からの日本リーグの歩み']] },
+  { key: 'news', en: 'News', jp: 'ニュース', href: 'news/index.html', items: [
+    ['news/index.html', 'ニュース一覧', '一覧', '公式発表・移籍・大会のニュース']] },
 ];
 const HEAD_LINKS = [['format/index.html', '大会', 'format'], ['teams/index.html', 'チーム', 'teams'], ['japan/index.html', '日本', 'japan'], ['news/index.html', 'ニュース', 'news']];
+
+// 現在地：current(セクション)と、詳細ページなら parent(一覧ページ)と leaf(チーム名・記事名)
+function navState(ctx, current, parent, leaf) {
+  const g = MENU.find((x) => x.key === current) || null;
+  const here = parent || ctx.rel;
+  const idx = g ? g.items.findIndex(([h]) => h === here) : -1;
+  return { g, here, idx, item: idx >= 0 ? g.items[idx] : null, leaf: leaf || '' };
+}
 
 // サイトロゴ：assets/img/site/logo.(svg|png|webp) があれば画像、なければ文字ロゴ
 function logoSlot(P) {
@@ -345,16 +365,77 @@ function logoSlot(P) {
   return `<a class="slot-logo" href="${P}index.html" aria-label="${SITE} ホームへ">${inner}</a>`;
 }
 
-function menuHtml(ctx) {
-  const cur = (href) => (href === ctx.rel ? ' aria-current="page"' : '');
-  const groups = MENU.map((g, i) => `<div class="menu-group menu-group--${g.key}" style="--i:${i}">
-        <a class="menu-head" href="${ctx.P}${g.href}"${cur(g.href)}><span class="en">${esc(g.en)}</span><span class="jp">${esc(g.jp)}</span></a>
-        ${g.items ? `<ul class="menu-items">${g.items.map(([h, l]) => `<li><a href="${ctx.P}${h}"${cur(h)}>${esc(l)}</a></li>`).join('')}</ul>` : ''}
-      </div>`).join('\n      ');
+// B. ヘッダーの現在地「大会システム › 1年の流れ」(スマホはページ名だけ)
+function headLoc(nav) {
+  if (!nav.g || nav.g.key === 'home') return '';
+  const page = nav.leaf || (nav.item ? nav.item[1] : '');
+  if (!page) return '';
+  return `<p class="head-loc" aria-label="現在地"><span class="head-loc-sec">${esc(nav.g.jp)}</span><span class="head-loc-sep" aria-hidden="true">›</span><span class="head-loc-page">${esc(page)}</span></p>`;
+}
+
+// E. 「02 / 05」＋細い進み具合のバー
+function progressHtml(nav, cls = '') {
+  if (!nav.g?.series || nav.idx < 0) return '';
+  const n = nav.g.items.length;
+  return `<div class="prog${cls ? ` ${cls}` : ''}" role="img" aria-label="${esc(nav.g.jp)} ${n}ページ中${nav.idx + 1}ページ目"><span class="prog-num"><b>${pad2(nav.idx + 1)}</b><span class="prog-of"> / ${pad2(n)}</span></span><span class="prog-bar" aria-hidden="true">${nav.g.items.map((_, i) => `<i${i <= nav.idx ? ' class="on"' : ''}></i>`).join('')}</span></div>`;
+}
+
+// A. セクションのサブナビ(ヘッダーの下、ヘッダーと一緒に固定)
+function subnavHtml(ctx, nav) {
+  if (!nav.g || nav.g.key === 'home') return '';
+  const items = nav.g.items.map(([h, , short], i) => {
+    const on = h === nav.here;
+    const attr = on ? (nav.leaf ? ' class="is-cur"' : ' class="is-cur" aria-current="page"') : '';
+    const num = nav.g.series ? `<span class="subnav-n" aria-hidden="true">${pad2(i + 1)}</span>` : '';
+    return `<li><a href="${ctx.P}${h}"${attr}>${num}${esc(short)}</a></li>`;
+  }).join('');
+  const leaf = nav.leaf ? `<li class="subnav-leaf"><span class="subnav-sep" aria-hidden="true">›</span><span aria-current="page">${esc(nav.leaf)}</span></li>` : '';
+  return `<nav class="subnav" aria-label="${esc(nav.g.jp)}のページ">
+    <div class="wrap subnav-bar">
+      <span class="subnav-sec en" aria-hidden="true">${esc(nav.g.en)}</span>
+      <ul class="subnav-list">${items}${leaf}</ul>
+      ${progressHtml(nav)}
+    </div>
+  </nav>`;
+}
+
+// D. スマホ下部のタブバー(html.has-tabbar のときだけ表示。build の --tabbar で付く)
+const TAB_ICONS = {
+  home: '<path d="M3.5 10.5 12 4l8.5 6.5V20h-5.5v-6h-6v6H3.5z"/>',
+  format: '<path d="M8 4h8v5.5a4 4 0 0 1-8 0z"/><path d="M8 6H4.5c0 2.6 1.6 4.3 3.8 4.5M16 6h3.5c0 2.6-1.6 4.3-3.8 4.5"/><path d="M12 13.5V17M8 20.5h8M9.5 17h5v3.5h-5z"/>',
+  teams: '<circle cx="9" cy="8.5" r="3.2"/><path d="M3 20c.4-3.4 2.9-5.6 6-5.6s5.6 2.2 6 5.6"/><path d="M15.2 5.6a3 3 0 0 1 0 5.8M17.4 14.6c1.9.8 3.2 2.8 3.5 5.4"/>',
+  japan: '<rect x="3" y="5" width="18" height="14"/><circle cx="12" cy="12" r="3.3"/>',
+  news: '<path d="M4 5h12.5v15H6.5A2.5 2.5 0 0 1 4 17.5z"/><path d="M16.5 9H20v8.5a2.5 2.5 0 0 1-2.5 2.5"/><path d="M7.5 9h5.5M7.5 12.5h5.5M7.5 16h3.5"/>',
+};
+const TABS = [['home', 'index.html', 'ホーム'], ['format', 'format/index.html', '大会'], ['teams', 'teams/index.html', 'チーム'], ['japan', 'japan/index.html', '日本'], ['news', 'news/index.html', 'ニュース']];
+function tabbarHtml(ctx, current) {
+  return `<nav class="tabbar" aria-label="セクション">
+  ${TABS.map(([k, h, l]) => `<a class="tabbar-item" href="${ctx.P}${h}"${k === current ? ' aria-current="true"' : ''}><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${TAB_ICONS[k]}</svg><span>${l}</span></a>`).join('\n  ')}
+</nav>`;
+}
+
+// G. メニュー＝サイトマップ(全ページ＋1行の説明、現在地に YOU ARE HERE)
+function menuHtml(ctx, nav) {
+  const HERE = '<span class="here-tag">You are here</span>';
+  const groups = MENU.map((g, i) => {
+    const curSec = nav.g && nav.g.key === g.key;
+    const items = g.items.map(([h, label, , d], j) => {
+      const isHere = h === nav.here;
+      const exact = isHere && !nav.leaf;
+      const num = g.series ? `<span class="map-n" aria-hidden="true">${pad2(j + 1)}</span>` : '<span class="map-n map-n--dot" aria-hidden="true"></span>';
+      const leaf = isHere && nav.leaf ? `<li class="map-item map-item--leaf is-here"><span class="map-link"><span class="map-n" aria-hidden="true">›</span><span class="map-t"><span class="map-name" aria-current="page">${esc(nav.leaf)}</span>${HERE}</span></span></li>` : '';
+      return `<li class="map-item${exact ? ' is-here' : ''}${isHere && nav.leaf ? ' is-parent' : ''}"><a class="map-link" href="${ctx.P}${h}"${exact ? ' aria-current="page"' : ''}>${num}<span class="map-t"><span class="map-name">${esc(label)}</span>${exact ? HERE : ''}</span><span class="map-d">${esc(d)}</span></a></li>${leaf}`;
+    }).join('');
+    return `<div class="menu-group menu-group--${g.key}${curSec ? ' is-cur-sec' : ''}" style="--i:${i}">
+        <p class="menu-head"><span class="en">${esc(g.en)}</span><span class="jp">${esc(g.jp)}</span>${g.items.length > 1 ? `<span class="menu-count">${g.items.length} pages</span>` : ''}</p>
+        <ul class="map-items">${items}</ul>
+      </div>`;
+  }).join('\n      ');
   return `<details class="menu">
-    <summary class="menu-btn" aria-label="メニュー"><span class="menu-open">MENU</span><span class="menu-close">CLOSE</span><span class="menu-ic" aria-hidden="true"><i></i><i></i><i></i></span></summary>
-    <nav class="menu-panel" aria-label="サイトメニュー">
+    <summary class="menu-btn" aria-label="メニュー(サイトマップ)"><span class="menu-open">MENU</span><span class="menu-close">CLOSE</span><span class="menu-ic" aria-hidden="true"><i></i><i></i><i></i></span></summary>
+    <nav class="menu-panel" aria-label="サイトマップ">
       <div class="wrap">
+      <p class="menu-title"><span class="en">Site Map</span><span class="jp">サイトのページ一覧</span></p>
       <div class="menu-groups">
       ${groups}
       </div>
@@ -389,11 +470,14 @@ function creditsDrawer(ctx) {
     : '<p>このページでは写真を使用していません。ロゴ・選手写真の枠は、運営者が用意した画像に順次差し替えます。</p>';
 }
 
-function layout(ctx, { title, desc, current, body, bodyStyle = '', source = 'data/', solidHead = false }) {
+function layout(ctx, { title, desc, current, body, bodyStyle = '', source = 'data/', solidHead = false, parent = null, leaf = '' }) {
   const P = ctx.P;
+  const nav = navState(ctx, current, parent, leaf);
+  const sub = subnavHtml(ctx, nav);
+  const htmlCls = [sub ? 'has-subnav' : '', TABBAR ? 'has-tabbar' : ''].filter(Boolean).join(' ');
   const fullTitle = title ? `${title}｜${SITE}` : `${SITE}｜VCTをもっと気軽に。もっと楽しく。`;
   return `<!doctype html>
-<html lang="ja">
+<html lang="ja"${htmlCls ? ` class="${htmlCls}"` : ''}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -415,9 +499,11 @@ function layout(ctx, { title, desc, current, body, bodyStyle = '', source = 'dat
 <header class="site-head${solidHead ? ' site-head--solid' : ''}">
   <div class="wrap head-bar">
     ${logoSlot(P)}
+    ${headLoc(nav)}
     <nav class="head-links" aria-label="主なページ">${HEAD_LINKS.map(([h, l, k]) => `<a href="${P}${h}"${current === k ? ' aria-current="true"' : ''}>${l}</a>`).join('')}</nav>
-    ${menuHtml(ctx)}
+    ${menuHtml(ctx, nav)}
   </div>
+  ${sub}
 </header>
 
 <main id="main">
@@ -440,6 +526,8 @@ ${creditsDrawer(ctx)}
     </details>
   </div>
 </aside>
+
+${tabbarHtml(ctx, current)}
 
 <footer class="site-foot">
   <div class="wrap">
@@ -494,7 +582,8 @@ function hero(ctx, { variant = 'page', img = null, kicker, titleHtml, titleLabel
 </section>`;
 }
 
-const crumbsHtml = (ctx, items) => `<nav class="crumbs ld" style="--i:0" aria-label="パンくずリスト">${items.map(([h, l], i) => (h ? `<a href="${ctx.P}${h}">${esc(l)}</a>` : `<span>${esc(l)}</span>`) + (i < items.length - 1 ? '<span aria-hidden="true">/</span>' : '')).join('')}</nav>`;
+// パンくずはサブナビと重なるため表示しません(呼び出し側はそのまま)
+const crumbsHtml = () => '';
 
 function teamLogo(t, P) {
   const logo = assetPath(t.images?.logo) || assetPath(`assets/img/teams/${t.slug}/logo.png`) || assetPath(`assets/img/teams/${t.slug}/logo.svg`);
@@ -870,6 +959,7 @@ function teamPage(t) {
 
   return layout(ctx, {
     title: `${t.name}${t.name_kana ? `(${t.name_kana})` : ''}`, current: 'teams', source: `data/teams/${t.slug}.json`,
+    parent: isJapan ? 'teams/japan.html' : (pacificOrder().some((x) => x.team.slug === t.slug) ? 'teams/pacific.html' : 'teams/index.html'), leaf: t.name,
     desc: `${t.name}のチーム紹介。選手、歩み、実績、関連ニュースをまとめています。`,
     bodyStyle: teamVars(t.team_color),
     body: [heroHtml, tabsSec, back].join('\n'),
@@ -935,6 +1025,7 @@ function newsPage(n) {
   });
   return layout(ctx, {
     title: `${n.title}｜ニュース`, current: 'news', source: `data/news/${n.id}.json`, solidHead: true,
+    parent: 'news/index.html', leaf: n.title,
     desc: n.summary || n.title, body: [head, body].join('\n'),
   });
 }
@@ -971,7 +1062,6 @@ const KIND = { online: { en: 'Online', jp: 'オンライン予選' }, lan: { en:
 const EVENT_KIND = { open: 'online', kickoff: 'lan', cup: 'lan', masters: 'intl', champions: 'intl' };
 const FORMAT_NAV = MENU.find((g) => g.key === 'format').items;
 const JAPAN_NAV = MENU.find((g) => g.key === 'japan').items;
-const pad2 = (n) => String(n).padStart(2, '0');
 
 function fmtCtx(rel) {
   const ctx = newPage(rel);
@@ -986,14 +1076,24 @@ function soonSection(ctx, related = []) {
   return section({ id: 'soon', tone: 'cream', inner: soonPanel(ctx, 'このページは準備中です。', related) });
 }
 
-// 前後のページ(大会システム・日本の下層ページ共通)
+// 前後のページ(大会システム・日本の下層ページ共通)。次のページは大きく、タイトルと1行の説明つき
 function pagerSec(ctx, list) {
   const i = list.findIndex(([h]) => h === ctx.rel);
-  const card = (x, label) => (x ? `<a class="card" href="${ctx.P}${x[0]}"><span class="label">${label}</span><span class="t">${esc(x[1])}</span></a>` : '<span></span>');
-  const next = list[i + 1] ? [list[i + 1], 'Next →'] : (i > 0 ? [list[0], 'Back to Start ↺'] : [null, '']);
+  const n = list.length;
+  const isLast = i === n - 1;
+  const nextI = isLast ? 0 : i + 1;
+  const nx = list[nextI];
+  const pv = i > 0 ? list[i - 1] : null;
+  const next = n > 1 ? `<a class="pager-next" href="${ctx.P}${nx[0]}">
+      <span class="pager-label en">${isLast ? 'Back to start ↺' : 'Next'}<span class="pager-step">${pad2(nextI + 1)} / ${pad2(n)}</span></span>
+      <span class="pager-t">${esc(nx[1])}</span>
+      <span class="pager-d">${esc(nx[3] || '')}</span>
+      <span class="pager-arrow" aria-hidden="true">→</span>
+    </a>` : '';
+  const prev = pv ? `<a class="pager-prev" href="${ctx.P}${pv[0]}"><span class="pager-label en">← Prev<span class="pager-step">${pad2(i)} / ${pad2(n)}</span></span><span class="pager-t">${esc(pv[1])}</span></a>` : '';
   return section({
     id: 'pager', tone: 'surface', cls: 'sec--pager',
-    inner: `<nav class="pager pager--flush" aria-label="前後のページ">${card(list[i - 1], '← Prev')}${card(next[0], next[1])}</nav>`,
+    inner: `<nav class="pager-series${pv ? '' : ' pager-series--first'}" aria-label="前後のページ">${next}${prev}</nav>`,
   });
 }
 

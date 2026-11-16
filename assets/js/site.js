@@ -1,6 +1,7 @@
 /* VCT FAN — site.js (design system v2)
    Progressive enhancement only: every piece of content is readable without JS.
    - header: .is-scrolled after scrolling
+   - subnav: scroll the current item of .subnav-list into view (mobile)
    - menu:   <details class="menu"> → animated overlay, focus trap, Esc, scroll lock
    - reveal: .rv gets .in when it enters the viewport
    - count:  [data-count] numbers count up once visible
@@ -24,6 +25,35 @@
     onScroll();
   }
 
+  /* ---------- tab bar: hide while scrolling down, show on scroll up ---------- */
+  if (doc.classList.contains('has-tabbar')) {
+    var lastY = window.scrollY, tbTick = false;
+    window.addEventListener('scroll', function () {
+      if (tbTick) return;
+      tbTick = true;
+      requestAnimationFrame(function () {
+        var y = window.scrollY, dy = y - lastY;
+        var nearBottom = window.innerHeight + y >= document.documentElement.scrollHeight - 80;
+        if (y < 80 || dy < -6 || nearBottom) doc.classList.remove('tabbar-hide');
+        else if (dy > 6) doc.classList.add('tabbar-hide');
+        if (Math.abs(dy) > 6) lastY = y;
+        tbTick = false;
+      });
+    }, { passive: true });
+  }
+
+  /* ---------- sub-nav: keep the current page visible in the horizontal list ---------- */
+  var subList = document.querySelector('.subnav-list');
+  if (subList) {
+    var curItem = subList.querySelector('.subnav-leaf') || subList.querySelector('.is-cur');
+    if (curItem && subList.scrollWidth > subList.clientWidth) {
+      var li = curItem.closest('li') || curItem;
+      var left = li.offsetLeft - subList.offsetLeft;
+      var target = left + li.offsetWidth - subList.clientWidth + 32;
+      subList.scrollLeft = Math.max(0, Math.min(left - 8, target > 0 ? target : 0));
+    }
+  }
+
   /* ---------- menu ---------- */
   var menu = document.querySelector('.menu');
   if (menu) {
@@ -41,6 +71,12 @@
       btn.setAttribute('aria-expanded', 'true');
       document.body.classList.add('menu-lock');
       requestAnimationFrame(function () { requestAnimationFrame(function () { menu.classList.add('is-open'); }); });
+      // site map: bring "YOU ARE HERE" into view if it is below the fold
+      var here = panel.querySelector('.map-item.is-here');
+      if (here) {
+        var r = here.getBoundingClientRect();
+        if (r.bottom > window.innerHeight - 24) panel.scrollTop += r.top - window.innerHeight * 0.4;
+      }
       var first = panel.querySelector('a[href]');
       if (first) setTimeout(function () { first.focus({ preventScroll: true }); }, reduce ? 0 : 120);
     };
