@@ -10,17 +10,17 @@ HTML / CSS / 少しの JS だけの静的サイトです。**すべてのペー�
 
 ```
 index.html                 HOME(ヒーロー、3つの入口、最新ニュース3件、東京 Cup 2)
-format/index.html          大会システム概要        ┐
-format/season.html         1年の流れ               │
-format/events.html         大会の種類              │ PHASE 2 で中身を作る(今は「準備中」)
-format/rules.html          ルールと支援金          │ 原稿は content/format.md
-format/glossary.html       用語集・FAQ             ┘
+format/index.html          大会システム概要(3つの変化、流れ、下層への入口、2026との違い)  ┐
+format/season.html         1年の流れ(3サイクルのタイムライン、Pacificの開催地)            │ data/format.json
+format/events.html         大会の種類(5つの大会カード)                                    │ (原稿は content/format.md)
+format/rules.html          ルールと支援金(2つの道の図、3/5ルール、支援金の棒グラフ)        │
+format/glossary.html       用語集・FAQ(アコーディオン)                                    ┘
 teams/index.html           チーム入口(Pacific / 日本)
 teams/pacific.html         Pacific パートナー8チーム
 teams/japan.html           日本チーム(ロスター状況で絞り込み)
 teams/<slug>.html          チーム詳細(タブ：概要 / 選手 / 実績 / ニュース)
-japan/index.html           日本予選      ┐ PHASE 2(今は「準備中」)。データは data/japan.json
-japan/history.html         VCJの歴史     ┘
+japan/index.html           日本予選(Kickoffまでの道の図、日程、招待チーム、Cupの枠)   ┐ data/japan.json
+japan/history.html         VCJの歴史(年ごとのカード、優勝回数)                       ┘
 news/index.html            ニュース一覧(カテゴリで絞り込み)
 news/<id>.html             ニュース詳細、news/feed.xml(Atom)
 format.html / japan.html / news.html   旧URL。新ページへ移動する短いページ(meta refresh)
@@ -35,6 +35,7 @@ assets/img/site/             会場・都市などの写真(サイトロゴを�
 assets/img/teams/<slug>/     チームロゴ(logo.png)・チーム写真(hero.jpg)・選手写真(<ign小文字>.jpg)
 data/teams/<slug>.json       チームデータ
 data/japan.json              日本予選・VCJの歴史のデータ
+data/format.json             大会システムのデータ(HOME の数字・Cup 2 の日程もここから)
 data/news/<日付>-<id>.json   ニュース(1件1ファイル)
 data/pacific-partners.json   Pacific パートナーの並び順
 data/credits.json            サイト共通写真のクレジット(id で参照)
@@ -69,7 +70,7 @@ ctx.src([...]); ctx.openQ.push('...'); ctx.asOf = '2026-11-16';
 writeFile('format/season.html', layout(ctx, { title, desc, current: 'format', body }));
 ```
 
-部品の関数：`hero()`、`section({ id, tone: 'dark'|'cream'|'surface', num, head: secHead({...}), inner })`、`secHead()`、`teamCard()`、`teamLogo()`、`playerCard()`、`newsCard()`、`readmore(text)`、`more(html)`、`status(s)`、`soonPanel()`、`crumbsHtml()`。今は「準備中」の `format/*`・`japan/*` は末尾の `PH` 配列で作っているので、中身を作るときは専用の関数に置き換えてください。
+部品の関数：`hero()`、`section({ id, tone: 'dark'|'cream'|'surface', num, head: secHead({...}), inner })`、`secHead()`、`teamCard()`、`teamLogo()`、`playerCard()`、`newsCard()`、`readmore(text)`、`more(html)`、`status(s)`、`soonPanel()`、`crumbsHtml()`、`flowStrip()`(大会の流れの帯)、`bars()`(カウントアップ付き棒グラフ)、`acc()`(アコーディオン)、`cmpTable()`(比較表)、`pagerSec()`(下層ページの前後リンク)。
 
 ### ルール(content/DESIGN.md より)
 
@@ -90,6 +91,7 @@ writeFile('format/season.html', layout(ctx, { title, desc, current: 'format', bo
 | 画像枠 | `.slot`、`.slot--16x9`、`.slot-team-logo`、`.slot-photo`、`.slot-logo`(ヘッダー) |
 | 開閉 | `details.more`、`.readmore`、`details.drawer`(最下部) |
 | その他 | `.tabs`、`.timeline`、`.chips[data-filter-group]`、`.facts`、`.tip`、`.tags`、`.status--rep / --tbd`、`.soon` |
+| 図・PHASE 2 | `.flow`、`.change-card`、`.link-card`、`.vs`/`.cmp`、`.cycles`/`.step-card`、`.venue-card`、`.event-card`、`.paths`/`.lane`、`.keep`、`.bars`、`.segs`、`.acc`、`.road`、`.date-tile`、`.callout`、`.year-track` |
 | 動き | `.ld`(読み込み時、`style="--i:n"`)、`.rv`(スクロール表示、`style="--d:n"`)。`prefers-reduced-motion` では停止、JSなしでも全部表示 |
 
 ## ロゴと写真の枠

@@ -4,7 +4,7 @@
    - menu:   <details class="menu"> → animated overlay, focus trap, Esc, scroll lock
    - reveal: .rv gets .in when it enters the viewport
    - count:  [data-count] numbers count up once visible
-   - more:   <details class="more"> open/close height animation
+   - more:   <details class="more"> / <details class="acc"> open/close height animation
    - readmore: .readmore → 2-line clamp + MORE button (only if text overflows)
    - tabs:   .tabs (anchor links → ARIA tabs)
    - filter: .chips[data-filter-group] buttons filter [data-filter-key] items
@@ -108,7 +108,7 @@
   }
 
   /* ---------- MORE + (details height animation) ---------- */
-  $$('details.more').forEach(function (d) {
+  $$('details.more, details.acc').forEach(function (d) {
     var sum = d.querySelector('summary');
     var body = d.querySelector('.more-body');
     if (!sum || !body || reduce || !body.animate) return;

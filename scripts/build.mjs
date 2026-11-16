@@ -9,12 +9,12 @@
 //
 // 生成するもの(content/DESIGN.md のページ構成)
 //   index.html                       HOME
-//   format/{index,season,events,rules,glossary}.html   大会システム(PHASE 2 で中身を作る。今は「準備中」)
+//   format/{index,season,events,rules,glossary}.html   大会システム(data/format.json。原稿は content/format.md)
 //   teams/index.html                 チーム入口(Pacific / 日本)
 //   teams/pacific.html               Pacific パートナー8チーム
 //   teams/japan.html                 日本チーム(ロスター状況で絞り込み)
 //   teams/<slug>.html                チーム詳細(タブ：概要 / 選手 / 実績 / ニュース)
-//   japan/{index,history}.html       日本予選 / VCJの歴史(PHASE 2。今は「準備中」)
+//   japan/{index,history}.html       日本予選 / VCJの歴史(data/japan.json)
 //   news/index.html, news/<id>.html  ニュース一覧・詳細、news/feed.xml
 //   format.html / japan.html / news.html   旧URL → 新ページへの案内(meta refresh)
 // リンクはすべて相対パス(file:// でも GitHub Pages のサブパスでも動く)。
@@ -175,6 +175,9 @@ function loadJapan() {
   return j && typeof j === 'object' && !Array.isArray(j) ? j : null;
 }
 const japan = loadJapan();
+
+// 大会システム(format/*.html と HOME の数字)。原稿は content/format.md
+const fmt = fs.existsSync(path.join(DATA, 'format.json')) ? readJSON(path.join(DATA, 'format.json')) : (console.warn('! data/format.json がまだありません'), null);
 
 function loadNews() {
   const map = new Map();
@@ -570,6 +573,8 @@ function homePage() {
   ctx.src(partners?.sources);
   if (partners?.status) ctx.checks.push({ label: 'Pacific パートナー8チーム', status: partners.status });
   ctx.asOf = partners?.as_of || '';
+  const nCycles = Number(fmt?.numbers?.cycles) || arr(fmt?.cycles).length || 3;
+  const nKickoff = Number(fmt?.numbers?.kickoff_teams) || 12;
 
   const top = hero(ctx, {
     variant: 'home', img: heroImg, kicker: 'Unofficial Fan Guide — 2027 Season',
@@ -579,8 +584,8 @@ function homePage() {
     btns: `<a class="btn btn--solid" href="${P}format/index.html">大会のしくみ ${ARROW}</a><a class="btn" href="${P}teams/index.html">チームを見る</a>`,
     extra: `<div class="stats ld" style="--i:5">
       <div class="stat"><span class="stat-num" data-count="${pac.length || 8}">${pac.length || 8}</span><span class="stat-label">Pacific<br>パートナー</span></div>
-      <div class="stat"><span class="stat-num" data-count="3">3</span><span class="stat-label">シーズンの<br>サイクル</span></div>
-      <div class="stat"><span class="stat-num" data-count="12">12</span><span class="stat-label">Kickoff<br>出場チーム</span></div>
+      <div class="stat"><span class="stat-num" data-count="${nCycles}">${nCycles}</span><span class="stat-label">シーズンの<br>サイクル</span></div>
+      <div class="stat"><span class="stat-num" data-count="${nKickoff}">${nKickoff}</span><span class="stat-label">Kickoff<br>出場チーム</span></div>
     </div>`,
   }) + '\n<span class="scroll-cue" aria-hidden="true">Scroll</span>';
 
@@ -612,14 +617,16 @@ ${entry('03', 'japan/index.html', 'Japan', '日本', 'VCJからオープン予�
 
   // 東京 Cup 2
   const tokyo = ctx.siteImg('city-tokyo');
-  ctx.checks.push({ label: 'Cup 2 東京の日程(8月)', status: 'reported' }, { label: 'Cup 2 の会場・チケット', status: 'unverified' });
-  ctx.src([{ title: 'ゲームウィズ:VCT 2027 日程', url: 'https://gamewith.jp/valorant/article/show/583037' }, { title: 'Sheep Esports:VCT Pacific 2027 dates', url: 'https://www.sheepesports.com/de/articles/masters-seoul-final-rescheduled-as-vct-pacific-confirms-2027-dates/en' }]);
+  const cup2 = arr(fmt?.pacific_venues).find((v) => v.city === 'Tokyo') || { event: 'Cup 2', month: '2027.08', status: 'reported' };
+  const cup2Month = Number(String(cup2.month).split('.')[1]) || 8;
+  const cup2St = ctx.fact(`${cup2.event} 東京の日程(${cup2Month}月)`, { status: cup2.status, sources: fmt?.date_sources });
+  ctx.checks.push({ label: `${cup2.event} の会場・チケット`, status: 'unverified' });
   const band = `<section class="band" id="tokyo" aria-labelledby="tokyo-h">
   ${tokyo ? `<div class="hero-media"><img src="${esc(tokyo.src)}" alt="" loading="lazy"></div>` : ''}
   <div class="wrap hero-inner">
-    <span class="kicker rv">Pacific Cup 2 — 2027.08</span>
-    <h2 class="band-title rv" style="--d:1" id="tokyo-h" aria-label="東京でCup 2">Tokyo</h2>
-    <p class="band-line rv" style="--d:2">2027年8月、Pacificの決戦が東京へ。 ${status('reported')}</p>
+    <span class="kicker rv">Pacific ${esc(cup2.event)} — ${esc(cup2.month)}</span>
+    <h2 class="band-title rv" style="--d:1" id="tokyo-h" aria-label="東京で${esc(cup2.event)}">Tokyo</h2>
+    <p class="band-line rv" style="--d:2">2027年${cup2Month}月、Pacificの決戦が東京へ。 ${cup2St}</p>
     <div class="btns rv" style="--d:3"><a class="btn" href="${P}format/season.html">1年の流れを見る ${ARROW}</a></div>
   </div>
 </section>`;
@@ -959,17 +966,500 @@ ${entries}
 `;
 }
 
-// ---------------------------------------------------------------- placeholders (PHASE 2 で中身を作る)
-function placeholderPage(rel, { title, kicker, en, catchText, current, img = null, crumbs, related = [] }) {
+// ---------------------------------------------------------------- FORMAT(data/format.json、原稿は content/format.md)
+const KIND = { online: { en: 'Online', jp: 'オンライン予選' }, lan: { en: 'LAN', jp: '地域大会(LAN)' }, intl: { en: 'World', jp: '世界大会' } };
+const EVENT_KIND = { open: 'online', kickoff: 'lan', cup: 'lan', masters: 'intl', champions: 'intl' };
+const FORMAT_NAV = MENU.find((g) => g.key === 'format').items;
+const JAPAN_NAV = MENU.find((g) => g.key === 'japan').items;
+const pad2 = (n) => String(n).padStart(2, '0');
+
+function fmtCtx(rel) {
   const ctx = newPage(rel);
-  const im = img ? ctx.siteImg(img) : null;
-  const top = hero(ctx, {
-    variant: im ? 'page' : 'plain', img: im, kicker,
-    titleHtml: en, catchHtml: esc(catchText),
-    crumbs: crumbsHtml(ctx, crumbs),
+  ctx.src(fmt?.sources);
+  ctx.asOf = str(fmt?.as_of);
+  return ctx;
+}
+const fmtCrumbs = (ctx, label) => crumbsHtml(ctx, label ? [['index.html', 'HOME'], ['format/index.html', '大会システム'], [null, label]] : [['index.html', 'HOME'], [null, '大会システム']]);
+
+// データが無いときの「準備中」
+function soonSection(ctx, related = []) {
+  return section({ id: 'soon', tone: 'cream', inner: soonPanel(ctx, 'このページは準備中です。', related) });
+}
+
+// 前後のページ(大会システム・日本の下層ページ共通)
+function pagerSec(ctx, list) {
+  const i = list.findIndex(([h]) => h === ctx.rel);
+  const card = (x, label) => (x ? `<a class="card" href="${ctx.P}${x[0]}"><span class="label">${label}</span><span class="t">${esc(x[1])}</span></a>` : '<span></span>');
+  const next = list[i + 1] ? [list[i + 1], 'Next →'] : (i > 0 ? [list[0], 'Back to Start ↺'] : [null, '']);
+  return section({
+    id: 'pager', tone: 'surface', cls: 'sec--pager',
+    inner: `<nav class="pager pager--flush" aria-label="前後のページ">${card(list[i - 1], '← Prev')}${card(next[0], next[1])}</nav>`,
   });
-  const body = section({ id: 'soon', tone: 'cream', inner: soonPanel(ctx, 'このページは準備中です。', related) });
-  return layout(ctx, { title, current, desc: `${title}(準備中)`, body: [top, body].join('\n'), solidHead: !im });
+}
+
+// Open Qualifiers → Kickoff → … → Champions の帯
+function flowStrip(list) {
+  const items = arr(list).map((s, i) => `<li class="flow-step flow-step--${esc(s.kind)}" style="--d:${i}"><span class="flow-en">${esc(s.en)}</span><span class="flow-jp">${esc(s.jp)}</span></li>`).join('');
+  const kinds = [...new Set(arr(list).map((s) => s.kind))].filter((k) => KIND[k]);
+  return `<ol class="flow rv" aria-label="2027年の大会の流れ">${items}</ol>
+    <div class="flow-legend rv" style="--d:2">${kinds.map((k) => `<span class="flow-key flow-key--${k}">${KIND[k].jp}</span>`).join('')}</div>`;
+}
+
+// 2026 / 2027 の比較表(スマホでは縦に積む)
+const cmpTable = (rows) => `<div class="cmp" role="table" aria-label="2026年と2027年の比較">
+  <div class="cmp-row cmp-row--head" role="row"><span role="columnheader">項目</span><span role="columnheader">2026</span><span role="columnheader">2027</span></div>
+  ${arr(rows).map(([k, a, b]) => `<div class="cmp-row" role="row"><span class="cmp-k" role="rowheader">${esc(k)}</span><span class="cmp-a" role="cell" data-y="2026">${esc(a)}</span><span class="cmp-b" role="cell" data-y="2027">${esc(b)}</span></div>`).join('')}
+</div>`;
+
+// 横棒グラフ(金額・回数)。--w で長さ、[data-count] でカウントアップ
+function bars(items, { pre = '', post = '' } = {}) {
+  const max = Math.max(1, ...items.map((x) => x.value));
+  return `<ul class="bars">${items.map((x, i) => `<li class="bar rv" style="--d:${i};--w:${(x.value / max * 100).toFixed(1)}%">
+    <span class="bar-label">${x.labelHtml}</span>
+    <span class="bar-track" aria-hidden="true"><span class="bar-fill"></span></span>
+    <span class="bar-num">${pre}<span data-count="${x.value}">${x.value}</span>${/^[A-Za-z]+$/.test(post) ? post : `<small>${post}</small>`}</span>
+  </li>`).join('')}</ul>`;
+}
+
+// アコーディオン(用語集・FAQ)。開閉は site.js が more と同じアニメーション
+const acc = (sumHtml, bodyHtml, i = 0) => `<details class="acc rv" style="--d:${i % 4}"><summary>${sumHtml}<span class="acc-ic" aria-hidden="true"></span></summary><div class="more-body">${bodyHtml}</div></details>`;
+
+function formatIndexPage() {
+  const ctx = fmtCtx('format/index.html');
+  const img = ctx.siteImg('champions-la-2023');
+  const top = hero(ctx, {
+    variant: 'page', img, kicker: 'Format — 2027 Season',
+    titleHtml: 'How VCT <span class="r">Works</span>',
+    catchHtml: '2027年、VCTはトーナメント中心に。',
+    crumbs: fmtCrumbs(ctx),
+  });
+  if (!fmt) return layout(ctx, { title: '大会システム', current: 'format', desc: 'VCT 2027の大会システム(準備中)', body: [top, soonSection(ctx)].join('\n') });
+  ctx.openQ.push(...arr(fmt.open_questions).map((q) => `${q}は未確定です。`));
+  const n = fmt.numbers || {};
+
+  const changes = section({
+    id: 'changes', tone: 'cream', num: '01',
+    head: secHead({ id: 'changes', kicker: "What's New", en: '3 Big Changes', jp: '2027年の大きな変化', lead: esc(fmt.headline || '') }),
+    inner: `<ol class="grid grid--3 change-grid">${arr(fmt.changes).map((c, i) => `<li class="change-card rv" style="--d:${i}">
+      <span class="change-num" aria-hidden="true">${pad2(i + 1)}</span>
+      <span class="change-en">${esc(c.en)}</span>
+      <h3 class="change-title">${esc(c.title)}</h3>
+      <p class="change-line">${esc(c.line)}</p>
+    </li>`).join('')}</ol>`,
+  });
+
+  const flow = section({
+    id: 'flow', tone: 'dark', num: '02',
+    head: secHead({ id: 'flow', kicker: 'The Flow', en: 'One Season', jp: '1年の流れ', lead: `予選 → 地域大会 → 世界大会を、1年に${esc(n.cycles || 3)}回。` }),
+    inner: `${flowStrip(fmt.flow)}
+    <p class="sec-cta rv"><a class="link-arrow" href="season.html">日程と開催地を見る ${ARROW}</a></p>`,
+  });
+
+  const SUBS = [
+    ['season.html', 'Season', '1年の流れ', '3つのサイクルと開催地。'],
+    ['events.html', 'Events', '大会の種類', '5つの大会を1枚ずつ。'],
+    ['rules.html', 'Rules', 'ルールと支援金', 'パートナーとオープンの違い。'],
+    ['glossary.html', 'Glossary', '用語集・FAQ', 'わからない言葉は、ここで。'],
+  ];
+  const subs = section({
+    id: 'deeper', tone: 'cream', num: '03',
+    head: secHead({ id: 'deeper', kicker: 'Dig Deeper', en: 'Learn More', jp: 'くわしく見る' }),
+    inner: `<div class="grid grid--4 link-grid">${SUBS.map(([h, en, jp, line], i) => `<a class="card link-card rv" href="${h}" style="--d:${i}">
+      <span class="link-num" aria-hidden="true">${pad2(i + 1)}</span>
+      <h3 class="link-title">${en}</h3><span class="link-jp">${jp}</span>
+      <p class="link-line">${line}</p>${ARROW}
+    </a>`).join('\n')}</div>`,
+  });
+
+  const vs = (label, a, b, d) => `<div class="vs rv" style="--d:${d}"><span class="vs-label">${label}</span><span class="vs-row"><span class="vs-a">${a}</span><span class="vs-arrow" aria-hidden="true">→</span><span class="vs-b">${b}</span></span></div>`;
+  const compare = section({
+    id: 'compare', tone: 'dark', num: '04',
+    head: secHead({ id: 'compare', kicker: '2026 → 2027', en: 'Then vs Now', jp: '2026年との違い', lead: 'パートナーは減り、地域リーグはトーナメントに。' }),
+    inner: `<div class="grid grid--2 vs-grid">
+      ${vs('1地域のパートナー', esc(n.partners_2026 ?? 10), esc(n.partners_per_region ?? 8), 0)}
+      ${vs('地域の大会', 'Stage', 'Cup', 1)}
+    </div>
+    ${arr(fmt.compare).length ? more(cmpTable(fmt.compare), { open: 'MORE — 比較表', close: 'CLOSE' }) : ''}`,
+  });
+
+  return layout(ctx, {
+    title: '大会システム', current: 'format', source: 'data/format.json',
+    desc: 'VCT 2027の大会システムを、3つの変化と1年の流れでひと目で紹介します。',
+    body: [top, changes, flow, subs, compare, pagerSec(ctx, FORMAT_NAV)].join('\n'),
+  });
+}
+
+function formatSeasonPage() {
+  const ctx = fmtCtx('format/season.html');
+  ctx.src(fmt?.date_sources);
+  const img = ctx.siteImg('city-seoul');
+  const top = hero(ctx, {
+    variant: 'page', img, kicker: 'Format — Season',
+    titleHtml: 'The <span class="r">Season</span>',
+    catchHtml: '予選 → 地域大会 → 世界大会を、3回。',
+    crumbs: fmtCrumbs(ctx, '1年の流れ'),
+  });
+  if (!fmt) return layout(ctx, { title: '1年の流れ', current: 'format', desc: 'VCT 2027の1年の流れ(準備中)', body: [top, soonSection(ctx)].join('\n') });
+  ctx.openQ.push(...arr(fmt.open_questions).filter((q) => /日程|終了日/.test(q)).map((q) => `${q}は未確定です。`));
+
+  const stepCard = (s) => {
+    const im = s.img ? ctx.siteImg(s.img) : null;
+    const st = str(s.dates) === '未発表' ? '' : ctx.fact(`${s.event}(${s.city})の日程`, { status: s.status });
+    return `<li class="step-card step-card--${esc(s.kind)}">
+      <div class="slot slot--16x9">${im ? `<img src="${esc(im.src)}" alt="" loading="lazy">` : '<span class="step-online" aria-hidden="true"></span>'}
+        <span class="step-kind">${esc(KIND[s.kind]?.en || '')}</span>
+        <span class="step-cap"><span class="step-event">${esc(s.event)}</span><span class="step-city">${esc(s.city)}</span></span>
+      </div>
+      <p class="step-date">${esc(s.dates)} ${st}</p>
+    </li>`;
+  };
+  const cycles = section({
+    id: 'cycles', tone: 'dark', num: '01',
+    head: secHead({ id: 'cycles', kicker: 'Three Cycles', en: 'The Road', jp: '3つのサイクル', lead: 'オンライン予選から地域大会、そして世界大会へ。日程は Pacific のものです。' }),
+    inner: `<ol class="cycles">${arr(fmt.cycles).map((c) => `<li class="cycle rv">
+      <div class="cycle-head"><span class="cycle-num" aria-hidden="true">${pad2(c.n)}</span><div><h3 class="cycle-en">${esc(c.en)}</h3><span class="cycle-when">${esc(c.line)}</span></div></div>
+      <ol class="cycle-steps">${arr(c.steps).map(stepCard).join('')}</ol>
+    </li>`).join('\n')}</ol>
+    ${arr(fmt.date_notes).length ? more(`<ul class="list-dots">${fmt.date_notes.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>`, { open: 'MORE — 日程について', close: 'CLOSE' }) : ''}`,
+  });
+
+  const venues = section({
+    id: 'venues', tone: 'cream', num: '02',
+    head: secHead({ id: 'venues', kicker: 'Pacific Venues', en: 'Host Cities', jp: 'Pacificの開催地', lead: 'Kickoffはバンコク、Cup 1はマニラ、Cup 2は東京。' }),
+    inner: `<div class="grid grid--3 venue-grid">${arr(fmt.pacific_venues).map((v, i) => {
+      const im = ctx.siteImg(v.img);
+      const st = ctx.fact(`${v.event}(${v.city_jp})の日程`, { status: v.status });
+      const home = v.city === 'Tokyo';
+      return `<article class="venue-card${home ? ' venue-card--home' : ''} rv" style="--d:${i}">
+        <div class="slot venue-media">${im ? `<img src="${esc(im.src)}" alt="${esc(im.alt)}" loading="lazy">` : ''}${home ? '<span class="venue-flag">日本開催</span>' : ''}</div>
+        <div class="venue-cap"><span class="venue-event">${esc(v.event)} — ${esc(v.month)}</span><h3 class="venue-city">${esc(v.city)}</h3><span class="venue-meta">${esc(v.city_jp)}・${esc(v.dates)} ${st}</span></div>
+      </article>`;
+    }).join('\n')}</div>`,
+  });
+
+  return layout(ctx, {
+    title: '1年の流れ', current: 'format', source: 'data/format.json',
+    desc: 'VCT 2027の1年を、3つのサイクルとPacificの開催地(バンコク・マニラ・東京)で紹介します。',
+    body: [top, cycles, venues, pagerSec(ctx, FORMAT_NAV)].join('\n'),
+  });
+}
+
+function formatEventsPage() {
+  const ctx = fmtCtx('format/events.html');
+  const img = ctx.siteImg('champions-istanbul-2022');
+  const top = hero(ctx, {
+    variant: 'page', img, kicker: 'Format — Events',
+    titleHtml: 'The <span class="r">Events</span>',
+    catchHtml: '入口から、世界一まで。5つの大会。',
+    crumbs: fmtCrumbs(ctx, '大会の種類'),
+  });
+  if (!fmt) return layout(ctx, { title: '大会の種類', current: 'format', desc: 'VCT 2027の大会の種類(準備中)', body: [top, soonSection(ctx)].join('\n') });
+
+  const card = (e, i) => {
+    const kind = EVENT_KIND[e.key] || 'lan';
+    const whoSt = e.who_status ? ctx.fact(`${e.en}の出場チーム数`, { status: e.who_status }) : '';
+    const facts = [['形式', esc(e.format)], ['出場', `${esc(e.who)} ${whoSt}`], ['次へ', esc(e.next)]].filter(([, v]) => v.trim());
+    const isNum = /^\d+$/.test(str(e.num));
+    return `<article class="event-card event-card--${kind} rv" style="--d:${i % 2}">
+      <div class="event-key"><span class="event-num"${isNum ? ` data-count="${esc(e.num)}"` : ''}>${esc(e.num)}</span><span class="event-unit">${esc(e.unit)}</span></div>
+      <div class="event-body">
+        <span class="event-kind">${pad2(i + 1)} — ${esc(KIND[kind].jp)}</span>
+        <h3 class="event-name">${esc(e.en)}</h3>
+        <p class="event-line">${esc(e.line)}</p>
+        ${more(`<dl class="facts">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>`)}
+      </div>
+    </article>`;
+  };
+  const list = section({
+    id: 'events', tone: 'dark', num: '01',
+    head: secHead({ id: 'events', kicker: 'Know the Events', en: 'Five Events', jp: '5つの大会', lead: '大きな数字は、その大会をひと言で表す数です。' }),
+    inner: `<div class="event-list">${arr(fmt.events).map(card).join('\n')}</div>`,
+  });
+  const link = section({
+    id: 'connect', tone: 'cream', num: '02',
+    head: secHead({ id: 'connect', kicker: 'How They Connect', en: 'Connected', jp: '大会のつながり', lead: 'Cup 1の先はMasters Valencia、Cup 2の先はChampions。' }),
+    inner: `${flowStrip(fmt.flow)}
+    <div class="btns rv sec-cta"><a class="btn btn--solid" href="season.html">1年の流れ ${ARROW}</a><a class="btn" href="rules.html">ルールと支援金</a></div>`,
+  });
+  return layout(ctx, {
+    title: '大会の種類', current: 'format', source: 'data/format.json',
+    desc: 'Open Qualifiers・Kickoff・Cup・Masters・Champions。VCT 2027の5つの大会をカードで紹介します。',
+    body: [top, list, link, pagerSec(ctx, FORMAT_NAV)].join('\n'),
+  });
+}
+
+function formatRulesPage() {
+  const ctx = fmtCtx('format/rules.html');
+  const top = hero(ctx, {
+    variant: 'plain', kicker: 'Format — Rules',
+    titleHtml: 'Rules &amp; <span class="r">Support</span>',
+    catchHtml: 'パートナーも、オープンも。',
+    crumbs: fmtCrumbs(ctx, 'ルールと支援金'),
+  });
+  const r = fmt?.rules;
+  if (!r) return layout(ctx, { title: 'ルールと支援金', current: 'format', solidHead: true, desc: 'VCT 2027のルールと支援金(準備中)', body: [top, soonSection(ctx)].join('\n') });
+
+  const lane = (cls, en, jp, steps, note = '', d = 0) => `<div class="lane lane--${cls} rv" style="--d:${d}">
+      <div class="lane-label"><span class="lane-en">${en}</span><span class="lane-jp">${jp}</span></div>
+      <ol class="lane-steps">${arr(steps).map((s) => `<li class="lane-step">${esc(s)}</li>`).join('')}</ol>
+      ${note ? `<p class="lane-note">${esc(note)}</p>` : ''}
+    </div>`;
+  const paths = section({
+    id: 'paths', tone: 'cream', num: '01',
+    head: secHead({ id: 'paths', kicker: 'Two Paths', en: 'Open System', jp: 'パートナーとオープン', lead: 'どちらも最後は成績しだい。パートナーの保証はKickoffだけです。' }),
+    inner: `<div class="paths">
+      ${lane('partner', 'Partner', 'パートナー', r.partner_path, r.partner_else, 0)}
+      ${lane('open', 'Open', 'オープン', r.open_path, '', 1)}
+      <div class="paths-goal rv" style="--d:2"><span class="kicker">Goal</span><p class="paths-goal-t">${arr(r.goal).map(esc).join(' <span class="r" aria-hidden="true">→</span> ')}</p><span class="paths-goal-sub">成績しだいで、どちらの道からでも。</span></div>
+    </div>`,
+  });
+
+  const keep = Number(r.roster_keep) || 3;
+  const size = Number(r.roster_size) || 5;
+  const roster = section({
+    id: 'roster', tone: 'dark', num: '02',
+    head: secHead({ id: 'roster', kicker: 'Roster Rule', en: `Keep ${keep} of ${size}`, jp: 'ロスター継続ルール', lead: esc(r.roster_line || '') }),
+    inner: `<div class="keep rv">
+      <div class="keep-ratio" aria-hidden="true"><span class="keep-big">${keep}</span><span class="keep-of">/${size}</span></div>
+      <ol class="keep-slots" aria-label="${size}人中${keep}人が継続">${Array.from({ length: size }, (_, i) => `<li class="keep-slot${i < keep ? ' is-keep' : ''}" style="--d:${i}">${SILHOUETTE}<span>${i < keep ? 'KEEP' : 'NEW'}</span></li>`).join('')}</ol>
+    </div>`,
+  });
+
+  const stip = arr(r.stipends).filter((s) => Number(s.amount) > 0);
+  const support = section({
+    id: 'support', tone: 'cream', num: '03',
+    head: secHead({ id: 'support', kicker: 'Support', en: 'Stipends', jp: '支援金', lead: esc(r.stipend_line || '') }),
+    inner: stip.length ? bars(stip.map((s) => ({ labelHtml: esc(s.label), value: Math.round(Number(s.amount) / 1000) })), { pre: '$', post: 'K' }) : '',
+  });
+
+  const regs = arr(r.regions);
+  const segRegions = regs.filter((x) => arr(x.segments).length);
+  const region = section({
+    id: 'regions', tone: 'dark', num: '04',
+    head: secHead({ id: 'regions', kicker: 'By Region', en: 'Kickoff 12', jp: '地域ごとの違い', lead: `Kickoffはどの地域も${esc(fmt.numbers?.kickoff_teams ?? 12)}チーム。中身が少しだけ違います。` }),
+    inner: `<div class="segs">${segRegions.map((x, i) => `<div class="seg rv" style="--d:${i}">
+        <span class="seg-name">${esc(x.region)}</span>
+        <div class="seg-bar" role="img" aria-label="${esc(x.segments.map((s) => `${s.label}${s.n}`).join('・'))}">${x.segments.map((s) => Array.from({ length: Number(s.n) || 0 }, () => `<i class="seg-c seg-c--${esc(s.kind)}"></i>`).join('')).join('')}</div>
+        <span class="seg-legend">${x.segments.map((s) => `<span class="seg-k seg-k--${esc(s.kind)}">${esc(s.label)} ${esc(s.n)}</span>`).join('')}</span>
+      </div>`).join('')}</div>
+      ${regs.length ? more(`<dl class="facts">${regs.map((x) => `<div><dt>${esc(x.region)}</dt><dd>${esc(x.text)}</dd></div>`).join('')}</dl>`) : ''}`,
+  });
+
+  return layout(ctx, {
+    title: 'ルールと支援金', current: 'format', source: 'data/format.json', solidHead: true,
+    desc: 'VCT 2027のオープン形式、ロスター継続ルール、非パートナーへの支援金を図で紹介します。',
+    body: [top, paths, roster, support, region, pagerSec(ctx, FORMAT_NAV)].join('\n'),
+  });
+}
+
+function formatGlossaryPage() {
+  const ctx = fmtCtx('format/glossary.html');
+  const top = hero(ctx, {
+    variant: 'plain', kicker: 'Format — Glossary',
+    titleHtml: 'Glossary &amp; <span class="r">FAQ</span>',
+    catchHtml: 'わからない言葉は、ここで。',
+    crumbs: fmtCrumbs(ctx, '用語集・FAQ'),
+  });
+  if (!fmt) return layout(ctx, { title: '用語集・FAQ', current: 'format', solidHead: true, desc: '用語集・FAQ(準備中)', body: [top, soonSection(ctx)].join('\n') });
+  const gl = arr(fmt.glossary).filter((g) => g && g.term);
+  const fq = arr(fmt.faq).filter((f) => f && f.q);
+  const glossary = section({
+    id: 'glossary', tone: 'cream', num: '01',
+    head: secHead({ id: 'glossary', kicker: 'Glossary', en: 'Words', jp: '用語集', lead: '言葉をタップすると、説明が開きます。' }),
+    inner: `<div class="acc-list">${gl.map((g, i) => acc(`<span class="acc-en">${esc(g.en || '')}</span><span class="acc-t">${esc(g.term)}</span>`, `<p>${esc(g.def)} ${g.status ? ctx.fact(g.term, { status: g.status }) : ''}</p>`, i)).join('\n')}</div>`,
+  });
+  const faq = section({
+    id: 'faq', tone: 'dark', num: '02',
+    head: secHead({ id: 'faq', kicker: 'FAQ', en: 'Questions', jp: 'よくある質問' }),
+    inner: `<div class="acc-list">${fq.map((f, i) => acc(`<span class="acc-q" aria-hidden="true">Q</span><span class="acc-t">${esc(f.q)}</span>`, `<p>${esc(f.a)} ${f.status ? ctx.fact(f.q, { status: f.status }) : ''}</p>${Array.isArray(f.link) ? `<p class="acc-link"><a class="link-arrow" href="${ctx.P}${esc(f.link[0])}">${esc(f.link[1])} ${ARROW}</a></p>` : ''}`, i)).join('\n')}</div>`,
+  });
+  return layout(ctx, {
+    title: '用語集・FAQ', current: 'format', source: 'data/format.json', solidHead: true,
+    desc: 'VCT 2027の用語(パートナー、LCQ、トリプルエリミネーションなど)と、よくある質問。',
+    body: [top, glossary, faq, pagerSec(ctx, FORMAT_NAV)].join('\n'),
+  });
+}
+
+// ---------------------------------------------------------------- JAPAN(data/japan.json)
+const numIn = (s, re, dflt) => { const m = str(s).match(re); return m ? Number(m[1]) : dflt; };
+// 「2026年11月22日(日)・23日…」から最初と最後の日付を取り出す
+function dateRange(s) {
+  const t = str(s);
+  const y = t.match(/(20\d\d)年/)?.[1] || '';
+  const all = [...t.matchAll(/(?:(\d{1,2})月)?(\d{1,2})日/g)];
+  if (!all.length || !all[0][1]) return null;
+  let m = all[0][1];
+  const pts = all.map((x) => { if (x[1]) m = x[1]; return `${pad2(m)}.${pad2(x[2])}`; });
+  return { y, start: pts[0], end: pts.length > 1 ? pts[pts.length - 1] : '' };
+}
+
+function japanIndexPage() {
+  const ctx = newPage('japan/index.html');
+  const P = ctx.P;
+  const img = ctx.siteImg('city-tokyo');
+  const top = hero(ctx, {
+    variant: 'page', img, kicker: 'Japan Qualifier — 2027',
+    titleHtml: 'Road to <span class="r">Kickoff</span>',
+    catchHtml: '日本から、VCTへ。',
+    crumbs: crumbsHtml(ctx, [['index.html', 'HOME'], [null, '日本予選']]),
+  });
+  const J = japan;
+  if (!J) return layout(ctx, { title: '日本予選', current: 'japan', desc: '日本予選(準備中)', body: [top, soonSection(ctx, [['teams/japan.html', '日本チーム']])].join('\n') });
+  ctx.asOf = str(J.as_of);
+  ctx.fact('日本予選の概要', J.summary);
+  ctx.openQ.push(...arr(J.open_questions).filter((q) => typeof q === 'string' && q.trim() && !/^2021年|VCJ 2026 Split 1/.test(q)));
+
+  const steps = arr(J.path).filter((s) => s && s.step);
+  const find = (re) => steps.find((s) => re.test(s.step));
+  const sOQ = find(/Open Qualifiers|オープン予選/);
+  const sPO = find(/Playoffs/);
+  const sFI = find(/Finals/);
+  const sKO = find(/Kickoff$/);
+  const sEntry = find(/エントリー/);
+  const invited = arr(J.invited_teams).filter((x) => x && x.name);
+  const invShort = invited.map((x) => (bySlug.has(String(x.slug)) ? shortOf(bySlug.get(String(x.slug))) : x.name)).join('・');
+  // 数字は data/japan.json の文章から読み取る(読めなければ 2026-11 時点の値)
+  const nPass = numIn(sOQ?.text, /(\d+)チームがPlayoffs/, 6);
+  const nPO = numIn(sPO?.text, /計(\d+)チーム/, nPass + invited.length);
+  const nFI = numIn(sPO?.text, /上位(\d+)チームがFinals/, 3);
+  const nSlot = numIn(J.slots?.text, /出場枠は(\d+)枠/, 1);
+  const ROAD = [
+    sOQ && { s: sOQ, en: 'Open Qualifiers', jp: 'オープン予選', big: 'Open', sub: `誰でも参加 → ${nPass}チーム通過`, where: 'Online' },
+    sPO && { s: sPO, en: 'Playoffs', jp: 'プレーオフ', big: String(nPO), sub: `${nPass}チーム＋招待${invited.length}`, where: 'Online', invite: invited.length > 0 },
+    sFI && { s: sFI, en: 'Finals', jp: 'ファイナル', big: String(nFI), sub: `上位${nFI}チーム`, where: 'Theatre G-Rosso' },
+    sKO && { s: sKO, en: 'Pacific Kickoff', jp: 'キックオフ', big: String(nSlot), sub: '優勝チームだけ', where: 'Bangkok', goal: true },
+  ].filter(Boolean);
+  for (const x of steps) ctx.fact(`日本予選：${x.step}`, x);
+
+  const road = section({
+    id: 'road', tone: 'dark', num: '01',
+    head: secHead({ id: 'road', kicker: 'Road to Kickoff', en: 'The Road', jp: 'Kickoffまでの道', lead: `日本予選で優勝した${nSlot}チームだけが、1月のPacific Kickoffへ。` }),
+    inner: `<ol class="road">${ROAD.map((x, i) => `<li class="road-node${x.goal ? ' road-node--goal' : ''} rv" style="--d:${i}">
+        ${x.invite ? `<span class="road-invite"><b>+${invited.length}</b> 招待：${esc(invShort)}</span>` : ''}
+        <span class="road-en">${esc(x.en)}</span>
+        <span class="road-big${/^\d+$/.test(x.big) ? '' : ' road-big--word'}">${esc(x.big)}</span>
+        <span class="road-sub">${esc(x.sub)}</span>
+        <span class="road-where">${esc(x.where)}</span>
+      </li>`).join('\n')}</ol>
+      ${more(`<dl class="facts">${steps.map((x) => `<div><dt>${esc(x.step)}</dt><dd>${esc(x.text)}${x.dates ? `<br><span class="muted">${esc(x.dates)}</span>` : ''} ${status(x.status)}</dd></div>`).join('')}</dl>`, { open: 'MORE — 各段階のくわしい説明', close: 'CLOSE' })}`,
+  });
+
+  const tiles = ROAD.map((x) => ({ x, r: dateRange(x.s.dates) })).filter((t) => t.r);
+  const deadline = str(sEntry?.dates).split('〜')[1] || '';
+  const dates = section({
+    id: 'dates', tone: 'cream', num: '02',
+    head: secHead({ id: 'dates', kicker: 'Key Dates', en: 'Calendar', jp: '日程', lead: deadline ? `エントリー締切は ${esc(deadline)}。` : '' }),
+    inner: `<ol class="grid grid--4 date-grid">${tiles.map(({ x, r }, i) => `<li class="date-tile${x.goal ? ' date-tile--goal' : ''} rv" style="--d:${i}">
+        <span class="date-y">${esc(r.y)}</span>
+        <span class="date-md">${esc(r.start)}</span>
+        <span class="date-label">${esc(x.en)}</span>
+        <span class="date-sub">${r.end ? `〜${esc(r.end)}` : ''}${status(x.s.status)}</span>
+      </li>`).join('')}</ol>`,
+  });
+
+  const partnersJP = ['zeta-division', 'crazy-raccoon'].map((slug) => bySlug.get(slug) || { slug, name: teamName(slug), team_color: '#394656' });
+  const cards = [
+    ...invited.map((x) => ({ t: bySlug.get(String(x.slug)) || { slug: x.slug, name: x.name, team_color: '#394656' }, sub: 'Playoffs シード' })),
+    ...partnersJP.map((t) => ({ t, sub: 'Kickoff 直接出場' })),
+  ];
+  invited.forEach((x) => ctx.fact(`${x.name} の招待`, x));
+  const teamsSec = section({
+    id: 'teams', tone: 'dark', num: '03',
+    head: secHead({ id: 'teams', kicker: 'Seeded & Partners', en: 'Head Start', jp: '先に待つチーム', lead: `招待の${invited.length}チームはPlayoffsから。パートナーの2チームはKickoffから出場します。` }),
+    inner: `<div class="grid grid--4">${cards.map((c, i) => teamCard(c.t, ctx, { href: bySlug.has(c.t.slug) ? `${P}teams/${c.t.slug}.html` : null, sub: c.sub, d: i })).join('\n')}</div>
+      ${invited.length ? more(`<ul class="list-dots">${invited.map((x) => `<li><b>${esc(x.name)}</b>：${esc(x.reason)}</li>`).join('')}</ul>`, { open: 'MORE — 招待の理由', close: 'CLOSE' }) : ''}
+      <div class="btns rv sec-cta"><a class="btn" href="${P}teams/japan.html">日本チームをすべて見る ${ARROW}</a></div>`,
+  });
+
+  const sCup = find(/Cup/);
+  const nCup = numIn(J.slots?.text, /日本から毎回(\d+)チーム/, numIn(sCup?.text, /日本から各(\d+)チーム/, 3));
+  ctx.fact('Cupへの枠', J.slots);
+  const cup = section({
+    id: 'cup', tone: 'cream', num: '04',
+    head: secHead({ id: 'cup', kicker: 'After Kickoff', en: 'Cup Slots', jp: 'Cupへの枠' }),
+    inner: `<div class="callout rv">
+        <span class="callout-num" aria-hidden="true">${nCup}</span>
+        <div class="callout-body"><p class="callout-t">Cup 1・Cup 2 に、日本から各${nCup}チーム。</p><p class="callout-sub">Cup 2の舞台は東京。日本予選の日程は未発表です。</p>
+        <a class="link-arrow" href="${P}format/season.html">1年の流れを見る ${ARROW}</a></div>
+      </div>
+      ${more(`${J.slots?.text ? `<p>${esc(J.slots.text)}</p>` : ''}${sCup ? `<p style="margin-top:12px">${esc(sCup.text)}</p>` : ''}`)}`,
+  });
+
+  return layout(ctx, {
+    title: '日本予選', current: 'japan', source: 'data/japan.json',
+    desc: '2027 VCT Pacific Kickoff 日本予選の流れ・日程・招待チームを図で紹介します。',
+    body: [top, road, dates, teamsSec, cup, pagerSec(ctx, JAPAN_NAV)].join('\n'),
+  });
+}
+
+// 「Split 1:FENNEL / Split 2:SCARZ」→ [{label, team}]
+function winnersList(w) {
+  return str(w).split(/\s+\/\s+/).map((p) => {
+    const clean = p.replace(/\([^)]*\)|（[^）]*）/g, '').trim();
+    const i = Math.max(clean.lastIndexOf(':'), clean.lastIndexOf('：'));
+    return i >= 0 ? { label: clean.slice(0, i).trim(), team: clean.slice(i + 1).trim(), raw: p.slice(p.search(/[:：]/) + 1).trim() } : { label: '', team: clean, raw: clean };
+  }).filter((x) => x.team);
+}
+function teamByName(name) {
+  const n = String(name).toLowerCase();
+  return teams.find((t) => String(t.name).toLowerCase() === n) || teams.find((t) => n.startsWith(String(t.name).toLowerCase() + ' ')) || null;
+}
+
+function japanHistoryPage() {
+  const ctx = newPage('japan/history.html');
+  const P = ctx.P;
+  const top = hero(ctx, {
+    variant: 'plain', kicker: 'Japan — 2021–2026',
+    titleHtml: 'VCJ <span class="r">History</span>',
+    catchHtml: '日本のリーグの、6年間。',
+    crumbs: crumbsHtml(ctx, [['index.html', 'HOME'], ['japan/index.html', '日本予選'], [null, 'VCJの歴史']]),
+  });
+  const hist = arr(japan?.vcj_history).filter((h) => h && Number(h.year)).sort((a, b) => a.year - b.year);
+  if (!hist.length) return layout(ctx, { title: 'VCJの歴史', current: 'japan', solidHead: true, desc: 'VCJの歴史(準備中)', body: [top, soonSection(ctx, [['japan/index.html', '日本予選']])].join('\n') });
+  ctx.asOf = str(japan.as_of);
+  ctx.openQ.push(...arr(japan.open_questions).filter((q) => /^2021年|VCJ 2026 Split 1/.test(q)));
+
+  const cards = hist.map((h, i) => {
+    ctx.src(h.sources);
+    const ws = winnersList(h.winners);
+    const names = [...new Set(ws.map((w) => w.team))];
+    const era = h.year >= 2023 ? 'Challengers Japan' : 'VCT Stage';
+    return `<li class="year-card rv" style="--d:${i % 3}">
+      <span class="year-num">${h.year}</span>
+      <span class="year-era">${era}</span>
+      <p class="year-win"><span class="sr-only">優勝：</span>${names.map(esc).join(' / ')}</p>
+      ${more(`${ws.length ? `<dl class="facts">${ws.map((w) => `<div><dt>${esc(w.label || '優勝')}</dt><dd>${esc(w.raw)}</dd></div>`).join('')}</dl>` : ''}${h.text ? `<p style="margin-top:14px">${esc(h.text)}</p>` : ''}`)}
+    </li>`;
+  });
+  const track = section({
+    id: 'years', tone: 'dark', num: '01',
+    head: secHead({ id: 'years', kicker: 'Year by Year', en: 'Six Seasons', jp: '年ごとのあゆみ', lead: '2021〜22年はVCTの日本大会、2023〜26年はVCJ。名前は各年の優勝チームです。' }),
+    inner: `<ol class="year-track">${cards.join('\n')}</ol><p class="swipe-hint" aria-hidden="true">Swipe →</p>`,
+  });
+
+  const count = new Map();
+  for (const h of hist) for (const w of winnersList(h.winners)) count.set(w.team, (count.get(w.team) || 0) + 1);
+  const ranked = [...count].filter(([, n]) => n >= 2).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+  const titles = ranked.length ? section({
+    id: 'titles', tone: 'cream', num: '02',
+    head: secHead({ id: 'titles', kicker: 'Champions of Japan', en: 'Most Titles', jp: '優勝回数', lead: `2021〜2026年の日本大会(主要な決勝)で、2回以上優勝したチーム。` }),
+    inner: bars(ranked.map(([name, n]) => {
+      const t = teamByName(name);
+      return { labelHtml: t ? `<a href="${P}teams/${t.slug}.html">${esc(name)}</a>` : esc(name), value: n };
+    }), { post: '回' }),
+  }) : '';
+
+  const next = section({
+    id: 'next', tone: 'dark', cls: 'sec--tight',
+    head: secHead({ id: 'next', kicker: 'From 2027', en: 'Open Era', jp: '2027年からはオープン予選へ' }),
+    inner: `<div class="btns rv"><a class="btn btn--solid" href="index.html">日本予選を見る ${ARROW}</a><a class="btn" href="${P}teams/japan.html">日本チーム</a></div>`,
+  });
+
+  return layout(ctx, {
+    title: 'VCJの歴史', current: 'japan', source: 'data/japan.json(vcj_history)', solidHead: true,
+    desc: '2021〜2026年の日本のVALORANT大会(VCT日本大会・VCJ)の優勝チームを年ごとに紹介します。',
+    body: [top, track, titles, next].join('\n'),
+  });
 }
 
 // 旧URL → 新ページ
@@ -1023,16 +1513,13 @@ writeFile('news/index.html', newsIndexPage());
 for (const n of news) writeFile(`news/${n.id}.html`, newsPage(n));
 writeFile('news/feed.xml', newsFeed());
 
-const PH = [
-  ['format/index.html', { title: '大会システム', kicker: 'Format — 2027', en: 'How VCT <span class="r">Works</span>', catchText: '2027年、VCTはトーナメント中心に。', current: 'format', img: 'champions-la-2023', crumbs: [['index.html', 'HOME'], [null, '大会システム']], related: [['format/season.html', '1年の流れ'], ['format/events.html', '大会の種類']] }],
-  ['format/season.html', { title: '1年の流れ', kicker: 'Format — Season', en: 'The <span class="r">Season</span>', catchText: '予選 → 地域大会 → 世界大会を、3回。', current: 'format', crumbs: [['index.html', 'HOME'], ['format/index.html', '大会システム'], [null, '1年の流れ']], related: [['format/index.html', '大会システム概要']] }],
-  ['format/events.html', { title: '大会の種類', kicker: 'Format — Events', en: 'The <span class="r">Events</span>', catchText: 'Kickoff・Cup・Masters・Champions。', current: 'format', crumbs: [['index.html', 'HOME'], ['format/index.html', '大会システム'], [null, '大会の種類']], related: [['format/index.html', '大会システム概要']] }],
-  ['format/rules.html', { title: 'ルールと支援金', kicker: 'Format — Rules', en: 'Rules &amp; <span class="r">Support</span>', catchText: 'オープン形式と、パートナーのルール。', current: 'format', crumbs: [['index.html', 'HOME'], ['format/index.html', '大会システム'], [null, 'ルールと支援金']], related: [['format/index.html', '大会システム概要']] }],
-  ['format/glossary.html', { title: '用語集・FAQ', kicker: 'Format — Glossary', en: 'Glossary &amp; <span class="r">FAQ</span>', catchText: 'わからない言葉は、ここで。', current: 'format', crumbs: [['index.html', 'HOME'], ['format/index.html', '大会システム'], [null, '用語集・FAQ']], related: [['format/index.html', '大会システム概要']] }],
-  ['japan/index.html', { title: '日本予選', kicker: 'Japan — Road to Kickoff', en: 'Japan <span class="r">Qualifier</span>', catchText: '日本から、VCTへ。', current: 'japan', img: 'city-tokyo', crumbs: [['index.html', 'HOME'], [null, '日本予選']], related: [['teams/japan.html', '日本チーム'], ['japan/history.html', 'VCJの歴史']] }],
-  ['japan/history.html', { title: 'VCJの歴史', kicker: 'Japan — History', en: 'VCJ <span class="r">History</span>', catchText: '2021〜2026、日本のリーグのあゆみ。', current: 'japan', crumbs: [['index.html', 'HOME'], ['japan/index.html', '日本予選'], [null, 'VCJの歴史']], related: [['japan/index.html', '日本予選']] }],
-];
-for (const [rel, o] of PH) writeFile(rel, placeholderPage(rel, o));
+writeFile('format/index.html', formatIndexPage());
+writeFile('format/season.html', formatSeasonPage());
+writeFile('format/events.html', formatEventsPage());
+writeFile('format/rules.html', formatRulesPage());
+writeFile('format/glossary.html', formatGlossaryPage());
+writeFile('japan/index.html', japanIndexPage());
+writeFile('japan/history.html', japanHistoryPage());
 
 writeFile('format.html', redirectPage('format/index.html', '大会システム'));
 writeFile('japan.html', redirectPage('japan/index.html', '日本予選'));

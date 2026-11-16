@@ -4,26 +4,11 @@
 掲載内容：①大会システム紹介(2027フォーマット) ②チーム紹介(まずPacific 8チーム)。
 静的サイト(HTML/CSS/最小限のJS)。GitHub Pages でそのまま公開できること。外部ビルドツール不要(Node標準のみのビルドスクリプトは可)。
 
-## ディレクトリ
-```
-index.html            トップ
-format.html           大会システム紹介
-teams/index.html      チーム一覧(地域タブ。Pacific以外は「準備中」)
-teams/<slug>.html     チーム詳細(scripts/build.mjs が data/teams/*.json から生成)
-assets/css/site.css   共通デザイン
-assets/js/site.js     共通JS(ナビ、スクロール演出など)
-assets/img/teams/<slug>/   チーム・選手の画像
-assets/img/site/      会場・大会などの画像
-data/teams/<slug>.json チームデータ(下のスキーマ)
-data/credits.json     サイト共通画像のクレジット
-scripts/build.mjs     JSON→HTML生成(Node標準ライブラリのみ)
-content/              原稿
-```
+## ページ構成とディレクトリ
+ページ構成は `content/DESIGN.md` の「ページ構成」、ディレクトリとビルド方法は `README.md` を参照。すべてのページを `scripts/build.mjs` が `data/` から生成する(手書きのHTMLはない)。
 
-## デザイン(VCT風、全ページ統一)
-- 配色：背景 #0D1117、赤 #FF4D5E、シアン #45D4E0、文字 #F2F4F6(既存の図解ページと同じ)
-- 雰囲気：eスポーツ大会の公式放送のような、暗い背景＋鋭角(斜めカット)＋大きな英字見出し＋細い罫線・グリッド
-- フォント：Google Fonts。見出しの英字は詰まった太字(例 Anton / Bebas Neue / Barlow Condensed)、本文は Noto Sans JP
+## デザイン
+**`content/DESIGN.md`(v2)に従う。** 文字は少なく、見せる。1セクション＝見出し＋2行までのリード＋ビジュアル、詳細は MORE か下層ページへ。確定マークは出さず、報道・未定だけ小さな点。出典・画像クレジットはページ最下部の折りたたみ。部品(CSSクラス・ビルド関数)の一覧は `README.md` と `assets/css/site.css` 先頭のコメント。
 - スマホ幅(375px)で崩れないこと。左右16pxの余白、横スクロールなし
 - Riot Games / VALORANT / VCT の**ロゴは使わない**。公式サイトと誤解される見た目(公式ロゴ、公式と名乗る文言)は避ける
 - フッターに必ず次の免責文を入れる：
@@ -89,7 +74,7 @@ content/              原稿
 - 検索結果の抜粋だけを出典にしない。開いて読んだページのURLを付ける
 
 ## 大会システムの原稿
-`content/format.md` を参照(運営者が確認済みのDocから転記)。日程・数字の「確定/未確定」の表示を必ず残す。
+`content/format.md` を参照(運営者が確認済みのDocから転記)。ページは `data/format.json`(同じ内容を構造化したもの。HOME の数字・Cup 2 の出典もここから)から生成する。原稿を直したら format.json も直す。日程・数字の確度は各項目の `status`(reported / unverified)で残す。
 
 ---
 ## 追加仕様(2026-11-16 第2弾)
