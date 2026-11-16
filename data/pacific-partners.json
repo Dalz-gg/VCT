@@ -1,0 +1,20 @@
+{
+  "as_of": "2026-11-16",
+  "teams": [
+    {"name": "Crazy Raccoon", "slug": "crazy-raccoon"},
+    {"name": "FULL SENSE", "slug": "full-sense"},
+    {"name": "GAM Esports", "slug": "gam-esports"},
+    {"name": "Gen.G", "slug": "gen-g"},
+    {"name": "Paper Rex", "slug": "paper-rex"},
+    {"name": "Rex Regum Qeon (RRQ)", "slug": "rrq"},
+    {"name": "T1", "slug": "t1"},
+    {"name": "ZETA DIVISION", "slug": "zeta-division"}
+  ],
+  "status": "confirmed",
+  "sources": [
+    "https://valorantesports.com/news/introducing-the-vct-2027-partner-teams",
+    "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/39af1cdcabd74a7b99deb2c6c18e0d7a94b04f2a-1920x1080.png",
+    "https://www.thespike.gg/valorant/news/riot-officially-reveals-all-vct-2027-partner-teams/9080"
+  ],
+  "notes": "Riot公式発表「Introducing the VCT 2027 Partner Teams」(valorantesports.com、2026年10月22日)に掲載の画像「VCT 2027 PARTNERED TEAMS」のPACIFIC欄で、CRAZY RACCOON / FULL SENSE / GAM ESPORTS / GEN.G ESPORTS / PAPER REX / REX REGUM QEON / T1 / ZETA DIVISION の8チームを確認しました(チーム名は本文テキストではなく画像内にのみ記載)。The Spike の一覧も同じ8チームです。Dot Esports の記事にあった「Phoenix」は公式発表と一致しないため採用しません。パートナー契約は2年更新制(2027〜2028年)。"
+}

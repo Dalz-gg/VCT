@@ -1,0 +1,172 @@
+{
+  "slug": "full-sense",
+  "name": "FULL SENSE",
+  "name_kana": "フルセンス",
+  "short": "FS",
+  "region": "Pacific",
+  "country": "タイ",
+  "base": {
+    "text": "タイ",
+    "status": "reported",
+    "sources": [
+      "https://liquipedia.net/valorant/FULL_SENSE",
+      "https://www.vlr.gg/team/4050/full-sense",
+      "https://valo2asia.com/news/vct-pacific-partnered-teams-for-2027-28-finalized-crazy-raccoon-and-gam-esports-among-new-additions"
+    ]
+  },
+  "team_color": "#CD1515",
+  "partner": {
+    "text": "2027〜2028年 VCT Pacific パートナー",
+    "status": "confirmed",
+    "sources": [
+      "https://valorantesports.com/news/introducing-the-vct-2027-partner-teams",
+      "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/39af1cdcabd74a7b99deb2c6c18e0d7a94b04f2a-1920x1080.png",
+      "https://valorantesports.com/en-US/teams/full-sense"
+    ]
+  },
+  "history": {
+    "text": "FULL SENSEは2020年にタイで生まれたeスポーツチームで、2021年にVALORANT部門を作りました。2021年には世界大会のVALORANT Championsに出場しています。2025年12月、Riot GamesはTALONに代わってFULL SENSEをVCT Pacificに迎え、TALONの選手たちをそのまま引き継ぎました。2026年10月には2027〜2028年のパートナーチームにも選ばれました。",
+    "status": "confirmed",
+    "sources": [
+      "https://valorantesports.com/en-SG/news/riot-games-welcomes-full-sense-to-vct-pacific-for-2026",
+      "https://valorantesports.com/news/introducing-the-vct-2027-partner-teams",
+      "https://liquipedia.net/valorant/FULL_SENSE",
+      "https://valo2asia.com/news/vct-pacific-partnered-teams-for-2027-28-finalized-crazy-raccoon-and-gam-esports-among-new-additions"
+    ]
+  },
+  "achievements": [
+    {
+      "text": "VCT 2021 APAC Last Chance Qualifier(世界大会への最後の予選)優勝",
+      "status": "reported",
+      "sources": [
+        "https://liquipedia.net/valorant/FULL_SENSE"
+      ]
+    },
+    {
+      "text": "VALORANT Champions 2021(ベルリン)出場(グループステージ敗退)",
+      "status": "reported",
+      "sources": [
+        "https://liquipedia.net/valorant/VALORANT_Champions_Tour/2021/Champions",
+        "https://liquipedia.net/valorant/FULL_SENSE",
+        "https://valo2asia.com/news/vct-pacific-partnered-teams-for-2027-28-finalized-crazy-raccoon-and-gam-esports-among-new-additions"
+      ]
+    },
+    {
+      "text": "VCT 2026 Pacific Stage 1 準優勝",
+      "status": "confirmed",
+      "sources": [
+        "https://valorantesports.com/en-US/teams/full-sense",
+        "https://liquipedia.net/valorant/FULL_SENSE"
+      ]
+    },
+    {
+      "text": "VCT 2026 Masters London 出場(スイスステージ=勝ち数で次に進むチームを決める方式で0勝2敗、敗退)",
+      "status": "confirmed",
+      "sources": [
+        "https://valorantesports.com/en-US/teams/full-sense",
+        "https://liquipedia.net/valorant/VCT/2026/Stage_2/Masters",
+        "https://www.vlr.gg/777336/vct-pacific-organizations-announce-partner-status"
+      ]
+    }
+  ],
+  "roster": {
+    "as_of": "2026-11-16",
+    "status": "reported",
+    "sources": [
+      "https://liquipedia.net/valorant/FULL_SENSE",
+      "https://www.vlr.gg/team/4050/full-sense",
+      "https://www.vlr.gg/team/transactions/4050/full-sense/",
+      "https://www.thespike.gg/valorant/news/vct-2027-roster-changes/9236",
+      "https://valorantesports.com/en-US/teams/full-sense"
+    ],
+    "players": [
+      {
+        "ign": "seph1roth",
+        "name": "Chinnakrit Phoojaroen",
+        "country": "タイ",
+        "role": "コントローラー(使用エージェントからの推定)",
+        "photo": null,
+        "note": "2026年7月から先発メンバー。2025年にも在籍していました"
+      },
+      {
+        "ign": "Leviathan",
+        "name": "Thanyathon Nakmee",
+        "country": "タイ",
+        "role": "コントローラー(使用エージェントからの推定)",
+        "photo": null,
+        "note": "2026年7月から控え(サブ)の扱い"
+      },
+      {
+        "ign": "JitBoyS",
+        "name": "Jittana Nokngam",
+        "country": "タイ",
+        "role": "センチネル(使用エージェントからの推定)",
+        "photo": null,
+        "note": "2026年11月8日に非アクティブ(試合に出ない登録)になり、他チームとの交渉が許可されたと報じられています"
+      },
+      {
+        "ign": "killua",
+        "name": "Tanate Teerasawad",
+        "country": "タイ",
+        "role": "デュエリスト(使用エージェントからの推定)",
+        "photo": null,
+        "note": "2026年11月8日に非アクティブになり、他チームとの交渉が許可されたと報じられています"
+      }
+    ],
+    "staff": [
+      {
+        "ign": "FrosT",
+        "role": "ヘッドコーチ(アメリカ出身、2026年7月就任)"
+      },
+      {
+        "ign": "THEE",
+        "role": "アシスタントコーチ"
+      },
+      {
+        "ign": "sushiboys",
+        "role": "アシスタントコーチ(2026年11月に非アクティブ、他チームとの交渉許可と報道)"
+      }
+    ]
+  },
+  "featured_players": [
+    {
+      "ign": "seph1roth",
+      "why": "2026年の途中から先発に入り、オフシーズンのいまもチームに残っている数少ない選手です。",
+      "draft": true
+    }
+  ],
+  "playstyle": {
+    "text": "タイ出身の選手を中心に戦ってきたチームです。2027年のメンバーがまだ固まっていないため、戦い方は新しいメンバーが発表されてから書き足します。",
+    "draft": true
+  },
+  "highlights_2027": {
+    "text": "2026年にPacific Stage 1で準優勝し、Mastersにも初めて出場しました。メンバーが大きく入れ替わるオフシーズンで、どんなチームを作るのかが見どころです。",
+    "draft": true
+  },
+  "beginner_tip": {
+    "text": "タイのファンに支えられるチーム。2026年はPacificで準優勝を経験しました。",
+    "draft": true
+  },
+  "links": {
+    "official": "https://www.fullsense.gg",
+    "x": "https://x.com/fullsense_gg",
+    "youtube": "https://www.youtube.com/@FULLSENSE"
+  },
+  "images": {
+    "hero": null,
+    "logo": null
+  },
+  "image_credits": [],
+  "open_questions": [
+    "2027年のロースターは公式発表前です。2026年オフの動き:Crwsが2026-08-22に引退、Primmieが10-23に退団、thyyが10-27に退団、JitBoyS・killuaが11-08に非アクティブ(VLR.gg・Liquipedia)。",
+    "移籍の噂:The Spikeの移籍まとめ(2026-11-13更新)はFULL SENSEの噂ラインナップを「seph1roth, Leviathan, Kr1stal」とし、Kr1stal(Savva Fedorov、ロシア、元Global Esports)の加入を「Rumored」としています。Sheep Esportsは別のラインナップ(JitBoyS, Killua, Kr1stal, seph1roth)を伝えているとの検索結果がありましたが、記事はアクセスがブロックされ確認できませんでした。",
+    "Riot公式チームページ(valorantesports.com)のロースター欄はJitBoyS, Killua, Leviathan, Primmie, seph1roth, thyy, コーチにCrws・FrosTと古い情報のままです。",
+    "選手の役割(ロール)は公式の情報ではなく、VLR.ggの使用エージェントの傾向から推定したものです。",
+    "THEEの役職:Liquipediaは「Assistant Coach」、VLR.ggは「coach」と表記しています。",
+    "VLR.gg(2026-10)の記事は「Masters Londonで初めて国際大会に出場」としていますが、2021年にChampionsに出場しています(VCTのパートナー制度になってからの初出場という意味と思われます)。",
+    "拠点(タイ)はLiquipedia・VLR.ggと、Riotの紹介文を引用したVALO2ASIAによるものです。Riot公式本文での確認はできていないため reported としています。",
+    "team_color #CD1515 は公式サイト(fullsense.gg)のCSSに出てくる赤から推定したもので、チームの代表色としては未確認です。",
+    "写真:Wikimedia Commons(チーム名・選手名・大会名で検索)とOpenverse(FlickrのCC画像)を探しましたが、再利用できる写真は見つかりませんでした。"
+  ],
+  "researched_at": "2026-11-16"
+}
