@@ -1,0 +1,137 @@
+{
+  "slug": "delight",
+  "name": "Delight",
+  "name_kana": "ディライト",
+  "short": "DLT",
+  "region": "Japan",
+  "tier": "open",
+  "country": "日本",
+  "base": {
+    "text": "日本",
+    "status": "reported",
+    "sources": [
+      "https://www.vlr.gg/team/15596"
+    ]
+  },
+  "team_color": "#FF7AB6",
+  "path_2027": {
+    "text": "11月22日から始まる日本オープン予選に出る予定と報じられています。日本予選(2027 VCT Pacific Kickoff Japan Qualifier)は、オープン予選が11月21〜29日、プレーオフが12月1〜12日の予定で、招待チームはDetonatioN FocusMeとQT DIG∞の2チームと掲載されています。",
+    "status": "reported",
+    "sources": [
+      "https://valorantnews.jp/archives/169612",
+      "https://www.vlr.gg/event/3210/vct-2027-pacific-kickoff-japan-qualifier"
+    ]
+  },
+  "history": {
+    "text": "Delightは日本のチームで、VALORANT部門と女性チームの「Delight GC」があります。2025年のVCJ Stage 3ではメインステージで3位に入りました。2026年11月7日、平均18.2歳(報道)の若手5人による新しいロスターを発表しました。",
+    "status": "reported",
+    "sources": [
+      "https://www.vlr.gg/team/15596",
+      "https://www.vlr.gg/team/18731",
+      "https://x.com/De_Del1ght/status/2118961656881730028",
+      "https://valorantnews.jp/archives/169612"
+    ]
+  },
+  "achievements": [
+    {
+      "text": "VALORANT Challengers Japan 2025 Stage 3 メインステージ 3位",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/event/2311/challengers-2025-japan-stage-3"
+      ]
+    },
+    {
+      "text": "VALORANT Challengers Japan 2026 Split 1 Advance Stage(予選段階) グループB 4位",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/event/2847/challengers-2026-japan-split-1"
+      ]
+    }
+  ],
+  "roster": {
+    "as_of": "2026-11-16",
+    "status": "confirmed",
+    "sources": [
+      "https://x.com/De_Del1ght/status/2118961656881730028",
+      "https://valorantnews.jp/archives/169612"
+    ],
+    "players": [
+      {
+        "ign": "ren",
+        "country": "日本",
+        "role": "未発表",
+        "photo": null,
+        "note": "新加入(2026年11月7日発表)。前所属はZETA DIVISIONの育成チームと報じられています。"
+      },
+      {
+        "ign": "Sota",
+        "country": "日本",
+        "role": "未発表",
+        "photo": null,
+        "note": "新加入(2026年11月7日発表)。DFMの育成チーム出身で、2026年はREJECTのサブメンバーだったと報じられています。"
+      },
+      {
+        "ign": "RONY",
+        "country": "日本",
+        "role": "未発表",
+        "photo": null,
+        "note": "新加入(2026年11月7日発表)。前所属はWEC Cと報じられています。"
+      },
+      {
+        "ign": "Ryuyan",
+        "country": "日本",
+        "role": "未発表",
+        "photo": null,
+        "note": "新加入(2026年11月7日発表)。前所属はBC SWELLと報じられています。"
+      },
+      {
+        "ign": "chocolatte",
+        "country": "日本",
+        "role": "未発表",
+        "photo": null,
+        "note": "新加入(2026年11月7日発表)。IGZISTの育成チーム出身と報じられています。"
+      }
+    ],
+    "staff": [
+      {
+        "ign": "RyinG",
+        "role": "コーチ(続投と報じられています)"
+      },
+      {
+        "ign": "DeKop0N",
+        "role": "コーチ(続投と報じられています)"
+      }
+    ]
+  },
+  "featured_players": [],
+  "playstyle": {
+    "text": "新しいロスターの公式戦がまだないため、現時点では書きません。",
+    "draft": true
+  },
+  "highlights_2027": {
+    "text": "10代中心の若いメンバーが、初めての日本オープン予選でどこまで戦えるかが注目点です。",
+    "draft": true
+  },
+  "beginner_tip": {
+    "text": "若手5人で作られた、新しく生まれ変わったチームです。",
+    "draft": true
+  },
+  "links": {
+    "official": null,
+    "x": "https://x.com/De_Del1ght",
+    "youtube": null
+  },
+  "images": {
+    "hero": null,
+    "logo": null
+  },
+  "image_credits": [],
+  "open_questions": [
+    "選手の国籍は、VLR.ggなどの表示から日本と判断しました。公式発表には国籍もロールも書かれていません。",
+    "前所属や平均年齢18.2歳は、valorantnews.jpの記事によるもので、チームの発表文には書かれていません。",
+    "Split 2以降の2026年の成績と、運営会社・公式サイトは確認できませんでした。",
+    "VLR.ggのチームページ(team/15596)は古いロスター(daydus / Mametu / Airy / Hands など)のままです。",
+    "team_colorは仮の値です。"
+  ],
+  "researched_at": "2026-11-16"
+}

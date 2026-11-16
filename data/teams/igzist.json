@@ -1,0 +1,107 @@
+{
+  "slug": "igzist",
+  "name": "IGZIST",
+  "name_kana": "イグジスト",
+  "short": "IGZ",
+  "region": "Japan",
+  "tier": "open",
+  "country": "日本",
+  "base": {
+    "text": "日本(運営:BRBD)",
+    "status": "reported",
+    "sources": [
+      "https://liquipedia.net/valorant/IGZIST",
+      "https://igzist-gg.com/"
+    ]
+  },
+  "team_color": "#7B2CBF",
+  "path_2027": {
+    "text": "2026年11月16日時点で、2027年のロスターや日本オープン予選へのエントリーは発表されていません。日本予選(2027 VCT Pacific Kickoff Japan Qualifier)は、オープン予選が11月21〜29日、プレーオフが12月1〜12日の予定で、招待チームはDetonatioN FocusMeとQT DIG∞の2チームと掲載されています。",
+    "status": "unverified",
+    "sources": [
+      "https://www.vlr.gg/event/3210/vct-2027-pacific-kickoff-japan-qualifier"
+    ]
+  },
+  "history": {
+    "text": "IGZISTは2021年12月にできた日本のチームで、VALORANT部門も同時に始まりました。2023年3月から株式会社BRBDが運営しています。2026年はVCJで戦い、Season Finalsで3〜4位に入りました。2026年10月26日、選手4人とコーチ・アナリスト3人の契約満了による退団を発表しました。",
+    "status": "reported",
+    "sources": [
+      "https://liquipedia.net/valorant/IGZIST",
+      "https://x.com/IGZIST_GG/status/2114658298687627501",
+      "https://x.com/IGZIST_GG/status/2114658545647997123"
+    ]
+  },
+  "achievements": [
+    {
+      "text": "Predator League 2026 Japan 優勝(アジア太平洋大会はグループステージ5〜8位)",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/event/2680/predator-league-2026-japan",
+        "https://www.vlr.gg/event/2623/predator-league-2026-asia-pacific"
+      ]
+    },
+    {
+      "text": "VALORANT Challengers Japan 2026 Split 1 Advance Stage(予選段階) グループB 3位",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/event/2847/challengers-2026-japan-split-1"
+      ]
+    },
+    {
+      "text": "VALORANT Challengers Japan 2026 Split 2 メインステージ 6位",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/event/2974/challengers-2026-japan-split-2"
+      ]
+    },
+    {
+      "text": "VALORANT Challengers Japan 2026 Season Finals 3〜4位",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/event/2991/challengers-2026-japan-season-finals"
+      ]
+    }
+  ],
+  "roster": {
+    "as_of": "2026-11-16",
+    "status": "confirmed",
+    "sources": [
+      "https://x.com/IGZIST_GG/status/2114658298687627501",
+      "https://x.com/IGZIST_GG/status/2114658545647997123",
+      "https://www.vlr.gg/team/transactions/6869"
+    ],
+    "players": [],
+    "staff": [],
+    "note": "2027年のロスターは発表されていません。2026年10月26日に popogachi / Frxeez / kAyle / SID の4選手と、sitimentyo / gainpe / yukufuru の3スタッフが契約満了で退団しました。2026年のメンバーで退団発表に名前がないのは、創設時からいるoitaNだけです。ただし、2027年も選手として出るかどうかは発表されていないため、ここには載せていません。"
+  },
+  "featured_players": [],
+  "playstyle": {
+    "text": "新しいロスターが決まっていないため、現時点では書きません。",
+    "draft": true
+  },
+  "highlights_2027": {
+    "text": "2026年のSeason Finalsで3〜4位に入ったチームです。新しいメンバーが発表されるのを待っている段階です。",
+    "draft": true
+  },
+  "beginner_tip": {
+    "text": "2021年からVALORANTで戦う日本のチームです。",
+    "draft": true
+  },
+  "links": {
+    "official": "https://igzist-gg.com/",
+    "x": "https://x.com/IGZIST_GG",
+    "youtube": "https://www.youtube.com/@IGZIST_GG"
+  },
+  "images": {
+    "hero": null,
+    "logo": null
+  },
+  "image_credits": [],
+  "open_questions": [
+    "oitaNが2027年も選手として残るかどうか確認できませんでした。",
+    "公式サイトのメンバー一覧は古く、退団した選手(popogachi、Frxeez、SID、kAyle)がまだ載っています。ニュースは2026年6月で止まっています。",
+    "popogachiは本人のX投稿で2026年9月10日に退団を報告していますが、チームの発表(10月26日)にも名前があります。",
+    "team_colorは仮の値です。"
+  ],
+  "researched_at": "2026-11-16"
+}

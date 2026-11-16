@@ -1,0 +1,111 @@
+{
+  "slug": "crest-gaming",
+  "name": "CREST GAMING Zst",
+  "name_kana": "クレストゲーミング ゼスト",
+  "short": "CGZ",
+  "region": "Japan",
+  "tier": "open",
+  "country": "日本",
+  "base": {
+    "text": "日本",
+    "status": "reported",
+    "sources": [
+      "https://www.vlr.gg/team/294"
+    ]
+  },
+  "team_color": "#F2B705",
+  "path_2027": {
+    "text": "2026年11月16日時点で、2027年のトップチームのロスターや日本オープン予選へのエントリーは発表されていません。日本予選(2027 VCT Pacific Kickoff Japan Qualifier)は、オープン予選が11月21〜29日、プレーオフが12月1〜12日の予定で、招待チームはDetonatioN FocusMeとQT DIG∞の2チームと掲載されています。",
+    "status": "unverified",
+    "sources": [
+      "https://www.vlr.gg/event/3210/vct-2027-pacific-kickoff-japan-qualifier"
+    ]
+  },
+  "history": {
+    "text": "CREST GAMINGは日本のゲーミングチームで、VALORANTのトップチームは「CREST GAMING Zst(CGZ)」の名前で戦っています。2026年はVCJ Split 1で優勝しました。その後、2026年7月末から9月初めにかけて、選手とコーチの契約終了が続けて発表されました。",
+    "status": "reported",
+    "sources": [
+      "https://www.vlr.gg/event/2847/challengers-2026-japan-split-1",
+      "https://x.com/crest_gaming/status/2083402627162005919",
+      "https://x.com/crest_gaming/status/2094621280150651193"
+    ]
+  },
+  "achievements": [
+    {
+      "text": "Predator League 2025 Japan 優勝(アジア太平洋大会は3〜4位)",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/event/2214/predator-league-2025-japan",
+        "https://www.vlr.gg/event/2208/predator-league-asia-pacific-2025"
+      ]
+    },
+    {
+      "text": "VALORANT Challengers Japan 2026 Split 1 優勝(決勝でFENNELに3-1)",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/event/2847/challengers-2026-japan-split-1"
+      ]
+    },
+    {
+      "text": "VALORANT Challengers Japan 2026 Split 2 メインステージ 5位",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/event/2974/challengers-2026-japan-split-2"
+      ]
+    },
+    {
+      "text": "VALORANT Challengers Japan 2026 Season Finals 5〜6位",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/event/2991/challengers-2026-japan-season-finals"
+      ]
+    }
+  ],
+  "roster": {
+    "as_of": "2026-11-16",
+    "status": "confirmed",
+    "sources": [
+      "https://x.com/crest_gaming/status/2083402627162005919",
+      "https://x.com/crest_gaming/status/2094621280150651193",
+      "https://www.vlr.gg/team/transactions/294"
+    ],
+    "players": [],
+    "staff": [
+      {
+        "ign": "Eureka",
+        "role": "アナリスト(VLR.ggの登録。2027年も在籍しているかは未確認)"
+      }
+    ],
+    "note": "2026年のSplit 1優勝メンバー5人は全員チームを離れています。bazz / yutaro / NOBITA とコーチのNeruFi・hubukiは2026年8月1日、KENは9月1日に契約終了が発表されました。Flicker(DRXからのレンタル)は7月にレンタルが終わっています。2027年のロスターはまだ発表されていません。なお、KENはZETA DIVISIONへの加入が報じられています。"
+  },
+  "featured_players": [],
+  "playstyle": {
+    "text": "新しいロスターが決まっていないため、現時点では書きません。",
+    "draft": true
+  },
+  "highlights_2027": {
+    "text": "2026年にVCJ Split 1で優勝したチームです。新しいメンバーが発表されるのを待っている段階です。",
+    "draft": true
+  },
+  "beginner_tip": {
+    "text": "2026年の国内大会Split 1で優勝したチームです。",
+    "draft": true
+  },
+  "links": {
+    "official": null,
+    "x": "https://x.com/crest_gaming",
+    "youtube": null
+  },
+  "images": {
+    "hero": null,
+    "logo": null
+  },
+  "image_credits": [],
+  "open_questions": [
+    "公式サイトのURLを確認できませんでした(crestgaming.jp は接続できず、crest-gaming.com は別の団体のサイトでした)。",
+    "育成チーム「CREST GAMING Academy」(VLR.gg登録:Alexa / Knullzin / EMRE / leyy / Jam)が2026年10月に大会に出ていますが、トップチームに上がるかどうかは不明です。",
+    "チーム名を「CREST GAMING」と「CREST GAMING Zst」のどちらで載せるか、運営者の確認が必要です。",
+    "team_colorは仮の値です。"
+  ],
+  "researched_at": "2026-11-16"
+}

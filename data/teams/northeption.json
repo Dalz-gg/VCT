@@ -1,0 +1,102 @@
+{
+  "slug": "northeption",
+  "name": "NORTHEPTION",
+  "name_kana": "ノーセプション",
+  "short": "NTH",
+  "region": "Japan",
+  "tier": "open",
+  "country": "日本",
+  "base": {
+    "text": "日本(運営:株式会社CodeBlitz)",
+    "status": "confirmed",
+    "sources": [
+      "https://northeption.com/news",
+      "https://prtimes.jp/main/html/rd/p/000000001.000141737.html"
+    ]
+  },
+  "team_color": "#D7263D",
+  "path_2027": {
+    "text": "2026年11月16日時点で、トップチームのVALORANTロスターや日本オープン予選へのエントリーは発表されていません。日本予選(2027 VCT Pacific Kickoff Japan Qualifier)は、オープン予選が11月21〜29日、プレーオフが12月1〜12日の予定で、招待チームはDetonatioN FocusMeとQT DIG∞の2チームと掲載されています。",
+    "status": "unverified",
+    "sources": [
+      "https://northeption.com/teams/",
+      "https://www.vlr.gg/event/3210/vct-2027-pacific-kickoff-japan-qualifier"
+    ]
+  },
+  "history": {
+    "text": "NORTHEPTIONは2021年2月にVALORANT部門を立ち上げた日本のチームです。2022年には国内大会(VCT Japan Stage 2 Challengers)で優勝し、世界大会「Masters Copenhagen 2022」に出場しました。2024年5月に運営が株式会社CodeBlitzへ移り、同年9月末にトップチームの選手が全員退団しました。その後は若手育成チーム「NORTHEPTION Youth」(旧Academy)が国内大会に出ています。",
+    "status": "reported",
+    "sources": [
+      "https://liquipedia.net/valorant/NORTHEPTION",
+      "https://www.vlr.gg/team/transactions/2988",
+      "https://northeption.com/teams/",
+      "https://www.vlr.gg/team/17882"
+    ]
+  },
+  "achievements": [
+    {
+      "text": "VCT 2022 Japan Stage 2 Challengers プレーオフ 優勝",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/event/1013/champions-tour-japan-stage-2-challengers-playoffs"
+      ]
+    },
+    {
+      "text": "VCT 2022 Masters Copenhagen 出場(9〜10位)",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/event/1014/valorant-champions-tour-stage-2-masters-copenhagen"
+      ]
+    },
+    {
+      "text": "VALORANT Challengers Japan 2026 Split 1 Advance Stage(予選段階) グループA 5位(育成チーム NORTHEPTION Youth として出場)",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/event/2847/challengers-2026-japan-split-1",
+        "https://www.vlr.gg/team/17882"
+      ]
+    }
+  ],
+  "roster": {
+    "as_of": "2026-11-16",
+    "status": "unverified",
+    "sources": [
+      "https://northeption.com/teams/",
+      "https://northeption.com/news",
+      "https://www.vlr.gg/team/2988",
+      "https://www.vlr.gg/team/transactions/2988"
+    ],
+    "players": [],
+    "staff": [],
+    "note": "2026年11月16日時点で、トップチームのVALORANTロスターは発表されていません。公式サイトのチーム一覧にVALORANTのトップチームはなく、育成チーム「NORTHEPTION Youth」のみ掲載されています。VLR.ggではYouthにr4bbit / Kennosuke / Acherron / R14hが登録されていますが、2027年の予選に出るかどうかは確認できませんでした。"
+  },
+  "featured_players": [],
+  "playstyle": {
+    "text": "トップチームの選手がいないため、現時点では書けません。ロスターが発表されたら追加します。",
+    "draft": true
+  },
+  "highlights_2027": {
+    "text": "2022年に世界大会を経験したチームです。2027年にトップチームを再始動するかどうかが注目点です。",
+    "draft": true
+  },
+  "beginner_tip": {
+    "text": "2022年に日本代表として世界大会に出たチームです。",
+    "draft": true
+  },
+  "links": {
+    "official": "https://northeption.com/",
+    "x": "https://x.com/NORTHEPTION",
+    "youtube": "https://www.youtube.com/channel/UCz0jFfhRWzJZY_c9f0CN3sg"
+  },
+  "images": {
+    "hero": null,
+    "logo": null
+  },
+  "image_credits": [],
+  "open_questions": [
+    "トップチームのVALORANT部門が正式に解散したのか、休止中なのかについて、チームの公式発表を確認できませんでした(Liquipediaは2024-09-30に解散と記載)。",
+    "NORTHEPTION Youthが2027年の日本オープン予選に出るかどうかは未確認です。公式ニュースの更新は2025年10月が最後です。",
+    "team_colorは仮の値です。運営者の確認が必要です。"
+  ],
+  "researched_at": "2026-11-16"
+}
