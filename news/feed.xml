@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja">
-  <title>VCT ファンガイド(非公式)ニュース</title>
+  <title>VCT ファンガイド(非公式) ニュース</title>
   <subtitle>VCTと日本のVALORANTシーンのニュース(非公式ファンサイト)</subtitle>
   <id>tag:vct-fan-guide,2026:news</id>
-  <link rel="alternate" type="text/html" href="../news.html"/>
+  <link rel="alternate" type="text/html" href="index.html"/>
   <link rel="self" type="application/atom+xml" href="feed.xml"/>
   <updated>2026-11-13T00:00:00+09:00</updated>
-  <author><name>VCT ファンガイド</name></author>
+  <author><name>VCT FAN</name></author>
   <rights>本サイトは非公式のファンサイトです。Riot Games が承認・後援したものではなく、Riot Games または VALORANT の制作・運営に関わる方の見解を反映するものではありません。VALORANT および Riot Games は Riot Games, Inc. の商標または登録商標です。</rights>
   <entry>
     <title>T1にTenZ選手とcrashies選手が加入、ヘッドコーチはSacyさん</title>
