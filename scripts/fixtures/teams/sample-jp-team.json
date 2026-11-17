@@ -1,0 +1,34 @@
+{
+  "_comment": "【テスト用の架空データ】日本(オープン)チームのテンプレート確認専用です。data/teams には置かないでください。",
+  "slug": "sample-jp-team",
+  "name": "Sample Japan (テスト用)",
+  "name_kana": "サンプルジャパン(架空)",
+  "short": "SJP",
+  "region": "Japan",
+  "tier": "open",
+  "country": "日本",
+  "base": {"text": "東京都(テスト用の文章です)", "status": "unverified", "sources": ["https://example.com/jp-team"]},
+  "team_color": "#2B5BD7",
+  "path_2027": {"text": "日本オープン予選から出場(テスト)", "status": "reported", "sources": ["https://example.com/jp-path"]},
+  "history": {"text": "これはテンプレート確認用の架空のチームです。VCJに参加していた、という設定のテスト文章です。", "status": "unverified", "sources": []},
+  "achievements": [{"text": "架空VCJ 2099 Split 1 優勝(テスト)", "status": "unverified"}],
+  "roster": {
+    "as_of": "2099-01-01",
+    "status": "unverified",
+    "sources": ["https://example.com/jp-roster"],
+    "players": [
+      {"ign": "OwnerPhoto", "role": "デュエリスト", "country": "日本", "photo": "assets/img/site/city-tokyo.jpg", "note": "運営提供写真のクレジット表示テスト(写真は街の風景で代用)"},
+      {"ign": "NoPhoto", "role": "コントローラー", "country": "日本", "photo": null},
+      {"ign": "Kana_テスト", "role": "センチネル", "country": "日本"}
+    ],
+    "staff": [{"ign": "CoachJP", "role": "ヘッドコーチ"}]
+  },
+  "beginner_tip": {"text": "テスト用のひと言です。", "draft": true},
+  "links": {"x": "https://x.com/example"},
+  "images": {"hero": null, "logo": null},
+  "image_credits": [
+    {"file": "assets/img/site/city-tokyo.jpg", "source_url": null, "author": "テスト撮影者", "license": "運営提供", "license_url": null, "provided_by_owner": true}
+  ],
+  "open_questions": ["テスト用:日本チームの確認できていない点です。"],
+  "researched_at": "2099-01-01"
+}

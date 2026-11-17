@@ -1,0 +1,367 @@
+{
+  "as_of": "2026-11-16",
+  "summary": {
+    "text": "2026年まで日本の公式リーグだったVALORANT Challengers Japan(VCJ)はなくなり、2027年からは誰でも参加できる「オープン予選」が日本での入口になります。最初の目標は1月にタイ・バンコクで行われる「VCT Pacific Kickoff」で、日本予選(2027 VCT Pacific Kickoff Japan Qualifier)の優勝チーム1チームが出場権を得ます。予選はオンラインのOpen Qualifiers(11月22日〜29日)、Playoffs(12月2日〜6日)、東京・シアターGロッソでのオフラインFinals(12月11日・12日)の3段階です。DetonatioN FocusMeとQT DIG∞はシードとしてPlayoffsから出場します。日本のパートナーチームであるZETA DIVISIONとCrazy RaccoonはKickoffに直接出場します。",
+    "status": "confirmed",
+    "sources": [
+      "https://valorantesports.com/ja-JP/news/2027-vct-pacific-kickoff-japan-qualifier",
+      "https://valorantesports.com/ja-JP/valorantesports/news/vct-pacific-2027-primer",
+      "https://valorantnews.jp/archives/169510"
+    ]
+  },
+  "path": [
+    {
+      "step": "エントリー受付",
+      "text": "専用フォームから申し込みます。選手はOpen Qualifiers初戦の時点で満17歳以上、ランクはアセンダント1以上が条件です。メインロスター5名のうち3名以上が日本の居住者である必要があり、Playoffsに進んだ後もこの条件を守る必要があります。トーナメント表は11月21日(土)に発表されます。",
+      "dates": "2026年11月2日(月)〜11月16日(月)23:59",
+      "status": "confirmed",
+      "sources": [
+        "https://valorantesports.com/ja-JP/news/2027-vct-pacific-kickoff-japan-qualifier",
+        "https://valorantnews.jp/archives/169510"
+      ]
+    },
+    {
+      "step": "日本オープン予選(Open Qualifiers)",
+      "text": "オンライン開催です。ダブルエリミネーション形式(2敗で敗退)で、全試合BO3(3マップ中2本先取)です。勝ち上がった6チームがPlayoffsへ進みます。参加チーム数によって開催日数が変わることがあり、公式配信は予定されていません。",
+      "dates": "2026年11月22日(日)・23日(月・祝)・28日(土)・29日(日)",
+      "status": "confirmed",
+      "sources": [
+        "https://valorantesports.com/ja-JP/news/2027-vct-pacific-kickoff-japan-qualifier",
+        "https://valorantnews.jp/archives/169510",
+        "https://fistbump-news.jp/article/2026/11/02/3130.html"
+      ]
+    },
+    {
+      "step": "日本予選Playoffs",
+      "text": "オンライン開催です。Open Qualifiersを勝ち抜いた6チームと、シードの2チーム(DetonatioN FocusMe、QT DIG∞)の計8チームによるダブルエリミネーション形式で、全試合BO3です。上位3チームがFinalsへ進みます。全試合が公式配信される予定です。",
+      "dates": "2026年12月2日(水)〜6日(日)",
+      "status": "confirmed",
+      "sources": [
+        "https://valorantesports.com/ja-JP/news/2027-vct-pacific-kickoff-japan-qualifier",
+        "https://valorantnews.jp/archives/169510"
+      ]
+    },
+    {
+      "step": "日本予選Finals",
+      "text": "東京・水道橋のシアターGロッソで、観客を入れたオフライン大会として行われます。12月11日にアッパーブラケット決勝とローワーブラケット決勝、12月12日にグランドファイナルを行います。グランドファイナルのみBO5(5マップ中3本先取)で、ほかはBO3です。優勝した1チームがPacific Kickoffの出場権を得ます。チケットなどの詳細は後日発表です。",
+      "dates": "2026年12月11日(金)〜12日(土)",
+      "status": "confirmed",
+      "sources": [
+        "https://valorantesports.com/ja-JP/news/2027-vct-pacific-kickoff-japan-qualifier",
+        "https://valorantnews.jp/archives/169510"
+      ]
+    },
+    {
+      "step": "VCT Pacific Kickoff",
+      "text": "タイ・バンコクで行われ、パートナー8チームと予選通過4チームの計12チームが出場します。予選通過の4枠は、韓国予選・日本予選・東南アジア予選の各優勝チームと、Kickoff LCQの優勝チームです。上位3チームはMasters Seoulに進みます。",
+      "dates": "2027年1月11日〜31日(日程は報道・Liquipedia)",
+      "status": "reported",
+      "sources": [
+        "https://valorantesports.com/ja-JP/valorantesports/news/vct-pacific-2027-primer",
+        "https://liquipedia.net/valorant/VCT/2027/Pacific/Kickoff"
+      ]
+    },
+    {
+      "step": "LCQ(ラストチャンス予選)",
+      "text": "Kickoff LCQは南アジア、オセアニア、東南アジア予選の次点チームが対象で、日本は対象に入っていません。日本予選で優勝できなかったチームに、Kickoffへの別ルートはありません。",
+      "dates": "Kickoff LCQは2026年12月17日〜20日(Liquipedia)",
+      "status": "confirmed",
+      "sources": [
+        "https://valorantesports.com/ja-JP/valorantesports/news/vct-pacific-2027-primer",
+        "https://liquipedia.net/valorant/VCT/2027/Pacific/Kickoff/LCQ"
+      ]
+    },
+    {
+      "step": "Cup 1・Cup 2への道",
+      "text": "年2回のCup(Cup 1はマニラ、Cup 2は東京)には、日本から各3チームが直接出場できます。Cupの出場権は、日本の地域Playoffs(上位8チームで争う段階)を勝ち上がることでしか得られません。地域Playoffsには、オープン予選→プレイイン(地域Playoffsのシード4チームを決める段階)を経て進みます。Masters SeoulまたはMasters Valenciaに出たチームは、オープン予選とプレイインが免除されます。パートナーチームもKickoff以外に特別な枠はなく、Mastersに進めなければプレイインから戦います。Cup向けの日本予選の日程と形式はまだ発表されていません。",
+      "dates": "未発表",
+      "status": "confirmed",
+      "sources": [
+        "https://valorantesports.com/ja-JP/valorantesports/news/vct-pacific-2027-primer",
+        "https://www.invenglobal.com/articles/27795/riot-unveils-restructuring-plan-for-2027-valorant-champions-tour-pacific",
+        "https://www.gambling.com/news/vct-pacific-2027-format-cups-and-qualifier-slots"
+      ]
+    }
+  ],
+  "slots": {
+    "text": "日本予選からPacific Kickoffへの出場枠は1枠です(優勝チームのみ)。ほかにパートナーチームのZETA DIVISIONとCrazy Raccoonが直接出場するため、Kickoffには最大で日本の3チームが出場します。Cupには日本から毎回3チームが直接出場できます(韓国も3、東南アジアは2、タイ・インドネシア・ベトナムは各1)。オープン予選からKickoffやCupに進んだチームには、大会ごとに10万米ドルの固定支援金が支払われます。",
+    "status": "confirmed",
+    "sources": [
+      "https://valorantesports.com/ja-JP/news/2027-vct-pacific-kickoff-japan-qualifier",
+      "https://valorantesports.com/ja-JP/valorantesports/news/vct-pacific-2027-primer",
+      "https://valorantnews.jp/archives/169510",
+      "https://fistbump-news.jp/article/2026/11/02/3130.html",
+      "https://valorantesports.com/ja-jp/news/get-ready-for-vct-2027-open-qualifiers"
+    ]
+  },
+  "invited_teams": [
+    {
+      "name": "DetonatioN FocusMe",
+      "slug": "detonation-focusme",
+      "reason": "2026年のVCT Pacificシーズンに出場した実績が評価され、シードとしてPlayoffsに招待されました。DFMは2023年からVCT Pacificのパートナーでしたが、2027〜2028年のパートナーには選ばれませんでした。",
+      "status": "confirmed",
+      "sources": [
+        "https://valorantesports.com/ja-JP/news/2027-vct-pacific-kickoff-japan-qualifier",
+        "https://valorantnews.jp/archives/169510",
+        "https://valorantnews.jp/archives/168200"
+      ]
+    },
+    {
+      "name": "QT DIG∞",
+      "slug": "qt-dig",
+      "reason": "2026年のVALORANT Challengers Japan Split 2(Season Finals)で優勝した実績が評価され、シードとしてPlayoffsに招待されました。",
+      "status": "confirmed",
+      "sources": [
+        "https://valorantesports.com/ja-JP/news/2027-vct-pacific-kickoff-japan-qualifier",
+        "https://valorantnews.jp/archives/169510",
+        "https://valorantnews.jp/archives/128938"
+      ]
+    }
+  ],
+  "teams": [
+    {
+      "name": "MURASH GAMING",
+      "slug": "murash-gaming",
+      "roster_status": "announced",
+      "note": "HoneyBunny、MrTenzouEzが続投し、Caedye(元DFM)、Seoldam、Xdll(元ZETA DIVISION)が加入。コーチはReitaとmltdwn。日本予選に向けた5人がそろったとチームが発表しています(11月9日・11日)。",
+      "status": "confirmed",
+      "sources": [
+        "https://valorantnews.jp/archives/169638",
+        "https://valorantnews.jp/archives/169660"
+      ]
+    },
+    {
+      "name": "DetonatioN FocusMe",
+      "slug": "detonation-focusme",
+      "roster_status": "unannounced",
+      "note": "Playoffsシード。11月2日にMeiy、Akame、Caedye、yatsukaの4選手とコーチ3名との契約終了を発表し、新しい選手・コーチを募集中です。2027年の選手はまだ発表されていません。",
+      "status": "confirmed",
+      "sources": [
+        "https://valorantnews.jp/archives/169499",
+        "https://valorantnews.jp/archives/169466"
+      ]
+    },
+    {
+      "name": "QT DIG∞",
+      "slug": "qt-dig",
+      "roster_status": "announced",
+      "note": "Playoffsシード。日本人選手3名(misaya、kippei、yuran)の残留と、Meteor・TenTen兄弟の加入を発表。margaretとPkmは10月に退団しました。2025年4月にSengoku Gamingから改名したチームです。",
+      "status": "confirmed",
+      "sources": [
+        "https://valorantnews.jp/archives/169607",
+        "https://valorantnews.jp/archives/159919",
+        "https://valorantnews.jp/archives/99108",
+        "https://liquipedia.net/valorant/VCT/2027/Pacific/Kickoff/Japan"
+      ]
+    },
+    {
+      "name": "REJECT",
+      "slug": "reject",
+      "roster_status": "unannounced",
+      "note": "VCJ 2026 Split 2準優勝。10月21日に選手募集を始め、10月31日にPersiaが契約満了で退団しました。2027年の全ロスターは発表されていません。",
+      "status": "confirmed",
+      "sources": [
+        "https://valorantnews.jp/archives/169303",
+        "https://valorantnews.jp/archives/169482"
+      ]
+    },
+    {
+      "name": "SCARZ",
+      "slug": "scarz",
+      "roster_status": "partial",
+      "note": "Art氏(元選手)がコーチとなって部門を立て直し中です。2026年9月にトライアウトで選んだKellan、SacrificE、Yamada、thiefy、grayの5人を公開しましたが、この5人で日本予選に出るかは確認できていません。",
+      "status": "confirmed",
+      "sources": [
+        "https://valorantnews.jp/archives/149446"
+      ]
+    },
+    {
+      "name": "FENNEL",
+      "slug": "fennel",
+      "roster_status": "partial",
+      "note": "VCJで3回優勝(2023 Split 1、2024 Split 1、2025年Split 3)。2026年シーズン後にCLZ、Aace、Anthem、GangPinが抜け、残る選手はHalsのみです(11月16日時点)。",
+      "status": "confirmed",
+      "sources": [
+        "https://valorantnews.jp/archives/169712",
+        "https://valorantnews.jp/archives/169561"
+      ]
+    },
+    {
+      "name": "NORTHEPTION",
+      "slug": "northeption",
+      "roster_status": "unannounced",
+      "note": "2022年Stage 2の日本王者で、Masters Copenhagenに出場。2024年11月にアカデミーを立ち上げましたが、2026年のVALORANT部門の活動と2027年の予定は確認できていません。",
+      "status": "unverified",
+      "sources": [
+        "https://valorantnews.jp/archives/92979",
+        "https://www.vlr.gg/event/1013"
+      ]
+    },
+    {
+      "name": "RIDDLE ORDER",
+      "slug": "riddle-order",
+      "roster_status": "disbanded",
+      "note": "2024〜2025年にVCJで国内4連覇。オーナーのボドカ氏が10月19日の配信で、2027年以降はVALORANT部門を続けないと話したと報じられています。チームからの正式発表は確認できていません。",
+      "status": "reported",
+      "sources": [
+        "https://valorantnews.jp/archives/168207"
+      ]
+    },
+    {
+      "name": "VARREL",
+      "slug": "varrel",
+      "roster_status": "unannounced",
+      "note": "2026年はVCT Pacificに出場(Stage 2で4位)。2027〜2028年のパートナーには選ばれず、11月3日に全選手・コーチとの契約終了を発表しました。2027年も活動は続けるとしていますが、日本と韓国のどちらの予選に出るかは発表されていません。",
+      "status": "confirmed",
+      "sources": [
+        "https://valorantnews.jp/archives/169521"
+      ]
+    },
+    {
+      "name": "IGZIST",
+      "slug": "igzist",
+      "roster_status": "unannounced",
+      "note": "VCJ 2026 Season Finalsでベスト4。10月26日にpopogachi、Frxeez、kAyle、SIDの4選手とコーチ・アナリスト3名の退団を発表しました。新しいロスターは発表されていません。",
+      "status": "confirmed",
+      "sources": [
+        "https://valorantnews.jp/archives/169406",
+        "https://www.vlr.gg/event/2991"
+      ]
+    },
+    {
+      "name": "CREST GAMING",
+      "slug": "crest-gaming",
+      "roster_status": "unannounced",
+      "note": "「CREST GAMING Zst」としてVCJ 2026 Split 1で初優勝。その後、選手・コーチが全員抜け、9月1日時点で所属選手がいない状態です。2027年の参戦は発表されていません。",
+      "status": "confirmed",
+      "sources": [
+        "https://valorantnews.jp/archives/131741",
+        "https://valorantnews.jp/archives/146270",
+        "https://www.vlr.gg/event/2847"
+      ]
+    },
+    {
+      "name": "Delight",
+      "slug": "delight",
+      "roster_status": "announced",
+      "note": "11月8日に若手中心の新ロスター(ren、Sota、RONY、Ryuyan、chocolatte)を発表しました。2025年VCJ Split 3で3位。",
+      "status": "confirmed",
+      "sources": [
+        "https://valorantnews.jp/archives/169612"
+      ]
+    },
+    {
+      "name": "INSOMNIA",
+      "slug": "insomnia",
+      "roster_status": "unannounced",
+      "note": "VCJ 2026 Split 1でベスト4。2027年の体制は確認できていません。",
+      "status": "unverified",
+      "sources": [
+        "https://www.vlr.gg/event/2847"
+      ]
+    },
+    {
+      "name": "AGELITE",
+      "slug": "agelite",
+      "roster_status": "disbanded",
+      "note": "VCJ 2026 Split 2に出場。8月18日にロスターの解散とVALORANT部門の一時休止を発表しました。",
+      "status": "confirmed",
+      "sources": [
+        "https://valorantnews.jp/archives/139697"
+      ]
+    },
+    {
+      "name": "NOEZ FOXX",
+      "slug": "noez-foxx",
+      "roster_status": "disbanded",
+      "note": "2026年はREIGNITEとの共同チーム「REIGNITE FOXX」として参戦しましたが、7月に解散し、VALORANT部門は一時休止中です。",
+      "status": "confirmed",
+      "sources": [
+        "https://valorantnews.jp/archives/129849"
+      ]
+    }
+  ],
+  "vcj_history": [
+    {
+      "year": 2021,
+      "text": "VCT 2021の日本大会として、Stage 1〜3の各段階でChallengers(予選大会)を行い、その上位で国際大会への代表を決める形式でした。Crazy RaccoonがStage 2を制してMasters Reykjavíkに出場しました。Stage 3ではZETA DIVISIONが優勝し、ZETAとCrazy RaccoonがMasters Berlinに出場。Crazy RaccoonはポイントでChampions 2021の出場権も得ました。",
+      "winners": "Stage 1 Masters(日本):Crazy Raccoon / Stage 2 Challengers Finals:Crazy Raccoon / Stage 3 Challengers Playoffs:ZETA DIVISION",
+      "sources": [
+        "https://www.vlr.gg/event/352",
+        "https://www.vlr.gg/event/441",
+        "https://www.vlr.gg/event/540",
+        "https://valo2asia.com/news/zeta-division-crazy-raccoon-berlin",
+        "https://upcomer.com/crazy-raccoon-qualify-for-vct-champions-off-of-points/"
+      ]
+    },
+    {
+      "year": 2022,
+      "text": "Stage 1・Stage 2の2回、Challengersの予選とPlayoffsで日本代表を決めました。Stage 1を制したZETA DIVISIONはMasters Reykjavíkで3位に入り、そのポイントでChampions 2022にも出場しました。Stage 2を制したNORTHEPTIONはMasters Copenhagenに出場し、East Asia LCQで3位でした。",
+      "winners": "Stage 1:ZETA DIVISION / Stage 2:NORTHEPTION",
+      "sources": [
+        "https://www.vlr.gg/event/853",
+        "https://www.vlr.gg/event/1013",
+        "https://www.vlr.gg/event/1083",
+        "https://nerdstreet.com/news/2022/7/northeption-masters-copenhagen-experience-for-vct-last-chance-qualifier"
+      ]
+    },
+    {
+      "year": 2023,
+      "text": "VCT Pacific(パートナー制のリーグ)が始まり、その下の国内大会として「VALORANT Challengers Japan(VCJ)」が始まりました。年2回のSplit制です。SCARZがAscension Pacific(Pacificリーグへの昇格をかけた大会)で準優勝しました。",
+      "winners": "Split 1:FENNEL / Split 2:SCARZ",
+      "sources": [
+        "https://www.vlr.gg/event/1432",
+        "https://www.vlr.gg/event/1531",
+        "https://www.vlr.gg/event/1652"
+      ]
+    },
+    {
+      "year": 2024,
+      "text": "Split 1〜3の3回制でした。RIDDLE ORDERがAscension Pacific 2024に出場し、4位でした。",
+      "winners": "Split 1:FENNEL / Split 2:RIDDLE ORDER / Split 3:RIDDLE ORDER",
+      "sources": [
+        "https://www.vlr.gg/event/1962",
+        "https://www.vlr.gg/event/2049",
+        "https://www.vlr.gg/event/2173",
+        "https://www.vlr.gg/event/2146"
+      ]
+    },
+    {
+      "year": 2025,
+      "text": "3回のSplitとSeason Finalsの形式でした。RIDDLE ORDERがSeason Finalsを制してAscension Pacific 2025に出場しましたが、昇格はSLT Seongnamでした。12月のKorea & Japan ShowdownではQT DIG∞が3位でした。",
+      "winners": "Split 1:RIDDLE ORDER / Split 2:RIDDLE ORDER / Split 3:FENNEL / Season Finals:RIDDLE ORDER",
+      "sources": [
+        "https://www.vlr.gg/event/2309",
+        "https://www.vlr.gg/event/2310",
+        "https://www.vlr.gg/event/2311",
+        "https://www.vlr.gg/event/2584",
+        "https://www.vlr.gg/event/2535",
+        "https://www.vlr.gg/event/2750"
+      ]
+    },
+    {
+      "year": 2026,
+      "text": "VCJ最後の年です。Split 1・Split 2(各Splitの上位がSeason Finalsへ)の形式でした。Split 1はCREST GAMING ZstがAdvance Stageから無敗で初優勝。Split 2のMain StageはREJECTが全勝で1位でしたが、Season Finals(アリーナ立川立飛)ではQT DIG∞がREJECTを3-2で破って初優勝し、VCT Pacific Stage 2のPlay-Inに出場しました(勝利はなし)。",
+      "winners": "Split 1:CREST GAMING Zst / Split 2 Season Finals:QT DIG∞(準優勝 REJECT)",
+      "sources": [
+        "https://www.vlr.gg/event/2847",
+        "https://www.vlr.gg/event/2974",
+        "https://www.vlr.gg/event/2991",
+        "https://valorantnews.jp/archives/128938",
+        "https://esports-world.jp/report/63852",
+        "https://valorantnews.jp/archives/131741",
+        "https://valorantnews.jp/archives/169607"
+      ]
+    }
+  ],
+  "open_questions": [
+    "Cup 1・Cup 2に向けた日本のオープン予選・プレイイン・地域Playoffsの日程と形式は、まだ発表されていません。",
+    "Pacific Kickoffの日程(1月11日〜31日)はLiquipediaと報道によるもので、日本予選のページには書かれていません。",
+    "DetonatioN FocusMe、REJECT、IGZIST、FENNELなどの2027年ロスターは未発表または一部のみです。オープン予選の参加チーム一覧(11月21日発表予定)で確認が必要です。",
+    "RIDDLE ORDERの撤退はオーナーの配信での発言の報道で、チームの正式発表は確認できていません。",
+    "VARRELが日本と韓国のどちらの予選に出るかは未発表です。NORTHEPTION、INSOMNIA、CREST GAMINGが2027年の予選に出るかは確認できていません。",
+    "VCJ 2026 Split 1の優勝(CREST GAMING Zst)で得た国際大会への出場権の有無は確認できていません。",
+    "2021年の大会構成は時期によって名称が異なり(Challengers 1・2、Masters、Finalsなど)、本データでは主要な決勝のみを記載しています。",
+    "Liquipediaは調査中にアクセス制限(レート制限)がかかったため、一部ページ(VCJ一覧など)は確認できていません。"
+  ]
+}

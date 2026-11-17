@@ -1,0 +1,235 @@
+{
+  "slug": "gen-g",
+  "name": "Gen.G",
+  "name_kana": "ジェンジー",
+  "short": "GEN",
+  "region": "Pacific",
+  "country": "韓国",
+  "base": {
+    "text": "韓国",
+    "status": "confirmed",
+    "sources": [
+      "https://valorantesports.com/en-SG/news/introducing-vct-pacific-partnered-teams-for-2027-and-beyond",
+      "https://liquipedia.net/valorant/Gen.G_Esports"
+    ]
+  },
+  "team_color": "#AA8B56",
+  "partner": {
+    "text": "2027〜2028年 VCT Pacific パートナー",
+    "status": "confirmed",
+    "sources": [
+      "https://valorantesports.com/news/introducing-the-vct-2027-partner-teams",
+      "https://valorantesports.com/en-SG/news/introducing-vct-pacific-partnered-teams-for-2027-and-beyond",
+      "https://www.thespike.gg/valorant/news/riot-officially-reveals-all-vct-2027-partner-teams/9080"
+    ]
+  },
+  "history": {
+    "text": "Gen.Gは2017年に設立された、韓国にルーツを持つ多タイトルのeスポーツチームです。VALORANT部門は2020年に北米で始まり、2022年にVCT Pacificのパートナーチーム(Riotと長期契約を結んだチーム)に選ばれたことを機に、同年10月に韓国へ拠点を移すと発表しました。2024年にはMasters Shanghaiで優勝し、Pacific地域に初めてVCT国際大会のタイトルをもたらしました。",
+    "status": "confirmed",
+    "sources": [
+      "https://valorantesports.com/en-SG/news/introducing-vct-pacific-partnered-teams-for-2027-and-beyond",
+      "https://liquipedia.net/valorant/Gen.G_Esports"
+    ]
+  },
+  "achievements": [
+    {
+      "text": "VALORANT Masters Shanghai 2024 優勝(Pacific地域のチームとして初のVCT国際大会タイトル)",
+      "status": "confirmed",
+      "sources": [
+        "https://valorantesports.com/en-SG/news/introducing-vct-pacific-partnered-teams-for-2027-and-beyond",
+        "https://liquipedia.net/valorant/Gen.G_Esports",
+        "https://insider-gaming.com/gen-g-sign-dambi-mako/"
+      ]
+    },
+    {
+      "text": "VCT 2024 Pacific Kickoff 優勝",
+      "status": "confirmed",
+      "sources": [
+        "https://valorantesports.com/en-SG/news/introducing-vct-pacific-partnered-teams-for-2027-and-beyond",
+        "https://liquipedia.net/valorant/Gen.G_Esports",
+        "https://insider-gaming.com/gen-g-sign-dambi-mako/"
+      ]
+    },
+    {
+      "text": "VALORANT Masters Madrid 2024 準優勝(韓国のチームとして初めてVCT国際大会の決勝に進出)",
+      "status": "reported",
+      "sources": [
+        "https://valorantesports.com/en-SG/news/introducing-vct-pacific-partnered-teams-for-2027-and-beyond",
+        "https://liquipedia.net/valorant/Gen.G_Esports"
+      ]
+    },
+    {
+      "text": "VCT 2024 Pacific Stage 2 優勝",
+      "status": "reported",
+      "sources": [
+        "https://liquipedia.net/valorant/Gen.G_Esports",
+        "https://insider-gaming.com/gen-g-sign-dambi-mako/"
+      ]
+    },
+    {
+      "text": "VCT 2025 Pacific Stage 1 準優勝",
+      "status": "reported",
+      "sources": [
+        "https://liquipedia.net/valorant/Gen.G_Esports"
+      ]
+    },
+    {
+      "text": "Esports World Cup 2025(VALORANT部門)3位",
+      "status": "reported",
+      "sources": [
+        "https://liquipedia.net/valorant/Gen.G_Esports"
+      ]
+    }
+  ],
+  "roster": {
+    "as_of": "2026-11-16",
+    "status": "reported",
+    "sources": [
+      "https://x.com/geng_gold/status/2118652361430426012",
+      "https://x.com/geng_gold/status/2118652613197701426",
+      "https://x.com/geng_gold/status/2118652111298920801",
+      "https://x.com/geng_gold/status/2121181288828948616",
+      "https://x.com/geng_gold/status/2024710708492194122",
+      "https://www.vlr.gg/575730/going-nowh3re-t3xture-re-signs-with-gen-g/",
+      "https://liquipedia.net/valorant/Gen.G_Esports",
+      "https://www.vlr.gg/team/17/gen-g",
+      "https://www.thespike.gg/valorant/news/gen-g-roster-mako-dambi-2027/9191",
+      "https://www.thespike.gg/valorant/news/ray-joins-gen-g-to-complete-its-vct-2027-lineup/9248",
+      "https://www.vlr.gg/post/7556049/gen-g-announces-its-next-generation-with-dambi-mako",
+      "https://insider-gaming.com/gen-g-sign-dambi-mako/"
+    ],
+    "players": [
+      {
+        "ign": "Dambi",
+        "name": "イ・ヒョッキュ(Lee Hyuk-kyu)",
+        "country": "韓国",
+        "role": "デュエリスト",
+        "photo": null,
+        "note": "2026年11月6日に加入をチームが発表。前所属はNongshim RedForceで、Masters Santiago 2026のMVP"
+      },
+      {
+        "ign": "MaKo",
+        "name": "キム・ミョングァン(Kim Myeong-kwan)",
+        "country": "韓国",
+        "role": "コントローラー",
+        "photo": null,
+        "note": "2026年11月6日に加入をチームが発表。前所属はDRX(KRX)"
+      },
+      {
+        "ign": "Karon",
+        "name": "キム・ウォンテ(Kim Won-tae)",
+        "country": "韓国",
+        "role": "コントローラー(センチネルの経験もあり)",
+        "photo": null,
+        "note": "2026年11月6日に2027年も残留することをチームが発表"
+      },
+      {
+        "ign": "t3xture",
+        "name": "キム・ナラ(Kim Na-ra)",
+        "country": "韓国",
+        "role": "デュエリスト",
+        "photo": null,
+        "note": "2025年10月に2027年までの契約で再契約(VLR.gg報道)"
+      },
+      {
+        "ign": "Ray",
+        "name": "オ・ウンヒョク(Oh Eun-hyuk)",
+        "country": "韓国",
+        "role": "コントローラー",
+        "photo": null,
+        "note": "2026年11月13日に加入をチームが発表。前所属はONSIDE GAMING。The Spikeは「6人目の選手」と報道"
+      },
+      {
+        "ign": "RaxcaL",
+        "name": "キム・ミンソク(Kim Min-seok)",
+        "country": "韓国",
+        "role": "センチネル",
+        "photo": null,
+        "note": "2026年7月に加入。2028年まで契約があると報道。The SpikeはKickoffに出場する可能性が高いと報道"
+      },
+      {
+        "ign": "Xiesta",
+        "name": "チョン・シファン(Jung Si-hwan)",
+        "country": "韓国",
+        "role": "デュエリスト",
+        "photo": null,
+        "note": "2026年2月に4年契約をチームが発表。年齢制限(2027年から17歳以上)のため、17歳になる2027年3月までは公式戦に出られない見込みと報道。Liquipediaでは現在『非アクティブ』扱い"
+      },
+      {
+        "ign": "ZynX",
+        "name": "キム・ドンハ(Kim Dong-ha)",
+        "country": "韓国",
+        "role": "(未確認)",
+        "photo": null,
+        "note": "2026年7月から非アクティブ(Liquipedia・VLR.ggの登録)。2027年の扱いは未発表"
+      }
+    ],
+    "staff": [
+      {
+        "ign": "solo",
+        "role": "ヘッドコーチ(2027年も続投と報道)"
+      },
+      {
+        "ign": "HSK",
+        "role": "コーチ(2027年末までの契約延長と報道)"
+      },
+      {
+        "ign": "FIFAHUN",
+        "role": "ゼネラルマネージャー"
+      }
+    ]
+  },
+  "featured_players": [
+    {
+      "ign": "Dambi",
+      "why": "Masters Santiago 2026でMVPに選ばれた、攻撃的なプレーが持ち味のデュエリストです。",
+      "draft": true
+    },
+    {
+      "ign": "MaKo",
+      "why": "2021年から長く第一線で活躍してきたベテランのコントローラー(煙で視界をさえぎる役割)です。",
+      "draft": true
+    }
+  ],
+  "playstyle": {
+    "text": "2027年はMasters Shanghai 2024の優勝を知るKaronとt3xtureに、DambiとMaKoという実績ある選手が加わった新しい体制です。IGL(試合中に作戦を指示する司令塔)が誰になるかは、まだ発表されていません。",
+    "draft": true
+  },
+  "highlights_2027": {
+    "text": "新加入のDambi・MaKo・Rayと残留メンバーがどうかみ合うか、そして17歳になる3月以降のXiestaの起用が注目点です。",
+    "draft": true
+  },
+  "beginner_tip": {
+    "text": "2024年にPacific初の国際タイトルを取ったチーム。新メンバーとの化学反応に注目です。",
+    "draft": true
+  },
+  "links": {
+    "official": "https://geng.gg/",
+    "x": "https://x.com/geng_gold",
+    "youtube": "https://www.youtube.com/@geng_gold"
+  },
+  "images": {
+    "hero": "assets/img/teams/gen-g/hero.jpg",
+    "logo": null
+  },
+  "image_credits": [
+    {
+      "file": "assets/img/teams/gen-g/hero.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Valorant_Champions_%C4%B0stanbul_2022.jpg",
+      "author": "Emriquet",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+    }
+  ],
+  "open_questions": [
+    "2027年の先発5人とIGL(司令塔)はチームから発表されていません。Ray加入で登録上は6人(Xiestaを含めると7人)となり、誰が先発するかは未確定です。",
+    "t3xtureの契約(2027年まで)は VLR.gg の記事(2025年10月25日)で確認しましたが、Gen.G公式投稿そのものは開けていません。",
+    "solo・HSKの続投は The Spike と Liquipedia で確認しましたが、チーム公式投稿は開けていません。",
+    "ZynX(2026年7月から非アクティブ)の2027年の扱いは未発表です。ロールも確認できていません。",
+    "ヒーロー画像は VALORANT Champions 2022(イスタンブール)会場の写真で、Gen.Gは写っておらず同大会にも出場していません。Gen.GのVALORANT部門の再利用可能な写真は見つからなかったため、大会の雰囲気を伝える写真として使っています。他チームのページと同じ写真になる可能性があります。",
+    "Wikimedia CommonsにあるGen.Gの写真(例: File:Gen.G for LG.jpg、CC BY 2.0)はリーグ・オブ・レジェンド部門の選手と広告の写真のため使用していません。",
+    "選手8人とコーチ陣の再利用可能な写真は Wikimedia Commons・Flickr(CCライセンス)で見つかりませんでした。全員『写真なし』です。",
+    "Masters Madrid 2024準優勝・Pacific Stage 2 2024優勝・Stage 1 2025準優勝・EWC 2025 3位は Liquipedia と大手メディアで確認したもので、Riot公式の結果ページは開けていません(status: reported)。"
+  ],
+  "researched_at": "2026-11-16"
+}

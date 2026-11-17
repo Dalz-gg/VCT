@@ -1,0 +1,116 @@
+{
+  "slug": "varrel",
+  "name": "VARREL",
+  "name_kana": "バレル",
+  "short": "VL",
+  "region": "Japan",
+  "tier": "open",
+  "country": "日本",
+  "base": {
+    "text": "神奈川県横浜市(運営:CELLORB)",
+    "status": "reported",
+    "sources": [
+      "https://liquipedia.net/valorant/VARREL"
+    ]
+  },
+  "team_color": "#1F6FEB",
+  "path_2027": {
+    "text": "VCT 2027のパートナーには選ばれていません。韓国予選(2027 VCT Pacific Kickoff Korea Qualifier)のプレーオフに招待チームとして入ると報じられており、日本のオープン予選には出ない見込みです。",
+    "status": "reported",
+    "sources": [
+      "https://www.invenglobal.com/articles/28012/valorant-2027-vct-korea-qualifier-to-kick-off-on-the-25th",
+      "https://www.vlr.gg/event/3211",
+      "https://www.vlr.gg/784050/varrel-parts-ways-with-full-roster"
+    ]
+  },
+  "history": {
+    "text": "VARRELは2015年にできた横浜のチームで、旧名はUnsold Stuff Gaming(USG)です。2022年12月に今の名前になり、2025年10月からはCELLORBが運営しています。2025年12月、Ascension Pacific 2025で優勝したSLT Seongnamの韓国人ロスターを引き継ぎ、2026年はVCT Pacific(アジア太平洋のトップリーグ)で戦いました。2026年11月3日、選手とコーチ全員との契約終了を発表しましたが、VALORANTの活動は続けるとしています。",
+    "status": "reported",
+    "sources": [
+      "https://liquipedia.net/valorant/VARREL",
+      "https://x.com/VARREL_VALORANT/status/2117466803656110527",
+      "https://valorantnews.jp/archives/169521",
+      "https://www.vlr.gg/784050/varrel-parts-ways-with-full-roster"
+    ]
+  },
+  "achievements": [
+    {
+      "text": "VCT 2026 Pacific Kickoff 11〜12位",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/event/2683/vct-2026-pacific-kickoff"
+      ]
+    },
+    {
+      "text": "VCT 2026 Pacific Stage 1 グループステージ 11〜12位",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/event/2775/vct-2026-pacific-stage-1"
+      ]
+    },
+    {
+      "text": "Esports World Cup 2026 Pacific予選 2位",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/event/2955/esports-world-cup-2026-pacific-qualifier"
+      ]
+    },
+    {
+      "text": "VCT 2026 Pacific Stage 2 4位(グループステージ1〜2位でプレーオフ進出)",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/event/2776/vct-2026-pacific-stage-2"
+      ]
+    },
+    {
+      "text": "2026年はVCT Pacificで戦ったため、VCJ(国内リーグ)には出ていません",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/event/2847/challengers-2026-japan-split-1",
+        "https://www.vlr.gg/event/2974/challengers-2026-japan-split-2"
+      ]
+    }
+  ],
+  "roster": {
+    "as_of": "2026-11-16",
+    "status": "confirmed",
+    "sources": [
+      "https://x.com/VARREL_VALORANT/status/2117466803656110527",
+      "https://www.vlr.gg/team/transactions/11229",
+      "https://valorantnews.jp/archives/169521"
+    ],
+    "players": [],
+    "staff": [],
+    "note": "選手はいません。2026年11月3日、Foxy9 / Klaus / XuNa / oonzmlp / Zexy / C1ndeR の6選手と、ヘッドコーチTK9・アナリストR3THMEとの契約終了が発表されました(双方合意)。2027年の新しいロスターはまだ発表されていません。"
+  },
+  "featured_players": [],
+  "playstyle": {
+    "text": "新しいロスターが決まっていないため、現時点では書きません。",
+    "draft": true
+  },
+  "highlights_2027": {
+    "text": "2026年のPacific Stage 2で4位に入ったチームです。2027年にどんなメンバーをそろえるかが注目点です。",
+    "draft": true
+  },
+  "beginner_tip": {
+    "text": "横浜のチームですが、2026年は韓国人選手中心で戦いました。",
+    "draft": true
+  },
+  "links": {
+    "official": "https://varrel.jp/",
+    "x": "https://x.com/VARREL_VALORANT",
+    "youtube": "https://www.youtube.com/@_VARREL"
+  },
+  "images": {
+    "hero": null,
+    "logo": null
+  },
+  "image_credits": [],
+  "open_questions": [
+    "韓国予選への招待は、Inven Global(2026-11-01)とVLR.ggの大会ページで確認しましたが、VARRELやRiotの発表文は確認できていません。",
+    "契約終了の人数が情報源で違います。valorantnews.jpはコーチのRainも含めて9名としていますが、VLR.ggではRainは2026年5月に退団済みとなっています。",
+    "VLR.ggは「運営を日本から韓国へ移すとみられる」と書いていますが、チームの発表はありません。日本チームとして載せ続けるかは運営者の判断が必要です。",
+    "team_colorは仮の値です。"
+  ],
+  "researched_at": "2026-11-16"
+}

@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>VCT 2027 フォーマット図解</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Noto+Sans+JP:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#0D1117}
+a{color:#45D4E0}
+a:hover{color:#9BE8EE}
+.c8{clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px))}
+.c10{clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px))}
+.c14{clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px))}
+.c20{clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,20px 100%,0 calc(100% - 20px))}
+.mono{font-family:'JetBrains Mono',monospace}
+.kick{font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:0.16em;color:#FF4D5E;font-weight:700}
+.h2{margin:0;font-family:'Space Grotesk','Noto Sans JP',sans-serif;font-weight:700;font-size:clamp(30px,4.4vw,52px);line-height:1.25}
+.bignum{font-family:'Space Grotesk',sans-serif;font-weight:700;color:transparent;-webkit-text-stroke:2px #FF4D5E;line-height:0.85}
+.sq{width:46px;height:46px;display:flex;align-items:center;justify-content:center;color:#0D1117;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:17px;transition:translate 0.2s}
+.sq:hover{translate:0 -5px}
+.hv{transition:translate 0.25s,background 0.25s}
+.hv:hover{translate:0 -6px;background:#1E2936 !important}
+.chip{flex:1 1 220px;min-width:0;background:#1B2430;padding:18px 22px;transition:translate 0.25s,background 0.25s}
+.chip:hover{translate:0 -4px;background:#222E3C}
+.nv{color:#C3CDD6;text-decoration:none;font-size:15px;white-space:nowrap;padding:8px 2px;border-bottom:2px solid transparent;transition:color 0.2s,border-color 0.2s}
+.nv:hover{color:#F2F4F6;border-bottom-color:#FF4D5E}
+.prog{display:none}
+@keyframes dcUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:none}}
+@keyframes dcGrowX{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes dcGrowY{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes dcMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes dcFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes dcSpin{to{transform:rotate(360deg)}}
+@keyframes dcPulse{0%{transform:scale(1);opacity:0.8}100%{transform:scale(4);opacity:0}}
+@keyframes dcBeat{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+@keyframes dcNudge{0%,100%{transform:translateX(0)}50%{transform:translateX(7px)}}
+@keyframes dcNudgeY{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+@keyframes dcSweep{from{transform:translateX(-140%) skewX(-14deg)}to{transform:translateX(620%) skewX(-14deg)}}
+@keyframes dcGrid{to{background-position:0 64px}}
+@keyframes dcShine{from{transform:translateX(-160%) skewX(-18deg)}to{transform:translateX(420%) skewX(-18deg)}}
+.ld{animation:dcUp 0.9s cubic-bezier(0.2,0.8,0.2,1) both}
+.float{animation:dcFloat 4s ease-in-out infinite}
+.spin{animation:dcSpin 9s linear infinite}
+.ping{transform-box:fill-box;transform-origin:center;animation:dcPulse 2.6s ease-out infinite}
+.beat{animation:dcBeat 1.8s ease-in-out infinite}
+.nudge{animation:dcNudge 1.4s ease-in-out infinite}
+.nudgey{animation:dcNudgeY 1.4s ease-in-out infinite}
+.marq{animation:dcMarquee 38s linear infinite}
+.grid{animation:dcGrid 6s linear infinite}
+.sweep{animation:dcSweep 8s ease-in-out infinite}
+.shine{animation:dcShine 5s ease-in-out infinite}
+@supports (animation-timeline: view()){
+.rv{animation:dcUp linear both;animation-timeline:view();animation-range:entry 4% cover 26%}
+.gx{transform-origin:left center;animation:dcGrowX linear both;animation-timeline:view();animation-range:entry 8% cover 36%}
+.gy{transform-origin:center bottom;animation:dcGrowY linear both;animation-timeline:view();animation-range:entry 8% cover 42%}
+.prog{display:block;transform-origin:left center;animation:dcGrowX linear both;animation-timeline:scroll(root)}
+}
+@media (prefers-reduced-motion: reduce){
+.ld,.rv,.gx,.gy,.prog,.float,.spin,.ping,.beat,.nudge,.nudgey,.marq,.grid,.sweep,.shine{animation:none !important}
+}
+</style>
+</helmet>
+<div id="top" style="background:#0D1117;color:#F2F4F6;font-family:'Noto Sans JP','Space Grotesk',system-ui,sans-serif;font-size:17px;line-height:1.8;overflow-x:clip">
+
+<!-- NAV -->
+<header style="position:sticky;top:0;z-index:20;background:#0D1117;border-bottom:1px solid #1B2430">
+<nav aria-label="ページ内メニュー" style="display:flex;align-items:center;gap:28px;padding:0 24px;height:58px;overflow-x:auto">
+<a href="#top" class="mono" style="color:#FF4D5E;text-decoration:none;font-weight:700;letter-spacing:0.12em;white-space:nowrap">VCT 2027</a>
+<a class="nv" href="#chg">変更点</a>
+<a class="nv" href="#flow">年間の流れ</a>
+<a class="nv" href="#system">仕組み</a>
+<a class="nv" href="#events">大会</a>
+<a class="nv" href="#compare">2026年との違い</a>
+<a class="nv" href="#pacific">日本</a>
+<a class="nv" href="#money">支援金</a>
+<a class="nv" href="#terms">用語</a>
+</nav>
+<div class="prog" style="height:3px;background:#FF4D5E"></div>
+</header>
+
+<!-- HERO -->
+<section style="position:relative;overflow:hidden;min-height:700px;display:flex;align-items:center;padding:80px 24px">
+<div class="grid" style="position:absolute;top:0;right:0;bottom:0;left:0;background-image:linear-gradient(#18212B 1px,transparent 1px),linear-gradient(90deg,#18212B 1px,transparent 1px);background-size:64px 64px"></div>
+<div class="sweep" style="position:absolute;top:0;bottom:0;left:0;width:16%;background:#FF4D5E;opacity:0.08"></div>
+<div style="position:relative;max-width:1200px;width:100%;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:48px">
+<div style="flex:1 1 520px;min-width:0;display:flex;flex-direction:column;gap:26px">
+<div class="kick ld" style="animation-delay:0.05s">FAN GUIDE / 2026.11.11 時点</div>
+<h1 aria-label="VCT 2027" style="margin:0;font-family:'Space Grotesk','Noto Sans JP',sans-serif;font-weight:700;font-size:clamp(68px,13vw,176px);line-height:0.95;letter-spacing:-0.02em;display:flex;flex-wrap:wrap;column-gap:0.22em">
+<span style="display:inline-flex">
+<span aria-hidden="true" class="ld" style="display:inline-block;animation-delay:0.15s">V</span><span aria-hidden="true" class="ld" style="display:inline-block;animation-delay:0.22s">C</span><span aria-hidden="true" class="ld" style="display:inline-block;animation-delay:0.29s">T</span>
+</span>
+<span style="display:inline-flex;color:#FF4D5E">
+<span aria-hidden="true" class="ld" style="display:inline-block;animation-delay:0.4s">2</span><span aria-hidden="true" class="ld" style="display:inline-block;animation-delay:0.47s">0</span><span aria-hidden="true" class="ld" style="display:inline-block;animation-delay:0.54s">2</span><span aria-hidden="true" class="ld" style="display:inline-block;animation-delay:0.61s">7</span>
+</span>
+</h1>
+<div class="ld" style="animation-delay:0.75s;font-weight:900;font-size:clamp(26px,4vw,50px);line-height:1.3">すべてが、トーナメントになる。</div>
+<p class="ld" style="animation-delay:0.9s;margin:0;max-width:600px;font-size:19px;color:#C3CDD6">リーグ戦が消え、誰でもオープン予選からMastersとChampionsを目指せる。2027年の新フォーマットを、図でさくっとつかむガイドです。</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr));gap:14px;max-width:760px;margin-top:8px">
+<div class="ld c10" style="animation-delay:1.05s;background:#151B23;padding:18px 22px"><div class="mono" style="font-weight:700;font-size:52px;line-height:1;color:#FF4D5E">8</div><div style="font-size:14px;color:#9AA7B4;margin-top:8px;line-height:1.5">パートナー枠(各地域)</div></div>
+<div class="ld c10" style="animation-delay:1.15s;background:#151B23;padding:18px 22px"><div class="mono" style="font-weight:700;font-size:52px;line-height:1;color:#FF4D5E">12</div><div style="font-size:14px;color:#9AA7B4;margin-top:8px;line-height:1.5">Kickoffの出場チーム</div></div>
+<div class="ld c10" style="animation-delay:1.25s;background:#151B23;padding:18px 22px"><div class="mono" style="font-weight:700;font-size:52px;line-height:1;color:#FF4D5E">50+</div><div style="font-size:14px;color:#9AA7B4;margin-top:8px;line-height:1.5">年間の大会数(予選含む)</div></div>
+<div class="ld c10" style="animation-delay:1.35s;background:#151B23;padding:18px 22px"><div class="mono" style="font-weight:700;font-size:52px;line-height:1;color:#FF4D5E">15</div><div style="font-size:14px;color:#9AA7B4;margin-top:8px;line-height:1.5">開催都市</div></div>
+</div>
+</div>
+<div class="ld" style="animation-delay:0.5s;flex:1 1 320px;max-width:480px;min-width:0;margin:0 auto">
+<svg viewBox="0 0 460 460" aria-hidden="true" style="width:100%;height:auto;display:block">
+<g fill="none" stroke="#26303B" stroke-width="1.5">
+<circle cx="230" cy="230" r="60"/><circle cx="230" cy="230" r="120"/><circle cx="230" cy="230" r="180"/><circle cx="230" cy="230" r="220" stroke="#394656"/>
+<path d="M230 10V450M10 230H450"/>
+<path d="M75 75L385 385M385 75L75 385" stroke-dasharray="4 8"/>
+</g>
+<g class="spin" style="transform-origin:230px 230px">
+<path d="M230 230L230 10A220 220 0 0 1 385.6 74.4Z" fill="#FF4D5E" fill-opacity="0.18"/>
+<path d="M230 230L230 10" stroke="#FF4D5E" stroke-width="2"/>
+</g>
+<circle cx="320" cy="140" r="7" fill="#FF4D5E"/><circle class="ping" cx="320" cy="140" r="7" fill="none" stroke="#FF4D5E" stroke-width="2"/>
+<circle cx="150" cy="170" r="7" fill="#FF4D5E"/><circle class="ping" style="animation-delay:0.6s" cx="150" cy="170" r="7" fill="none" stroke="#FF4D5E" stroke-width="2"/>
+<circle cx="305" cy="310" r="7" fill="#FF4D5E"/><circle class="ping" style="animation-delay:1.2s" cx="305" cy="310" r="7" fill="none" stroke="#FF4D5E" stroke-width="2"/>
+<circle cx="185" cy="335" r="7" fill="#FF4D5E"/><circle class="ping" style="animation-delay:1.8s" cx="185" cy="335" r="7" fill="none" stroke="#FF4D5E" stroke-width="2"/>
+<circle cx="110" cy="270" r="7" fill="#45D4E0"/><circle class="ping" style="animation-delay:0.3s" cx="110" cy="270" r="7" fill="none" stroke="#45D4E0" stroke-width="2"/>
+<circle cx="352" cy="232" r="7" fill="#45D4E0"/><circle class="ping" style="animation-delay:0.9s" cx="352" cy="232" r="7" fill="none" stroke="#45D4E0" stroke-width="2"/>
+<circle cx="245" cy="88" r="7" fill="#45D4E0"/><circle class="ping" style="animation-delay:1.5s" cx="245" cy="88" r="7" fill="none" stroke="#45D4E0" stroke-width="2"/>
+<circle cx="230" cy="230" r="9" fill="#F2F4F6"/>
+</svg>
+</div>
+</div>
+</section>
+
+<!-- MARQUEE -->
+<div aria-hidden="true" style="overflow:hidden;background:#151B23;border-top:1px solid #1B2430;border-bottom:1px solid #1B2430;padding:14px 0">
+<div class="marq" style="display:flex;width:max-content">
+<div class="mono" style="display:flex;align-items:center;gap:28px;padding-right:28px;font-size:15px;letter-spacing:0.14em;color:#C3CDD6;white-space:nowrap"><span>OPEN QUALIFIERS</span><span style="color:#FF4D5E">◆</span><span>KICKOFF</span><span style="color:#FF4D5E">◆</span><span>MASTERS SEOUL</span><span style="color:#FF4D5E">◆</span><span>CUP 1</span><span style="color:#FF4D5E">◆</span><span>MASTERS VALENCIA</span><span style="color:#FF4D5E">◆</span><span>CUP 2</span><span style="color:#FF4D5E">◆</span><span>CHAMPIONS AUSTIN</span><span style="color:#FF4D5E">◆</span></div>
+<div class="mono" style="display:flex;align-items:center;gap:28px;padding-right:28px;font-size:15px;letter-spacing:0.14em;color:#C3CDD6;white-space:nowrap"><span>OPEN QUALIFIERS</span><span style="color:#FF4D5E">◆</span><span>KICKOFF</span><span style="color:#FF4D5E">◆</span><span>MASTERS SEOUL</span><span style="color:#FF4D5E">◆</span><span>CUP 1</span><span style="color:#FF4D5E">◆</span><span>MASTERS VALENCIA</span><span style="color:#FF4D5E">◆</span><span>CUP 2</span><span style="color:#FF4D5E">◆</span><span>CHAMPIONS AUSTIN</span><span style="color:#FF4D5E">◆</span></div>
+</div>
+</div>
+
+<!-- 01 CHANGES -->
+<section id="chg" style="padding:112px 24px 56px">
+<div style="max-width:1200px;margin:0 auto">
+<div class="rv" style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:24px;margin-bottom:48px">
+<div class="bignum" style="font-size:clamp(72px,10vw,128px)">01</div>
+<div style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:10px"><div class="kick">CHANGES</div><h2 class="h2">2027年、変わる3つのこと</h2></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:20px">
+<div class="rv"><div class="hv c20" style="background:#151B23;padding:36px;display:flex;flex-direction:column;gap:16px;height:100%;box-sizing:border-box">
+<svg class="float" width="56" height="56" viewBox="0 0 64 64" aria-hidden="true"><path d="M16 10h32v14c0 10-7 18-16 18S16 34 16 24Z M16 14H8c0 8 3 13 9 14 M48 14h8c0 8-3 13-9 14 M32 42v10 M22 54h20" fill="none" stroke="#45D4E0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<div class="mono" style="font-size:14px;letter-spacing:0.1em;color:#45D4E0;font-weight:700">STAGE → CUP</div>
+<h3 style="margin:0;font-size:26px;line-height:1.4">リーグ戦が、Cupになる</h3>
+<p style="margin:0;color:#C3CDD6">年間のリーグ戦(Stage)は廃止。短く勝負の重いLANトーナメント「Cup」が、各地域で年2回開かれます。</p>
+</div></div>
+<div class="rv"><div class="hv c20" style="background:#151B23;padding:36px;display:flex;flex-direction:column;gap:16px;height:100%;box-sizing:border-box">
+<svg class="float" style="animation-delay:0.4s" width="56" height="56" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6l20 8v16c0 14-9 24-20 28C21 54 12 44 12 30V14Z" fill="none" stroke="#FF4D5E" stroke-width="3" stroke-linejoin="round"/><path d="M32 22v16M26 30h12" fill="none" stroke="#FF4D5E" stroke-width="3" stroke-linecap="round"/></svg>
+<div class="mono" style="font-size:14px;letter-spacing:0.1em;color:#FF4D5E;font-weight:700">PARTNER</div>
+<h3 style="margin:0;font-size:26px;line-height:1.4">パートナーの保証は、Kickoffだけ</h3>
+<p style="margin:0;color:#C3CDD6">パートナーは各地域8チーム(2026年は10チーム)。直接出場できるのは最初のKickoffのみで、Cup以降は成績で勝ち取ります。</p>
+</div></div>
+<div class="rv"><div class="hv c20" style="background:#151B23;padding:36px;display:flex;flex-direction:column;gap:16px;height:100%;box-sizing:border-box">
+<svg class="float" style="animation-delay:0.8s" width="56" height="56" viewBox="0 0 64 64" aria-hidden="true"><rect x="14" y="30" width="36" height="26" rx="3" fill="none" stroke="#45D4E0" stroke-width="3"/><path d="M22 30V20a10 10 0 0 1 19-4" fill="none" stroke="#45D4E0" stroke-width="3" stroke-linecap="round"/><path d="M32 40v6" stroke="#45D4E0" stroke-width="3" stroke-linecap="round"/></svg>
+<div class="mono" style="font-size:14px;letter-spacing:0.1em;color:#45D4E0;font-weight:700">OPEN</div>
+<h3 style="margin:0;font-size:26px;line-height:1.4">誰でも、Championsまで行ける</h3>
+<p style="margin:0;color:#C3CDD6">オープン予選を勝ち上がれば、パートナーでなくてもMastersとChampionsに出場できます。</p>
+</div></div>
+</div>
+</div>
+</section>
+
+<!-- 02 FLOW -->
+<section id="flow" style="padding:88px 24px 56px">
+<div style="max-width:1200px;margin:0 auto">
+<div class="rv" style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:24px;margin-bottom:24px">
+<div class="bignum" style="font-size:clamp(72px,10vw,128px)">02</div>
+<div style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:10px"><div class="kick">SEASON FLOW</div><h2 class="h2">1年は「予選 → 地域大会 → 世界大会」の3周</h2></div>
+</div>
+<p class="rv" style="margin:0 0 40px;max-width:720px;color:#9AA7B4">オンライン予選で勝つとLANの地域大会へ。地域大会の上位が、世界大会に進みます。これを3回くり返して、最後がChampionsです。</p>
+
+<div style="display:flex;flex-direction:column;gap:18px">
+<div class="rv"><div class="c14" style="background:#151B23;padding:26px;display:flex;flex-direction:column;gap:16px">
+<div class="mono" style="font-size:14px;letter-spacing:0.12em;color:#9AA7B4;font-weight:700">CYCLE 1</div>
+<div style="display:flex;flex-wrap:wrap;align-items:stretch;gap:12px">
+<div class="chip c10"><div class="mono" style="font-size:13px;letter-spacing:0.08em;color:#45D4E0;font-weight:700">OPEN QUALIFIERS</div><div style="font-weight:700;font-size:19px;margin-top:2px">オンライン予選</div><div style="font-size:15px;color:#9AA7B4">2026年11月〜12月</div></div>
+<div style="display:flex;align-items:center"><svg class="nudge" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" style="flex:none"><path d="M9 5l7 7-7 7" fill="none" stroke="#FF4D5E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div class="chip c10"><div class="mono" style="font-size:13px;letter-spacing:0.08em;color:#FF4D5E;font-weight:700">KICKOFF</div><div style="font-weight:700;font-size:19px;margin-top:2px">各地域のLAN大会</div><div style="font-size:15px;color:#9AA7B4">1/14〜2/7</div></div>
+<div style="display:flex;align-items:center"><svg class="nudge" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" style="flex:none"><path d="M9 5l7 7-7 7" fill="none" stroke="#FF4D5E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div class="chip c10"><div class="mono" style="font-size:13px;letter-spacing:0.08em;color:#F2F4F6;font-weight:700">MASTERS SEOUL</div><div style="font-weight:700;font-size:19px;margin-top:2px">世界大会 1回目</div><div style="font-size:15px;color:#9AA7B4">2/20〜3/7(韓国)</div></div>
+</div>
+</div></div>
+
+<div class="rv"><div class="c14" style="background:#151B23;padding:26px;display:flex;flex-direction:column;gap:16px">
+<div class="mono" style="font-size:14px;letter-spacing:0.12em;color:#9AA7B4;font-weight:700">CYCLE 2</div>
+<div style="display:flex;flex-wrap:wrap;align-items:stretch;gap:12px">
+<div class="chip c10"><div class="mono" style="font-size:13px;letter-spacing:0.08em;color:#45D4E0;font-weight:700">OPEN QUALIFIERS</div><div style="font-weight:700;font-size:19px;margin-top:2px">オンライン予選</div><div style="font-size:15px;color:#9AA7B4">シーズン中に複数回</div></div>
+<div style="display:flex;align-items:center"><svg class="nudge" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" style="flex:none"><path d="M9 5l7 7-7 7" fill="none" stroke="#FF4D5E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div class="chip c10"><div class="mono" style="font-size:13px;letter-spacing:0.08em;color:#FF4D5E;font-weight:700">CUP 1</div><div style="font-weight:700;font-size:19px;margin-top:2px">各地域のLAN大会</div><div style="font-size:15px;color:#9AA7B4">4/29〜5/23</div></div>
+<div style="display:flex;align-items:center"><svg class="nudge" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" style="flex:none"><path d="M9 5l7 7-7 7" fill="none" stroke="#FF4D5E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div class="chip c10"><div class="mono" style="font-size:13px;letter-spacing:0.08em;color:#F2F4F6;font-weight:700">MASTERS VALENCIA</div><div style="font-weight:700;font-size:19px;margin-top:2px">世界大会 2回目</div><div style="font-size:15px;color:#9AA7B4">6/5〜6/20(スペイン)</div></div>
+</div>
+</div></div>
+
+<div class="rv"><div class="c14" style="background:#151B23;padding:26px;display:flex;flex-direction:column;gap:16px">
+<div class="mono" style="font-size:14px;letter-spacing:0.12em;color:#9AA7B4;font-weight:700">CYCLE 3</div>
+<div style="display:flex;flex-wrap:wrap;align-items:stretch;gap:12px">
+<div class="chip c10"><div class="mono" style="font-size:13px;letter-spacing:0.08em;color:#45D4E0;font-weight:700">OPEN QUALIFIERS</div><div style="font-weight:700;font-size:19px;margin-top:2px">オンライン予選</div><div style="font-size:15px;color:#9AA7B4">シーズン中に複数回</div></div>
+<div style="display:flex;align-items:center"><svg class="nudge" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" style="flex:none"><path d="M9 5l7 7-7 7" fill="none" stroke="#FF4D5E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div class="chip c10"><div class="mono" style="font-size:13px;letter-spacing:0.08em;color:#FF4D5E;font-weight:700">CUP 2</div><div style="font-weight:700;font-size:19px;margin-top:2px">各地域のLAN大会</div><div style="font-size:15px;color:#9AA7B4">8/5〜8/29</div></div>
+<div style="display:flex;align-items:center"><svg class="nudge" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" style="flex:none"><path d="M9 5l7 7-7 7" fill="none" stroke="#FF4D5E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div class="chip c10"><div class="mono" style="font-size:13px;letter-spacing:0.08em;color:#F2F4F6;font-weight:700">CHAMPIONS AUSTIN</div><div style="font-weight:700;font-size:19px;margin-top:2px">世界一を決める大会</div><div style="font-size:15px;color:#9AA7B4">9/16〜10/10(アメリカ)</div></div>
+</div>
+</div></div>
+</div>
+
+<!-- calendar -->
+<div style="margin-top:64px;display:flex;flex-direction:column;gap:18px">
+<h3 class="rv" style="margin:0;font-size:28px">カレンダーで見ると</h3>
+<div class="rv" style="display:flex;flex-wrap:wrap;gap:22px;font-size:15px;color:#C3CDD6">
+<div style="display:flex;align-items:center;gap:8px"><div style="width:22px;height:10px;background:#45D4E0"></div>オンライン予選</div>
+<div style="display:flex;align-items:center;gap:8px"><div style="width:22px;height:10px;background:#FF4D5E"></div>地域のLAN大会(Kickoff・Cup)</div>
+<div style="display:flex;align-items:center;gap:8px"><div style="width:22px;height:10px;background:#F2F4F6"></div>世界大会(Masters・Champions)</div>
+</div>
+<div style="overflow-x:auto;background:#151B23;padding:8px 24px 0">
+<div style="position:relative;min-width:980px;height:310px">
+<div style="position:absolute;left:0;right:0;top:146px;height:2px;background:#26303B"></div>
+
+<div class="gx" style="position:absolute;left:0%;width:16.4%;top:140px;height:14px;background:#45D4E0"></div>
+<div class="gx" style="position:absolute;left:20.3%;width:6.6%;top:140px;height:14px;background:#FF4D5E"></div>
+<div class="gx" style="position:absolute;left:30.4%;width:4.1%;top:140px;height:14px;background:#F2F4F6"></div>
+<div class="gx" style="position:absolute;left:49%;width:6.6%;top:140px;height:14px;background:#FF4D5E"></div>
+<div class="gx" style="position:absolute;left:59.2%;width:4.1%;top:140px;height:14px;background:#F2F4F6"></div>
+<div class="gx" style="position:absolute;left:75.9%;width:6.6%;top:140px;height:14px;background:#FF4D5E"></div>
+<div class="gx" style="position:absolute;left:87.4%;width:6.6%;top:140px;height:14px;background:#F2F4F6"></div>
+
+<div style="position:absolute;left:calc(8.2% - 1px);top:104px;width:2px;height:36px;background:#45D4E0"></div>
+<div style="position:absolute;left:calc(23.6% - 1px);top:154px;width:2px;height:42px;background:#FF4D5E"></div>
+<div style="position:absolute;left:calc(32.5% - 1px);top:104px;width:2px;height:36px;background:#F2F4F6"></div>
+<div style="position:absolute;left:calc(52.3% - 1px);top:154px;width:2px;height:42px;background:#FF4D5E"></div>
+<div style="position:absolute;left:calc(61.3% - 1px);top:104px;width:2px;height:36px;background:#F2F4F6"></div>
+<div style="position:absolute;left:calc(79.2% - 1px);top:154px;width:2px;height:42px;background:#FF4D5E"></div>
+<div style="position:absolute;left:calc(90.7% - 1px);top:104px;width:2px;height:36px;background:#F2F4F6"></div>
+
+<div class="rv" style="position:absolute;left:calc(8.2% - 62px);top:36px;width:124px;height:68px;box-sizing:border-box;padding:8px 10px;background:#1B2430;text-align:center;line-height:1.5"><div class="mono" style="font-size:13px;color:#45D4E0">11〜12月</div><div style="font-weight:700;font-size:14px">オンライン予選</div></div>
+<div class="rv" style="position:absolute;left:calc(23.6% - 62px);top:196px;width:124px;height:68px;box-sizing:border-box;padding:8px 10px;background:#1B2430;text-align:center;line-height:1.5"><div class="mono" style="font-size:13px;color:#FF4D5E">1/14〜2/7</div><div style="font-weight:700;font-size:14px">Kickoff</div></div>
+<div class="rv" style="position:absolute;left:calc(32.5% - 62px);top:36px;width:124px;height:68px;box-sizing:border-box;padding:8px 10px;background:#1B2430;text-align:center;line-height:1.5"><div class="mono" style="font-size:13px;color:#F2F4F6">2/20〜3/7</div><div style="font-weight:700;font-size:14px">Masters Seoul</div></div>
+<div class="rv" style="position:absolute;left:calc(52.3% - 62px);top:196px;width:124px;height:68px;box-sizing:border-box;padding:8px 10px;background:#1B2430;text-align:center;line-height:1.5"><div class="mono" style="font-size:13px;color:#FF4D5E">4/29〜5/23</div><div style="font-weight:700;font-size:14px">Cup 1</div></div>
+<div class="rv" style="position:absolute;left:calc(61.3% - 62px);top:36px;width:124px;height:68px;box-sizing:border-box;padding:8px 10px;background:#1B2430;text-align:center;line-height:1.5"><div class="mono" style="font-size:13px;color:#F2F4F6">6/5〜6/20</div><div style="font-weight:700;font-size:14px">Masters Valencia</div></div>
+<div class="rv" style="position:absolute;left:calc(79.2% - 62px);top:196px;width:124px;height:68px;box-sizing:border-box;padding:8px 10px;background:#1B2430;text-align:center;line-height:1.5"><div class="mono" style="font-size:13px;color:#FF4D5E">8/5〜8/29</div><div style="font-weight:700;font-size:14px">Cup 2</div></div>
+<div class="rv" style="position:absolute;left:calc(90.7% - 62px);top:36px;width:124px;height:68px;box-sizing:border-box;padding:8px 10px;background:#1B2430;text-align:center;line-height:1.5"><div class="mono" style="font-size:13px;color:#F2F4F6">9/16〜10/10</div><div style="font-weight:700;font-size:14px">Champions</div></div>
+
+<div class="mono" style="position:absolute;left:0%;top:282px;font-size:13px;color:#9AA7B4">2026.11</div>
+<div class="mono" style="position:absolute;left:8.2%;top:282px;font-size:13px;color:#9AA7B4">12</div>
+<div class="mono" style="position:absolute;left:16.7%;top:282px;font-size:13px;color:#9AA7B4">2027.1</div>
+<div class="mono" style="position:absolute;left:25.2%;top:282px;font-size:13px;color:#9AA7B4">2</div>
+<div class="mono" style="position:absolute;left:32.9%;top:282px;font-size:13px;color:#9AA7B4">3</div>
+<div class="mono" style="position:absolute;left:41.4%;top:282px;font-size:13px;color:#9AA7B4">4</div>
+<div class="mono" style="position:absolute;left:49.6%;top:282px;font-size:13px;color:#9AA7B4">5</div>
+<div class="mono" style="position:absolute;left:58.1%;top:282px;font-size:13px;color:#9AA7B4">6</div>
+<div class="mono" style="position:absolute;left:66.3%;top:282px;font-size:13px;color:#9AA7B4">7</div>
+<div class="mono" style="position:absolute;left:74.8%;top:282px;font-size:13px;color:#9AA7B4">8</div>
+<div class="mono" style="position:absolute;left:83.3%;top:282px;font-size:13px;color:#9AA7B4">9</div>
+<div class="mono" style="position:absolute;left:91.5%;top:282px;font-size:13px;color:#9AA7B4">10</div>
+</div>
+</div>
+<p style="margin:0;font-size:15px;color:#9AA7B4">日付は全地域をまとめた期間です。オープン予選は2回目以降も、CupやMastersと並行して開かれます。</p>
+</div>
+</div>
+</section>
+
+<!-- 03 SYSTEM -->
+<section id="system" style="padding:88px 24px 56px">
+<div style="max-width:1200px;margin:0 auto">
+<div class="rv" style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:24px;margin-bottom:48px">
+<div class="bignum" style="font-size:clamp(72px,10vw,128px)">03</div>
+<div style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:10px"><div class="kick">OPEN SYSTEM</div><h2 class="h2">パートナーとオープンチームが、同じ土俵で戦う</h2></div>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:20px">
+
+<div class="rv"><div class="c20" style="background:#151B23;padding:34px;display:flex;flex-direction:column;gap:22px;height:100%;box-sizing:border-box">
+<h3 style="margin:0;font-size:24px">Kickoffに出る12チームの内訳</h3>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="font-size:15px;color:#9AA7B4">Americas / EMEA / Pacific</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<div class="sq c8" style="background:#FF4D5E">P</div><div class="sq c8" style="background:#FF4D5E">P</div><div class="sq c8" style="background:#FF4D5E">P</div><div class="sq c8" style="background:#FF4D5E">P</div><div class="sq c8" style="background:#FF4D5E">P</div><div class="sq c8" style="background:#FF4D5E">P</div><div class="sq c8" style="background:#FF4D5E">P</div><div class="sq c8" style="background:#FF4D5E">P</div>
+<div class="sq c8" style="background:#45D4E0">O</div><div class="sq c8" style="background:#45D4E0">O</div><div class="sq c8" style="background:#45D4E0">O</div><div class="sq c8" style="background:#45D4E0">O</div>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="font-size:15px;color:#9AA7B4">China</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<div class="sq c8" style="background:#FF4D5E">P</div><div class="sq c8" style="background:#FF4D5E">P</div><div class="sq c8" style="background:#FF4D5E">P</div><div class="sq c8" style="background:#FF4D5E">P</div><div class="sq c8" style="background:#FF4D5E">P</div><div class="sq c8" style="background:#FF4D5E">P</div><div class="sq c8" style="background:#FF4D5E">P</div><div class="sq c8" style="background:#FF4D5E">P</div>
+<div class="sq c8" style="background:#F2F4F6">V</div><div class="sq c8" style="background:#F2F4F6">V</div>
+<div class="sq c8" style="background:#45D4E0">O</div><div class="sq c8" style="background:#45D4E0">O</div>
+</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:20px;font-size:15px;color:#C3CDD6">
+<div><b style="color:#FF4D5E">P</b> パートナー</div>
+<div><b style="color:#45D4E0">O</b> オープン予選から</div>
+<div><b style="color:#F2F4F6">V</b> ビジター(Chinaのみ)</div>
+</div>
+<p style="margin:0;color:#C3CDD6">Kickoffの上位3チームが、最初の世界大会Masters Seoulへ進みます。</p>
+</div></div>
+
+<div class="rv"><div class="c20" style="background:#151B23;padding:34px;display:flex;flex-direction:column;gap:12px;height:100%;box-sizing:border-box">
+<h3 style="margin:0 0 4px;font-size:24px">パートナーが勝てなかったら?</h3>
+<div class="chip c10" style="flex:none"><div class="mono" style="font-size:13px;letter-spacing:0.08em;color:#FF4D5E;font-weight:700">STEP 1</div><div style="font-weight:700">CupやMastersで上位に入る</div><div style="font-size:15px;color:#9AA7B4">次の大会へ進める</div></div>
+<div style="display:flex;justify-content:center"><svg class="nudgey" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9l7 7 7-7" fill="none" stroke="#FF4D5E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div class="chip c10" style="flex:none"><div class="mono" style="font-size:13px;letter-spacing:0.08em;color:#FF4D5E;font-weight:700">STEP 2</div><div style="font-weight:700">上位に入れない</div><div style="font-size:15px;color:#9AA7B4">Open Playoffsに回り、自力で勝ち上がる</div></div>
+<div style="display:flex;justify-content:center"><svg class="nudgey" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9l7 7 7-7" fill="none" stroke="#FF4D5E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div class="chip c10" style="flex:none"><div class="mono" style="font-size:13px;letter-spacing:0.08em;color:#FF4D5E;font-weight:700">STEP 3</div><div style="font-weight:700">成績が悪い・実績のない新チーム</div><div style="font-size:15px;color:#9AA7B4">次のオープン予選の最初からやり直し</div></div>
+</div></div>
+
+<div class="rv"><div class="c20" style="background:#151B23;padding:34px;display:flex;flex-direction:column;gap:18px;height:100%;box-sizing:border-box">
+<h3 style="margin:0;font-size:24px">ロスター継続ルール</h3>
+<div style="display:flex;align-items:center;gap:12px" role="img" aria-label="5人のうち3人が塗りつぶし、2人が空白">
+<div class="beat" style="width:40px;height:40px;border-radius:50%;background:#FF4D5E"></div>
+<div class="beat" style="animation-delay:0.2s;width:40px;height:40px;border-radius:50%;background:#FF4D5E"></div>
+<div class="beat" style="animation-delay:0.4s;width:40px;height:40px;border-radius:50%;background:#FF4D5E"></div>
+<div style="width:34px;height:34px;border-radius:50%;border:3px solid #9AA7B4;box-sizing:border-box"></div>
+<div style="width:34px;height:34px;border-radius:50%;border:3px solid #9AA7B4;box-sizing:border-box"></div>
+</div>
+<p style="margin:0;color:#C3CDD6">5人のうち3人を残せば、チームはポイントと出場資格を引き継げます。主力が入れ替わっても、積み上げが消えない仕組みです。</p>
+</div></div>
+
+<div class="rv"><div class="c20" style="background:#151B23;padding:34px;display:flex;flex-direction:column;gap:16px;height:100%;box-sizing:border-box">
+<h3 style="margin:0;font-size:24px">Chinaだけは、少し違う</h3>
+<p style="margin:0;color:#C3CDD6">Chinaにはビジターチームという昇格・降格の枠が残ります。パートナーとビジターは、Kickoffと最初の2回のCupに直接出場できます。</p>
+<p style="margin:0;color:#C3CDD6">Pacificには、南アジアやオセアニアのチームが出る敗者復活戦(LCQ)があり、最後の1枠を争います。</p>
+</div></div>
+
+</div>
+</div>
+</section>
+
+<!-- 04 EVENTS -->
+<section id="events" style="padding:88px 24px 56px">
+<div style="max-width:1200px;margin:0 auto">
+<div class="rv" style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:24px;margin-bottom:48px">
+<div class="bignum" style="font-size:clamp(72px,10vw,128px)">04</div>
+<div style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:10px"><div class="kick">EVENTS</div><h2 class="h2">5種類の大会ガイド</h2></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:16px">
+<div class="rv"><div class="hv c14" style="background:#151B23;padding:26px;display:flex;flex-direction:column;gap:12px;height:100%;box-sizing:border-box">
+<div class="bignum" style="font-size:60px;-webkit-text-stroke-color:#45D4E0">01</div>
+<h3 style="margin:0;font-size:22px;line-height:1.3">Open Qualifiers</h3>
+<div class="mono" style="font-size:13px;color:#9AA7B4">オンライン</div>
+<ul style="margin:0;padding-left:20px;color:#C3CDD6;font-size:16px;line-height:1.7"><li>世界16地域で開催</li><li>誰でも参加できる</li><li>勝つとKickoffかCupへ</li></ul>
+</div></div>
+<div class="rv"><div class="hv c14" style="background:#151B23;padding:26px;display:flex;flex-direction:column;gap:12px;height:100%;box-sizing:border-box">
+<div class="bignum" style="font-size:60px">02</div>
+<h3 style="margin:0;font-size:22px;line-height:1.3">Kickoff</h3>
+<div class="mono" style="font-size:13px;color:#9AA7B4">LAN・1月</div>
+<ul style="margin:0;padding-left:20px;color:#C3CDD6;font-size:16px;line-height:1.7"><li>12チームで開催</li><li>3敗で敗退するトリプルエリミネーション</li><li>上位3チームがMastersへ</li></ul>
+</div></div>
+<div class="rv"><div class="hv c14" style="background:#151B23;padding:26px;display:flex;flex-direction:column;gap:12px;height:100%;box-sizing:border-box">
+<div class="bignum" style="font-size:60px">03</div>
+<h3 style="margin:0;font-size:22px;line-height:1.3">Cup</h3>
+<div class="mono" style="font-size:13px;color:#9AA7B4">LAN・各地域で年2回</div>
+<ul style="margin:0;padding-left:20px;color:#C3CDD6;font-size:16px;line-height:1.7"><li>最後の週末は観客を入れた決勝</li><li>Cup 1はMasters Valenciaへ</li><li>Cup 2はChampionsへ</li></ul>
+</div></div>
+<div class="rv"><div class="hv c14" style="background:#151B23;padding:26px;display:flex;flex-direction:column;gap:12px;height:100%;box-sizing:border-box">
+<div class="bignum" style="font-size:60px;-webkit-text-stroke-color:#F2F4F6">04</div>
+<h3 style="margin:0;font-size:22px;line-height:1.3">Masters</h3>
+<div class="mono" style="font-size:13px;color:#9AA7B4">世界大会・年2回</div>
+<ul style="margin:0;padding-left:20px;color:#C3CDD6;font-size:16px;line-height:1.7"><li>Seoul: 2/20〜3/7</li><li>Valencia: 6/5〜6/20</li><li>出場チーム数は未確認</li></ul>
+</div></div>
+<div class="rv"><div class="hv c14" style="background:#151B23;padding:26px;display:flex;flex-direction:column;gap:12px;height:100%;box-sizing:border-box">
+<div class="bignum" style="font-size:60px;-webkit-text-stroke-color:#F2F4F6">05</div>
+<h3 style="margin:0;font-size:22px;line-height:1.3">Champions</h3>
+<div class="mono" style="font-size:13px;color:#9AA7B4">世界大会・年1回</div>
+<ul style="margin:0;padding-left:20px;color:#C3CDD6;font-size:16px;line-height:1.7"><li>Austin: 9/16〜10/10</li><li>Game Changers Championshipも同じ都市で</li><li>出場チーム数は未確認</li></ul>
+</div></div>
+</div>
+</div>
+</section>
+
+<!-- 05 COMPARE -->
+<section id="compare" style="padding:88px 24px 56px">
+<div style="max-width:1200px;margin:0 auto">
+<div class="rv" style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:24px;margin-bottom:48px">
+<div class="bignum" style="font-size:clamp(72px,10vw,128px)">05</div>
+<div style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:10px"><div class="kick">BEFORE &amp; AFTER</div><h2 class="h2">2026年と、どこが違う?</h2></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:20px">
+<div class="rv"><div class="c20" style="background:#151B23;padding:34px;display:flex;flex-direction:column;gap:22px;height:100%;box-sizing:border-box">
+<div class="mono" style="font-weight:700;font-size:44px;line-height:1;color:#9AA7B4">2026</div>
+<div><div class="mono" style="font-size:13px;letter-spacing:0.08em;color:#9AA7B4;font-weight:700">大会の流れ</div><div>Kickoff → Masters → Stage 1 → Masters → Stage 2 → Champions</div></div>
+<div><div class="mono" style="font-size:13px;letter-spacing:0.08em;color:#9AA7B4;font-weight:700">地域の試合</div><div>年2回のStage(グループ戦のあとプレーオフ)</div></div>
+<div><div class="mono" style="font-size:13px;letter-spacing:0.08em;color:#9AA7B4;font-weight:700">パートナー</div><div>各地域10チーム+昇格2チームの12チームが地域リーグに参加</div></div>
+<div><div class="mono" style="font-size:13px;letter-spacing:0.08em;color:#9AA7B4;font-weight:700">非パートナー</div><div>下位リーグの上位4チームがStage 2の予備戦へ</div></div>
+<div><div class="mono" style="font-size:13px;letter-spacing:0.08em;color:#9AA7B4;font-weight:700">世界大会</div><div>Masters Santiago・London、Champions Shanghai</div></div>
+</div></div>
+<div class="rv"><div class="c20" style="background:#1B2430;padding:34px;display:flex;flex-direction:column;gap:22px;height:100%;box-sizing:border-box">
+<div class="mono" style="font-weight:700;font-size:44px;line-height:1;color:#FF4D5E">2027</div>
+<div><div class="mono" style="font-size:13px;letter-spacing:0.08em;color:#45D4E0;font-weight:700">大会の流れ</div><div>Open Qualifiers → Kickoff → Masters → Cup 1 → Masters → Cup 2 → Champions</div></div>
+<div><div class="mono" style="font-size:13px;letter-spacing:0.08em;color:#45D4E0;font-weight:700">地域の試合</div><div>Stageは廃止。LANのCupが年2回</div></div>
+<div><div class="mono" style="font-size:13px;letter-spacing:0.08em;color:#45D4E0;font-weight:700">パートナー</div><div>各地域8チーム。出場が保証されるのはKickoffのみ</div></div>
+<div><div class="mono" style="font-size:13px;letter-spacing:0.08em;color:#45D4E0;font-weight:700">非パートナー</div><div>オープン予選からMasters・Championsまで直接つながる</div></div>
+<div><div class="mono" style="font-size:13px;letter-spacing:0.08em;color:#45D4E0;font-weight:700">世界大会</div><div>Masters Seoul・Valencia、Champions Austin</div></div>
+</div></div>
+</div>
+</div>
+</section>
+
+<!-- 06 PACIFIC -->
+<section id="pacific" style="padding:88px 24px 56px">
+<div style="max-width:1200px;margin:0 auto">
+<div class="rv" style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:24px;margin-bottom:24px">
+<div class="bignum" style="font-size:clamp(72px,10vw,128px)">06</div>
+<div style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:10px"><div class="kick">PACIFIC</div><h2 class="h2">日本のファンへ。Cup 2は、東京。</h2></div>
+</div>
+<p class="rv" style="margin:0 0 40px;max-width:720px;color:#9AA7B4">Pacificの地域大会は、バンコク、マニラ、東京の3都市で開かれます。</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:20px">
+
+<div class="rv"><div class="hv c20" style="background:#151B23;padding:32px 32px 0;display:flex;flex-direction:column;gap:10px;overflow:hidden">
+<div class="mono" style="font-size:13px;letter-spacing:0.08em;color:#FF4D5E;font-weight:700">KICKOFF</div>
+<div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:42px;line-height:1.1">BANGKOK</div>
+<div style="color:#C3CDD6">タイ / 1月11日〜31日</div>
+<svg viewBox="0 0 300 120" aria-hidden="true" style="width:100%;height:120px;display:block;margin-top:12px"><g fill="#26303B"><rect x="0" y="66" width="32" height="54"/><rect x="34" y="44" width="30" height="76"/><rect x="66" y="78" width="34" height="42"/><rect x="102" y="58" width="28" height="62"/><polygon points="140,120 140,76 147,76 147,56 153,56 153,36 151,36 156,6 161,36 159,36 159,56 165,56 165,76 172,76 172,120"/><rect x="178" y="70" width="30" height="50"/><rect x="210" y="48" width="32" height="72"/><rect x="244" y="84" width="26" height="36"/><rect x="272" y="60" width="28" height="60"/></g></svg>
+</div></div>
+
+<div class="rv"><div class="hv c20" style="background:#151B23;padding:32px 32px 0;display:flex;flex-direction:column;gap:10px;overflow:hidden">
+<div class="mono" style="font-size:13px;letter-spacing:0.08em;color:#FF4D5E;font-weight:700">CUP 1</div>
+<div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:42px;line-height:1.1">MANILA</div>
+<div style="color:#C3CDD6">フィリピン / 5月6日〜23日</div>
+<svg viewBox="0 0 300 120" aria-hidden="true" style="width:100%;height:120px;display:block;margin-top:12px"><g fill="#26303B"><circle cx="232" cy="52" r="20"/><rect x="0" y="80" width="30" height="40"/><rect x="32" y="56" width="26" height="64"/><rect x="60" y="72" width="34" height="48"/><rect x="96" y="34" width="28" height="86"/><rect x="126" y="62" width="30" height="58"/><rect x="158" y="46" width="26" height="74"/><rect x="186" y="82" width="34" height="38"/><rect x="222" y="70" width="28" height="50"/><rect x="252" y="50" width="24" height="70"/><rect x="278" y="86" width="22" height="34"/></g></svg>
+</div></div>
+
+<div class="rv"><div class="hv c20" style="background:#FF4D5E !important;color:#0D1117;padding:32px 32px 0;display:flex;flex-direction:column;gap:10px;overflow:hidden;position:relative">
+<div class="shine" style="position:absolute;top:0;bottom:0;left:0;width:22%;background:#FFFFFF;opacity:0.22"></div>
+<div class="mono" style="font-size:13px;letter-spacing:0.08em;font-weight:700;position:relative">CUP 2</div>
+<div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:42px;line-height:1.1;position:relative">TOKYO</div>
+<div style="font-weight:700;position:relative">日本 / 8月12日〜29日</div>
+<svg viewBox="0 0 300 120" aria-hidden="true" style="width:100%;height:120px;display:block;margin-top:12px;position:relative"><g fill="#0D1117" fill-opacity="0.3"><rect x="0" y="74" width="30" height="46"/><rect x="32" y="50" width="28" height="70"/><rect x="62" y="82" width="32" height="38"/><rect x="96" y="60" width="26" height="60"/><rect x="190" y="68" width="30" height="52"/><rect x="222" y="44" width="28" height="76"/><rect x="252" y="80" width="26" height="40"/><rect x="278" y="62" width="22" height="58"/><polygon points="126,120 148,34 152,34 174,120 164,120 150,62 136,120"/><rect x="142" y="50" width="16" height="6"/><rect x="149" y="6" width="2" height="30"/></g></svg>
+</div></div>
+</div>
+<p class="rv" style="margin:28px 0 0;color:#C3CDD6;max-width:760px">日本単独のオープン予選もあり、勝てばKickoffへの道が開けます(詳細は11月初旬に発表予定と報じられています)。東京の会場やチケットの情報は、まだ確認できていません。</p>
+<p style="margin:8px 0 0;font-size:15px;color:#9AA7B4">Pacific内の正確な日程は報道ベースです。</p>
+</div>
+</section>
+
+<!-- 07 MONEY -->
+<section id="money" style="padding:88px 24px 56px">
+<div style="max-width:1200px;margin:0 auto">
+<div class="rv" style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:24px;margin-bottom:24px">
+<div class="bignum" style="font-size:clamp(72px,10vw,128px)">07</div>
+<div style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:10px"><div class="kick">SUPPORT</div><h2 class="h2">進むほど、倍になる支援金</h2></div>
+</div>
+<p class="rv" style="margin:0 0 40px;max-width:720px;color:#9AA7B4">パートナーでないチームが出場権を得ると、賞金とは別に固定額の支援金が出ます。</p>
+<div class="rv"><div class="c20" style="background:#151B23;padding:44px 32px 32px">
+<div style="display:flex;align-items:flex-end;gap:24px;max-width:780px;margin:0 auto" role="img" aria-label="支援金は、KickoffまたはCupが10万ドル、Mastersが20万ドル、Championsが40万ドル">
+<div style="flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:12px"><div class="mono" style="font-weight:700;font-size:clamp(18px,3.2vw,34px);color:#45D4E0">$100,000</div><div class="gy" style="height:80px;background:#45D4E0"></div><div style="font-size:15px;color:#C3CDD6">Kickoff / Cup</div></div>
+<div style="flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:12px"><div class="mono" style="font-weight:700;font-size:clamp(18px,3.2vw,34px);color:#F2F4F6">$200,000</div><div class="gy" style="height:160px;background:#F2F4F6"></div><div style="font-size:15px;color:#C3CDD6">Masters</div></div>
+<div style="flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:12px"><div class="mono" style="font-weight:700;font-size:clamp(18px,3.2vw,34px);color:#FF4D5E">$400,000</div><div class="gy" style="height:320px;background:#FF4D5E"></div><div style="font-size:15px;color:#C3CDD6">Champions</div></div>
+</div>
+</div></div>
+</div>
+</section>
+
+<!-- 08 TERMS -->
+<section id="terms" style="padding:88px 24px 56px">
+<div style="max-width:1200px;margin:0 auto">
+<div class="rv" style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:24px;margin-bottom:48px">
+<div class="bignum" style="font-size:clamp(72px,10vw,128px)">08</div>
+<div style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:10px"><div class="kick">GLOSSARY</div><h2 class="h2">用語ミニ辞典</h2></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:16px">
+<div class="rv"><div class="hv c14" style="background:#151B23;padding:26px;height:100%;box-sizing:border-box"><div style="font-weight:700;font-size:19px">パートナーチーム</div><p style="margin:8px 0 0;color:#C3CDD6;font-size:16px">Riotと2年契約(2027〜2028年)を結ぶチーム。各地域8チームで、Kickoffに直接出場できる。</p></div></div>
+<div class="rv"><div class="hv c14" style="background:#151B23;padding:26px;height:100%;box-sizing:border-box"><div style="font-weight:700;font-size:19px">オープンチーム</div><p style="margin:8px 0 0;color:#C3CDD6;font-size:16px">パートナーではなく、オープン予選から勝ち上がるチーム。</p></div></div>
+<div class="rv"><div class="hv c14" style="background:#151B23;padding:26px;height:100%;box-sizing:border-box"><div style="font-weight:700;font-size:19px">Open Playoffs</div><p style="margin:8px 0 0;color:#C3CDD6;font-size:16px">CupやMastersで上位に入れなかったチームが、再び上を目指すための段階。</p></div></div>
+<div class="rv"><div class="hv c14" style="background:#151B23;padding:26px;height:100%;box-sizing:border-box"><div style="font-weight:700;font-size:19px">LCQ(Last Chance Qualifier)</div><p style="margin:8px 0 0;color:#C3CDD6;font-size:16px">最後の1枠を決める敗者復活の予選。</p></div></div>
+<div class="rv"><div class="hv c14" style="background:#151B23;padding:26px;height:100%;box-sizing:border-box"><div style="font-weight:700;font-size:19px">トリプルエリミネーション</div><p style="margin:8px 0 0;color:#C3CDD6;font-size:16px">3回負けるまで敗退しない方式。Kickoffで使われる。</p></div></div>
+<div class="rv"><div class="hv c14" style="background:#151B23;padding:26px;height:100%;box-sizing:border-box"><div style="font-weight:700;font-size:19px">ビジターチーム</div><p style="margin:8px 0 0;color:#C3CDD6;font-size:16px">Chinaにある昇格・降格の枠。パートナーと同じく、Kickoffに直接出場できる。</p></div></div>
+</div>
+</div>
+</section>
+
+<!-- 09 OPEN QUESTIONS + SOURCES -->
+<section style="padding:64px 24px 96px">
+<div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:20px">
+<div class="rv"><div class="c20" style="background:#151B23;padding:34px;display:flex;flex-direction:column;gap:14px;height:100%;box-sizing:border-box">
+<div class="kick">まだ確定していない点</div>
+<ul style="margin:0;padding-left:22px;color:#C3CDD6;font-size:16px;display:flex;flex-direction:column;gap:6px">
+<li>Championship Pointsの扱い(Riotが検討中と報じられています)</li>
+<li>MastersとChampionsの出場チーム数</li>
+<li>Pacific以外のCupの出場チーム数</li>
+<li>Masters Seoulの終了日(3月3日から3月7日に変更と報道)</li>
+<li>Pacificの地域別日程(報道ベース)</li>
+</ul>
+<p style="margin:0;font-size:15px;color:#9AA7B4">公開前に、公式サイトで最新の日程と数字を確認してください。</p>
+</div></div>
+<div class="rv"><div class="c20" style="background:#151B23;padding:34px;display:flex;flex-direction:column;gap:14px;height:100%;box-sizing:border-box">
+<div class="mono" style="font-size:14px;letter-spacing:0.16em;color:#45D4E0;font-weight:700">出典</div>
+<ul style="margin:0;padding-left:22px;font-size:16px;display:flex;flex-direction:column;gap:6px">
+<li><a href="https://valorantesports.com/news/no-guaranteed-paths-inside-the-new-vct-2027">VALORANT Esports公式: No Guaranteed Paths</a></li>
+<li><a href="https://playvalorant.com/en-gb/news/the-new-valorant-champions-tour/">VALORANT公式: The New VALORANT Champions Tour</a></li>
+<li><a href="https://gamewith.jp/valorant/article/show/583037">ゲームウィズ: VCT 2027の日程と開催地</a></li>
+<li><a href="https://www.sheepesports.com/de/articles/masters-seoul-final-rescheduled-as-vct-pacific-confirms-2027-dates/en">Sheep Esports: Pacificの2027年日程</a></li>
+<li><a href="https://www.vlr.gg/753976/riot-unveils-details-for-vcts-2027-open-qualifiers">VLR.gg: オープン予選の詳細</a></li>
+</ul>
+</div></div>
+</div>
+<div style="max-width:1200px;margin:48px auto 0;padding-top:24px;border-top:1px solid #26303B;display:flex;flex-direction:column;gap:6px;font-size:14px;color:#9AA7B4;line-height:1.7">
+<div>VCT 2027 フォーマット図解は、Riot Gamesの「Legal Jibber Jabber」ポリシーに基づいて作成された非公式のファンプロジェクトです。Riot Gamesは本プロジェクトを承認・後援していません。</div>
+<div>This fan project was created under Riot Games' 'Legal Jibber Jabber' policy. Riot Games does not endorse or sponsor this project.</div>
+</div>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":8200}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

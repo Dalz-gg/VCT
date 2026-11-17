@@ -1,0 +1,194 @@
+{
+  "slug": "zeta-division",
+  "name": "ZETA DIVISION",
+  "name_kana": "ゼータディビジョン",
+  "short": "ZETA",
+  "region": "Pacific",
+  "country": "日本",
+  "base": {
+    "text": "東京（運営会社 GANYMEDE株式会社 の本社は東京都港区）",
+    "status": "confirmed",
+    "sources": [
+      "https://zetadivision.com/about"
+    ]
+  },
+  "team_color": "#F2F2F2",
+  "partner": {
+    "text": "2027〜2028年 VCT Pacific パートナー",
+    "status": "confirmed",
+    "sources": [
+      "https://valorantesports.com/news/introducing-the-vct-2027-partner-teams",
+      "https://zetadivision.com/news/2026/10/19/47797",
+      "https://www.thespike.gg/valorant/news/riot-officially-reveals-all-vct-2027-partner-teams/9080"
+    ]
+  },
+  "history": {
+    "text": "東京を拠点とするゲーミングブランド「ZETA DIVISION」のVALORANT部門です。2020年4月に前身の「JUPITER」としてVALORANTに参入し、2021年7月に現在のチーム名に変わりました。2023〜2026年はVCT Pacific（アジア太平洋地域のトップリーグ）のパートナーチームとして戦い、2027年からも引き続きパートナーとして参戦します。",
+    "status": "confirmed",
+    "sources": [
+      "https://zetadivision.com/about",
+      "https://zetadivision.com/news/2026/10/19/47797",
+      "https://liquipedia.net/valorant/ZETA_DIVISION"
+    ]
+  },
+  "achievements": [
+    {
+      "text": "VALORANT Masters Reykjavík 2022 3位（日本のチームとして初の国際大会入賞と報じられています）",
+      "status": "reported",
+      "sources": [
+        "https://www.gamespark.jp/article/2022/04/24/118015.html",
+        "https://liquipedia.net/valorant/ZETA_DIVISION/Results"
+      ]
+    },
+    {
+      "text": "VALORANT Champions 2022（イスタンブール）出場",
+      "status": "confirmed",
+      "sources": [
+        "https://zetadivision.com/about"
+      ]
+    },
+    {
+      "text": "VCT 2022 Stage 1 Challengers Japan プレーオフ 優勝",
+      "status": "confirmed",
+      "sources": [
+        "https://zetadivision.com/about"
+      ]
+    },
+    {
+      "text": "VCT Pacific 2023 リーグ戦4位・プレーオフ5〜6位",
+      "status": "confirmed",
+      "sources": [
+        "https://zetadivision.com/about"
+      ]
+    },
+    {
+      "text": "VCT Pacific Last Chance Qualifier 2023 優勝（VALORANT Champions 2023 ロサンゼルスに出場）",
+      "status": "confirmed",
+      "sources": [
+        "https://zetadivision.com/about"
+      ]
+    },
+    {
+      "text": "VCT 2021 Masters Berlin 出場（13〜15位）",
+      "status": "confirmed",
+      "sources": [
+        "https://zetadivision.com/about"
+      ]
+    },
+    {
+      "text": "First Strike Japan 2020 優勝（JUPITER時代）",
+      "status": "reported",
+      "sources": [
+        "https://liquipedia.net/valorant/ZETA_DIVISION/Results"
+      ]
+    }
+  ],
+  "roster": {
+    "as_of": "2026-11-16",
+    "status": "reported",
+    "sources": [
+      "https://liquipedia.net/valorant/ZETA_DIVISION",
+      "https://www.vlr.gg/team/5448/zeta-division",
+      "https://zetadivision.com/news/2026/11/03/47546",
+      "https://zetadivision.com/news/2025/12/16/39973"
+    ],
+    "players": [
+      {
+        "ign": "SugarZ3ro",
+        "name": "渡邊 翔太",
+        "country": "日本",
+        "role": "コントローラー（煙で視界をさえぎる役）／IGL（試合中の指示役）",
+        "photo": null,
+        "note": "2021年12月加入。2026年シーズン終了後も非アクティブ扱いになっていない唯一の選手です。海外メディア（Sheep Esports、2026年11月10日）がCrazy Raccoonへの移籍見込みを報じていますが、チーム・本人からの発表はなく、記事本文も確認できていません（未確認）。"
+      },
+      {
+        "ign": "eKo",
+        "name": "염왕룡（Yeom Wang-ryong）",
+        "country": "韓国",
+        "role": "イニシエーター／デュエリスト（フレックス）",
+        "photo": null,
+        "note": "2026年10月22日から非アクティブ（控え）扱い。本人がXで移籍先を探している（LFT）と投稿したとLiquipediaが記録しています。2027年の去就は未発表です。"
+      },
+      {
+        "ign": "Absol",
+        "name": "Kazuki Fujinoki",
+        "country": "日本",
+        "role": "デュエリスト（前に出て撃ち合う役）",
+        "photo": null,
+        "note": "2025年12月にMURASH GAMINGから加入（公式発表）。2026年10月22日から非アクティブ扱い・LFT投稿ありとLiquipediaが記録。2027年の去就は未発表です。"
+      },
+      {
+        "ign": "SyouTa",
+        "name": "青木 翔太",
+        "country": "日本",
+        "role": "センチネル／コントローラー",
+        "photo": null,
+        "note": "2025年12月にMURASH GAMINGから加入（公式発表）。2026年10月22日から非アクティブ扱い・LFT投稿ありとLiquipediaが記録。2027年の去就は未発表です。"
+      }
+    ],
+    "staff": [
+      {
+        "ign": "ryota-",
+        "role": "ヘッドコーチ"
+      },
+      {
+        "ign": "XQQ",
+        "role": "アシスタントコーチ"
+      },
+      {
+        "ign": "gya9",
+        "role": "アナリスト"
+      }
+    ]
+  },
+  "featured_players": [
+    {
+      "ign": "SugarZ3ro",
+      "why": "2021年末からZETAで戦い続けてきたIGLで、チームの指示役として長く中心にいた選手です（ただし移籍報道あり。発表を待って差し替えてください）。",
+      "draft": true
+    }
+  ],
+  "playstyle": {
+    "text": "2027年のメンバーがまだ発表されていないため、プレースタイルは発表後に書き直す前提の下書きです。これまでは日本チームらしい連携の細かさと、試合中の指示役（IGL）を軸にした組み立てが持ち味として語られてきました。",
+    "draft": true
+  },
+  "highlights_2027": {
+    "text": "新フォーマットでは4年ぶりに日本国内での試合も予定されているとチームが発表しており、ファンイベントも準備中とのことです。新しいメンバー構成の発表にも注目です。",
+    "draft": true
+  },
+  "beginner_tip": {
+    "text": "日本で最も知られたチームのひとつ。2022年に世界3位になった歴史を知ると応援がもっと楽しくなります。",
+    "draft": true
+  },
+  "links": {
+    "official": "https://zetadivision.com/",
+    "x": "https://x.com/zetadivision",
+    "youtube": "https://www.youtube.com/ZETADIVISION"
+  },
+  "images": {
+    "hero": "assets/img/teams/zeta-division/hero.jpg",
+    "logo": null
+  },
+  "image_credits": [
+    {
+      "file": "assets/img/teams/zeta-division/hero.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Tokyo-Game-Show-2025_0408.jpg",
+      "author": "RuinDig/Yuki Uchida",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ],
+  "open_questions": [
+    "2027年の選手ロースターは未発表です（2026-11-16時点）。Liquipedia・VLR.ggではアクティブはSugarZ3roのみ、eKo・Absol・SyouTaは2026年10月22日から非アクティブです。",
+    "SugarZ3roのCrazy Raccoon移籍報道（Sheep Esports、2026-11-10: https://www.sheepesports.com/us/articles/sources-sugarz3ro-set-to-join-crazy-raccoon-for-vct-pacific-2027/en）は、サイトが自動アクセスを拒否（403）したため本文を確認できていません。検索結果の要約のみで、チーム・本人の発表はありません。",
+    "Xdllは2026年11月3日に契約満了で退団（公式発表）。Liquipediaは移籍先をMURASH GAMINGと記載していますが、公式発表では移籍先に触れていません。",
+    "Riot発表の日付：valorantesports.comの記事は2026年10月22日付、Liquipediaの年表は10月21日付と記載（時差の可能性）。ZETA公式の発表は10月19日付です。",
+    "Masters Reykjavík 2022の3位はGame*SparkとLiquipediaで確認。ZETA公式サイトのHISTORYページでは2022年4月の記載を見つけられませんでした。",
+    "VALORANT Champions 2022の順位：ZETA公式は「9-13位」、Liquipediaは「9th-12th」と表記が異なるため、実績欄では「出場」とだけ記載しました。",
+    "staffの役職はLiquipedia／VLR.ggによる（ryota-のヘッドコーチ就任は2026年4月2日のチーム投稿が出典とされていますが、X投稿そのものは開いていません）。2027年のスタッフ体制は未発表です。",
+    "team_colorはチームの公式カラー指定が見つからなかったため、ブランドの白黒基調に合わせた仮の値です。",
+    "選手写真：Wikimedia Commons と Flickr を検索しましたが、現ロースター選手の再利用可能な写真は見つかりませんでした。RiotのFlickr（valorantesports）にあるZETAの写真は「All rights reserved」のため使っていません。",
+    "Absolの本名はLiquipedia・VLR.ggのローマ字表記（Kazuki Fujinoki）のみ確認。漢字表記は未確認です。"
+  ],
+  "researched_at": "2026-11-16"
+}

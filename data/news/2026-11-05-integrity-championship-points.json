@@ -1,0 +1,25 @@
+{
+  "id": "2026-11-05-integrity-championship-points",
+  "date": "2026-11-05",
+  "title": "VCT 2027の公平性ルールを公式が説明、Championship Pointsは「案」として拡大",
+  "category": "公式発表",
+  "regions": [
+    "Pacific",
+    "Japan"
+  ],
+  "teams": [],
+  "summary": "Riotが、2027年のVCTで不正を防ぐためのルールをまとめて発表しました。あわせて、Championship Points(成績に応じてもらえるポイント)をオープン予選からMastersまでほぼ全ての大会に広げる案を示しました。詳しい内容は数週間のうちに発表される予定です。",
+  "body": [
+    "オープン予選では、ランクがアセンダント以上であること、最近30日間にゲーム内の処分を受けていないことなどが条件です。選手の配信には2分以上の遅延が必要になります。予選の段階が上がるほど、ボイスの確認や会場カメラなどのチェックが厳しくなります。",
+    "Championship Pointsは、予選の段階では主に組み合わせ(シード)を決めるのに使われ、上位の大会ではChampionsの出場権を決める材料になるとされています。ポイントや進出の権利を持ち越すには、基本的に5人のうち3人以上の選手を残す必要があります。"
+  ],
+  "status": "confirmed",
+  "sources": [
+    {
+      "title": "Protecting Competitive Integrity in VCT 2027(PLAYVALORANT)",
+      "url": "https://playvalorant.com/en-us/news/game-updates/protecting-competitive-integrity-in-vct-2027/"
+    }
+  ],
+  "image": null,
+  "image_credit": null
+}

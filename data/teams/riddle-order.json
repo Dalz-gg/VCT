@@ -1,0 +1,135 @@
+{
+  "slug": "riddle-order",
+  "name": "RIDDLE ORDER",
+  "name_kana": "リドルオーダー",
+  "short": "RID",
+  "region": "Japan",
+  "tier": "open",
+  "country": "日本",
+  "base": {
+    "text": "日本",
+    "status": "reported",
+    "sources": [
+      "https://liquipedia.net/valorant/RIDDLE_ORDER"
+    ]
+  },
+  "team_color": "#E8E8E8",
+  "path_2027": {
+    "text": "VALORANT部門は2026年10月19日から活動を休止しているため、日本オープン予選には出ない見込みです。VCT 2027のパートナーには選ばれていません。",
+    "status": "reported",
+    "sources": [
+      "https://www.inside-games.jp/article/2026/10/19/189512.html",
+      "https://www.vlr.gg/777336/vct-pacific-organizations-announce-partner-status"
+    ]
+  },
+  "history": {
+    "text": "RIDDLE ORDERは、YouTuber・配信者のVodkaさんが2016年に立ち上げたチームです。2023年12月にZETA DIVISIONの育成チームの選手を迎えてVALORANT部門を作り、2024年シーズンから戦いました。2024年Split 2から2025年Season Finalsまで国内大会で4連覇し、Ascension Pacific(Pacificリーグへの昇格をかけた大会)に2年続けて出ました。2026年10月19日、JoXJoとgyenの契約満了による退団と、部門の活動休止を発表しました。",
+    "status": "reported",
+    "sources": [
+      "https://liquipedia.net/valorant/RIDDLE_ORDER",
+      "https://www.inside-games.jp/article/2026/10/19/189512.html",
+      "https://x.com/RIDDLEORDER/status/2112121584861245717"
+    ]
+  },
+  "achievements": [
+    {
+      "text": "VALORANT Challengers Japan 2024 Split 2 優勝",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/event/2049/challengers-league-2024-japan-split-2"
+      ]
+    },
+    {
+      "text": "VCT Ascension Pacific 2024 4位",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/event/2146/champions-tour-2024-pacific-ascension"
+      ]
+    },
+    {
+      "text": "VALORANT Challengers Japan 2025 Stage 1 メインステージ 1位、Stage 2 プレーオフ 優勝",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/event/2309/challengers-2025-japan-stage-1",
+        "https://www.vlr.gg/event/2310/challengers-2025-japan-stage-2"
+      ]
+    },
+    {
+      "text": "VALORANT Challengers Japan 2025 Season Finals 優勝",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/event/2584/challengers-league-2025-japan-finals"
+      ]
+    },
+    {
+      "text": "VCT Ascension Pacific 2025 グループステージ 9〜10位",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/event/2535/vct-2025-pacific-ascension"
+      ]
+    },
+    {
+      "text": "VALORANT Challengers Japan 2026 Split 1 Phase 2(予選段階) 4位",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/event/2847/challengers-2026-japan-split-1"
+      ]
+    },
+    {
+      "text": "VALORANT Challengers Japan 2026 Split 2 メインステージ 3位",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/event/2974/challengers-2026-japan-split-2"
+      ]
+    },
+    {
+      "text": "VALORANT Challengers Japan 2026 Season Finals 5〜6位",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/event/2991/challengers-2026-japan-season-finals"
+      ]
+    }
+  ],
+  "roster": {
+    "as_of": "2026-11-16",
+    "status": "confirmed",
+    "sources": [
+      "https://x.com/RIDDLEORDER/status/2094711876923887629",
+      "https://x.com/RIDDLEORDER/status/2112121584861245717",
+      "https://www.inside-games.jp/article/2026/10/19/189512.html"
+    ],
+    "players": [],
+    "staff": [],
+    "note": "選手はいません。2026年9月1日にSeoldam / Luca / Minty とコーチのnokaze・munが、10月19日にJoXJoとgyenが契約満了で退団し、同日に部門の活動休止が発表されました。なお、SeoldamとCaedye(元RIDDLE)はMURASH GAMINGの2027年ロスターに加わっています。"
+  },
+  "featured_players": [],
+  "playstyle": {
+    "text": "活動休止中のため、現時点では書きません。",
+    "draft": true
+  },
+  "highlights_2027": {
+    "text": "2024〜2025年の国内大会で4連覇したチームです。VALORANT部門が再開するかどうかが注目点です。",
+    "draft": true
+  },
+  "beginner_tip": {
+    "text": "2024〜25年の日本で一番勝ったチームの一つ。今は活動休止中です。",
+    "draft": true
+  },
+  "links": {
+    "official": "https://riddle.info/",
+    "x": "https://x.com/RIDDLEORDER",
+    "youtube": "https://www.youtube.com/@RIDDLE_ORDER"
+  },
+  "images": {
+    "hero": null,
+    "logo": null
+  },
+  "image_credits": [],
+  "open_questions": [
+    "活動休止を伝えた公式X投稿そのものは開けず、inside-gamesの記事(2026-10-19)で内容を確認しました。休止の期間や再開の予定は書かれていません。",
+    "Liquipediaは2026-10-19に解散と書いていますが、報道では「活動休止」です。どちらの表現を使うかは確認が必要です。",
+    "2024年Split 3の結果はVLR.ggで「1〜2位」とだけ表示され、優勝かどうかを確かめられなかったため、実績から外しました。",
+    "team_colorは仮の値です。"
+  ],
+  "researched_at": "2026-11-16"
+}

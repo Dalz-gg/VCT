@@ -1,0 +1,46 @@
+{
+  "_comment": "【テスト用の架空データ】テンプレート確認専用です。実在のチーム・選手とは関係ありません。data/teams には置かないでください。",
+  "slug": "sample-team",
+  "name": "Sample Team (テスト用)",
+  "name_kana": "サンプルチーム(架空)",
+  "short": "SMPL",
+  "region": "Pacific",
+  "country": "架空の国",
+  "base": {"text": "架空の都市(テスト用の文章です)", "status": "confirmed", "sources": ["https://example.com/official-announcement"]},
+  "team_color": "#1A1F6B",
+  "partner": {"text": "テスト用:パートナー表示の確認", "status": "reported", "sources": ["https://example.com/news-article"]},
+  "history": {"text": "これはテンプレート確認用の架空の文章です。<script>alert('xss')</script> のようなタグはそのまま文字として表示されるはずです。& や \" や ' も正しくエスケープされます。", "status": "unverified", "sources": ["https://example.com/wiki", "javascript:alert(1)"]},
+  "achievements": [
+    {"text": "架空大会 2099 優勝(テスト)", "status": "confirmed", "sources": ["https://example.com/official-announcement"]},
+    {"text": "架空カップ 準優勝(テスト)", "status": "reported", "sources": ["https://example.com/news-article"]},
+    {"text": "出典なしの実績(テスト)", "status": "unverified"}
+  ],
+  "roster": {
+    "as_of": "2099-01-01",
+    "status": "reported",
+    "sources": ["https://example.com/roster"],
+    "players": [
+      {"ign": "TestAlpha", "name": "テスト 太郎", "country": "架空の国", "role": "デュエリスト", "photo": "assets/img/site/city-tokyo.jpg", "note": "写真ありの表示確認(写真は街の風景で代用)"},
+      {"ign": "beta_test", "name": null, "country": "架空の国", "role": "コントローラー", "photo": null},
+      {"ign": "Gamma", "country": "架空の国", "role": "イニシエーター", "photo": "assets/img/teams/does-not-exist.jpg", "note": "存在しない写真パス → プレースホルダー表示"},
+      {"ign": "δelta", "role": "センチネル", "photo": "../../etc/passwd"},
+      {"ign": "VeryLongPlayerNameForWrapTest", "country": "架空の国", "role": "フレックス", "photo": null, "note": "長い名前の折り返し確認"}
+    ],
+    "staff": [{"ign": "CoachTest", "role": "ヘッドコーチ"}, {"name": "名前だけのスタッフ", "role": "アナリスト"}]
+  },
+  "featured_players": [
+    {"ign": "TestAlpha", "why": "テスト用の下書き文章です。公開ページには draft の表示が出ないことを確認します。", "draft": true},
+    {"ign": "Gamma", "why": "2人目の注目選手の表示確認です。", "draft": true}
+  ],
+  "playstyle": {"text": "テスト用の下書き(プレースタイル)です。2文目もあります。", "draft": true},
+  "highlights_2027": {"text": "テスト用の下書き(見どころ)です。", "draft": true},
+  "beginner_tip": {"text": "テスト用のひと言です。40字前後の文章を想定しています。", "draft": true},
+  "links": {"official": "https://example.com/", "x": "https://x.com/example", "youtube": null, "bad": "javascript:alert(1)"},
+  "images": {"hero": "assets/img/site/champions-la-2023.jpg", "logo": null},
+  "image_credits": [
+    {"file": "assets/img/site/champions-la-2023.jpg", "source_url": "https://commons.wikimedia.org/wiki/File:Valorant_Champions_Los_Angeles_2023.jpg", "author": "David Jiang", "license": "CC BY-SA 4.0", "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"},
+    {"file": "assets/img/site/city-tokyo.jpg", "source_url": "https://commons.wikimedia.org/wiki/File:Minato_City,_Tokyo,_Japan_(Night).jpg", "author": "David Kernan", "license": "CC BY 4.0", "license_url": "https://creativecommons.org/licenses/by/4.0/"}
+  ],
+  "open_questions": ["テスト用:確認できていない点の表示確認です。"],
+  "researched_at": "2099-01-01"
+}

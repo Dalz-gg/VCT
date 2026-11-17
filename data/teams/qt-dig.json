@@ -1,0 +1,175 @@
+{
+  "slug": "qt-dig",
+  "name": "QT DIG∞",
+  "name_kana": "キューティーディグ",
+  "short": "QTD",
+  "region": "Japan",
+  "tier": "open",
+  "country": "日本",
+  "base": {
+    "text": "日本（九州を拠点とする旧 Sengoku Gaming が前身と紹介されていますが、現在の拠点は未確認です）",
+    "status": "unverified",
+    "sources": [
+      "https://liquipedia.net/valorant/QT_DIG",
+      "https://www.thespike.gg/news/from-kyushu-to-the-world-interview-with-sengoku-gaming/269"
+    ]
+  },
+  "team_color": "#E4007F",
+  "path_2027": {
+    "text": "2027 VCT Pacific Kickoff Japan Qualifier のプレーオフ（Playoffs）に招待されています。Riot は理由を「2026 Challengers Split 2 での優勝」と説明しており、オープン予選は免除されます。",
+    "status": "confirmed",
+    "sources": [
+      "https://valorantesports.com/ja-JP/news/2027-vct-pacific-kickoff-japan-qualifier"
+    ]
+  },
+  "history": {
+    "text": "前身は2020年5月に VALORANT 部門を始めた Sengoku Gaming で、現在は QT DIG∞（DIG は Digital Innovation Gaming の略）として活動しています。2026年は VALORANT Challengers Japan の Season Finals で優勝し、VCT Pacific Stage 2 の Play-Ins に出場しました。",
+    "status": "confirmed",
+    "sources": [
+      "https://liquipedia.net/valorant/QT_DIG",
+      "https://news.mynavi.jp/article/20260806-4784390/"
+    ]
+  },
+  "achievements": [
+    {
+      "text": "VALORANT Challengers Japan 2026 Season Finals 優勝（決勝で REJECT に3-2）",
+      "status": "reported",
+      "sources": [
+        "https://news.mynavi.jp/article/20260806-4784390/",
+        "https://www.vlr.gg/event/2991/challengers-2026-japan-season-finals"
+      ]
+    },
+    {
+      "text": "VCT 2026 Pacific Stage 2 Play-Ins 出場（9〜12位）",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/team/18299/qt-dig",
+        "https://news.mynavi.jp/article/20260806-4784390/"
+      ]
+    },
+    {
+      "text": "VALORANT Challengers Japan 2026 Split 2 Main Stage 2位（総当たり5勝2敗）",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/event/2974/challengers-2026-japan-split-2"
+      ]
+    },
+    {
+      "text": "VALORANT Challengers Japan 2026 Split 1 プレーオフ 3〜4位",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/team/18299/qt-dig"
+      ]
+    },
+    {
+      "text": "Challengers 2025 Korea & Japan Showdown 3位",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/team/18299/qt-dig"
+      ]
+    }
+  ],
+  "roster": {
+    "as_of": "2026-11-16",
+    "status": "confirmed",
+    "sources": [
+      "https://x.com/QT_DIG/status/2119281758386753865",
+      "https://x.com/QT_DIG/status/2116108679124754867",
+      "https://x.com/QT_DIG/status/2105568403356610983",
+      "https://www.vlr.gg/786658/brothers-for-meteor-and-tenten-team-up-on-qt-dig"
+    ],
+    "players": [
+      {
+        "ign": "misaya",
+        "name": null,
+        "country": "日本",
+        "role": "イニシエーター（推定）／キャプテン",
+        "photo": null,
+        "note": "2021年9月から在籍。10月30日の公式投稿で新シーズンも一緒に戦うメンバーとして名前が挙がっています。"
+      },
+      {
+        "ign": "Kippei",
+        "name": "Kippei Suzuki",
+        "country": "日本",
+        "role": "コントローラー（推定）",
+        "photo": null,
+        "note": "再契約（2026年10月30日発表）。"
+      },
+      {
+        "ign": "Yuran",
+        "name": "Yushin Hato",
+        "country": "日本",
+        "role": "コントローラー／センチネル（推定）",
+        "photo": null,
+        "note": "再契約（2026年10月30日発表）。"
+      },
+      {
+        "ign": "Meteor",
+        "name": "Kim Tae-oh（김태오）",
+        "country": "韓国",
+        "role": "センチネル／デュエリスト（推定）",
+        "photo": null,
+        "note": "新加入（2026年11月8日発表）。直前は T1 に所属し、VCT 国際大会の経験があります。TenTen の兄と報じられています。"
+      },
+      {
+        "ign": "TenTen",
+        "name": "Kim Tae-young（김태영）",
+        "country": "韓国",
+        "role": "デュエリスト（推定）",
+        "photo": null,
+        "note": "新加入（2026年11月8日発表）。2026年は MURASH GAMING などでプレーしました。"
+      }
+    ],
+    "staff": [
+      {
+        "ign": "Relife",
+        "role": "ヘッドコーチ（再契約）"
+      }
+    ]
+  },
+  "featured_players": [
+    {
+      "ign": "Meteor",
+      "why": "T1 で国際大会を経験してから日本に戻ってきた選手で、その経験に注目です。",
+      "draft": true
+    },
+    {
+      "ign": "misaya",
+      "why": "2021年からチームを支える選手で、2026年の日本一も経験しています。",
+      "draft": true
+    }
+  ],
+  "playstyle": {
+    "text": "2026年の日本一を経験した3人に、韓国出身の兄弟2人が加わる新体制です。新ロスターでの公式戦はまだありません。",
+    "draft": true
+  },
+  "highlights_2027": {
+    "text": "日本王者として招待枠から出場し、新加入の兄弟がチームにどう溶け込むかが見どころです。",
+    "draft": true
+  },
+  "beginner_tip": {
+    "text": "2026年の日本王者。兄弟で同じチームに入った2人にも注目です。",
+    "draft": true
+  },
+  "links": {
+    "official": "https://qtdig.com/",
+    "x": "https://x.com/QT_DIG",
+    "youtube": "https://www.youtube.com/@QT_DIG"
+  },
+  "images": {
+    "hero": null,
+    "logo": null
+  },
+  "image_credits": [],
+  "open_questions": [
+    "Riot は招待理由を「2026 Challengers Split 2 での優勝」と書いていますが、VLR.gg では Split 2 Main Stage の1位は REJECT、QT DIG∞ は2位で、その後の Season Finals で優勝しています。表記の違いは運営者の確認が必要です。",
+    "misaya の2027年の契約は個別には発表されていません（10月30日の再契約発表は Kippei・Yuran・Relife の3人）。",
+    "IGL（司令塔）について、Liquipedia ではチーム欄で misaya、選手欄で Yuran がIGLと書かれていて、食い違いがあります。",
+    "アナリストの Dhimoruto は10月27日に契約満了で退団しました。後任のスタッフは未発表です。",
+    "Meteor と TenTen が兄弟である点は VLR.gg の報道によるもので、公式発表では確認していません。",
+    "チーム名を Sengoku Gaming から QT DIG∞ に変えた時期と、現在の拠点は確認できませんでした。",
+    "選手のロールは公式発表に記載がなく、VLR.gg の通算使用エージェントからの推定です。",
+    "team_color（#E4007F）は仮の値です。運営者の確認が必要です。"
+  ],
+  "researched_at": "2026-11-16"
+}

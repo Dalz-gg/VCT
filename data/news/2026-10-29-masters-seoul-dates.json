@@ -1,0 +1,32 @@
+{
+  "id": "2026-10-29-masters-seoul-dates",
+  "date": "2026-10-29",
+  "title": "Masters Seoulの日程、公式サイトでは2月20日〜3月7日に",
+  "category": "大会・日程",
+  "regions": [
+    "Pacific"
+  ],
+  "teams": [],
+  "summary": "2027年最初の世界大会「Masters Seoul」の終了日が、公式サイトの大会ページで3月7日と表示されています。10月15日の発表画像では2月20日〜3月3日とされていました。",
+  "body": [
+    "VALORANT Esports公式サイトの大会ページでは、Masters Seoulが2027年2月20日から3月7日までと表示されています。開始日は変わらず、終わりの日が後ろにずれた形です。",
+    "PacificのKickoffで上位3チームに入ると、このMasters Seoulに出場できます。日程が変わった理由は、公式からは説明されていません。"
+  ],
+  "status": "confirmed",
+  "sources": [
+    {
+      "title": "Events(VALORANT Esports 公式大会ページ)",
+      "url": "https://valorantesports.com/en-US/events"
+    },
+    {
+      "title": "VCT 2027: The Global Tour(VALORANT Esports)",
+      "url": "https://valorantesports.com/en-US/news/vct-2027-the-global-tour"
+    },
+    {
+      "title": "VCT 2027 Schedule Lists Masters Seoul Through March 7(eXputer)",
+      "url": "https://exputer.com/news/games/vct-2027-masters-seoul-march-7-pacific-schedule/"
+    }
+  ],
+  "image": null,
+  "image_credit": null
+}

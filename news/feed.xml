@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja">
+  <title>VCT ファンガイド(非公式) ニュース</title>
+  <subtitle>VCTと日本のVALORANTシーンのニュース(非公式ファンサイト)</subtitle>
+  <id>tag:vct-fan-guide,2026:news</id>
+  <link rel="alternate" type="text/html" href="index.html"/>
+  <link rel="self" type="application/atom+xml" href="feed.xml"/>
+  <updated>2026-11-13T00:00:00+09:00</updated>
+  <author><name>VCT FAN</name></author>
+  <rights>本サイトは非公式のファンサイトです。Riot Games が承認・後援したものではなく、Riot Games または VALORANT の制作・運営に関わる方の見解を反映するものではありません。VALORANT および Riot Games は Riot Games, Inc. の商標または登録商標です。</rights>
+  <entry>
+    <title>T1にTenZ選手とcrashies選手が加入、ヘッドコーチはSacyさん</title>
+    <id>tag:vct-fan-guide,2026:news/2026-11-13-t1-tenz-crashies-sacy</id>
+    <link rel="alternate" type="text/html" href="2026-11-13-t1-tenz-crashies-sacy.html"/>
+    <updated>2026-11-13T00:00:00+09:00</updated>
+    <published>2026-11-13T00:00:00+09:00</published>
+    <category term="移籍・ロスター"/>
+    <summary>T1が、TenZ選手とcrashies選手の加入、そしてSacyさんのヘッドコーチ就任を相次いで発表しました。残留したstax選手、BuZz選手、iZu選手と合わせて5人がそろいました。</summary>
+  </entry>
+  <entry>
+    <title>Gen.GにMaKo選手・Dambi選手・Ray選手が加入</title>
+    <id>tag:vct-fan-guide,2026:news/2026-11-13-gen-g-2027-roster</id>
+    <link rel="alternate" type="text/html" href="2026-11-13-gen-g-2027-roster.html"/>
+    <updated>2026-11-13T00:00:00+09:00</updated>
+    <published>2026-11-13T00:00:00+09:00</published>
+    <category term="移籍・ロスター"/>
+    <summary>Gen.Gが、2027年に向けてMaKo選手、Dambi選手、Ray選手の加入を発表しました。11月3日にはAsh選手、Efina選手、periコーチとの契約終了も発表しています。</summary>
+  </entry>
+  <entry>
+    <title>Crazy Raccoonの2027年ロスター、元DFMのMeiy選手・Akame選手らの加入が報じられる</title>
+    <id>tag:vct-fan-guide,2026:news/2026-11-13-crazy-raccoon-roster-reports</id>
+    <link rel="alternate" type="text/html" href="2026-11-13-crazy-raccoon-roster-reports.html"/>
+    <updated>2026-11-13T00:00:00+09:00</updated>
+    <published>2026-11-13T00:00:00+09:00</published>
+    <category term="移籍・ロスター"/>
+    <summary>Crazy Raccoonの2027年のロスターについて、akame選手、Meiy選手、Aace選手、SugarZ3ro選手、CLZ選手が加わると報じられています。11月16日時点で、チームからの正式な発表はありません。</summary>
+  </entry>
+  <entry>
+    <title>MURASH GAMINGが2027年のロスターを発表、Caedye・Seoldam・Xdllが加入</title>
+    <id>tag:vct-fan-guide,2026:news/2026-11-11-murash-2027-roster</id>
+    <link rel="alternate" type="text/html" href="2026-11-11-murash-2027-roster.html"/>
+    <updated>2026-11-11T00:00:00+09:00</updated>
+    <published>2026-11-11T00:00:00+09:00</published>
+    <category term="日本"/>
+    <summary>MURASH GAMINGが、2027年シーズンのVALORANT部門のメンバーを発表しました。新たにCaedye選手、Seoldam選手、Xdll選手と、コーチのmltdwnさんが加わります。</summary>
+  </entry>
+  <entry>
+    <title>QT DIG∞にMeteor選手とTenTen選手が加入</title>
+    <id>tag:vct-fan-guide,2026:news/2026-11-08-qt-dig-meteor-tenten</id>
+    <link rel="alternate" type="text/html" href="2026-11-08-qt-dig-meteor-tenten.html"/>
+    <updated>2026-11-08T00:00:00+09:00</updated>
+    <published>2026-11-08T00:00:00+09:00</published>
+    <category term="日本"/>
+    <summary>QT DIG∞が、Meteor選手とTenTen選手の加入を発表しました。Meteor選手はT1でMasters Bangkok優勝を経験した韓国の選手です。</summary>
+  </entry>
+  <entry>
+    <title>FULL SENSEのJitBoyS選手・Killua選手が移籍先を探すと発表</title>
+    <id>tag:vct-fan-guide,2026:news/2026-11-08-full-sense-lft</id>
+    <link rel="alternate" type="text/html" href="2026-11-08-full-sense-lft.html"/>
+    <updated>2026-11-08T00:00:00+09:00</updated>
+    <published>2026-11-08T00:00:00+09:00</published>
+    <category term="移籍・ロスター"/>
+    <summary>タイのFULL SENSEに所属していたJitBoyS選手とKillua選手が、それぞれXで新しいチームを探していると発表しました。10月23日にはPrimmie選手も、契約満了が近いことから新しいチームを探すと発表しています。</summary>
+  </entry>
+  <entry>
+    <title>VCT 2027の公平性ルールを公式が説明、Championship Pointsは「案」として拡大</title>
+    <id>tag:vct-fan-guide,2026:news/2026-11-05-integrity-championship-points</id>
+    <link rel="alternate" type="text/html" href="2026-11-05-integrity-championship-points.html"/>
+    <updated>2026-11-05T00:00:00+09:00</updated>
+    <published>2026-11-05T00:00:00+09:00</published>
+    <category term="公式発表"/>
+    <summary>Riotが、2027年のVCTで不正を防ぐためのルールをまとめて発表しました。あわせて、Championship Points(成績に応じてもらえるポイント)をオープン予選からMastersまでほぼ全ての大会に広げる案を示しました。詳しい内容は数週間のうちに発表される予定です。</summary>
+  </entry>
+  <entry>
+    <title>ZETA DIVISIONのXdll選手が契約満了で退団</title>
+    <id>tag:vct-fan-guide,2026:news/2026-11-03-zeta-xdll-leaves</id>
+    <link rel="alternate" type="text/html" href="2026-11-03-zeta-xdll-leaves.html"/>
+    <updated>2026-11-03T00:00:00+09:00</updated>
+    <published>2026-11-03T00:00:00+09:00</published>
+    <category term="移籍・ロスター"/>
+    <summary>ZETA DIVISIONが、Xdll選手の契約満了による退団を発表しました。Xdll選手はのちにMURASH GAMINGへの加入が発表されています。</summary>
+  </entry>
+  <entry>
+    <title>VARRELがVALORANT部門の全選手・コーチとの契約を終了</title>
+    <id>tag:vct-fan-guide,2026:news/2026-11-03-varrel-releases</id>
+    <link rel="alternate" type="text/html" href="2026-11-03-varrel-releases.html"/>
+    <updated>2026-11-03T00:00:00+09:00</updated>
+    <published>2026-11-03T00:00:00+09:00</published>
+    <category term="日本"/>
+    <summary>VARRELが、VALORANT部門に所属する全選手とコーチングスタッフとの契約を、双方合意のうえで終了したと発表しました。</summary>
+  </entry>
+  <entry>
+    <title>T1がKDGヘッドコーチ、Meteor選手らとの別れを発表</title>
+    <id>tag:vct-fan-guide,2026:news/2026-11-02-t1-departures</id>
+    <link rel="alternate" type="text/html" href="2026-11-02-t1-departures.html"/>
+    <updated>2026-11-02T00:00:00+09:00</updated>
+    <published>2026-11-02T00:00:00+09:00</published>
+    <category term="移籍・ロスター"/>
+    <summary>T1が、ヘッドコーチのKDGさん、Masters Bangkok優勝メンバーのMeteor選手、Munchkin選手、DH選手との別れを発表しました。10月26日にはアカデミー(育成)チームの選手とコーチも全員退団しています。</summary>
+  </entry>
+  <entry>
+    <title>日本予選の招待チームはDetonatioN FocusMeとQT DIG∞</title>
+    <id>tag:vct-fan-guide,2026:news/2026-11-02-japan-qualifier-invites</id>
+    <link rel="alternate" type="text/html" href="2026-11-02-japan-qualifier-invites.html"/>
+    <updated>2026-11-02T00:00:00+09:00</updated>
+    <published>2026-11-02T00:00:00+09:00</published>
+    <category term="日本"/>
+    <summary>Kickoff日本予選で、DetonatioN FocusMe(DFM)とQT DIG∞の2チームが招待チームに選ばれました。2チームはオンライン予選が免除され、Playoffsから出場します。</summary>
+  </entry>
+  <entry>
+    <title>2027 VCT Pacific Kickoff 日本予選のエントリー開始、優勝1チームがKickoffへ</title>
+    <id>tag:vct-fan-guide,2026:news/2026-11-02-japan-kickoff-qualifier</id>
+    <link rel="alternate" type="text/html" href="2026-11-02-japan-kickoff-qualifier.html"/>
+    <updated>2026-11-02T00:00:00+09:00</updated>
+    <published>2026-11-02T00:00:00+09:00</published>
+    <category term="日本"/>
+    <summary>「2027 VCT Pacific Kickoff Japan Qualifier」のエントリーが始まりました。オンライン予選、Playoffs、オフラインのFinalsの3段階で行われ、優勝した1チームが2027年のPacific Kickoffに出場できます。Finalsは12月11日〜12日にシアターGロッソで開催予定です。</summary>
+  </entry>
+  <entry>
+    <title>DetonatioN FocusMe、選手4人とコーチ3人との契約終了を発表</title>
+    <id>tag:vct-fan-guide,2026:news/2026-11-02-dfm-releases</id>
+    <link rel="alternate" type="text/html" href="2026-11-02-dfm-releases.html"/>
+    <updated>2026-11-02T00:00:00+09:00</updated>
+    <published>2026-11-02T00:00:00+09:00</published>
+    <category term="移籍・ロスター"/>
+    <summary>DetonatioN FocusMeが、VALORANT部門の選手4人(Meiy、Akame、Caedye、yatsuka)とコーチ3人(Vorz、NorthernLights、Melofovia)との契約終了を発表しました。</summary>
+  </entry>
+  <entry>
+    <title>Paper RexからJinggg選手とd4v41選手が退団</title>
+    <id>tag:vct-fan-guide,2026:news/2026-10-31-paper-rex-jinggg-d4v41</id>
+    <link rel="alternate" type="text/html" href="2026-10-31-paper-rex-jinggg-d4v41.html"/>
+    <updated>2026-10-31T00:00:00+09:00</updated>
+    <published>2026-10-31T00:00:00+09:00</published>
+    <category term="移籍・ロスター"/>
+    <summary>Paper Rexが、長くチームの中心だったJinggg選手とd4v41選手の退団を発表しました。2人は2023年のPacific初代王者や、2025年のMasters Toronto優勝を支えた選手です。</summary>
+  </entry>
+  <entry>
+    <title>Masters Seoulの日程、公式サイトでは2月20日〜3月7日に</title>
+    <id>tag:vct-fan-guide,2026:news/2026-10-29-masters-seoul-dates</id>
+    <link rel="alternate" type="text/html" href="2026-10-29-masters-seoul-dates.html"/>
+    <updated>2026-10-29T00:00:00+09:00</updated>
+    <published>2026-10-29T00:00:00+09:00</published>
+    <category term="大会・日程"/>
+    <summary>2027年最初の世界大会「Masters Seoul」の終了日が、公式サイトの大会ページで3月7日と表示されています。10月15日の発表画像では2月20日〜3月3日とされていました。</summary>
+  </entry>
+  <entry>
+    <title>「VCT Pacific 2027の概要」公開、日本にはCupsへの直接枠が3つ</title>
+    <id>tag:vct-fan-guide,2026:news/2026-10-28-vct-pacific-2027-primer</id>
+    <link rel="alternate" type="text/html" href="2026-10-28-vct-pacific-2027-primer.html"/>
+    <updated>2026-10-28T00:00:00+09:00</updated>
+    <published>2026-10-28T00:00:00+09:00</published>
+    <category term="公式発表"/>
+    <summary>Riotが2027年のVCT Pacificのしくみをまとめた記事を公開しました。日本の地域大会からは、Cups(各地域の大きな大会)へ直接進める枠が3つ用意されています。オープン予選から勝ち上がったチームには、大会ごとに10万ドルが支払われます。</summary>
+  </entry>
+  <entry>
+    <title>Riot公式がVCT Pacificのパートナー8チームを紹介</title>
+    <id>tag:vct-fan-guide,2026:news/2026-10-23-pacific-partner-intro</id>
+    <link rel="alternate" type="text/html" href="2026-10-23-pacific-partner-intro.html"/>
+    <updated>2026-10-23T00:00:00+09:00</updated>
+    <published>2026-10-23T00:00:00+09:00</published>
+    <category term="公式発表"/>
+    <summary>Riotが、VCT Pacificの2027年以降のパートナー8チームを1チームずつ紹介する記事を公開しました。続投のチームと新しく加わるチームがあり、日本からはCrazy RaccoonとZETA DIVISIONが選ばれています。</summary>
+  </entry>
+  <entry>
+    <title>ZETA DIVISIONのeKo・SyouTa・Absolが他チームとの交渉を許可される</title>
+    <id>tag:vct-fan-guide,2026:news/2026-10-22-zeta-lft-three</id>
+    <link rel="alternate" type="text/html" href="2026-10-22-zeta-lft-three.html"/>
+    <updated>2026-10-22T00:00:00+09:00</updated>
+    <published>2026-10-22T00:00:00+09:00</published>
+    <category term="移籍・ロスター"/>
+    <summary>ZETA DIVISIONのeKo選手、SyouTa選手、Absol選手が、チームと契約したまま来季に向けて他の選択肢を探す許可を得たと、それぞれXで発表しました。いわゆる「制限付きLFT(移籍先を探している状態)」です。</summary>
+  </entry>
+  <entry>
+    <title>VCT 2027〜2028のパートナー32チームが発表</title>
+    <id>tag:vct-fan-guide,2026:news/2026-10-22-vct-2027-partners</id>
+    <link rel="alternate" type="text/html" href="2026-10-22-vct-2027-partners.html"/>
+    <updated>2026-10-22T00:00:00+09:00</updated>
+    <published>2026-10-22T00:00:00+09:00</published>
+    <category term="公式発表"/>
+    <summary>Riotが、2027年からのVCTパートナーチーム32チームを正式に発表しました。アメリカ、EMEA、Pacific、中国の4地域に8チームずつです。契約は2年ごとに更新する形です。</summary>
+  </entry>
+  <entry>
+    <title>Crazy RaccoonがVCT 2027のパートナーチームに選出、トップシーンに復帰</title>
+    <id>tag:vct-fan-guide,2026:news/2026-10-20-crazy-raccoon-return</id>
+    <link rel="alternate" type="text/html" href="2026-10-20-crazy-raccoon-return.html"/>
+    <updated>2026-10-20T00:00:00+09:00</updated>
+    <published>2026-10-20T00:00:00+09:00</published>
+    <category term="日本"/>
+    <summary>日本のCrazy Raccoonが、VCT 2027のパートナーチームに選ばれたと発表しました。Crazy Raccoonは2021年に日本代表として世界大会に出場した、日本のVALORANT初期を代表するチームです。</summary>
+  </entry>
+  <entry>
+    <title>ZETA DIVISIONがRiotとのパートナー契約を再締結、2027年もPacificで戦う</title>
+    <id>tag:vct-fan-guide,2026:news/2026-10-19-zeta-partner-renewal</id>
+    <link rel="alternate" type="text/html" href="2026-10-19-zeta-partner-renewal.html"/>
+    <updated>2026-10-19T00:00:00+09:00</updated>
+    <published>2026-10-19T00:00:00+09:00</published>
+    <category term="公式発表"/>
+    <summary>ZETA DIVISIONは、Riot Gamesとのパートナーシップを再び結び、2027年に始まる新シーズンに参戦すると発表しました。2027年もVCT Pacificの日本代表チームのひとつとして、Kickoffから出場します。</summary>
+  </entry>
+  <entry>
+    <title>DetonatioN FocusMe、2027年以降のパートナーチームに選ばれず</title>
+    <id>tag:vct-fan-guide,2026:news/2026-10-19-dfm-not-partner</id>
+    <link rel="alternate" type="text/html" href="2026-10-19-dfm-not-partner.html"/>
+    <updated>2026-10-19T00:00:00+09:00</updated>
+    <published>2026-10-19T00:00:00+09:00</published>
+    <category term="日本"/>
+    <summary>DetonatioN FocusMe(DFM)は、2027年シーズン以降のVCTパートナーチームに選ばれなかったと発表しました。DFMは2023年のVCT Pacific開始時からパートナーとして参加してきました。</summary>
+  </entry>
+  <entry>
+    <title>Champions Shanghai 2026はLOUDが優勝、Pacific勢はT1とPaper Rexがプレイオフ進出</title>
+    <id>tag:vct-fan-guide,2026:news/2026-10-18-champions-shanghai-loud</id>
+    <link rel="alternate" type="text/html" href="2026-10-18-champions-shanghai-loud.html"/>
+    <updated>2026-10-18T00:00:00+09:00</updated>
+    <published>2026-10-18T00:00:00+09:00</published>
+    <category term="結果"/>
+    <summary>2026年の世界大会「Champions Shanghai」は、ブラジルのLOUDがTeam Vitalityを3-1で破って優勝しました。LOUDはChampionsを2回制した初めてのチームになったと報じられています。Pacificからは、T1とPaper Rexなどがプレイオフに進みました。</summary>
+  </entry>
+  <entry>
+    <title>VCT 2027の開催都市と日程が発表、PacificのCup 2は東京で開催</title>
+    <id>tag:vct-fan-guide,2026:news/2026-10-15-vct-2027-global-tour</id>
+    <link rel="alternate" type="text/html" href="2026-10-15-vct-2027-global-tour.html"/>
+    <updated>2026-10-15T00:00:00+09:00</updated>
+    <published>2026-10-15T00:00:00+09:00</published>
+    <category term="大会・日程"/>
+    <summary>Riotが2027年のVCTの全体スケジュールと開催都市を発表しました。Pacificの大会はバンコク(Kickoff)、マニラ(Cup 1)、東京(Cup 2)で行われます。世界大会はMastersがソウルとバレンシア、Championsがオースティンです。</summary>
+  </entry>
+  <entry>
+    <title>VCT 2027のオープン予選、11月から始まると公式が案内</title>
+    <id>tag:vct-fan-guide,2026:news/2026-09-08-open-qualifiers-prep</id>
+    <link rel="alternate" type="text/html" href="2026-09-08-open-qualifiers-prep.html"/>
+    <updated>2026-09-08T00:00:00+09:00</updated>
+    <published>2026-09-08T00:00:00+09:00</published>
+    <category term="公式発表"/>
+    <summary>Riotは、VCT 2027の「オープン予選」が2026年11月に始まると案内しました。オープン予選は、パートナー契約のないチームでもVCTの大会に出場できる入口です。日本も対象地域のひとつです。</summary>
+  </entry>
+</feed>
