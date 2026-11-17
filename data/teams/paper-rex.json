@@ -32,18 +32,98 @@
     ]
   },
   "achievements": [
-    {"text": "VALORANT Masters Copenhagen 2022 準優勝(Pacific地域のチームとして初めて国際大会の決勝に進出)", "status": "reported", "sources": ["https://liquipedia.net/valorant/Paper_Rex"]},
-    {"text": "VCT 2023 Pacific League 優勝", "status": "reported", "sources": ["https://liquipedia.net/valorant/Paper_Rex", "https://www.vlr.gg/782896/paper-rex-parts-ways-with-jinggg-after-five-years"]},
-    {"text": "VALORANT Masters Tokyo 2023 3位", "status": "reported", "sources": ["https://liquipedia.net/valorant/Paper_Rex"]},
-    {"text": "VALORANT Champions 2023(ロサンゼルス)準優勝", "status": "reported", "sources": ["https://liquipedia.net/valorant/Paper_Rex", "https://www.vlr.gg/782896/paper-rex-parts-ways-with-jinggg-after-five-years"]},
-    {"text": "VCT 2024 Pacific Stage 1 優勝", "status": "reported", "sources": ["https://liquipedia.net/valorant/Paper_Rex"]},
-    {"text": "VALORANT Masters Toronto 2025 優勝(決勝でFNATICに3-1。チーム初の国際大会タイトル。f0rsakeN選手が大会MVP)", "status": "reported", "sources": ["https://www.vlr.gg/507868/paper-rex-wins-masters-toronto-as-the-train-reaches-final-destination", "https://liquipedia.net/valorant/Paper_Rex"]},
-    {"text": "VCT 2025 Pacific Stage 2 優勝", "status": "reported", "sources": ["https://liquipedia.net/valorant/Paper_Rex", "https://www.vlr.gg/782896/paper-rex-parts-ways-with-jinggg-after-five-years"]},
-    {"text": "VALORANT Champions 2025(パリ)4位", "status": "reported", "sources": ["https://www.vlr.gg/782896/paper-rex-parts-ways-with-jinggg-after-five-years"]},
-    {"text": "VALORANT Masters Santiago 2026 準優勝", "status": "reported", "sources": ["https://liquipedia.net/valorant/Paper_Rex", "https://www.vlr.gg/780050/d4v41-announces-lft-status-after-six-years-with-paper-rex"]},
-    {"text": "VCT 2026 Pacific Stage 1 優勝", "status": "reported", "sources": ["https://liquipedia.net/valorant/Paper_Rex", "https://www.vlr.gg/782896/paper-rex-parts-ways-with-jinggg-after-five-years"]},
-    {"text": "VALORANT Masters London 2026 準優勝(決勝でLEVIATÁNに2-3)", "status": "reported", "sources": ["https://www.vlr.gg/704013/leviat-n-earns-first-masters-title-in-3-2-victory-over-prx", "https://liquipedia.net/valorant/Paper_Rex"]},
-    {"text": "VALORANT Champions 2026(上海)ベスト8", "status": "reported", "sources": ["https://www.vlr.gg/769734/insane-t1-comeback-sends-paper-rex-into-extinction-for-2026", "https://www.vlr.gg/780050/d4v41-announces-lft-status-after-six-years-with-paper-rex"]}
+    {
+      "text": "VALORANT Masters Copenhagen 2022 準優勝(Pacific地域のチームとして初めて国際大会の決勝に進出)",
+      "status": "reported",
+      "sources": [
+        "https://liquipedia.net/valorant/Paper_Rex"
+      ]
+    },
+    {
+      "text": "VCT 2023 Pacific League 優勝",
+      "status": "reported",
+      "sources": [
+        "https://liquipedia.net/valorant/Paper_Rex",
+        "https://www.vlr.gg/782896/paper-rex-parts-ways-with-jinggg-after-five-years"
+      ]
+    },
+    {
+      "text": "VALORANT Masters Tokyo 2023 3位",
+      "status": "reported",
+      "sources": [
+        "https://liquipedia.net/valorant/Paper_Rex"
+      ]
+    },
+    {
+      "text": "VALORANT Champions 2023(ロサンゼルス)準優勝",
+      "status": "reported",
+      "sources": [
+        "https://liquipedia.net/valorant/Paper_Rex",
+        "https://www.vlr.gg/782896/paper-rex-parts-ways-with-jinggg-after-five-years"
+      ]
+    },
+    {
+      "text": "VCT 2024 Pacific Stage 1 優勝",
+      "status": "reported",
+      "sources": [
+        "https://liquipedia.net/valorant/Paper_Rex"
+      ]
+    },
+    {
+      "text": "VALORANT Masters Toronto 2025 優勝(決勝でFNATICに3-1。チーム初の国際大会タイトル。f0rsakeN選手が大会MVP)",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/507868/paper-rex-wins-masters-toronto-as-the-train-reaches-final-destination",
+        "https://liquipedia.net/valorant/Paper_Rex"
+      ]
+    },
+    {
+      "text": "VCT 2025 Pacific Stage 2 優勝",
+      "status": "reported",
+      "sources": [
+        "https://liquipedia.net/valorant/Paper_Rex",
+        "https://www.vlr.gg/782896/paper-rex-parts-ways-with-jinggg-after-five-years"
+      ]
+    },
+    {
+      "text": "VALORANT Champions 2025(パリ)4位",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/782896/paper-rex-parts-ways-with-jinggg-after-five-years"
+      ]
+    },
+    {
+      "text": "VALORANT Masters Santiago 2026 準優勝",
+      "status": "reported",
+      "sources": [
+        "https://liquipedia.net/valorant/Paper_Rex",
+        "https://www.vlr.gg/780050/d4v41-announces-lft-status-after-six-years-with-paper-rex"
+      ]
+    },
+    {
+      "text": "VCT 2026 Pacific Stage 1 優勝",
+      "status": "reported",
+      "sources": [
+        "https://liquipedia.net/valorant/Paper_Rex",
+        "https://www.vlr.gg/782896/paper-rex-parts-ways-with-jinggg-after-five-years"
+      ]
+    },
+    {
+      "text": "VALORANT Masters London 2026 準優勝(決勝でLEVIATÁNに2-3)",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/704013/leviat-n-earns-first-masters-title-in-3-2-victory-over-prx",
+        "https://liquipedia.net/valorant/Paper_Rex"
+      ]
+    },
+    {
+      "text": "VALORANT Champions 2026(上海)ベスト8",
+      "status": "reported",
+      "sources": [
+        "https://www.vlr.gg/769734/insane-t1-comeback-sends-paper-rex-into-extinction-for-2026",
+        "https://www.vlr.gg/780050/d4v41-announces-lft-status-after-six-years-with-paper-rex"
+      ]
+    }
   ],
   "roster": {
     "as_of": "2026-11-16",
@@ -56,23 +136,70 @@
       "https://www.strafe.com/news/read/paper-rex-announces-jinggg-and-d4v41-departures-ahead-of-vct-2027/"
     ],
     "players": [
-      {"ign": "f0rsakeN", "name": "Jason Susanto", "country": "インドネシア", "role": "コントローラー(フレックス)", "photo": null, "note": "2021年2月加入。2027年シーズンの残留はチーム未発表(Sheep Esportsが残留見込みと報道)。"},
-      {"ign": "something", "name": "Ilia Petrov", "country": "ロシア", "role": "デュエリスト", "photo": null, "note": "2023年3月加入。2027年シーズンの残留はチーム未発表(Sheep Esportsが残留見込みと報道)。"},
-      {"ign": "invy", "name": "Adrian Jiggs Aisa Reyes", "country": "フィリピン", "role": "イニシエーター", "photo": null, "note": "2025年12月加入。"}
+      {
+        "ign": "f0rsakeN",
+        "name": "Jason Susanto",
+        "country": "インドネシア",
+        "role": "コントローラー(フレックス)",
+        "photo": null,
+        "note": "2021年2月加入。2027年シーズンの残留はチーム未発表(Sheep Esportsが残留見込みと報道)。"
+      },
+      {
+        "ign": "something",
+        "name": "Ilia Petrov",
+        "country": "ロシア",
+        "role": "デュエリスト",
+        "photo": null,
+        "note": "2023年3月加入。2027年シーズンの残留はチーム未発表(Sheep Esportsが残留見込みと報道)。"
+      },
+      {
+        "ign": "invy",
+        "name": "Adrian Jiggs Aisa Reyes",
+        "country": "フィリピン",
+        "role": "イニシエーター",
+        "photo": null,
+        "note": "2025年12月加入。"
+      }
     ],
     "staff": [
-      {"ign": "alecks", "role": "ヘッドコーチ"},
-      {"ign": "Panda", "role": "パフォーマンスコーチ"},
-      {"ign": "Tommy", "role": "チームマネージャー"}
+      {
+        "ign": "alecks",
+        "role": "ヘッドコーチ"
+      },
+      {
+        "ign": "Panda",
+        "role": "パフォーマンスコーチ"
+      },
+      {
+        "ign": "Tommy",
+        "role": "チームマネージャー"
+      }
     ]
   },
   "featured_players": [
-    {"ign": "f0rsakeN", "why": "2021年からチームを支える中心選手で、Masters Toronto 2025では大会MVPに選ばれました。いろいろなエージェントを使いこなす器用さにも注目です。", "draft": true},
-    {"ign": "something", "why": "鋭い撃ち合いが持ち味のデュエリストで、オペレーター(高威力のスナイパーライフル)を持ったときのプレーも見どころです。", "draft": true}
+    {
+      "ign": "f0rsakeN",
+      "why": "2021年からチームを支える中心選手で、Masters Toronto 2025では大会MVPに選ばれました。いろいろなエージェントを使いこなす器用さにも注目です。",
+      "draft": true
+    },
+    {
+      "ign": "something",
+      "why": "鋭い撃ち合いが持ち味のデュエリストで、オペレーター(高威力のスナイパーライフル)を持ったときのプレーも見どころです。",
+      "draft": true
+    }
   ],
-  "playstyle": {"text": "固定の司令塔(IGL)を置かず、全員で声をかけ合って戦うスタイルで知られています。デュエリストを2人入れる構成など、積極的に前へ出る攻撃的な戦い方が特徴です。", "draft": true},
-  "highlights_2027": {"text": "長く主力だったJinggg選手とd4v41選手が退団し、新しいメンバーを迎えたチームがどのような形になるのかが2027年の見どころです。", "draft": true},
-  "beginner_tip": {"text": "全員で声をかけ合う攻めの姿勢が魅力。ラウンド序盤の動きに注目すると楽しめます。", "draft": true},
+  "playstyle": {
+    "text": "固定の司令塔(IGL)を置かず、全員で声をかけ合って戦うスタイルで知られています。デュエリストを2人入れる構成など、積極的に前へ出る攻撃的な戦い方が特徴です。",
+    "draft": true
+  },
+  "highlights_2027": {
+    "text": "長く主力だったJinggg選手とd4v41選手が退団し、新しいメンバーを迎えたチームがどのような形になるのかが2027年の見どころです。",
+    "draft": true
+  },
+  "beginner_tip": {
+    "text": "全員で声をかけ合う攻めの姿勢が魅力。ラウンド序盤の動きに注目すると楽しめます。",
+    "draft": true
+  },
   "links": {
     "official": "https://pprx.team",
     "x": "https://x.com/pprxteam",
@@ -80,7 +207,7 @@
   },
   "images": {
     "hero": "assets/img/teams/paper-rex/hero.jpg",
-    "logo": null
+    "logo": "assets/img/teams/paper-rex/logo.png"
   },
   "image_credits": [
     {
@@ -90,6 +217,14 @@
       "license": "CC BY-SA 4.0",
       "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
       "description": "VALORANT Champions 2023(ロサンゼルス)開幕日の会場の様子。写っている試合はNAVI対Team Liquidで、Paper Rexの試合ではありません。長辺1200pxに縮小して使用。"
+    },
+    {
+      "file": "assets/img/teams/paper-rex/logo.png",
+      "source_url": null,
+      "author": "",
+      "license": "運営提供",
+      "license_url": null,
+      "provided_by_owner": true
     }
   ],
   "open_questions": [

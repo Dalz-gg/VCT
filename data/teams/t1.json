@@ -180,7 +180,7 @@
   },
   "images": {
     "hero": "assets/img/teams/t1/hero.jpg",
-    "logo": null
+    "logo": "assets/img/teams/t1/logo.png"
   },
   "image_credits": [
     {
@@ -196,6 +196,14 @@
       "author": "David Jiang",
       "license": "CC BY-SA 4.0",
       "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    {
+      "file": "assets/img/teams/t1/logo.png",
+      "source_url": null,
+      "author": "",
+      "license": "運営提供",
+      "license_url": null,
+      "provided_by_owner": true
     }
   ],
   "open_questions": [

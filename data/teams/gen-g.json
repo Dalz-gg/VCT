@@ -13,7 +13,7 @@
       "https://liquipedia.net/valorant/Gen.G_Esports"
     ]
   },
-  "team_color": "#AA8B56",
+  "team_color": "#D3B985",
   "partner": {
     "text": "2027〜2028年 VCT Pacific パートナー",
     "status": "confirmed",
@@ -210,7 +210,7 @@
   },
   "images": {
     "hero": "assets/img/teams/gen-g/hero.jpg",
-    "logo": null
+    "logo": "assets/img/teams/gen-g/logo.png"
   },
   "image_credits": [
     {
@@ -219,6 +219,14 @@
       "author": "Emriquet",
       "license": "CC BY-SA 4.0",
       "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+    },
+    {
+      "file": "assets/img/teams/gen-g/logo.png",
+      "source_url": null,
+      "author": "",
+      "license": "運営提供",
+      "license_url": null,
+      "provided_by_owner": true
     }
   ],
   "open_questions": [
@@ -229,7 +237,8 @@
     "ヒーロー画像は VALORANT Champions 2022(イスタンブール)会場の写真で、Gen.Gは写っておらず同大会にも出場していません。Gen.GのVALORANT部門の再利用可能な写真は見つからなかったため、大会の雰囲気を伝える写真として使っています。他チームのページと同じ写真になる可能性があります。",
     "Wikimedia CommonsにあるGen.Gの写真(例: File:Gen.G for LG.jpg、CC BY 2.0)はリーグ・オブ・レジェンド部門の選手と広告の写真のため使用していません。",
     "選手8人とコーチ陣の再利用可能な写真は Wikimedia Commons・Flickr(CCライセンス)で見つかりませんでした。全員『写真なし』です。",
-    "Masters Madrid 2024準優勝・Pacific Stage 2 2024優勝・Stage 1 2025準優勝・EWC 2025 3位は Liquipedia と大手メディアで確認したもので、Riot公式の結果ページは開けていません(status: reported)。"
+    "Masters Madrid 2024準優勝・Pacific Stage 2 2024優勝・Stage 1 2025準優勝・EWC 2025 3位は Liquipedia と大手メディアで確認したもので、Riot公式の結果ページは開けていません(status: reported)。",
+    "チームカラー(#D3B985)は運営提供のロゴの色に合わせました。"
   ],
   "researched_at": "2026-11-16"
 }

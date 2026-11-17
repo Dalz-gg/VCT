@@ -92,9 +92,18 @@
   },
   "images": {
     "hero": null,
-    "logo": null
+    "logo": "assets/img/teams/gam-esports/logo.png"
   },
-  "image_credits": [],
+  "image_credits": [
+    {
+      "file": "assets/img/teams/gam-esports/logo.png",
+      "source_url": null,
+      "author": "",
+      "license": "運営提供",
+      "license_url": null,
+      "provided_by_owner": true
+    }
+  ],
   "open_questions": [
     "2026-11-16時点でVALORANTの選手・コーチは公式に発表されていません(Riot公式チームページは「NO CURRENT ROSTER」、Liquipediaも登録なし)。gam.ggの発表では「ロースターは近日発表」。",
     "移籍の噂:Sheep Esports(2026-11-09、情報筋)がRRQのcrazyguy(Ngô Công Anh、ベトナム、IGL=司令塔)の加入を報じ、The Spikeの移籍まとめでもGAMの欄に「CrazyGuy(Rumored)」とあります。Sheep Esportsの記事はアクセスがブロックされ本文を確認できず、VLR.ggではcrazyguyは現在もRRQ所属です。公式発表まで掲載しないでください。",

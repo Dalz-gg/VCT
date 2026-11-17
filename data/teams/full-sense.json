@@ -14,7 +14,7 @@
       "https://valo2asia.com/news/vct-pacific-partnered-teams-for-2027-28-finalized-crazy-raccoon-and-gam-esports-among-new-additions"
     ]
   },
-  "team_color": "#CD1515",
+  "team_color": "#FF7300",
   "partner": {
     "text": "2027〜2028年 VCT Pacific パートナー",
     "status": "confirmed",
@@ -154,9 +154,18 @@
   },
   "images": {
     "hero": null,
-    "logo": null
+    "logo": "assets/img/teams/full-sense/logo.png"
   },
-  "image_credits": [],
+  "image_credits": [
+    {
+      "file": "assets/img/teams/full-sense/logo.png",
+      "source_url": null,
+      "author": "",
+      "license": "運営提供",
+      "license_url": null,
+      "provided_by_owner": true
+    }
+  ],
   "open_questions": [
     "2027年のロースターは公式発表前です。2026年オフの動き:Crwsが2026-08-22に引退、Primmieが10-23に退団、thyyが10-27に退団、JitBoyS・killuaが11-08に非アクティブ(VLR.gg・Liquipedia)。",
     "移籍の噂:The Spikeの移籍まとめ(2026-11-13更新)はFULL SENSEの噂ラインナップを「seph1roth, Leviathan, Kr1stal」とし、Kr1stal(Savva Fedorov、ロシア、元Global Esports)の加入を「Rumored」としています。Sheep Esportsは別のラインナップ(JitBoyS, Killua, Kr1stal, seph1roth)を伝えているとの検索結果がありましたが、記事はアクセスがブロックされ確認できませんでした。",
@@ -165,8 +174,8 @@
     "THEEの役職:Liquipediaは「Assistant Coach」、VLR.ggは「coach」と表記しています。",
     "VLR.gg(2026-10)の記事は「Masters Londonで初めて国際大会に出場」としていますが、2021年にChampionsに出場しています(VCTのパートナー制度になってからの初出場という意味と思われます)。",
     "拠点(タイ)はLiquipedia・VLR.ggと、Riotの紹介文を引用したVALO2ASIAによるものです。Riot公式本文での確認はできていないため reported としています。",
-    "team_color #CD1515 は公式サイト(fullsense.gg)のCSSに出てくる赤から推定したもので、チームの代表色としては未確認です。",
-    "写真:Wikimedia Commons(チーム名・選手名・大会名で検索)とOpenverse(FlickrのCC画像)を探しましたが、再利用できる写真は見つかりませんでした。"
+    "写真:Wikimedia Commons(チーム名・選手名・大会名で検索)とOpenverse(FlickrのCC画像)を探しましたが、再利用できる写真は見つかりませんでした。",
+    "チームカラー(#FF7300)は運営提供のロゴの色に合わせました。"
   ],
   "researched_at": "2026-11-16"
 }

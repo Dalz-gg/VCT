@@ -32,12 +32,52 @@
     ]
   },
   "achievements": [
-    {"text": "VCT 2025 Pacific Stage 1 優勝(決勝でGen.Gに3-1。チーム初のVALORANTタイトル)", "status": "reported", "sources": ["https://www.thespike.gg/valorant/news/rex-regum-qeon-crowned-vct-pacific-2025-stage-1-champions/6163", "https://liquipedia.net/valorant/Rex_Regum_Qeon"]},
-    {"text": "VALORANT Masters Toronto 2025 7〜8位(チーム初の国際大会出場)", "status": "reported", "sources": ["https://liquipedia.net/valorant/Rex_Regum_Qeon", "https://www.thespike.gg/valorant/news/rex-regum-qeon-crowned-vct-pacific-2025-stage-1-champions/6163"]},
-    {"text": "VCT 2025 Pacific Stage 2 準優勝", "status": "reported", "sources": ["https://liquipedia.net/valorant/Rex_Regum_Qeon"]},
-    {"text": "VALORANT Champions 2025(パリ)9〜12位", "status": "reported", "sources": ["https://liquipedia.net/valorant/Rex_Regum_Qeon", "https://www.vlr.gg/777336/vct-pacific-organizations-announce-partner-status"]},
-    {"text": "VCT 2026 Pacific Kickoff 4位", "status": "reported", "sources": ["https://liquipedia.net/valorant/Rex_Regum_Qeon"]},
-    {"text": "Esports World Cup 2026 出場(Pacific予選を突破)", "status": "reported", "sources": ["https://liquipedia.net/valorant/Rex_Regum_Qeon", "https://www.vlr.gg/767709/xan-leaves-rex-regum-qeon"]}
+    {
+      "text": "VCT 2025 Pacific Stage 1 優勝(決勝でGen.Gに3-1。チーム初のVALORANTタイトル)",
+      "status": "reported",
+      "sources": [
+        "https://www.thespike.gg/valorant/news/rex-regum-qeon-crowned-vct-pacific-2025-stage-1-champions/6163",
+        "https://liquipedia.net/valorant/Rex_Regum_Qeon"
+      ]
+    },
+    {
+      "text": "VALORANT Masters Toronto 2025 7〜8位(チーム初の国際大会出場)",
+      "status": "reported",
+      "sources": [
+        "https://liquipedia.net/valorant/Rex_Regum_Qeon",
+        "https://www.thespike.gg/valorant/news/rex-regum-qeon-crowned-vct-pacific-2025-stage-1-champions/6163"
+      ]
+    },
+    {
+      "text": "VCT 2025 Pacific Stage 2 準優勝",
+      "status": "reported",
+      "sources": [
+        "https://liquipedia.net/valorant/Rex_Regum_Qeon"
+      ]
+    },
+    {
+      "text": "VALORANT Champions 2025(パリ)9〜12位",
+      "status": "reported",
+      "sources": [
+        "https://liquipedia.net/valorant/Rex_Regum_Qeon",
+        "https://www.vlr.gg/777336/vct-pacific-organizations-announce-partner-status"
+      ]
+    },
+    {
+      "text": "VCT 2026 Pacific Kickoff 4位",
+      "status": "reported",
+      "sources": [
+        "https://liquipedia.net/valorant/Rex_Regum_Qeon"
+      ]
+    },
+    {
+      "text": "Esports World Cup 2026 出場(Pacific予選を突破)",
+      "status": "reported",
+      "sources": [
+        "https://liquipedia.net/valorant/Rex_Regum_Qeon",
+        "https://www.vlr.gg/767709/xan-leaves-rex-regum-qeon"
+      ]
+    }
   ],
   "roster": {
     "as_of": "2026-11-16",
@@ -50,24 +90,82 @@
       "https://www.gambling.com/news/esports/rex-regum-qeon-release-valorant-head-coach-jovi"
     ],
     "players": [
-      {"ign": "crazyguy", "name": "Ngô Công Anh", "country": "ベトナム", "role": "イニシエーター(IGL=司令塔)", "photo": null, "note": "2025年3月加入。VLRによると契約は2028年まで。"},
-      {"ign": "Jemkin", "name": "Maksim Batorov", "country": "ロシア", "role": "デュエリスト", "photo": null, "note": "2023年10月加入。VLRによると契約は2027年まで。"},
-      {"ign": "xffero", "name": "David Sean Michael Monangin", "country": "インドネシア", "role": "センチネル", "photo": null, "note": "2022年10月加入。VLRによると契約は2028年まで。"},
-      {"ign": "Monyet", "name": "I Made Adhi Cahya Nugraha", "country": "インドネシア", "role": "コントローラー", "photo": null, "note": "2024年5月加入。VLRによると契約は2026年で満了予定で、2027年の去就は未発表。"},
-      {"ign": "Kushy", "name": "Bryan Carlos Setiawan", "country": "インドネシア", "role": "フレックス", "photo": null, "note": "2024年10月加入(当時の登録名はKush)。VLRによると契約は2026年で満了予定で、2027年の去就は未発表。"}
+      {
+        "ign": "crazyguy",
+        "name": "Ngô Công Anh",
+        "country": "ベトナム",
+        "role": "イニシエーター(IGL=司令塔)",
+        "photo": null,
+        "note": "2025年3月加入。VLRによると契約は2028年まで。"
+      },
+      {
+        "ign": "Jemkin",
+        "name": "Maksim Batorov",
+        "country": "ロシア",
+        "role": "デュエリスト",
+        "photo": null,
+        "note": "2023年10月加入。VLRによると契約は2027年まで。"
+      },
+      {
+        "ign": "xffero",
+        "name": "David Sean Michael Monangin",
+        "country": "インドネシア",
+        "role": "センチネル",
+        "photo": null,
+        "note": "2022年10月加入。VLRによると契約は2028年まで。"
+      },
+      {
+        "ign": "Monyet",
+        "name": "I Made Adhi Cahya Nugraha",
+        "country": "インドネシア",
+        "role": "コントローラー",
+        "photo": null,
+        "note": "2024年5月加入。VLRによると契約は2026年で満了予定で、2027年の去就は未発表。"
+      },
+      {
+        "ign": "Kushy",
+        "name": "Bryan Carlos Setiawan",
+        "country": "インドネシア",
+        "role": "フレックス",
+        "photo": null,
+        "note": "2024年10月加入(当時の登録名はKush)。VLRによると契約は2026年で満了予定で、2027年の去就は未発表。"
+      }
     ],
     "staff": [
-      {"ign": "SeasoNz", "role": "マネージャー"},
-      {"ign": "(未定)", "role": "ヘッドコーチ(2026年9月にJoviさんが退任。後任は未発表)"}
+      {
+        "ign": "SeasoNz",
+        "role": "マネージャー"
+      },
+      {
+        "ign": "(未定)",
+        "role": "ヘッドコーチ(2026年9月にJoviさんが退任。後任は未発表)"
+      }
     ]
   },
   "featured_players": [
-    {"ign": "Jemkin", "why": "2025年のPacific Stage 1決勝で活躍した、撃ち合いに強いデュエリストです。", "draft": true},
-    {"ign": "crazyguy", "why": "2025年に加入したベトナム出身のベテランで、チームの司令塔(IGL)として作戦を組み立てています。", "draft": true}
+    {
+      "ign": "Jemkin",
+      "why": "2025年のPacific Stage 1決勝で活躍した、撃ち合いに強いデュエリストです。",
+      "draft": true
+    },
+    {
+      "ign": "crazyguy",
+      "why": "2025年に加入したベトナム出身のベテランで、チームの司令塔(IGL)として作戦を組み立てています。",
+      "draft": true
+    }
   ],
-  "playstyle": {"text": "インドネシア・ベトナム・ロシア出身の選手がそろう多国籍チームです。司令塔のcrazyguy選手を中心に、エースのJemkin選手が撃ち合いで流れをつくる形が特徴です。", "draft": true},
-  "highlights_2027": {"text": "ヘッドコーチが空席のまま迎えるオフシーズンで、新しいコーチ陣と選手の顔ぶれがどう決まるかが2027年の見どころです。", "draft": true},
-  "beginner_tip": {"text": "インドネシアの熱いファンが有名なチーム。会場や配信の盛り上がりにも注目です。", "draft": true},
+  "playstyle": {
+    "text": "インドネシア・ベトナム・ロシア出身の選手がそろう多国籍チームです。司令塔のcrazyguy選手を中心に、エースのJemkin選手が撃ち合いで流れをつくる形が特徴です。",
+    "draft": true
+  },
+  "highlights_2027": {
+    "text": "ヘッドコーチが空席のまま迎えるオフシーズンで、新しいコーチ陣と選手の顔ぶれがどう決まるかが2027年の見どころです。",
+    "draft": true
+  },
+  "beginner_tip": {
+    "text": "インドネシアの熱いファンが有名なチーム。会場や配信の盛り上がりにも注目です。",
+    "draft": true
+  },
   "links": {
     "official": "https://teamrrq.com",
     "x": "https://x.com/teamrrqofficial",
@@ -75,9 +173,18 @@
   },
   "images": {
     "hero": null,
-    "logo": null
+    "logo": "assets/img/teams/rrq/logo.png"
   },
-  "image_credits": [],
+  "image_credits": [
+    {
+      "file": "assets/img/teams/rrq/logo.png",
+      "source_url": null,
+      "author": "",
+      "license": "運営提供",
+      "license_url": null,
+      "provided_by_owner": true
+    }
+  ],
   "open_questions": [
     "ヘッドコーチ:Joviさんが2026年9月14日に退任(本人発表、gambling.com・VLRで確認)。アシスタントコーチのWarbirdsさんも退団の意向を表明。後任としてDaniel \"Faded\" Hwangさんの就任をSheep Esports・LevelUpTalkが報じていますが、記事本文は開けず(403/502)、チームの公式発表も確認できていないため未確認です。",
     "Xan選手は2026年6月に加入しましたが、9月25日にフリーエージェントとして移籍先を探すと発表しました(VLRで確認)。Liquipediaは11月9日にBOOM Esportsへ移籍したと記載していますが(BOOM EsportsのX投稿が出典)、本文は直接確認していません。",
