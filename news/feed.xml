@@ -5,9 +5,45 @@
   <id>tag:vct-fan-guide,2026:news</id>
   <link rel="alternate" type="text/html" href="index.html"/>
   <link rel="self" type="application/atom+xml" href="feed.xml"/>
-  <updated>2026-11-13T00:00:00+09:00</updated>
+  <updated>2026-11-17T00:00:00+09:00</updated>
   <author><name>VCT FAN</name></author>
   <rights>本サイトは非公式のファンサイトです。Riot Games が承認・後援したものではなく、Riot Games または VALORANT の制作・運営に関わる方の見解を反映するものではありません。VALORANT および Riot Games は Riot Games, Inc. の商標または登録商標です。</rights>
+  <entry>
+    <title>Paper Rexのsomething選手、Pacificの「地域内選手」として認められたと報じられる</title>
+    <id>tag:vct-fan-guide,2026:news/2026-11-17-something-residency</id>
+    <link rel="alternate" type="text/html" href="2026-11-17-something-residency.html"/>
+    <updated>2026-11-17T00:00:00+09:00</updated>
+    <published>2026-11-17T00:00:00+09:00</published>
+    <category term="移籍・ロスター"/>
+    <summary>ロシア出身のsomething選手が、VCTのルール上、Pacific地域の選手として扱われることになったと海外メディアが報じました。事実なら、Paper Rexは地域外の選手をもう1人迎えやすくなります。Riotからの公式発表はまだありません。</summary>
+  </entry>
+  <entry>
+    <title>FULL SENSEのヘッドコーチにCrwsさんが就任</title>
+    <id>tag:vct-fan-guide,2026:news/2026-11-17-full-sense-crws-coach</id>
+    <link rel="alternate" type="text/html" href="2026-11-17-full-sense-crws-coach.html"/>
+    <updated>2026-11-17T00:00:00+09:00</updated>
+    <published>2026-11-17T00:00:00+09:00</published>
+    <category term="移籍・ロスター"/>
+    <summary>タイのFULL SENSEが、Crwsさんとの契約更新と、2027年シーズンのヘッドコーチ就任を発表しました。Crwsさんはタイを代表するIGL(作戦の指示役)として活躍し、2026年8月に選手を引退していました。</summary>
+  </entry>
+  <entry>
+    <title>新チーム「ASTREVA」がVALORANT部門を発表、日本のオープン予選へ</title>
+    <id>tag:vct-fan-guide,2026:news/2026-11-17-astreva-roster</id>
+    <link rel="alternate" type="text/html" href="2026-11-17-astreva-roster.html"/>
+    <updated>2026-11-17T00:00:00+09:00</updated>
+    <published>2026-11-17T00:00:00+09:00</published>
+    <category term="日本"/>
+    <summary>日本の新しいチームASTREVAが、VALORANT部門のロスターを発表しました。元SCARZのAllen選手・Yotaa選手らの5人に控え1人、韓国出身のコーチ2人という体制です。</summary>
+  </entry>
+  <entry>
+    <title>FENNELからAnthem選手とGangPin選手が契約満了で退団</title>
+    <id>tag:vct-fan-guide,2026:news/2026-11-16-fennel-anthem-gangpin</id>
+    <link rel="alternate" type="text/html" href="2026-11-16-fennel-anthem-gangpin.html"/>
+    <updated>2026-11-16T00:00:00+09:00</updated>
+    <published>2026-11-16T00:00:00+09:00</published>
+    <category term="日本"/>
+    <summary>FENNELが、Anthem選手とGangPin選手の契約満了による退団を発表しました。2026年の選手のうちチームに残るのはHals選手だけになりました。</summary>
+  </entry>
   <entry>
     <title>T1にTenZ選手とcrashies選手が加入、ヘッドコーチはSacyさん</title>
     <id>tag:vct-fan-guide,2026:news/2026-11-13-t1-tenz-crashies-sacy</id>
@@ -34,6 +70,15 @@
     <published>2026-11-13T00:00:00+09:00</published>
     <category term="移籍・ロスター"/>
     <summary>Crazy Raccoonの2027年のロスターについて、akame選手、Meiy選手、Aace選手、SugarZ3ro選手、CLZ選手が加わると報じられています。11月16日時点で、チームからの正式な発表はありません。</summary>
+  </entry>
+  <entry>
+    <title>ZETA DIVISIONにyatsuka選手が加入か、eKo選手ら3人は残留と報じられる</title>
+    <id>tag:vct-fan-guide,2026:news/2026-11-12-zeta-yatsuka-reports</id>
+    <link rel="alternate" type="text/html" href="2026-11-12-zeta-yatsuka-reports.html"/>
+    <updated>2026-11-12T00:00:00+09:00</updated>
+    <published>2026-11-12T00:00:00+09:00</published>
+    <category term="移籍・ロスター"/>
+    <summary>ZETA DIVISIONの2027年ロスターに、元DFMのyatsuka選手が加わると海外メディアが報じました。KEN選手の加入と、移籍先を探していたeKo選手・Absol選手・SyouTa選手の残留もあわせて報じられています。チームからの正式な発表はまだありません。</summary>
   </entry>
   <entry>
     <title>MURASH GAMINGが2027年のロスターを発表、Caedye・Seoldam・Xdllが加入</title>

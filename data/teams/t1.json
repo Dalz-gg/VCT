@@ -78,7 +78,7 @@
     }
   ],
   "roster": {
-    "as_of": "2026-11-16",
+    "as_of": "2026-11-17",
     "status": "confirmed",
     "sources": [
       "https://x.com/T1/status/2120713200475750401",
@@ -90,7 +90,8 @@
       "https://liquipedia.net/valorant/T1",
       "https://www.vlr.gg/team/14/t1",
       "https://www.thespike.gg/valorant/news/t1-executes-massive-roster-overhaul-ahead-of-2027-season/9162",
-      "https://www.vlr.gg/790063/t1-goes-all-in-on-fusion-roster-welcoming-sacy-as-head-coach"
+      "https://www.vlr.gg/790063/t1-goes-all-in-on-fusion-roster-welcoming-sacy-as-head-coach",
+      "https://x.com/T1/status/2121075582612189388"
     ],
     "players": [
       {
@@ -137,7 +138,7 @@
     "staff": [
       {
         "ign": "Sacy",
-        "role": "ヘッドコーチ(2026年11月13日加入と報道。チーム公式投稿は未確認)"
+        "role": "ヘッドコーチ(2026年11月13日にチームが発表)"
       },
       {
         "ign": "sungmin",
@@ -207,7 +208,6 @@
     }
   ],
   "open_questions": [
-    "ヘッドコーチSacyの加入は VLR.gg(2026年11月13日)と Liquipedia で確認しましたが、T1公式Xの発表投稿そのものは開けていません。公式投稿を確認できたら status を confirmed にしてください。",
     "2027年の各選手の担当ロール(特にstax・TenZ・crashies)とIGL(司令塔)はチームから発表されていません。表のロールは2026年までの実績にもとづく目安です。",
     "6人目(控え)の選手は2026年11月16日時点で未発表です。",
     "TenZの写真(Wikimedia Commons)は2023年のSentinels在籍時のもので、T1のユニフォームではありません。キャプションでその旨を表示することを推奨します。",

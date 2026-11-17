@@ -1,0 +1,44 @@
+{
+  "id": "2026-11-16-fennel-anthem-gangpin",
+  "date": "2026-11-16",
+  "title": "FENNELからAnthem選手とGangPin選手が契約満了で退団",
+  "category": "日本",
+  "regions": [
+    "Japan"
+  ],
+  "teams": [
+    "fennel"
+  ],
+  "summary": "FENNELが、Anthem選手とGangPin選手の契約満了による退団を発表しました。2026年の選手のうちチームに残るのはHals選手だけになりました。",
+  "body": [
+    "Anthem選手はIGL(試合中に作戦の指示を出す役)、GangPin選手はコントローラー(煙で視界をさえぎる役)を担当していました。FENNELは、すでにCLZ選手とAace選手も契約満了で送り出しています。",
+    "FENNELはVCJで3回優勝した日本の強豪です。11月22日から始まる日本のオープン予選に向けて、新しいメンバーが発表されるかが注目されます。"
+  ],
+  "status": "confirmed",
+  "sources": [
+    {
+      "title": "Roster Update:Anthem(FENNEL 公式X)",
+      "url": "https://x.com/FENNEL_official/status/2122268438336786776"
+    },
+    {
+      "title": "Roster Update:GangPin(FENNEL 公式X)",
+      "url": "https://x.com/FENNEL_official/status/2122268438399971468"
+    },
+    {
+      "title": "「FENNEL」よりAnthem / GangPinが脱退、残るプレイヤーはHalsのみに(Valorant News Japan)",
+      "url": "https://valorantnews.jp/archives/169712"
+    }
+  ],
+  "image": null,
+  "image_credit": null,
+  "x_posts": [
+    "https://x.com/FENNEL_official/status/2122268438336786776",
+    "https://x.com/FENNEL_official/status/2122268438399971468"
+  ],
+  "x_image": {
+    "src": "https://pbs.twimg.com/media/HXOwy4obQAAxwpe?format=jpg&name=medium",
+    "post": "https://x.com/FENNEL_official/status/2122268438336786776",
+    "account": "@FENNEL_official",
+    "alt": "VALORANT Div. Roster Update: 契約満了に伴い、Anthem @AnthemFps が脱退す…"
+  }
+}

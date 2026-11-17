@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-11-16",
+  "as_of": "2026-11-17",
   "summary": {
     "text": "2026年まで日本の公式リーグだったVALORANT Challengers Japan(VCJ)はなくなり、2027年からは誰でも参加できる「オープン予選」が日本での入口になります。最初の目標は1月にタイ・バンコクで行われる「VCT Pacific Kickoff」で、日本予選(2027 VCT Pacific Kickoff Japan Qualifier)の優勝チーム1チームが出場権を得ます。予選はオンラインのOpen Qualifiers(11月22日〜29日)、Playoffs(12月2日〜6日)、東京・シアターGロッソでのオフラインFinals(12月11日・12日)の3段階です。DetonatioN FocusMeとQT DIG∞はシードとしてPlayoffsから出場します。日本のパートナーチームであるZETA DIVISIONとCrazy RaccoonはKickoffに直接出場します。",
     "status": "confirmed",
@@ -183,7 +183,8 @@
       "status": "confirmed",
       "sources": [
         "https://valorantnews.jp/archives/169712",
-        "https://valorantnews.jp/archives/169561"
+        "https://valorantnews.jp/archives/169561",
+        "https://x.com/FENNEL_official/status/2122268438336786776"
       ]
     },
     {
@@ -248,6 +249,17 @@
       "status": "confirmed",
       "sources": [
         "https://valorantnews.jp/archives/169612"
+      ]
+    },
+    {
+      "name": "ASTREVA",
+      "slug": "astreva",
+      "roster_status": "announced",
+      "note": "2026年11月17日にVALORANT部門を立ち上げ、Day1、Yotaa、Allen、SmiLe、Leame(控えSoa)、コーチHoliday・eleN0aHの体制を発表した新チームです。日本オープン予選に出る予定です。",
+      "status": "confirmed",
+      "sources": [
+        "https://x.com/ASTREVA_vlrt/status/2122615740306243772",
+        "https://valorantnews.jp/archives/169729"
       ]
     },
     {

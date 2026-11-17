@@ -1,0 +1,127 @@
+{
+  "slug": "astreva",
+  "name": "ASTREVA",
+  "name_kana": "アストレヴァ",
+  "short": "AST",
+  "region": "Japan",
+  "tier": "open",
+  "country": "日本",
+  "base": {
+    "text": "日本",
+    "status": "reported",
+    "sources": [
+      "https://valorantnews.jp/archives/169729"
+    ]
+  },
+  "team_color": "#5B6CFF",
+  "path_2027": {
+    "text": "11月22日から始まる日本オープン予選に出る予定です(Yotaa選手の投稿)。オープン予選の上位6チームが、招待2チームとともに日本予選のプレーオフに進みます。",
+    "status": "confirmed",
+    "sources": [
+      "https://x.com/YotaaVLR/status/2122624410633072651",
+      "https://valorantnews.jp/archives/169510"
+    ]
+  },
+  "history": {
+    "text": "ASTREVAは新しくできた日本のチームです。2026年11月17日にVALORANT部門のロスターを発表しました。",
+    "status": "reported",
+    "sources": [
+      "https://x.com/ASTREVA_vlrt/status/2122615740306243772",
+      "https://valorantnews.jp/archives/169729"
+    ]
+  },
+  "achievements": [],
+  "roster": {
+    "as_of": "2026-11-17",
+    "status": "confirmed",
+    "sources": [
+      "https://x.com/ASTREVA_vlrt/status/2122615740306243772",
+      "https://valorantnews.jp/archives/169729",
+      "https://x.com/YotaaVLR/status/2122624410633072651"
+    ],
+    "players": [
+      {
+        "ign": "Day1",
+        "country": "韓国",
+        "role": "未発表",
+        "photo": null,
+        "note": "新加入(2026年11月17日発表)。元FEARXと報じられています。"
+      },
+      {
+        "ign": "Yotaa",
+        "country": "日本",
+        "role": "未発表",
+        "photo": null,
+        "note": "新加入(2026年11月17日発表)。元SCARZと報じられています。日本・フランス・モロッコにルーツがあります(報道)。"
+      },
+      {
+        "ign": "Allen",
+        "country": "日本",
+        "role": "未発表",
+        "photo": null,
+        "note": "新加入(2026年11月17日発表)。元SCARZと報じられています。日本・アメリカにルーツがあります(報道)。"
+      },
+      {
+        "ign": "SmiLe",
+        "country": "日本",
+        "role": "未発表",
+        "photo": null,
+        "note": "新加入(2026年11月17日発表)。ALESTAR在籍時にVCJのAdvance Stageに出場したと報じられています。"
+      },
+      {
+        "ign": "Leame",
+        "country": "ロシア",
+        "role": "未発表",
+        "photo": null,
+        "note": "新加入(2026年11月17日発表)。競技シーンは初挑戦とみられると報じられています。"
+      },
+      {
+        "ign": "Soa",
+        "country": "日本",
+        "role": "未発表",
+        "photo": null,
+        "note": "控え(サブ)。2026年11月17日発表。"
+      }
+    ],
+    "staff": [
+      {
+        "ign": "Holiday",
+        "role": "ヘッドコーチ(韓国出身と報道)"
+      },
+      {
+        "ign": "eleN0aH",
+        "role": "コーチ(韓国出身と報道)"
+      }
+    ]
+  },
+  "featured_players": [],
+  "playstyle": {
+    "text": "新しいチームで公式戦がまだないため、現時点では書きません。",
+    "draft": true
+  },
+  "highlights_2027": {
+    "text": "いろいろな国の出身者が集まった新チームが、初めての日本オープン予選でどこまで勝ち上がれるかが注目点です。",
+    "draft": true
+  },
+  "beginner_tip": {
+    "text": "2026年11月に生まれたばかりの、国際色ゆたかな新チームです。",
+    "draft": true
+  },
+  "links": {
+    "official": null,
+    "x": "https://x.com/ASTREVA_vlrt",
+    "youtube": null
+  },
+  "images": {
+    "hero": null,
+    "logo": null
+  },
+  "image_credits": [],
+  "open_questions": [
+    "チームの運営会社・公式サイト・設立日は確認できていません。",
+    "選手の国籍・前所属は Valorant News Japan の記事によるもので、チームの発表文には書かれていません。ロールも未発表です。",
+    "日本予選への出場は Yotaa 選手の投稿によるもので、出場チーム一覧(11月21日発表予定)での確認が必要です。",
+    "name_kana と team_color は仮の値です。運営者の確認が必要です。"
+  ],
+  "researched_at": "2026-11-17"
+}

@@ -70,14 +70,16 @@
     }
   ],
   "roster": {
-    "as_of": "2026-11-16",
+    "as_of": "2026-11-17",
     "status": "reported",
     "sources": [
       "https://liquipedia.net/valorant/FULL_SENSE",
       "https://www.vlr.gg/team/4050/full-sense",
       "https://www.vlr.gg/team/transactions/4050/full-sense/",
       "https://www.thespike.gg/valorant/news/vct-2027-roster-changes/9236",
-      "https://valorantesports.com/en-US/teams/full-sense"
+      "https://valorantesports.com/en-US/teams/full-sense",
+      "https://x.com/fullsense_gg/status/2122584649214107979",
+      "https://valorantnews.jp/archives/169726"
     ],
     "players": [
       {
@@ -115,8 +117,12 @@
     ],
     "staff": [
       {
+        "ign": "Crws",
+        "role": "ヘッドコーチ(2026年11月17日にチームが発表。元選手で、2026年8月に引退)"
+      },
+      {
         "ign": "FrosT",
-        "role": "ヘッドコーチ(アメリカ出身、2026年7月就任)"
+        "role": "コーチ(2026年7月からヘッドコーチ。Crwsさん就任後の役割は発表されていません)"
       },
       {
         "ign": "THEE",
@@ -168,8 +174,9 @@
   ],
   "open_questions": [
     "2027年のロースターは公式発表前です。2026年オフの動き:Crwsが2026-08-22に引退、Primmieが10-23に退団、thyyが10-27に退団、JitBoyS・killuaが11-08に非アクティブ(VLR.gg・Liquipedia)。",
+    "2026年11月17日、チームがCrwsのヘッドコーチ就任(契約更新)を発表しました。前ヘッドコーチFrosTの今後については、発表で触れられていません。",
     "移籍の噂:The Spikeの移籍まとめ(2026-11-13更新)はFULL SENSEの噂ラインナップを「seph1roth, Leviathan, Kr1stal」とし、Kr1stal(Savva Fedorov、ロシア、元Global Esports)の加入を「Rumored」としています。Sheep Esportsは別のラインナップ(JitBoyS, Killua, Kr1stal, seph1roth)を伝えているとの検索結果がありましたが、記事はアクセスがブロックされ確認できませんでした。",
-    "Riot公式チームページ(valorantesports.com)のロースター欄はJitBoyS, Killua, Leviathan, Primmie, seph1roth, thyy, コーチにCrws・FrosTと古い情報のままです。",
+    "Riot公式チームページ(valorantesports.com)のロースター欄はJitBoyS, Killua, Leviathan, Primmie, seph1roth, thyy, コーチにCrws・FrosTと古い情報のままです(Crwsは選手として掲載)。",
     "選手の役割(ロール)は公式の情報ではなく、VLR.ggの使用エージェントの傾向から推定したものです。",
     "THEEの役職:Liquipediaは「Assistant Coach」、VLR.ggは「coach」と表記しています。",
     "VLR.gg(2026-10)の記事は「Masters Londonで初めて国際大会に出場」としていますが、2021年にChampionsに出場しています(VCTのパートナー制度になってからの初出場という意味と思われます)。",

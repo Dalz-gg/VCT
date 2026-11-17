@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-17-something-residency",
+  "date": "2026-11-17",
+  "title": "Paper Rexのsomething選手、Pacificの「地域内選手」として認められたと報じられる",
+  "category": "移籍・ロスター",
+  "regions": [
+    "Pacific"
+  ],
+  "teams": [
+    "paper-rex",
+    "rrq"
+  ],
+  "summary": "ロシア出身のsomething選手が、VCTのルール上、Pacific地域の選手として扱われることになったと海外メディアが報じました。事実なら、Paper Rexは地域外の選手をもう1人迎えやすくなります。Riotからの公式発表はまだありません。",
+  "body": [
+    "VCTでは、チームが起用できる「地域外の選手」(インポート)の人数に上限があります。東南アジアのメディアLion Esportsによると、something選手はこの枠を使わずに出場できるようになり、RRQのJemkin選手など、長くPacificで活動してきたほかのロシア出身選手にも同じ扱いが広がる可能性があると報じられています。",
+    "どんな条件で認められるのか(住んでいる年数など)は明らかになっていません。また、国籍が変わるわけではなく、大会ルール上の区分の話です。Paper RexはJinggg選手とd4v41選手が退団し、2027年のメンバーをまだ集めているところです。"
+  ],
+  "status": "reported",
+  "sources": [
+    {
+      "title": "「Paper Rex」something、ロシア出身ながらAPAC地域内選手に認定か(Valorant News Japan)",
+      "url": "https://valorantnews.jp/archives/169723"
+    },
+    {
+      "title": "somethingがRiot GamesからAPACの居住者資格を取得と報道(VALORANT4JP)",
+      "url": "https://www.valorant4jp.com/2026/11/somethingriot-gamesapacpaper-rex.html"
+    }
+  ],
+  "image": null,
+  "image_credit": null,
+  "x_posts": [],
+  "x_image": null
+}

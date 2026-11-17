@@ -68,7 +68,7 @@
     }
   ],
   "roster": {
-    "as_of": "2026-11-16",
+    "as_of": "2026-11-17",
     "status": "unverified",
     "sources": [
       "https://x.com/FENNEL_official/status/2006379832725430356",
@@ -77,7 +77,9 @@
       "https://x.com/AnthemFps/status/2114323398910505285",
       "https://liquipedia.net/valorant/FENNEL",
       "https://www.vlr.gg/team/2934/fennel",
-      "https://www.vlr.gg/player/4664/gangpin"
+      "https://x.com/FENNEL_official/status/2122268438336786776",
+      "https://x.com/FENNEL_official/status/2122268438399971468",
+      "https://valorantnews.jp/archives/169712"
     ],
     "players": [
       {
@@ -86,15 +88,7 @@
         "country": "日本",
         "role": "デュエリスト（推定）",
         "photo": null,
-        "note": "2026年ロスターのメンバー（2025年12月31日発表）。退団の発表はありませんが、2027年の契約は未発表です。"
-      },
-      {
-        "ign": "GangPin",
-        "name": "Chae Jeong-mu",
-        "country": "韓国",
-        "role": "コントローラー（推定）",
-        "photo": null,
-        "note": "2026年ロスターのメンバー（2025年12月31日発表）。Liquipedia は在籍中、VLR.gg は2026年11月に退団と記載していて食い違いがあります。公式の退団発表は確認できていません。"
+        "note": "2026年ロスターのメンバー(2025年12月31日発表)。Anthem・GangPinの退団後、2026年の選手でチームに残る唯一の選手です(11月16日時点)。2027年の契約は未発表です。"
       }
     ],
     "staff": [
@@ -138,8 +132,7 @@
   },
   "image_credits": [],
   "open_questions": [
-    "2026年の5人のうち、CLZ（8月31日）と Aace（11月4日）が契約満了で退団しました。Anthem は10月25日に LFT（移籍先募集）を表明し、Liquipedia では非アクティブ扱いです。",
-    "GangPin の在籍について、Liquipedia（在籍）と VLR.gg（2026年11月に退団）の記載が食い違っています。公式発表では確認できませんでした。",
+    "2026年の5人のうち、CLZ(8月31日)とAace(11月4日)、Anthem・GangPin(11月16日)が契約満了で退団しました(チーム発表)。残る選手はHalsのみです。",
     "アナリスト兼マネージャーの nolozy は9月11日に退団しました。",
     "2027年のロスターと日本予選への出場は、公式にはまだ発表されていません（11月16日がエントリー締め切り）。",
     "選手のロールは公式発表に記載がなく、VLR.gg の通算使用エージェントからの推定です。",

@@ -1,0 +1,44 @@
+{
+  "id": "2026-11-17-astreva-roster",
+  "date": "2026-11-17",
+  "title": "新チーム「ASTREVA」がVALORANT部門を発表、日本のオープン予選へ",
+  "category": "日本",
+  "regions": [
+    "Japan"
+  ],
+  "teams": [
+    "astreva"
+  ],
+  "summary": "日本の新しいチームASTREVAが、VALORANT部門のロスターを発表しました。元SCARZのAllen選手・Yotaa選手らの5人に控え1人、韓国出身のコーチ2人という体制です。",
+  "body": [
+    "選手はDay1選手、Yotaa選手、Allen選手、SmiLe選手、Leame選手の5人で、控えにSoa選手が入ります。ヘッドコーチはHolidayさん、コーチはeleN0aHさんです。日本・韓国・ロシアなど、いろいろな国の出身者がそろったチームです。",
+    "Yotaa選手は自身のXで、11月22日から始まる日本のオープン予選(OQ Japan)に出ると話しています。予選の組み合わせは11月21日に発表される予定です。"
+  ],
+  "status": "confirmed",
+  "sources": [
+    {
+      "title": "ROSTER ANNOUNCEMENT(ASTREVA 公式X)",
+      "url": "https://x.com/ASTREVA_vlrt/status/2122615740306243772"
+    },
+    {
+      "title": "Yotaa 本人X",
+      "url": "https://x.com/YotaaVLR/status/2122624410633072651"
+    },
+    {
+      "title": "「ASTREVA」がVALORANT部門を設立、Allen / Day1 / Yotaa / SmiLe / Leame / Soaが加入(Valorant News Japan)",
+      "url": "https://valorantnews.jp/archives/169729"
+    }
+  ],
+  "image": null,
+  "image_credit": null,
+  "x_posts": [
+    "https://x.com/ASTREVA_vlrt/status/2122615740306243772",
+    "https://x.com/YotaaVLR/status/2122624410633072651"
+  ],
+  "x_image": {
+    "src": "https://pbs.twimg.com/media/HXTNuZRa4AAXI7N?format=jpg&name=medium",
+    "post": "https://x.com/ASTREVA_vlrt/status/2122615740306243772",
+    "account": "@ASTREVA_vlrt",
+    "alt": "【ROSTER ANNOUNCEMENT】 ◤ PLAYERS ◢ Day1 Yotaa Allen SmiLe Le…"
+  }
+}
