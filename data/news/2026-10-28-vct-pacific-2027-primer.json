@@ -21,5 +21,15 @@
     }
   ],
   "image": null,
-  "image_credit": null
+  "image_credit": null,
+  "x_posts": [
+    "https://x.com/vctpacific/status/2115361822236979691",
+    "https://x.com/vctpacific/status/2115361826674520514"
+  ],
+  "x_image": {
+    "src": "https://pbs.twimg.com/media/HVtFb1YbkAAj65I?format=jpg&name=medium",
+    "post": "https://x.com/vctpacific/status/2115361822236979691",
+    "account": "@vctpacific",
+    "alt": "A new format, more ways into VCT, regional Open Qualifiers,…"
+  }
 }

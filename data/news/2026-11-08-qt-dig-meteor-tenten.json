@@ -30,5 +30,14 @@
     }
   ],
   "image": null,
-  "image_credit": null
+  "image_credit": null,
+  "x_posts": [
+    "https://x.com/QT_DIG/status/2119281758386753865"
+  ],
+  "x_image": {
+    "src": "https://pbs.twimg.com/media/HWkzeUpasAA1zg5?format=jpg&name=medium",
+    "post": "https://x.com/QT_DIG/status/2119281758386753865",
+    "account": "@QT_DIG",
+    "alt": "【VALORANT DIV. Announcement】 Welcome to QT DIG∞ Meteor @Met…"
+  }
 }

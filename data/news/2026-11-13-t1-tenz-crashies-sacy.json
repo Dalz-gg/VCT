@@ -42,5 +42,15 @@
     }
   ],
   "image": null,
-  "image_credit": null
+  "image_credit": null,
+  "x_posts": [
+    "https://x.com/T1/status/2120713200475750401",
+    "https://x.com/T1/status/2120350808248397831"
+  ],
+  "x_image": {
+    "src": "https://pbs.twimg.com/media/HW45iYFbgAEuLs_?format=jpg&name=medium",
+    "post": "https://x.com/T1/status/2120713200475750401",
+    "account": "@T1",
+    "alt": "Welcome 'TenZ' The KING is back! 👑 A living legend of VALOR…"
+  }
 }

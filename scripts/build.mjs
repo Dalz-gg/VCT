@@ -258,6 +258,7 @@ const ownerCreditText = (c) => (str(c.author) ? `写真：${str(c.author)}(運�
 
 function creditLine(c) {
   if (typeof c === 'string') return esc(c);
+  if (c.x) { const u = safeUrl(c.source_url); return `${esc(c.title || 'X の投稿の画像')} — ${u ? `<a href="${esc(u)}" rel="noopener">画像：${esc(c.author)} / X</a>` : `画像：${esc(c.author)} / X`}(投稿の画像を X から直接表示しています)`; }
   const title = c.title || (c.file ? c.file.split('/').pop() : '画像');
   const src = safeUrl(c.source_url);
   const t = src ? `<a href="${esc(src)}" rel="noopener">${esc(title)}</a>` : esc(title);
@@ -585,6 +586,7 @@ function hero(ctx, { variant = 'page', img = null, kicker, titleHtml, titleLabel
 // パンくずはサブナビと重なるため表示しません(呼び出し側はそのまま)
 const crumbsHtml = () => '';
 
+function teamLogoFile(slug) { return assetPath(bySlug.get(slug)?.images?.logo) || assetPath(`assets/img/teams/${slug}/logo.png`); }
 function teamLogo(t, P) {
   const logo = assetPath(t.images?.logo) || assetPath(`assets/img/teams/${t.slug}/logo.png`) || assetPath(`assets/img/teams/${t.slug}/logo.svg`);
   return logo
@@ -633,17 +635,97 @@ function playerCard(t, p, ctx, d = 0) {
 </div>`;
 }
 
-// ニュースカード：日付・カテゴリ(・報道/未定)＋見出し＋READ
-function newsCard(n, ctx, { d = 0, filter = false } = {}) {
+// ---------------------------------------------------------------- X(Twitter)
+// x_posts：公式の投稿 URL(ニュース詳細で公式埋め込み)。x_image：投稿の画像を pbs.twimg.com から直接表示(再配布しない)。
+// data/x-posts.json は scripts/fetch-x.mjs が作るキャッシュ(埋め込みが読み込めないときの代替テキスト)。
+const X_POST_RE = /^https:\/\/(?:x|twitter)\.com\/([A-Za-z0-9_]{1,15})\/status\/(\d{5,25})(?:[/?#].*)?$/;
+const xCache = (fs.existsSync(path.join(DATA, 'x-posts.json')) ? readJSON(path.join(DATA, 'x-posts.json'))?.posts : null) || {};
+function xPost(u) {
+  const m = typeof u === 'string' ? u.trim().match(X_POST_RE) : null;
+  if (!m) return null;
+  const url = `https://x.com/${m[1]}/status/${m[2]}`;
+  const info = xCache[url] || Object.values(xCache).find((c) => c && c.id === m[2]) || {};
+  return { url, user: m[1], id: m[2], account: str(info.account) || `@${m[1]}`, name: str(info.name), date: validDate(info.date) ? info.date : '', text: str(info.text), deleted: !!info.deleted };
+}
+const xPosts = (n) => arr(n.x_posts).map(xPost).filter((p) => p && !p.deleted).filter((p, i, a) => a.findIndex((q) => q.id === p.id) === i).slice(0, 2);
+function xImage(n) {
+  const x = n.x_image;
+  if (!x || typeof x !== 'object') return null;
+  const src = safeUrl(x.src);
+  const post = xPost(x.post);
+  if (!src || !post || new URL(src).hostname !== 'pbs.twimg.com') return null;
+  const account = /^@[A-Za-z0-9_]{1,15}$/.test(str(x.account)) ? str(x.account) : post.account;
+  return { src, post: post.url, account, alt: str(x.alt) || `${account} の投稿の画像` };
+}
+// 画像クレジット(最下部の折りたたみ)に X の画像を登録
+function creditX(ctx, xi, title) {
+  ctx.credit({ x: true, file: xi.src, source_url: xi.post, author: xi.account, title });
+}
+
+// 画像が無い・消えたときのデザイン：チームのロゴ(チームカラーのグラデーション)か、カテゴリの模様
+const CAT_ART = {
+  '公式発表': { en: 'Official', k: 'official' },
+  '移籍・ロスター': { en: 'Roster', k: 'roster' },
+  '大会・日程': { en: 'Schedule', k: 'schedule' },
+  '結果': { en: 'Results', k: 'results' },
+  '日本': { en: 'Japan', k: 'japan' },
+  'その他': { en: 'News', k: 'other' },
+};
+function newsArt(n, P) {
+  const list = n.teams.slice(0, 3).map((slug) => {
+    const t = bySlug.get(slug) || { slug, name: teamName(slug), team_color: arr(partners?.teams).find((x) => x.slug === slug)?.team_color };
+    const logo = teamLogoFile(slug);
+    return { t, logo, color: hexColor(t.team_color || '#394656') };
+  });
+  if (list.length && n.teams.length <= 3) {
+    const c1 = list[0].color;
+    const c2 = list[1]?.color || '#0F1923';
+    return `<div class="news-art news-art--team" style="--c1:${c1};--c2:${c2}" aria-hidden="true">${list.map(({ t, logo }) => (logo
+      ? `<span class="na-logo"><img src="${esc(assetSrc(logo, P))}" alt="" loading="lazy"></span>`
+      : `<span class="na-logo na-logo--text">${esc(shortOf(t))}</span>`)).join('')}</div>`;
+  }
+  const c = CAT_ART[n.category] || CAT_ART['その他'];
+  return `<div class="news-art news-art--${c.k}" aria-hidden="true"><span class="na-en">${esc(c.en)}</span>${n.teams.length > 3 ? `<span class="na-count">${n.teams.length} Teams</span>` : ''}</div>`;
+}
+// 画像の読み込みに失敗したら(投稿が消えた等)、img とクレジットを外して下のデザインを見せる
+const X_ONERROR = "this.parentNode.classList.add('is-fallback');this.remove()";
+function newsMedia(n, ctx, { eager = false, cls = '', alt = '' } = {}) {
+  const local = assetSrc(n.image, ctx.P);
+  if (local) {
+    if (n.image_credit) ctx.credit(typeof n.image_credit === 'string' ? n.image_credit : { ...n.image_credit, file: n.image_credit.file || n.image, title: n.image_credit.title || `ニュース「${n.title}」の画像` });
+    return `<div class="slot slot--16x9 news-media${cls}">${newsArt(n, ctx.P)}<img src="${esc(local)}" alt="${esc(alt)}"${eager ? '' : ' loading="lazy"'}></div>`;
+  }
+  const xi = xImage(n);
+  if (xi) {
+    creditX(ctx, xi, `ニュース「${n.title}」の画像`);
+    return `<div class="slot slot--16x9 news-media has-x${cls}">${newsArt(n, ctx.P)}<img src="${esc(xi.src)}" alt="${esc(alt)}"${eager ? '' : ' loading="lazy"'} decoding="async" referrerpolicy="no-referrer" onerror="${X_ONERROR}"><span class="x-tag">${esc(xi.account)}</span></div>`;
+  }
+  return `<div class="slot slot--16x9 news-media${cls}">${newsArt(n, ctx.P)}</div>`;
+}
+
+// ニュースカード：画像(16:9)＋日付・カテゴリ(・報道/未定)＋見出し＋READ
+function newsCard(n, ctx, { d = 0, filter = false, featured = false } = {}) {
   const href = `${ctx.P}news/${esc(n.id)}.html`;
-  const img = assetSrc(n.image, ctx.P);
-  if (img && n.image_credit) ctx.credit(typeof n.image_credit === 'string' ? n.image_credit : { ...n.image_credit, file: n.image_credit.file || n.image, title: n.image_credit.title || `ニュース「${n.title}」の画像` });
-  return `<a class="card news-card rv" href="${href}" style="--d:${d}"${filter ? ` data-filter-key="${esc(n.category)}"` : ''}>
-  ${img ? `<div class="slot slot--16x9"><img src="${esc(img)}" alt="" loading="lazy"></div>` : ''}
+  return `<a class="card news-card${featured ? ' news-card--featured' : ''} rv" href="${href}" style="--d:${d}"${filter ? ` data-filter-key="${esc(n.category)}"` : ''}>
+  ${newsMedia(n, ctx, { eager: featured })}
+  <div class="news-body">
   <div class="news-meta"><time class="news-date" datetime="${esc(n.date)}">${esc(dotDate(n.date))}</time><span class="news-cat">${esc(n.category)}</span>${status(n.status)}</div>
   <h3 class="news-title">${esc(n.title)}</h3>
+  ${featured && n.summary ? `<p class="news-sum">${esc(n.summary)}</p>` : ''}
   <span class="news-read">READ ${ARROW}</span>
+  </div>
 </a>`;
+}
+
+// X の公式埋め込み。JS が無い・読み込めないときは、投稿の抜粋・アカウント・日付が読めるふつうの引用として表示
+function xEmbed(p) {
+  const who = p.name ? `${esc(p.name)} (${esc(p.account)})` : esc(p.account);
+  return `<div class="x-embed">
+  <blockquote class="twitter-tweet" data-theme="dark" data-lang="ja" data-dnt="true">
+    ${p.text ? `<p>${esc(p.text)}</p>` : `<p>${esc(p.account)} の投稿</p>`}
+    <span class="x-by">&mdash; ${who}</span> <a href="${esc(p.url)}" rel="noopener">${p.date ? esc(jpDate(p.date)) : 'X で見る'}</a>
+  </blockquote>
+</div>`;
 }
 
 // 2行だけ見せて MORE で全文(JS なしでは全文)
@@ -983,7 +1065,7 @@ function newsIndexPage() {
   for (const n of news) if (n.status && n.status !== 'confirmed') ctx.checks.push({ label: 'ニュース', status: n.status });
   const list = section({
     id: 'list', tone: 'dark',
-    inner: news.length ? `${chips}<div class="grid grid--3" id="news-grid">${news.map((n, i) => newsCard(n, ctx, { d: i % 3, filter: true })).join('\n')}</div>` : soonPanel(ctx, 'ニュースは準備中です。'),
+    inner: news.length ? `${chips}<div class="grid news-grid" id="news-grid">${news.map((n, i) => newsCard(n, ctx, { d: i % 3, filter: true, featured: i === 0 })).join('\n')}</div>` : soonPanel(ctx, 'ニュースは準備中です。'),
   });
   return layout(ctx, {
     title: 'ニュース', current: 'news', source: 'data/news/*.json', solidHead: true,
@@ -995,11 +1077,9 @@ function newsIndexPage() {
 function newsPage(n) {
   const ctx = newPage(`news/${n.id}.html`);
   const P = ctx.P;
-  const img = assetSrc(n.image, P);
   ctx.src(n.sources);
   if (n.status) ctx.checks.push({ label: 'このニュース', status: n.status });
-  if (img && n.image_credit) ctx.credit(typeof n.image_credit === 'string' ? n.image_credit : { ...n.image_credit, file: n.image_credit.file || n.image, title: n.image_credit.title || 'ニュースの画像' });
-  else if (img) console.warn(`! ニュース ${n.id} の画像にクレジット(image_credit)がありません`);
+  if (assetSrc(n.image, P) && !n.image_credit) console.warn(`! ニュース ${n.id} の画像にクレジット(image_credit)がありません`);
   const idx = news.indexOf(n);
   const newer = news[idx - 1];
   const older = news[idx + 1];
@@ -1013,20 +1093,40 @@ function newsPage(n) {
     ${tags ? `<div class="tags ld" style="--i:3;margin-top:20px">${tags}</div>` : ''}
   </div>
 </section>`;
+
+  // ヒーロー画像：運営の写真 > X の投稿の画像(クレジット付き) > デザイン
+  const xi = assetSrc(n.image, P) ? null : xImage(n);
+  const media = newsMedia(n, ctx, { eager: true, alt: xi ? xi.alt : (str(n.image_alt) || n.title) });
+  const heroFig = `<figure class="news-hero">
+      ${media}
+      ${xi ? `<figcaption class="x-credit">画像：<a href="${esc(xi.post)}" rel="noopener">${esc(xi.account)} / X</a></figcaption>` : ''}
+    </figure>`;
+
+  const posts = xPosts(n);
+  const pagerHtml = `<nav class="pager" aria-label="前後のニュース">${pager(newer, 'Newer')}${pager(older, 'Older')}</nav>
+    <p style="margin-top:32px"><a class="link-arrow" href="index.html">← ニュース一覧</a></p>`;
   const body = section({
     id: 'article', tone: 'cream',
     inner: `<div class="wrap--narrow" style="padding:0;margin:0 auto">
-    ${img ? `<div class="slot slot--16x9" style="margin-bottom:32px"><img src="${esc(img)}" alt="${esc(str(n.image_alt) || n.title)}"></div>` : ''}
+    ${heroFig}
     ${n.summary ? `<p class="lead">${esc(n.summary)}</p>` : ''}
     ${n.body.length ? `<div class="prose" style="margin-top:28px">${n.body.map((p) => `<p>${esc(p)}</p>`).join('')}</div>` : ''}
-    <nav class="pager" aria-label="前後のニュース">${pager(newer, 'Newer')}${pager(older, 'Older')}</nav>
-    <p style="margin-top:32px"><a class="link-arrow" href="index.html">← ニュース一覧</a></p>
+    ${posts.length ? '' : pagerHtml}
   </div>`,
   });
+  const postsSec = posts.length ? section({
+    id: 'posts', tone: 'dark',
+    head: secHead({ id: 'posts', kicker: 'Official Posts', en: 'On X', jp: '公式の投稿', center: true }),
+    inner: `<div class="x-embeds">${posts.map(xEmbed).join('\n')}</div>
+  <div class="wrap--narrow" style="padding:0;margin:0 auto">
+    ${pagerHtml}
+  </div>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>`,
+  }) : '';
   return layout(ctx, {
     title: `${n.title}｜ニュース`, current: 'news', source: `data/news/${n.id}.json`, solidHead: true,
     parent: 'news/index.html', leaf: n.title,
-    desc: n.summary || n.title, body: [head, body].join('\n'),
+    desc: n.summary || n.title, body: [head, body, postsSec].filter(Boolean).join('\n'),
   });
 }
 
@@ -1512,7 +1612,6 @@ function loadHistory() {
 const MONTHS_EN = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
 // 日付が月までのときは「AUG」のように月名だけを出す
 const histDate = (d) => { const m = str(d).match(/^(\d{4})-(\d{2})(?:-(\d{2}))?$/); return m ? { y: +m[1], dot: m[3] ? `${m[2]}.${m[3]}` : (MONTHS_EN[+m[2] - 1] || m[2]), iso: m[0] } : null; };
-const teamLogoFile = (slug) => assetPath(bySlug.get(slug)?.images?.logo) || assetPath(`assets/img/teams/${slug}/logo.png`);
 
 function japanHistoryPage() {
   const ctx = newPage('japan/history.html');

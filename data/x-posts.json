@@ -1,0 +1,221 @@
+{
+  "_note": "scripts/fetch-x.mjs が生成します。X の埋め込みが読み込めないときに表示する代替テキスト(投稿の抜粋・アカウント・日付)です。手で編集しないでください。",
+  "posts": {
+    "https://x.com/Absol_s/status/2113150417274384625": {
+      "id": "2113150417274384625",
+      "account": "@Absol_s",
+      "name": "ZETA Absol",
+      "date": "2026-10-22",
+      "text": "LFT(制限付き) ZETA DIVISIONとの契約下ではありますが、他の選択肢を探す許可をもらいました。 Roles// Duelist (他ロールも可) Contact// fukaya@gnmd.com",
+      "fetched_at": "2026-11-17"
+    },
+    "https://x.com/crazyraccoon406/status/2112548170773520557": {
+      "id": "2112548170773520557",
+      "account": "@crazyraccoon406",
+      "name": "Crazy Raccoon",
+      "date": "2026-10-20",
+      "text": "Crazy Raccoon has been selected as a VCT 2027 partner team! We Are Back この度、Crazy RaccoonがVCT 2027のパートナーチームとして選出されたことをお知らせいたします。 #CRWIN #VCT",
+      "fetched_at": "2026-11-17"
+    },
+    "https://x.com/DFM_VALORANT/status/2112093915297784227": {
+      "id": "2112093915297784227",
+      "account": "@DFM_VALORANT",
+      "name": "DFM VALORANT",
+      "date": "2026-10-19",
+      "text": "【Our VCT Partnership Ends in 2026】 この度、DFMは2027年シーズン以降の「VALORANT Champions Tour」におけるパートナーチームに選出されませんでした。 2023年の「VCT Pacific」開幕以来、苦しい時期も変わらず…",
+      "fetched_at": "2026-11-17"
+    },
+    "https://x.com/DFM_VALORANT/status/2117179918169813452": {
+      "id": "2117179918169813452",
+      "account": "@DFM_VALORANT",
+      "name": "DFM VALORANT",
+      "date": "2026-11-02",
+      "text": "VALORANT部門 選手・コーチ7名との契約終了のお知らせ ・Meiy / Akame / Caedye / yatsuka 4選手 ・Vorz / NorthernLights / Melofovia 3コーチ これまでの多大な貢献と献身に心より感謝申し上げるとともに、それ…",
+      "fetched_at": "2026-11-17"
+    },
+    "https://x.com/eKoVLRT/status/2113143132938453066": {
+      "id": "2113143132938453066",
+      "account": "@eKoVLRT",
+      "name": "ZETA eKo",
+      "date": "2026-10-22",
+      "text": "LFT for any region I’m still in talks with ZETA DIVISION, but they’ve also given me permission to explore my options for next year. Contact…",
+      "fetched_at": "2026-11-17"
+    },
+    "https://x.com/geng_gold/status/2118652361430426012": {
+      "id": "2118652361430426012",
+      "account": "@geng_gold",
+      "name": "Gen.G Gold",
+      "date": "2026-11-06",
+      "text": "Welcome, Dambi! We are excited to welcome Masters Santiago MVP, ‘Dambi’ Hyukgyu Lee to Gen.G VALORANT! Bringing his exceptional talent, fir…",
+      "fetched_at": "2026-11-17"
+    },
+    "https://x.com/geng_gold/status/2118652613197701426": {
+      "id": "2118652613197701426",
+      "account": "@geng_gold",
+      "name": "Gen.G Gold",
+      "date": "2026-11-06",
+      "text": "Welcome, MaKo! An established veteran of the scene, ‘MaKo’ Myeong-Kwan Kim joins Gen.G VALORANT for the 2027 season! Bringing his precise a…",
+      "fetched_at": "2026-11-17"
+    },
+    "https://x.com/jitboyy_/status/2119387407665754253": {
+      "id": "2119387407665754253",
+      "account": "@jitboyy_",
+      "name": "jitboyy",
+      "date": "2026-11-08",
+      "text": "LFT | Free Agent Can play any position. Basic English communication skills. Experienced in playing with international players. Open to new …",
+      "fetched_at": "2026-11-17"
+    },
+    "https://x.com/killuaX456/status/2119398344149918105": {
+      "id": "2119398344149918105",
+      "account": "@killuaX456",
+      "name": "killua",
+      "date": "2026-11-08",
+      "text": "LFT | Free Agent Open to ALL REGIONS Can play Initiator, second duelist, can try sentinel Basic English communication skills. Open to new o…",
+      "fetched_at": "2026-11-17"
+    },
+    "https://x.com/MURASHeSports/status/2119701532774126066": {
+      "id": "2119701532774126066",
+      "account": "@MURASHeSports",
+      "name": "MURASH GAMING / ムラッシュゲーミング 広報【公式】",
+      "date": "2026-11-09",
+      "text": "VALORANT Div. Announcement Part.1 ━━━━━━━━━━━━ 🔫 Player HoneyBunny(@HoneyBunnyTT) MrTenzouEz(@MrTenzouEz) 📋 Coach Reita(@ReitaTheFPS) 📊 Ana…",
+      "fetched_at": "2026-11-17"
+    },
+    "https://x.com/MURASHeSports/status/2120425041766883677": {
+      "id": "2120425041766883677",
+      "account": "@MURASHeSports",
+      "name": "MURASH GAMING / ムラッシュゲーミング 広報【公式】",
+      "date": "2026-11-11",
+      "text": "VALORANT Div. Announcement Part.2 ━━━━━━━━━━━━ 🔫 Player Caedye(@CaedyeuS) Seoldam(@SeoldamTwit) Xdll(@Xdllvl) 📋 Coach mltdwn(@ikedamaru64) …",
+      "fetched_at": "2026-11-17"
+    },
+    "https://x.com/pprxteam/status/2116470243887292427": {
+      "id": "2116470243887292427",
+      "account": "@pprxteam",
+      "name": "Paper Rex",
+      "date": "2026-10-31",
+      "text": "Khalish has been part of Paper Rex since our founding in 2020, starting first on our CS:GO Roster and transitioning with the team to VALORA…",
+      "fetched_at": "2026-11-17"
+    },
+    "https://x.com/pprxteam/status/2116499822173671558": {
+      "id": "2116499822173671558",
+      "account": "@pprxteam",
+      "name": "Paper Rex",
+      "date": "2026-10-31",
+      "text": "JJ first joined Paper Rex in September 2021, becoming a core member of our roster ever since. We will never forget the clutches, memes, ace…",
+      "fetched_at": "2026-11-17"
+    },
+    "https://x.com/QT_DIG/status/2119281758386753865": {
+      "id": "2119281758386753865",
+      "account": "@QT_DIG",
+      "name": "QT DIG∞",
+      "date": "2026-11-08",
+      "text": "【VALORANT DIV. Announcement】 Welcome to QT DIG∞ Meteor @Meteorvlrt TenTen @tentenvlrt さらなる高みを目指し戦い続けます。 #QTWIN",
+      "fetched_at": "2026-11-17"
+    },
+    "https://x.com/T1/status/2117089318820823120": {
+      "id": "2117089318820823120",
+      "account": "@T1",
+      "name": "T1 VALORANT",
+      "date": "2026-11-02",
+      "text": "Thank you 'Meteor' Having lifted the Masters Bangkok trophy together, we part ways with 'Meteor' as our contract comes to an end. It was an…",
+      "fetched_at": "2026-11-17"
+    },
+    "https://x.com/T1/status/2117090067562815659": {
+      "id": "2117090067562815659",
+      "account": "@T1",
+      "name": "T1 VALORANT",
+      "date": "2026-11-02",
+      "text": "Thank you 'KDG' T1 VALORANT bids farewell to Head Coach 'KDG'. His relentless pursuit of victory, coupled with boundless guidance and belie…",
+      "fetched_at": "2026-11-17"
+    },
+    "https://x.com/T1/status/2120350808248397831": {
+      "id": "2120350808248397831",
+      "account": "@T1",
+      "name": "T1 VALORANT",
+      "date": "2026-11-11",
+      "text": "Welcome Back 'crashies' Back and stronger than before, 'crashies' has joined T1. Join us in giving a warm welcome and loud cheers to 'crash…",
+      "fetched_at": "2026-11-17"
+    },
+    "https://x.com/T1/status/2120713200475750401": {
+      "id": "2120713200475750401",
+      "account": "@T1",
+      "name": "T1 VALORANT",
+      "date": "2026-11-12",
+      "text": "Welcome 'TenZ' The KING is back! 👑 A living legend of VALORANT, 'TenZ' begins a new chapter with T1. Ready to make history under the red wi…",
+      "fetched_at": "2026-11-17"
+    },
+    "https://x.com/valesports_jp/status/2117059446518198273": {
+      "id": "2117059446518198273",
+      "account": "@valesports_jp",
+      "name": "VALORANT Champions Tour JAPAN",
+      "date": "2026-11-02",
+      "text": "【エントリー開始】 2027 VCT Pacific Kickoff Japan Qualifier🔥 新シーズンへの挑戦はここから! 予選を勝ち抜き、オフラインFinalsを制して「Pacific Kickoff」への出場権を掴み取れ👊 📅受付:〜11/16(月)23:59 …",
+      "fetched_at": "2026-11-17"
+    },
+    "https://x.com/ValorantEsports/status/2110715204468380049": {
+      "id": "2110715204468380049",
+      "account": "@ValorantEsports",
+      "name": "VALORANT Champions Tour",
+      "date": "2026-10-15",
+      "text": "The VCT in 2027 is going even bigger with more than 50 tournaments across 15 cities. Get your five stack ready—Open Qualifiers start this N…",
+      "fetched_at": "2026-11-17"
+    },
+    "https://x.com/ValorantEsports/status/2110718040639930753": {
+      "id": "2110718040639930753",
+      "account": "@ValorantEsports",
+      "name": "VALORANT Champions Tour",
+      "date": "2026-10-15",
+      "text": "Global Events, Cups, Regional Opens. Here's where we'll be in 2027! #VCT",
+      "fetched_at": "2026-11-17"
+    },
+    "https://x.com/VARREL_VALORANT/status/2117466803656110527": {
+      "id": "2117466803656110527",
+      "account": "@VARREL_VALORANT",
+      "name": "VARREL VALORANT",
+      "date": "2026-11-03",
+      "text": "【Announcement: Team Roster Update】 平素よりVARRELを応援していただき、誠にありがとうございます。 VARRELはVALORANT部門所属の全選手およびコーチングスタッフと双方合意のもと契約を終了することとなりました。",
+      "fetched_at": "2026-11-17"
+    },
+    "https://x.com/vctpacific/status/2113450337147494604": {
+      "id": "2113450337147494604",
+      "account": "@vctpacific",
+      "name": "VCT Pacific",
+      "date": "2026-10-23",
+      "text": "Pacific, meet your 2027 Partnered Teams 👋 From returning names to new additions, here are the 8 organizations representing VCT Pacific in 2…",
+      "fetched_at": "2026-11-17"
+    },
+    "https://x.com/vctpacific/status/2115361822236979691": {
+      "id": "2115361822236979691",
+      "account": "@vctpacific",
+      "name": "VCT Pacific",
+      "date": "2026-10-28",
+      "text": "A new format, more ways into VCT, regional Open Qualifiers, two new Cups, and three Pacific roadshows across Bangkok, Manila and Tokyo. Her…",
+      "fetched_at": "2026-11-17"
+    },
+    "https://x.com/vctpacific/status/2115361826674520514": {
+      "id": "2115361826674520514",
+      "account": "@vctpacific",
+      "name": "VCT Pacific",
+      "date": "2026-10-28",
+      "text": "First, the calendar 🗓️ Kickoff starts us off in January, followed by two Pacific Cups and three global events as teams fight their way towa…",
+      "fetched_at": "2026-11-17"
+    },
+    "https://x.com/zetadivision/status/2112137231829999869": {
+      "id": "2112137231829999869",
+      "account": "@zetadivision",
+      "name": "ZETA DIVISION",
+      "date": "2026-10-19",
+      "text": "⚡️ZETA DIVISION - VALORANT このたび、ZETA DIVISIONはRiot Gamesとのパートナーシップを再締結し、VALORANT競技シーンにおける2027年開幕の新シーズンへ参戦することをご報告いたします。 📝",
+      "fetched_at": "2026-11-17"
+    },
+    "https://x.com/zetadivision/status/2117496998769103326": {
+      "id": "2117496998769103326",
+      "account": "@zetadivision",
+      "name": "ZETA DIVISION",
+      "date": "2026-11-03",
+      "text": "⚡ZETA DIVISION - VALORANT この度、Xdllが契約満了に伴い退団する運びとなりました。 これからも変わらない明るさで突き進め🔊🙌 @XdllVL 📝",
+      "fetched_at": "2026-11-17"
+    }
+  }
+}

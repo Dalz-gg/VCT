@@ -34,5 +34,14 @@
     }
   ],
   "image": null,
-  "image_credit": null
+  "image_credit": null,
+  "x_posts": [
+    "https://x.com/vctpacific/status/2113450337147494604"
+  ],
+  "x_image": {
+    "src": "https://pbs.twimg.com/media/HVRBydObkAAC2hK?format=jpg&name=medium",
+    "post": "https://x.com/vctpacific/status/2113450337147494604",
+    "account": "@vctpacific",
+    "alt": "Pacific, meet your 2027 Partnered Teams 👋 From returning na…"
+  }
 }

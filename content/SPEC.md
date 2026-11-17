@@ -20,7 +20,7 @@
 2. Flickr の写真で、ライセンスが CC BY / CC BY-SA / CC0 と明記されているもの
 3. Riot の「Legal Jibber Jabber」(ファンコンテンツ方針)で使える、ゲーム内の素材(エージェント・マップの画像など)
 4. 上のどれでもない画像(Liquipedia・VLR・ニュースサイト・チームSNSの写真で、ライセンスが不明なもの)は**使わない**。その選手は「写真なし」とし、プレースホルダー(イニシャルとチームカラー)で表示する
-- 画像はダウンロードして `assets/img/...` に保存する(ホットリンクしない)。長辺1200px以下、JPEG/WebPで軽くする
+- 画像はダウンロードして `assets/img/...` に保存する(ホットリンクしない)。例外：ニュースの X の投稿の画像(下の「ニュース」の `x_image`)長辺1200px以下、JPEG/WebPで軽くする
 - 画像ごとに次を記録する：file、source_url(画像のページ)、author、license、license_url。ページ内の画像の近くか、ページ下の「画像クレジット」に表示する
 - 必ず `curl` 等で画像ページを開き、ライセンス表記を自分で確認する。確認できなければ使わない
 
@@ -119,8 +119,13 @@
   "status": "confirmed|reported|unverified",
   "sources": [{"title": "...", "url": "https://..."}],
   "image": null,
-  "image_credit": null
+  "image_credit": null,
+  "x_posts": ["https://x.com/<user>/status/<id>"],
+  "x_image": {"src": "https://pbs.twimg.com/media/...?format=jpg&name=medium", "post": "https://x.com/<user>/status/<id>", "account": "@xxx", "alt": "投稿の文(60字以内)"}
 }
 ```
+- `x_posts`：ニュースの元になった**公式の X の投稿**(チーム・選手本人・@ValorantEsports・@vctpacific・@valesports_jp・@VALORANTjp・@PlayVALORANT・@RiotGamesJP など)。最大2件。**中身を開いて読み、ニュースと合っている投稿だけ**を入れる(ID を推測で書かない)。確認は `https://cdn.syndication.twimg.com/tweet-result?id=<id>&token=a` などで行う。無ければ `[]`
+- `x_image`：`node scripts/fetch-x.mjs` が自動で入れる(x_posts の中で最初に写真・動画サムネイルがある投稿)。無ければ `null`
+- **X の画像の扱い(画像ルールの例外)**：X の画像はダウンロード・再配布しない。投稿は X の公式埋め込みで表示し、カードやニュースのヒーロー画像は投稿自身の画像 URL(pbs.twimg.com)を直接表示して、「画像：@account / X」と投稿へのリンクをクレジットに出す。投稿が消えると画像も表示されなくなり、そのときはチームロゴ・カテゴリのデザインに切り替わる
 - 噂(関係者筋の報道)は `"status": "reported"` とし、本文で「〜と報じられています」と書く。公式発表で確定したら confirmed に更新
 - 開いて読めなかった記事を唯一の出典にしない。読めなかった場合は status を unverified にする

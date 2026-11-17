@@ -28,5 +28,14 @@
     }
   ],
   "image": null,
-  "image_credit": null
+  "image_credit": null,
+  "x_posts": [
+    "https://x.com/ValorantEsports/status/2110718040639930753"
+  ],
+  "x_image": {
+    "src": "https://pbs.twimg.com/media/HUrG1vzbsAAotbu?format=jpg&name=medium",
+    "post": "https://x.com/ValorantEsports/status/2110718040639930753",
+    "account": "@ValorantEsports",
+    "alt": "Global Events, Cups, Regional Opens. Here's where we'll be …"
+  }
 }

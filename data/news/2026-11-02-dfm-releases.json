@@ -34,5 +34,14 @@
     }
   ],
   "image": null,
-  "image_credit": null
+  "image_credit": null,
+  "x_posts": [
+    "https://x.com/DFM_VALORANT/status/2117179918169813452"
+  ],
+  "x_image": {
+    "src": "https://pbs.twimg.com/media/HWG0wcAbAAA4dC4?format=jpg&name=medium",
+    "post": "https://x.com/DFM_VALORANT/status/2117179918169813452",
+    "account": "@DFM_VALORANT",
+    "alt": "VALORANT部門 選手・コーチ7名との契約終了のお知らせ ・Meiy / Akame / Caedye / yat…"
+  }
 }

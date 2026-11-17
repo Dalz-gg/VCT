@@ -27,5 +27,14 @@
     }
   ],
   "image": null,
-  "image_credit": null
+  "image_credit": null,
+  "x_posts": [
+    "https://x.com/crazyraccoon406/status/2112548170773520557"
+  ],
+  "x_image": {
+    "src": "https://pbs.twimg.com/amplify_video_thumb/2112543738635620352/img/VGgIfICb63NvXc97.jpg?name=medium",
+    "post": "https://x.com/crazyraccoon406/status/2112548170773520557",
+    "account": "@crazyraccoon406",
+    "alt": "Crazy Raccoon has been selected as a VCT 2027 partner team!…"
+  }
 }

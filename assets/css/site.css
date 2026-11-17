@@ -18,7 +18,10 @@
    CARDS      .entry-card   big entry: .slot--16x9 media + num + EN title + JP + 1 line
               .team-card    .slot-team-logo + name + 1 line (+ --tc team color)
               .player-card  .slot-photo (3:4, silhouette) + IGN + role
-              .news-card    meta(date/cat/status) + title + READ
+              .news-card    .news-media(16:9: X image or .news-art) + .news-body(meta + title + READ)
+                            .news-card--featured (news index first, wide)  .news-grid (1/2/3 cols)
+   X          .x-embed > blockquote.twitter-tweet (official embed, readable fallback)
+              .x-tag (@account on card image)  .x-credit (figcaption)  .news-hero
               .info-card    small titled text block (used with .readmore)
    SLOTS      .slot (fixed-ratio placeholder; img inside = object-fit cover)
               .slot--16x9 .slot--1x1 .slot--3x4  .slot-logo (header)  .slot-team-logo
@@ -315,16 +318,75 @@ a.card:focus-visible{outline:2px solid var(--red);outline-offset:-4px}
 .sec--cream .player-card.is-tba .player-ign{color:var(--sub)}
 .player-credit{display:block;font-size:11px;color:var(--sub);margin-top:4px}
 
-/* news card */
-.news-card{display:flex;flex-direction:column;min-height:220px;padding:26px 26px 24px}
-.news-card .slot{margin:-26px -26px 22px}
+/* news card：画像(16:9、X の投稿の画像 or デザイン)＋本文 */
+.news-card{display:flex;flex-direction:column;padding:0}
+.news-body{display:flex;flex-direction:column;flex:1;padding:20px 22px 22px}
 .news-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;font-size:12px;letter-spacing:.06em;color:var(--sub)}
 .news-date{font-family:var(--f-display);font-size:16px;letter-spacing:.08em;color:var(--fg)}
 .news-cat{font-weight:700;color:var(--red)}
-.news-title{margin-top:14px;font-size:17px;font-weight:700;line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.news-read{margin-top:auto;padding-top:20px;display:flex;align-items:center;gap:10px;font-family:var(--f-display);font-size:14px;letter-spacing:.2em;color:var(--fg)}
+.news-title{margin-top:12px;font-size:17px;font-weight:700;line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.news-sum{margin-top:12px;font-size:15px;line-height:1.8;color:var(--sub);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.news-read{margin-top:auto;padding-top:18px;display:flex;align-items:center;gap:10px;font-family:var(--f-display);font-size:14px;letter-spacing:.2em;color:var(--fg)}
 .news-read .arrow{color:var(--red)}
-@media (min-width:768px){.news-card{padding:30px 30px 26px}.news-card .slot{margin:-30px -30px 24px}.news-title{font-size:18px}}
+@media (min-width:768px){.news-body{padding:22px 26px 24px}.news-title{font-size:18px}}
+
+/* news index grid：1 → 2 → 3列。先頭は大きな横長カード */
+.news-grid{grid-template-columns:minmax(0,1fr)}
+@media (min-width:640px){.news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1024px){.news-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:640px){
+  .news-card--featured{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+  .news-card--featured .news-media{height:100%;min-height:100%}
+  .news-card--featured .news-body{padding:28px 30px 28px;justify-content:center}
+  .news-card--featured .news-title{font-size:clamp(20px,2.3vw,28px);line-height:1.5;-webkit-line-clamp:4}
+  .news-card--featured .news-read{margin-top:0;padding-top:22px}
+}
+@media (min-width:640px) and (max-width:1023px){.news-card--featured .news-sum{display:none}}
+@media (min-width:1024px){.news-card--featured{grid-template-columns:minmax(0,2fr) minmax(0,1fr)}.news-card--featured .news-body{padding:36px 40px}}
+
+/* news media：デザイン(.news-art)の上に画像を重ね、読み込めなければ画像を外す */
+.news-media{background:var(--navy)}
+.news-media > img{z-index:1;object-position:50% 22%}
+.news-media.is-fallback .x-tag{display:none}
+.x-tag{position:absolute;right:8px;bottom:8px;z-index:2;padding:2px 8px;font-size:11px;line-height:1.6;letter-spacing:.02em;color:rgba(236,232,225,.92);background:rgba(15,25,35,.72);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);pointer-events:none;max-width:calc(100% - 16px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.news-art{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden;color:var(--cream);background:var(--navy)}
+.news-art::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0 16px,rgba(236,232,225,.045) 16px 17px)}
+.news-art::after{content:"";position:absolute;left:14px;top:14px;width:8px;height:8px;background:var(--red)}
+/* チーム：ロゴ＋チームカラーのグラデーション */
+.news-art--team{gap:clamp(14px,4%,28px);padding:0 10%;background:radial-gradient(circle at 30% 30%,color-mix(in srgb,var(--c1) 55%,transparent),transparent 60%),linear-gradient(120deg,color-mix(in srgb,var(--c1) 45%,var(--navy)) 0%,var(--navy) 55%,color-mix(in srgb,var(--c2) 40%,var(--navy)) 100%)}
+.news-art--team::after{background:var(--cream);opacity:.5}
+.na-logo{position:relative;z-index:1;flex:0 1 auto;width:clamp(56px,24%,120px);aspect-ratio:1/1;display:flex;align-items:center;justify-content:center}
+.na-logo img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 6px 18px rgba(0,0,0,.35))}
+.na-logo--text{font-family:var(--f-display);font-size:clamp(28px,6vw,52px);letter-spacing:.04em;line-height:1;color:var(--cream);width:auto;aspect-ratio:auto;text-shadow:0 4px 18px rgba(0,0,0,.35)}
+/* カテゴリ：VALORANT 風の模様＋大きな英字 */
+.na-en{position:relative;z-index:1;font-family:var(--f-display);text-transform:uppercase;letter-spacing:.06em;line-height:.9;font-size:clamp(46px,13cqi,92px);color:transparent;-webkit-text-stroke:1px rgba(236,232,225,.55)}
+.news-media{container-type:inline-size}
+.na-count{position:absolute;z-index:1;right:14px;top:12px;font-family:var(--f-display);font-size:13px;letter-spacing:.2em;color:rgba(236,232,225,.7);text-transform:uppercase}
+.news-art--official{background:linear-gradient(115deg,transparent 0 58%,var(--red) 58% 61%,transparent 61%),linear-gradient(135deg,#1F2731,var(--navy) 70%)}
+.news-art--roster{background:linear-gradient(115deg,transparent 0 64%,rgba(69,212,224,.85) 64% 65.5%,transparent 65.5%),repeating-linear-gradient(90deg,transparent 0 22px,rgba(69,212,224,.06) 22px 23px),linear-gradient(135deg,#1A2B36,var(--navy) 75%)}
+.news-art--roster::after{background:var(--cyan)}
+.news-art--schedule{background:repeating-linear-gradient(0deg,transparent 0 23px,rgba(242,184,75,.08) 23px 24px),repeating-linear-gradient(90deg,transparent 0 23px,rgba(242,184,75,.08) 23px 24px),linear-gradient(135deg,#2A2A2A,var(--navy) 75%)}
+.news-art--schedule::after{background:var(--amber)}
+.news-art--results{background:radial-gradient(circle at 78% 120%,rgba(242,184,75,.45),transparent 55%),linear-gradient(135deg,#2B2320,var(--navy) 70%)}
+.news-art--results::after{background:var(--amber)}
+.news-art--japan{background:radial-gradient(circle at 76% 50%,var(--red) 0 17%,transparent 17.4%),linear-gradient(135deg,#1F2731,var(--navy) 75%)}
+.news-art--japan .na-en{transform:translateX(-14%)}
+.news-art--other{background:linear-gradient(135deg,#1F2731,var(--navy) 75%)}
+
+/* news detail：ヒーロー画像＋クレジット、X の埋め込み */
+.news-hero{margin:0 0 36px}
+.news-hero .slot{clip-path:polygon(0 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%)}
+.news-hero .x-tag{display:none}
+.x-credit{margin-top:10px;font-size:12px;letter-spacing:.02em;color:var(--sub);text-align:right}
+.x-credit a{color:inherit;text-underline-offset:3px}
+.x-embeds{display:grid;gap:28px;justify-items:center}
+.x-embed{width:100%;max-width:550px;margin:0 auto}
+.x-embed .twitter-tweet-rendered,.x-embed > iframe{margin:0 auto !important}
+.x-embed blockquote.twitter-tweet{margin:0;padding:22px 24px;background:var(--card);border-left:3px solid var(--red);font-size:15px;line-height:1.8;color:var(--fg)}
+.x-embed blockquote.twitter-tweet p{margin:0 0 12px;white-space:pre-line}
+.x-embed blockquote.twitter-tweet .x-by{font-size:13px;color:var(--sub)}
+.x-embed blockquote.twitter-tweet a{color:var(--fg);font-size:13px;text-underline-offset:3px}
+#posts .pager{margin-top:56px}
 
 /* info card (text block with readmore) */
 .info-card{background:var(--card);padding:28px;clip-path:polygon(0 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%)}

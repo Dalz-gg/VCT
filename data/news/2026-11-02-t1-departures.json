@@ -34,5 +34,15 @@
     }
   ],
   "image": null,
-  "image_credit": null
+  "image_credit": null,
+  "x_posts": [
+    "https://x.com/T1/status/2117090067562815659",
+    "https://x.com/T1/status/2117089318820823120"
+  ],
+  "x_image": {
+    "src": "https://pbs.twimg.com/media/HWCg6B5acAAxfac?format=jpg&name=medium",
+    "post": "https://x.com/T1/status/2117090067562815659",
+    "account": "@T1",
+    "alt": "Thank you 'KDG' T1 VALORANT bids farewell to Head Coach 'KD…"
+  }
 }

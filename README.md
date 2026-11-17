@@ -38,10 +38,12 @@ data/japan.json              日本予選のデータ(VCJの年ごとの記録 v
 data/japan-history.json      日本シーンの歴史(年表の出来事 events・年ごとの時代名 eras・数字 stats)
 data/format.json             大会システムのデータ(HOME の数字・Cup 2 の日程もここから)
 data/news/<日付>-<id>.json   ニュース(1件1ファイル)
+data/x-posts.json            X の投稿の抜粋キャッシュ(scripts/fetch-x.mjs が生成。埋め込みの代替テキスト)
 data/pacific-partners.json   Pacific パートナーの並び順
 data/credits.json            サイト共通写真のクレジット(id で参照)
 scripts/build.mjs            ビルドスクリプト(Node 標準ライブラリのみ)
 scripts/add-photo.mjs        運営者の写真を追加するスクリプト
+scripts/fetch-x.mjs          ニュースの x_posts から x_image と data/x-posts.json を作るスクリプト
 scripts/fixtures/            テンプレート確認用の架空データ
 content/                     原稿・仕様・デザインブリーフ
 ```
@@ -118,7 +120,9 @@ writeFile('format/season.html', layout(ctx, { title, desc, current: 'format', bo
      "status": "confirmed",
      "sources": [{"title": "記事のタイトル", "url": "https://..."}],
      "image": null,
-     "image_credit": null
+     "image_credit": null,
+     "x_posts": ["https://x.com/T1/status/2120713200475750401"],
+     "x_image": null
    }
    ```
 
@@ -126,6 +130,9 @@ writeFile('format/season.html', layout(ctx, { title, desc, current: 'format', bo
    - `status`：公式発表は `confirmed`、関係者筋の報道は `reported`(本文で「〜と報じられています」と書く)、出典を読めなかったものは `unverified`。公式発表で確定したら `confirmed` に直します。
    - `teams` にチームの slug を書くと、ニュースにチームのタグ(チームページへのリンク)が付き、そのチームページの「関連ニュース」にも載ります。
    - 写真を付けるときは `assets/img/news/<id>.jpg` に置き、`"image": "assets/img/news/<id>.jpg"` と `image_credit`(下の「写真の追加方法」と同じ形)を書きます。
+   - `x_posts` に、ニュースの元になった公式の X の投稿 URL を最大2件書きます(チーム・選手本人・Riot の公式アカウント)。中身を読んで確かめた投稿だけにします。ニュース詳細ページの下に X の公式埋め込みで表示されます(埋め込みが読み込めなくても、投稿の抜粋・アカウント・日付が読めます)。無ければ `[]`。
+   - **x_posts を書いたら `node scripts/fetch-x.mjs` を実行します。** 投稿の画像の URL を `x_image` に、埋め込みの代替テキストを `data/x-posts.json` に書き込みます(画像はダウンロードしません)。もう一度実行しても、設定済みのものはそのまま。`--force` で取り直し、`node scripts/fetch-x.mjs <id>` で1件だけ。
+   - カードとニュースのヒーロー画像は、`image`(運営の写真) > `x_image`(X の投稿の画像。pbs.twimg.com から直接表示し「画像：@account / X」とクレジット) > デザイン(`teams` のチームロゴ＋チームカラー、なければカテゴリの模様)の順に使います。X の投稿が消えて画像が読めなくなったときも、自動でデザインに切り替わります。
 2. `node scripts/build.mjs` を実行します。`news/index.html`(新しい順)、`news/<id>.html`、`news/feed.xml`、HOME の「最新ニュース」(新しい3件)が更新されます。
 
 ## 写真の追加方法
@@ -190,6 +197,7 @@ node scripts/build.mjs
 - 使ってよいもの：Wikimedia Commons または Flickr の **CC BY / CC BY-SA / CC0 / パブリックドメイン** の画像。Riot の「Legal Jibber Jabber」で認められたゲーム内素材。
 - 使わないもの：ライセンスが不明な画像(Liquipedia・VLR・ニュースサイト・チームSNSなど)。Riot Games / VALORANT / VCT のロゴ。
 - 画像はダウンロードして `assets/img/` に保存します(ホットリンクしない)。長辺1200px以下に縮小します。
+- 例外：ニュースの X の投稿の画像はダウンロードせず、投稿自身の画像(pbs.twimg.com)を直接表示し、「画像：@account / X」と投稿へのリンクを付けます。投稿そのものは X の公式埋め込み(`platform.twitter.com/widgets.js`、埋め込みのあるページだけで読み込み)で表示します。
 - 運営者が提供した写真は例外で、`"license": "運営提供"`、`"provided_by_owner": true` として記録します(「写真の追加方法」)。
 - 画像ページを開いてライセンスを自分で確認し、`file`・`source_url`・`author`・`license`・`license_url` を記録します。サイト共通の写真は `data/credits.json`(`pages` に使うページを書く)、チームの写真は各チーム JSON の `image_credits` に書きます。クレジットは各ページ最下部の「画像クレジット」に自動で表示されます。
 - CC BY-SA の画像を加工した場合は、加工後の画像も同じライセンスになります(本サイトでは縮小・再圧縮のみ)。

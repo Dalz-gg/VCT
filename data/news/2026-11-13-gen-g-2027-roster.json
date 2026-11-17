@@ -42,5 +42,15 @@
     }
   ],
   "image": null,
-  "image_credit": null
+  "image_credit": null,
+  "x_posts": [
+    "https://x.com/geng_gold/status/2118652613197701426",
+    "https://x.com/geng_gold/status/2118652361430426012"
+  ],
+  "x_image": {
+    "src": "https://pbs.twimg.com/media/HWa-yIRaoAA55qt?format=jpg&name=medium",
+    "post": "https://x.com/geng_gold/status/2118652613197701426",
+    "account": "@geng_gold",
+    "alt": "Welcome, MaKo! An established veteran of the scene, ‘MaKo’ …"
+  }
 }

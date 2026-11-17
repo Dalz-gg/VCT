@@ -25,5 +25,14 @@
     }
   ],
   "image": null,
-  "image_credit": null
+  "image_credit": null,
+  "x_posts": [
+    "https://x.com/VARREL_VALORANT/status/2117466803656110527"
+  ],
+  "x_image": {
+    "src": "https://pbs.twimg.com/media/HWKhR-Za8AAkrWR?format=jpg&name=medium",
+    "post": "https://x.com/VARREL_VALORANT/status/2117466803656110527",
+    "account": "@VARREL_VALORANT",
+    "alt": "【Announcement: Team Roster Update】 平素よりVARRELを応援していただき、誠にあり…"
+  }
 }
