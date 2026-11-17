@@ -1,0 +1,1012 @@
+{
+ "as_of": "2026-11-17",
+ "title": "日本のVALORANT esportsの歴史",
+ "note": "年ごとの主な出来事。順位・日付はVLR.gg・公式発表・国内メディアで確認。2027年の日程は報道ベース。",
+ "stats": [
+  {
+   "value": 3,
+   "label": "国際大会の最高成績",
+   "unit": "位",
+   "sub": "Masters Reykjavík 2022"
+  },
+  {
+   "value": 1,
+   "label": "日本開催の世界大会",
+   "sub": "Masters Tokyo 2023"
+  },
+  {
+   "value": 3,
+   "label": "Masters・Championsに出た日本チーム",
+   "sub": "CR・ZETA・NORTHEPTION"
+  },
+  {
+   "value": 2,
+   "label": "2027年のPacificパートナー",
+   "sub": "ZETA・CR"
+  }
+ ],
+ "eras": [
+  {
+   "year": 2020,
+   "label": "始まりの年",
+   "summary": "ゲームが生まれ、最初の日本大会が開かれました。"
+  },
+  {
+   "year": 2021,
+   "label": "世界への扉",
+   "summary": "VCTが始まり、日本代表が初めて世界で戦いました。"
+  },
+  {
+   "year": 2022,
+   "label": "世界3位の衝撃",
+   "summary": "ZETAの3位で、日本のVALORANTが一気に注目されました。"
+  },
+  {
+   "year": 2023,
+   "label": "新時代と日本開催",
+   "summary": "Pacificリーグ、VCJ、Masters Tokyoが一度にやってきました。"
+  },
+  {
+   "year": 2024,
+   "label": "試練の年",
+   "summary": "国内ではRIDDLE ORDERが台頭、Pacificでは苦戦が続きました。"
+  },
+  {
+   "year": 2025,
+   "label": "積み上げの年",
+   "summary": "VCJは大会場へ。DFMがPacificのプレーオフに進みました。"
+  },
+  {
+   "year": 2026,
+   "label": "VCJ最後の年",
+   "summary": "最後の王者が決まり、2027年の新体制が発表されました。"
+  },
+  {
+   "year": 2027,
+   "label": "オープン時代へ",
+   "summary": "日本予選からPacificへ。夏には東京でCup 2。"
+  }
+ ],
+ "events": [
+  {
+   "date": "2020-06-02",
+   "year": 2020,
+   "category": "開催・イベント",
+   "title": "VALORANTが正式リリース",
+   "text": "Riot Gamesの5対5タクティカルFPS「VALORANT」が、基本プレイ無料で正式リリースされました。ここから日本の競技シーンも始まります。",
+   "teams": [],
+   "highlight": true,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "Wikipedia:VALORANT",
+     "url": "https://ja.wikipedia.org/wiki/VALORANT"
+    }
+   ]
+  },
+  {
+   "date": "2020-06-21",
+   "year": 2020,
+   "category": "国内リーグ",
+   "title": "RAGE InvitationalでJUPITERが優勝",
+   "text": "リリース直後に行われた国内大会「RAGE Invitational」で、Absolute JUPITER(のちのZETA DIVISION)が優勝しました。",
+   "teams": [
+    "zeta-division"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:RAGE Invitational",
+     "url": "https://www.vlr.gg/event/33/idx"
+    }
+   ]
+  },
+  {
+   "date": "2020-12-06",
+   "year": 2020,
+   "category": "国内リーグ",
+   "title": "First Strike: JapanをJUPITERが制す",
+   "text": "Riot公式の日本大会「First Strike: Japan」の決勝で、Absolute JUPITERがBlackBird Ignisに3-0で勝ち、優勝しました。",
+   "teams": [
+    "zeta-division"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:First Strike: Japan",
+     "url": "https://www.vlr.gg/event/213/idx"
+    }
+   ]
+  },
+  {
+   "date": "2021-03-21",
+   "year": 2021,
+   "category": "国内リーグ",
+   "title": "VCT日本大会、初代王者はCR",
+   "text": "VCT(VALORANT Champions Tour)が始まり、日本のStage 1 MastersはCrazy Raccoonが優勝しました。",
+   "teams": [
+    "crazy-raccoon"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:Champions Tour Japan Stage 1: Masters",
+     "url": "https://www.vlr.gg/event/352/idx"
+    }
+   ]
+  },
+  {
+   "date": "2021-05-02",
+   "year": 2021,
+   "category": "国内リーグ",
+   "title": "CRがアイスランド行きを決める",
+   "text": "Stage 2のChallengers FinalsでCrazy RaccoonがAbsolute JUPITERを破って優勝し、世界大会Masters Reykjavíkへの出場を決めました。",
+   "teams": [
+    "crazy-raccoon"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:Champions Tour Japan Stage 2: Challengers Finals",
+     "url": "https://www.vlr.gg/event/441/idx"
+    }
+   ]
+  },
+  {
+   "date": "2021-05-24",
+   "year": 2021,
+   "category": "国際大会",
+   "title": "日本代表、初めて世界の舞台へ",
+   "text": "VALORANT初のLAN(会場に集まって戦う)国際大会Masters Reykjavíkに、Crazy Raccoonが日本代表として出場しました。結果は9〜10位でした。",
+   "teams": [
+    "crazy-raccoon"
+   ],
+   "highlight": true,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:Masters Reykjavík 2021",
+     "url": "https://www.vlr.gg/event/353/idx"
+    },
+    {
+     "title": "GosuGamers:VCT 2021 Reykjavík Masters — everything you need to know",
+     "url": "https://gosugamers.net/valorant/news/54403-valorant-champions-tour-2021-reykjavik-masters-everything-you-need-to-know"
+    },
+    {
+     "title": "THESPIKE.GG:Crazy Raccoon looks to put Japan on the international map",
+     "url": "https://www.thespike.gg/news/crazy-raccoon-looks-to-put-japan-on-the-international-map-masters-reykjavik-team-previews/966"
+    },
+    {
+     "title": "VLR.gg:Crazy Raccoon(チームの大会成績)",
+     "url": "https://www.vlr.gg/team/277/crazy-raccoon"
+    }
+   ]
+  },
+  {
+   "date": "2021-07-08",
+   "year": 2021,
+   "category": "チーム・移籍",
+   "title": "JUPITERがZETA DIVISIONに",
+   "text": "チーム名を「ZETA DIVISION」に変更しました。日本のVALORANTを代表するチームの名前が、ここで生まれました。",
+   "teams": [
+    "zeta-division"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "Liquipedia:ZETA DIVISION",
+     "url": "https://liquipedia.net/valorant/ZETA_DIVISION"
+    }
+   ]
+  },
+  {
+   "date": "2021-08-15",
+   "year": 2021,
+   "category": "国内リーグ",
+   "title": "Stage 3はZETAが優勝",
+   "text": "Stage 3のChallengers PlayoffsでZETA DIVISIONが優勝。準優勝のCrazy Raccoonとともに、Masters Berlinへの出場を決めました。",
+   "teams": [
+    "zeta-division",
+    "crazy-raccoon"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:Champions Tour Japan Stage 3: Challengers Playoffs",
+     "url": "https://www.vlr.gg/event/540/idx"
+    }
+   ]
+  },
+  {
+   "date": "2021-09-10",
+   "year": 2021,
+   "category": "国際大会",
+   "title": "Masters Berlinに日本から2チーム",
+   "text": "ドイツのMasters BerlinにZETA DIVISIONとCrazy Raccoonが出場しました。どちらもグループステージで敗退しました。",
+   "teams": [
+    "zeta-division",
+    "crazy-raccoon"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:Masters Berlin 2021",
+     "url": "https://www.vlr.gg/event/466/idx"
+    },
+    {
+     "title": "VLR.gg:ZETA DIVISION(チームの大会成績)",
+     "url": "https://www.vlr.gg/team/5448/zeta-division"
+    },
+    {
+     "title": "VLR.gg:Crazy Raccoon(チームの大会成績)",
+     "url": "https://www.vlr.gg/team/277/crazy-raccoon"
+    }
+   ]
+  },
+  {
+   "date": "2021-12-01",
+   "year": 2021,
+   "category": "国際大会",
+   "title": "CRがChampions 2021へ",
+   "text": "1年の締めくくりの世界大会Champions 2021(ベルリン)に、Crazy Raccoonが年間ポイントで出場しました。結果はグループステージ敗退でした。",
+   "teams": [
+    "crazy-raccoon"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:Valorant Champions 2021",
+     "url": "https://www.vlr.gg/event/449/idx"
+    },
+    {
+     "title": "VLR.gg:Crazy Raccoon(チームの大会成績)",
+     "url": "https://www.vlr.gg/team/277/crazy-raccoon"
+    }
+   ]
+  },
+  {
+   "date": "2022-03-27",
+   "year": 2022,
+   "category": "国内リーグ",
+   "title": "新生ZETAがStage 1を制す",
+   "text": "選手を大きく入れ替えたZETA DIVISIONが、日本のStage 1 Challengers Playoffsで優勝しました。",
+   "teams": [
+    "zeta-division"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:Champions Tour Japan Stage 1: Challengers Playoffs",
+     "url": "https://www.vlr.gg/event/853/idx"
+    }
+   ]
+  },
+  {
+   "date": "2022-04-24",
+   "year": 2022,
+   "category": "国際大会",
+   "title": "ZETA、Masters Reykjavíkで世界3位",
+   "text": "下馬評を覆して勝ち上がり、日本チームとして世界大会で3位に入りました。日本のVALORANT人気を一気に押し上げた出来事です。",
+   "teams": [
+    "zeta-division"
+   ],
+   "highlight": true,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:Masters Reykjavík 2022",
+     "url": "https://www.vlr.gg/event/926/idx"
+    },
+    {
+     "title": "Game*Spark:ZETA DIVISION、北米OpTic Gamingに破れる―『VALORANT』世界大会は3位に",
+     "url": "https://www.gamespark.jp/article/2022/04/24/118015.html"
+    }
+   ]
+  },
+  {
+   "date": "2022-06-26",
+   "year": 2022,
+   "category": "国内リーグ",
+   "title": "NORTHEPTIONがZETAを破り優勝",
+   "text": "Stage 2のChallengers Playoffs(埼玉)で、NORTHEPTIONが優勝。ZETA DIVISIONは準優勝でした。",
+   "teams": [
+    "northeption",
+    "zeta-division"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:Champions Tour Japan Stage 2: Challengers Playoffs",
+     "url": "https://www.vlr.gg/event/1013/idx"
+    }
+   ]
+  },
+  {
+   "date": "2022-07-10",
+   "year": 2022,
+   "category": "国際大会",
+   "title": "NORTHEPTIONがMasters Copenhagenへ",
+   "text": "デンマークのMasters Copenhagenに日本代表として出場し、9〜10位でした。8月のEast Asia LCQ(最後の予選)は3位でした。",
+   "teams": [
+    "northeption"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:Masters Copenhagen 2022",
+     "url": "https://www.vlr.gg/event/1014/idx"
+    },
+    {
+     "title": "VLR.gg:Champions Tour East Asia: Last Chance Qualifier",
+     "url": "https://www.vlr.gg/event/1083/idx"
+    },
+    {
+     "title": "VLR.gg:NORTHEPTION(チームの大会成績)",
+     "url": "https://www.vlr.gg/team/2988/northeption"
+    }
+   ]
+  },
+  {
+   "date": "2022-08-31",
+   "year": 2022,
+   "category": "国際大会",
+   "title": "ZETAがChampions 2022に出場",
+   "text": "トルコ・イスタンブールのChampions 2022に、ZETA DIVISIONがポイントで出場しました。結果は9〜12位でした。",
+   "teams": [
+    "zeta-division"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:Valorant Champions 2022",
+     "url": "https://www.vlr.gg/event/1015/idx"
+    },
+    {
+     "title": "VLR.gg:ZETA DIVISION(チームの大会成績)",
+     "url": "https://www.vlr.gg/team/5448/zeta-division"
+    }
+   ]
+  },
+  {
+   "date": "2022-09-21",
+   "year": 2022,
+   "category": "制度",
+   "title": "ZETAとDFMがPacificパートナーに",
+   "text": "2023年から始まるパートナー制リーグ「VCT Pacific」の10チームが発表され、日本からZETA DIVISIONとDetonatioN FocusMeが選ばれました。",
+   "teams": [
+    "zeta-division",
+    "detonation-focusme"
+   ],
+   "highlight": true,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "THESPIKE.GG:Pacific partnership teams announced",
+     "url": "https://www.thespike.gg/news/pacific-partnership-teams-announced/1838"
+    },
+    {
+     "title": "Liquipedia:ZETA DIVISION",
+     "url": "https://liquipedia.net/valorant/ZETA_DIVISION"
+    }
+   ]
+  },
+  {
+   "date": "2023-02-13",
+   "year": 2023,
+   "category": "国際大会",
+   "title": "LOCK//INにZETAとDFM",
+   "text": "新時代の幕開けとなるブラジルの大会LOCK//IN São Pauloに、日本の2チームが出場しました。",
+   "teams": [
+    "zeta-division",
+    "detonation-focusme"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:LOCK//IN São Paulo",
+     "url": "https://www.vlr.gg/event/1188/idx"
+    },
+    {
+     "title": "VLR.gg:ZETA DIVISION(チームの大会成績)",
+     "url": "https://www.vlr.gg/team/5448/zeta-division"
+    },
+    {
+     "title": "VLR.gg:DetonatioN FocusMe(チームの大会成績)",
+     "url": "https://www.vlr.gg/team/278/detonation-focusme"
+    }
+   ]
+  },
+  {
+   "date": "2023-03-19",
+   "year": 2023,
+   "category": "国内リーグ",
+   "title": "VCJが開幕、初代王者はFENNEL",
+   "text": "Pacificの下の国内リーグ「Challengers Japan(VCJ)」が始まりました。Split 1はFENNELが優勝しました。",
+   "teams": [
+    "fennel"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:Challengers League Japan: Split 1",
+     "url": "https://www.vlr.gg/event/1432/idx"
+    }
+   ]
+  },
+  {
+   "date": "2023-03-25",
+   "year": 2023,
+   "category": "VCT Pacific",
+   "title": "VCT Pacificが開幕",
+   "text": "ソウルでPacificリーグが始まりました。ZETA DIVISIONはリーグ戦4位でプレーオフに進み、5〜6位でした。",
+   "teams": [
+    "zeta-division",
+    "detonation-focusme"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:VCT 2023: Pacific League",
+     "url": "https://www.vlr.gg/event/1191/idx"
+    }
+   ]
+  },
+  {
+   "date": "2023-06-11",
+   "year": 2023,
+   "category": "開催・イベント",
+   "title": "初めて日本で世界大会",
+   "text": "VCTの世界大会Masters Tokyoが千葉で開かれました。決勝の2日間は幕張メッセが舞台でした。",
+   "teams": [],
+   "highlight": true,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:Masters Tokyo 2023",
+     "url": "https://www.vlr.gg/event/1494/idx"
+    },
+    {
+     "title": "マイナビニュース:VALORANT Masters Tokyo 開催",
+     "url": "https://news.mynavi.jp/article/20230523-2685977/"
+    }
+   ]
+  },
+  {
+   "date": "2023-07-09",
+   "year": 2023,
+   "category": "VCT Pacific",
+   "title": "SCARZ、Ascensionで準優勝",
+   "text": "VCJ Split 2を制したSCARZが、Pacificへの昇格をかけたAscension(バンコク)で準優勝。昇格はあと一歩で逃しました。",
+   "teams": [
+    "scarz"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:Challengers League Japan: Split 2",
+     "url": "https://www.vlr.gg/event/1531/idx"
+    },
+    {
+     "title": "VLR.gg:Pacific Ascension 2023",
+     "url": "https://www.vlr.gg/event/1652/idx"
+    }
+   ]
+  },
+  {
+   "date": "2023-07-23",
+   "year": 2023,
+   "category": "VCT Pacific",
+   "title": "ZETAがLCQを制しChampionsへ",
+   "text": "Pacificの最終予選(LCQ)でZETA DIVISIONが優勝し、ロサンゼルスのChampions 2023に出場しました(13〜16位)。",
+   "teams": [
+    "zeta-division"
+   ],
+   "highlight": true,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:Pacific Last Chance Qualifier 2023",
+     "url": "https://www.vlr.gg/event/1660/idx"
+    },
+    {
+     "title": "VLR.gg:Valorant Champions 2023",
+     "url": "https://www.vlr.gg/event/1657/idx"
+    },
+    {
+     "title": "VLR.gg:ZETA DIVISION(チームの大会成績)",
+     "url": "https://www.vlr.gg/team/5448/zeta-division"
+    }
+   ]
+  },
+  {
+   "date": "2023-11-05",
+   "year": 2023,
+   "category": "開催・イベント",
+   "title": "両国国技館で国際招待大会",
+   "text": "Red Bull Home Ground #4が両国国技館で開かれ、海外の強豪が東京に集まりました。",
+   "teams": [],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:Red Bull Home Ground #4",
+     "url": "https://www.vlr.gg/event/1752/idx"
+    }
+   ]
+  },
+  {
+   "date": "2023-11-28",
+   "year": 2023,
+   "category": "チーム・移籍",
+   "title": "CRがVALORANTから離れる",
+   "text": "Crazy RaccoonがDetonatioNとの業務提携を発表。CRの選手はDFMに移り、CRは2024年のVALORANT競技に参加しないことになりました。",
+   "teams": [
+    "crazy-raccoon",
+    "detonation-focusme"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "Crazy Raccoon:Samurai工房とDetonatioNの包括的業務提携のお知らせ",
+     "url": "https://crazyraccoon.jp/20231128-1/"
+    },
+    {
+     "title": "Liquipedia:Crazy Raccoon",
+     "url": "https://liquipedia.net/valorant/Crazy_Raccoon"
+    }
+   ]
+  },
+  {
+   "date": "2023-12-03",
+   "year": 2023,
+   "category": "開催・イベント",
+   "title": "Riot Games ONEでZETA準優勝",
+   "text": "横浜・Kアリーナで開かれたRiot Gamesのイベント「Riot Games ONE」の招待大会で、ZETA DIVISIONが2位でした。",
+   "teams": [
+    "zeta-division",
+    "detonation-focusme"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:Riot Games ONE 2023",
+     "url": "https://www.vlr.gg/event/1875/idx"
+    }
+   ]
+  },
+  {
+   "date": "2024-03-31",
+   "year": 2024,
+   "category": "国内リーグ",
+   "title": "VCJ 2024 Split 1はFENNEL",
+   "text": "3回制になったVCJの最初のSplitを、FENNELが制しました。",
+   "teams": [
+    "fennel"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:Challengers League 2024 Japan: Split 1",
+     "url": "https://www.vlr.gg/event/1962/idx"
+    }
+   ]
+  },
+  {
+   "date": "2024-07-21",
+   "year": 2024,
+   "category": "VCT Pacific",
+   "title": "Pacificで苦しんだ1年",
+   "text": "Stage 2はZETA DIVISIONが8位、DFMが10位。この年、日本勢は世界大会に届きませんでした。",
+   "teams": [
+    "zeta-division",
+    "detonation-focusme"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:VCT 2024: Pacific Stage 2",
+     "url": "https://www.vlr.gg/event/2005/idx"
+    },
+    {
+     "title": "VLR.gg:ZETA DIVISION(チームの大会成績)",
+     "url": "https://www.vlr.gg/team/5448/zeta-division"
+    },
+    {
+     "title": "VLR.gg:DetonatioN FocusMe(チームの大会成績)",
+     "url": "https://www.vlr.gg/team/278/detonation-focusme"
+    }
+   ]
+  },
+  {
+   "date": "2024-07-28",
+   "year": 2024,
+   "category": "国内リーグ",
+   "title": "RIDDLE ORDERが有明で初優勝",
+   "text": "Split 2の決勝が有明GYM-EXで行われ、RIDDLE ORDERが優勝。Split 3も制しました。",
+   "teams": [
+    "riddle-order"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:Challengers League 2024 Japan: Split 2",
+     "url": "https://www.vlr.gg/event/2049/idx"
+    },
+    {
+     "title": "VLR.gg:Challengers League 2024 Japan: Split 3",
+     "url": "https://www.vlr.gg/event/2173/idx"
+    }
+   ]
+  },
+  {
+   "date": "2024-09-29",
+   "year": 2024,
+   "category": "VCT Pacific",
+   "title": "RIDDLE ORDER、Ascensionで4位",
+   "text": "ジャカルタのAscension Pacificに日本代表として出場し、4位でした。",
+   "teams": [
+    "riddle-order"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:Pacific Ascension 2024",
+     "url": "https://www.vlr.gg/event/2146/idx"
+    }
+   ]
+  },
+  {
+   "date": "2024-12-15",
+   "year": 2024,
+   "category": "開催・イベント",
+   "title": "Riot Games ONE 2024",
+   "text": "横浜・Kアリーナの招待大会で、ZETA DIVISIONが2位、DFMが3位に入りました。",
+   "teams": [
+    "zeta-division",
+    "detonation-focusme"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:Riot Games ONE 2024",
+     "url": "https://www.vlr.gg/event/2224/idx"
+    }
+   ]
+  },
+  {
+   "date": "2025-05-18",
+   "year": 2025,
+   "category": "国内リーグ",
+   "title": "幕張メッセでRIDDLE ORDERが連覇",
+   "text": "VCJ Stage 2のプレーオフが幕張メッセで開かれ、RIDDLE ORDERがStage 1に続いて優勝しました。",
+   "teams": [
+    "riddle-order"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:Challengers 2025: Japan Stage 1",
+     "url": "https://www.vlr.gg/event/2309/idx"
+    },
+    {
+     "title": "VLR.gg:Challengers 2025: Japan Stage 2",
+     "url": "https://www.vlr.gg/event/2310/idx"
+    }
+   ]
+  },
+  {
+   "date": "2025-08-24",
+   "year": 2025,
+   "category": "国内リーグ",
+   "title": "Season FinalsもRIDDLE ORDER",
+   "text": "Stage 3はFENNELが優勝。京王アリーナTOKYOでのSeason FinalsはRIDDLE ORDERがFENNELを抑えて制しました。",
+   "teams": [
+    "riddle-order",
+    "fennel"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:Challengers 2025: Japan Stage 3",
+     "url": "https://www.vlr.gg/event/2311/idx"
+    },
+    {
+     "title": "VLR.gg:Challengers League 2025: Japan Finals",
+     "url": "https://www.vlr.gg/event/2584/idx"
+    }
+   ]
+  },
+  {
+   "date": "2025-08-31",
+   "year": 2025,
+   "category": "VCT Pacific",
+   "title": "DFMがプレーオフ進出",
+   "text": "VCT Pacific Stage 2でDetonatioN FocusMeがプレーオフに進み、7〜8位でした。",
+   "teams": [
+    "detonation-focusme"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:VCT 2025: Pacific Stage 2",
+     "url": "https://www.vlr.gg/event/2500/idx"
+    },
+    {
+     "title": "VLR.gg:DetonatioN FocusMe(チームの大会成績)",
+     "url": "https://www.vlr.gg/team/278/detonation-focusme"
+    }
+   ]
+  },
+  {
+   "date": "2025-10-26",
+   "year": 2025,
+   "category": "VCT Pacific",
+   "title": "Ascensionは昇格ならず",
+   "text": "RIDDLE ORDERがタイでのAscension Pacificに出場しましたが、Pacificに昇格したのは韓国のSLT Seongnamでした。",
+   "teams": [
+    "riddle-order"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:VCT 2025: Pacific Ascension",
+     "url": "https://www.vlr.gg/event/2535/idx"
+    }
+   ]
+  },
+  {
+   "date": "2025-12-13",
+   "year": 2025,
+   "category": "国際大会",
+   "title": "日韓対抗戦でQT DIG∞が3位",
+   "text": "釜山で開かれたChallengers Korea & Japan Showdownで、QT DIG∞が3位に入りました。",
+   "teams": [
+    "qt-dig"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:Challengers 2025: Korea & Japan Showdown",
+     "url": "https://www.vlr.gg/event/2750/idx"
+    }
+   ]
+  },
+  {
+   "date": "2026-02-15",
+   "year": 2026,
+   "category": "VCT Pacific",
+   "title": "DFM、Kickoffで5位",
+   "text": "2026年最初のPacific大会Kickoffで、DetonatioN FocusMeが5位に入りました。",
+   "teams": [
+    "detonation-focusme"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:VCT 2026: Pacific Kickoff",
+     "url": "https://www.vlr.gg/event/2683/idx"
+    }
+   ]
+  },
+  {
+   "date": "2026-04-16",
+   "year": 2026,
+   "category": "国内リーグ",
+   "title": "CREST GAMING Zstが初優勝",
+   "text": "VCJ最後の年。Split 1はCREST GAMING Zstが初めて優勝しました。",
+   "teams": [
+    "crest-gaming"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:Challengers 2026: Japan Split 1",
+     "url": "https://www.vlr.gg/event/2847/idx"
+    }
+   ]
+  },
+  {
+   "date": "2026-07-26",
+   "year": 2026,
+   "category": "国内リーグ",
+   "title": "最後のVCJ王者はQT DIG∞",
+   "text": "アリーナ立川立飛でのSeason Finalsで、QT DIG∞がREJECTを3-2で破り、悲願の初優勝を果たしました。",
+   "teams": [
+    "qt-dig",
+    "reject"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:Challengers 2026: Japan Split 2",
+     "url": "https://www.vlr.gg/event/2974/idx"
+    },
+    {
+     "title": "VLR.gg:Challengers 2026: Japan Season Finals",
+     "url": "https://www.vlr.gg/event/2991/idx"
+    },
+    {
+     "title": "VALORANT NEWS JP:QT DIG∞、MeteorとTenTenの加入を発表",
+     "url": "https://valorantnews.jp/archives/169607"
+    }
+   ]
+  },
+  {
+   "date": "2026-08-12",
+   "year": 2026,
+   "category": "VCT Pacific",
+   "title": "QT DIG∞、Pacificに挑戦",
+   "text": "VCJ王者としてPacific Stage 2のPlay-Inに出場。勝利はなりませんでしたが、マップを奪う場面もありました。",
+   "teams": [
+    "qt-dig"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:VCT 2026: Pacific Stage 2",
+     "url": "https://www.vlr.gg/event/2776/idx"
+    },
+    {
+     "title": "VALORANT NEWS JP:QT DIG∞、MeteorとTenTenの加入を発表",
+     "url": "https://valorantnews.jp/archives/169607"
+    }
+   ]
+  },
+  {
+   "date": "2026-10-18",
+   "year": 2026,
+   "category": "チーム・移籍",
+   "title": "DFMはパートナーに選ばれず",
+   "text": "2023年からPacificで戦ってきたDetonatioN FocusMeが、2027年のパートナーには選ばれなかったと発表しました。",
+   "teams": [
+    "detonation-focusme"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VLR.gg:VCT Pacific organizations announce partner status",
+     "url": "https://www.vlr.gg/777336/vct-pacific-organizations-announce-partner-status"
+    }
+   ]
+  },
+  {
+   "date": "2026-10-23",
+   "year": 2026,
+   "category": "制度",
+   "title": "2027年、ZETAとCRがパートナーに",
+   "text": "2027年からのPacificパートナー8チームに、ZETA DIVISIONと、3年ぶりに戻るCrazy Raccoonが選ばれました。",
+   "teams": [
+    "zeta-division",
+    "crazy-raccoon"
+   ],
+   "highlight": true,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VALORANT Esports:Introducing VCT Pacific partnered teams for 2027 and beyond",
+     "url": "https://valorantesports.com/en-SG/news/introducing-vct-pacific-partnered-teams-for-2027-and-beyond"
+    },
+    {
+     "title": "VLR.gg:VCT Pacific organizations announce partner status",
+     "url": "https://www.vlr.gg/777336/vct-pacific-organizations-announce-partner-status"
+    }
+   ]
+  },
+  {
+   "date": "2026-11-02",
+   "year": 2026,
+   "category": "制度",
+   "title": "VCJに代わる日本予選がスタート",
+   "text": "2027年からは誰でも参加できるオープン予選に。優勝した1チームがPacific Kickoffに出場できます。",
+   "teams": [
+    "detonation-focusme",
+    "qt-dig"
+   ],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VALORANT Esports:2027 VCT Pacific Kickoff Japan Qualifier",
+     "url": "https://valorantesports.com/ja-jp/news/2027-vct-pacific-kickoff-japan-qualifier"
+    }
+   ]
+  },
+  {
+   "date": "2026-12-11",
+   "year": 2026,
+   "category": "開催・イベント",
+   "title": "日本予選Finals、シアターGロッソへ",
+   "text": "日本予選の上位3チームによるFinalsが、12月11日・12日にシアターGロッソで行われる予定です。",
+   "teams": [],
+   "highlight": false,
+   "status": "confirmed",
+   "sources": [
+    {
+     "title": "VALORANT Esports:2027 VCT Pacific Kickoff Japan Qualifier",
+     "url": "https://valorantesports.com/ja-jp/news/2027-vct-pacific-kickoff-japan-qualifier"
+    }
+   ]
+  },
+  {
+   "date": "2027-01",
+   "year": 2027,
+   "category": "VCT Pacific",
+   "title": "新しいPacificが開幕",
+   "text": "バンコクでのKickoffから2027年のPacificが始まります。日本からはZETA、CR、日本予選の優勝チームが出場します。",
+   "teams": [
+    "zeta-division",
+    "crazy-raccoon"
+   ],
+   "highlight": false,
+   "status": "reported",
+   "sources": [
+    {
+     "title": "ゲームウィズ:VCT 2027 日程",
+     "url": "https://gamewith.jp/valorant/article/show/583037"
+    },
+    {
+     "title": "VALORANT Esports:2027 VCT Pacific Kickoff Japan Qualifier",
+     "url": "https://valorantesports.com/ja-jp/news/2027-vct-pacific-kickoff-japan-qualifier"
+    },
+    {
+     "title": "VALORANT Esports:Introducing VCT Pacific partnered teams for 2027 and beyond",
+     "url": "https://valorantesports.com/en-SG/news/introducing-vct-pacific-partnered-teams-for-2027-and-beyond"
+    }
+   ]
+  },
+  {
+   "date": "2027-08",
+   "year": 2027,
+   "category": "開催・イベント",
+   "title": "Pacific Cup 2が東京で開催",
+   "text": "8月のPacific Cup 2は東京で開かれると報じられています。日本でPacificの決戦が見られます。",
+   "teams": [],
+   "highlight": true,
+   "status": "reported",
+   "sources": [
+    {
+     "title": "ゲームウィズ:VCT 2027 日程",
+     "url": "https://gamewith.jp/valorant/article/show/583037"
+    }
+   ]
+  }
+ ],
+ "open_questions": [
+  "Masters Reykjavík 2021が日本チームにとって初の国際大会だったかは、出典では明記されていません(本ページでは「初めて世界の舞台へ」としています)",
+  "2027年のPacific Cup 2(東京)の正確な日程・会場は未発表です(報道では8月)",
+  "2025年Ascension PacificでのRIDDLE ORDERの順位は確認できていません"
+ ]
+}

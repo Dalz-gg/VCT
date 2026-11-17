@@ -8,7 +8,8 @@
    - more:   <details class="more"> / <details class="acc"> open/close height animation
    - readmore: .readmore → 2-line clamp + MORE button (only if text overflows)
    - tabs:   .tabs (anchor links → ARIA tabs)
-   - filter: .chips[data-filter-group] buttons filter [data-filter-key] items
+   - filter: .chips[data-filter-group] buttons filter [data-filter-key] items ([data-filter-scope] hides when empty)
+   - history: sticky year nav marks the current year; .tl2 line grows with scroll (--p)
    All animation is skipped under prefers-reduced-motion. */
 (function () {
   'use strict';
@@ -144,7 +145,7 @@
   }
 
   /* ---------- MORE + (details height animation) ---------- */
-  $$('details.more, details.acc').forEach(function (d) {
+  $$('details.more, details.acc, details.ev-row').forEach(function (d) {
     var sum = d.querySelector('summary');
     var body = d.querySelector('.more-body');
     if (!sum || !body || reduce || !body.animate) return;
@@ -245,7 +246,51 @@
           it.hidden = !show;
           if (show) it.classList.add('in');
         });
+        // containers marked [data-filter-scope] (e.g. a year on the history page) hide when nothing in them is left
+        $$('[data-filter-scope]', target).forEach(function (sc) {
+          sc.hidden = !sc.querySelector('[data-filter-key]:not([hidden])');
+          if (!sc.hidden) $$('.rv', sc).forEach(function (el) { el.classList.add('in'); });
+        });
+        window.dispatchEvent(new Event('scroll'));
       });
     });
   });
+  /* ---------- history timeline: current year in the sticky year nav + line that grows with scroll ---------- */
+  var ynav = document.querySelector('.ynav');
+  var tl2 = document.querySelector('.tl2');
+  if (ynav || tl2) {
+    var ylinks = ynav ? $$('.ynav-a', ynav) : [];
+    var ylist = ynav ? ynav.querySelector('.ynav-list') : null;
+    var years = $$('.tl2 .yr');
+    var curY = null, hTick = false;
+    var setYear = function (id) {
+      if (id === curY) return;
+      curY = id;
+      var on = null;
+      ylinks.forEach(function (a) {
+        var hit = a.getAttribute('href') === '#' + id;
+        if (hit) { a.setAttribute('aria-current', 'true'); on = a; } else a.removeAttribute('aria-current');
+      });
+      if (on && ylist && ylist.scrollWidth > ylist.clientWidth) {
+        var l = on.parentNode.offsetLeft - ylist.offsetLeft;
+        var to = Math.max(0, l - (ylist.clientWidth - on.offsetWidth) / 2);
+        if (ylist.scrollTo) ylist.scrollTo({ left: to, behavior: reduce ? 'auto' : 'smooth' }); else ylist.scrollLeft = to;
+      }
+    };
+    var histUpdate = function () {
+      hTick = false;
+      var vh = window.innerHeight;
+      var id = null;
+      years.forEach(function (y) { if (!y.hidden && y.getBoundingClientRect().top <= vh * 0.38) id = y.id; });
+      setYear(id);
+      if (tl2 && !reduce) {
+        var r = tl2.getBoundingClientRect();
+        var p = r.height > 0 ? (vh * 0.62 - r.top) / r.height : 1;
+        tl2.style.setProperty('--p', Math.max(0, Math.min(1, p)).toFixed(4));
+      }
+    };
+    window.addEventListener('scroll', function () { if (!hTick) { hTick = true; requestAnimationFrame(histUpdate); } }, { passive: true });
+    window.addEventListener('resize', histUpdate);
+    histUpdate();
+  }
 })();

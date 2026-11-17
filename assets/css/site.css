@@ -954,3 +954,123 @@ a.step-card:hover .slot > img{transform:scale(1.05)}
 }
 @media (max-width:767px) and (prefers-reduced-motion:reduce){html.has-tabbar .tabbar{transition:none}}
 @media print{.subnav,.tabbar{display:none}}
+
+/* =====================================================================
+   HISTORY — japan/history.html (data/japan-history.json)
+   GLANCE     .glance > .glance-k + .stats.stats--4 (4 big numbers, 2×2 on SP)
+   YEAR NAV   .hist > nav.ynav (sticky under the sub-nav) > ol.ynav-list > a.ynav-a[aria-current]
+   TIMELINE   .tl2 (vertical line, grows with scroll via --p) > section.yr > header.yr-head(.yr-num .yr-label .yr-sum)
+              + ol.yr-evs > li.ev(.ev--l 国内 | .ev--r 国際・Pacific)(.ev--hl key moment card)
+              lanes: .yr-evs > ol.yr-lane--l / ol.yr-lane--r (display:contents on SP; li order keeps the date order)
+              rows: details.ev-row > summary(.ev-meta(.ev-date .ev-cat--*) .ev-title .ev-plus) + .more-body
+              PC ≥960px: two lanes around a centre line; SP: one lane, line on the left
+   ===================================================================== */
+.glance{margin-top:44px}
+.glance-k{display:block;font-size:13px;letter-spacing:.3em;color:var(--red)}
+.stats--4{grid-template-columns:repeat(2,minmax(0,1fr));max-width:none;gap:22px 16px;margin-top:14px}
+@media (min-width:768px){.stats--4{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}}
+.stats--4 .stat{min-width:0}
+.stat-sub{display:block;margin-top:2px;font-size:11px;font-weight:400;letter-spacing:.02em;color:rgba(236,232,225,.5)}
+
+html:has(.ynav){scroll-padding-top:calc(var(--head-total) + 64px)}
+.ynav{position:sticky;top:var(--head-total);z-index:50;background:rgba(15,25,35,.95);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:1px solid rgba(236,232,225,.08);border-bottom:1px solid rgba(236,232,225,.1)}
+.ynav-bar{display:flex;align-items:center;gap:16px;height:48px}
+.ynav-k{display:none;flex:none;font-size:12px;letter-spacing:.26em;color:var(--red)}
+@media (min-width:768px){.ynav-k{display:block}}
+.ynav-list{display:flex;flex:1 1 auto;min-width:0;gap:2px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin:0 calc(var(--gutter)*-1);padding:0 var(--gutter)}
+@media (min-width:768px){.ynav-list{margin:0;padding:0}}
+.ynav-list::-webkit-scrollbar{display:none}
+.ynav-list li{flex:none}
+.ynav-a{position:relative;display:flex;align-items:center;height:34px;padding:0 11px;font-family:var(--f-display);font-size:17px;letter-spacing:.05em;line-height:1;color:rgba(236,232,225,.55);text-decoration:none;transition:color .25s,background-color .25s}
+.ynav-a:hover{color:var(--cream)}
+.ynav-a.is-now::after{content:"";position:absolute;right:3px;top:7px;width:5px;height:5px;background:var(--red)}
+.ynav-a[aria-current]{color:#fff;background:var(--red);clip-path:polygon(0 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%)}
+.ynav-a[aria-current].is-now::after{background:#fff}
+
+.sec--hist{padding-top:calc(var(--sec-y)*.6)}
+.hist-chips{margin-bottom:28px}
+.tl2-lanes{display:none}
+.tl2{position:relative;--lx:7px}
+.tl2::before,.tl2::after{content:"";position:absolute;left:var(--lx);top:10px;bottom:0;width:2px;transform-origin:top}
+.tl2::before{background:var(--rule)}
+.tl2::after{background:linear-gradient(var(--red),var(--red) 92%,rgba(255,70,85,0))}
+.js .tl2::after{transform:scaleY(var(--p,0));transition:transform .15s linear}
+.yr{position:relative;padding-left:36px}
+.yr + .yr{margin-top:64px}
+.yr[hidden]{display:none}
+.yr-head{position:relative;z-index:2;margin-bottom:22px}
+.yr-head::before{content:"";position:absolute;left:-36px;top:14px;width:16px;height:16px;background:var(--red);transform:rotate(45deg);margin-left:0}
+.yr-num{font-family:var(--f-display);font-weight:400;font-size:clamp(76px,19vw,150px);line-height:.84;letter-spacing:.01em;color:transparent;-webkit-text-stroke:1.5px var(--cream)}
+.yr:last-child .yr-num{-webkit-text-stroke-color:var(--red)}
+.yr-label{margin-top:12px;font-size:clamp(19px,2.4vw,24px);font-weight:900;letter-spacing:.04em}
+.yr-sum{margin-top:4px;font-size:14px;color:var(--sub);max-width:30em}
+
+.yr-evs{display:flex;flex-direction:column;gap:6px}
+.yr-lane{display:contents}
+.ev{position:relative;min-width:0}
+.ev[hidden]{display:none}
+.ev::before{content:"";position:absolute;left:-33px;top:21px;width:10px;height:10px;background:var(--bg);border:2px solid var(--red);transform:rotate(45deg);z-index:1}
+.ev-row{border-bottom:1px solid var(--rule)}
+.ev-row > summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:14px;padding:12px 0 13px}
+.ev-row > summary::-webkit-details-marker{display:none}
+.ev-meta{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;line-height:1.3}
+.ev-date{font-family:var(--f-display);font-size:15px;letter-spacing:.06em;color:var(--red)}
+.ev-cat{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--sub)}
+.ev-cat::before{content:"";width:7px;height:7px;background:var(--gray)}
+.ev-cat--intl::before{background:var(--red)}
+.ev-cat--pac::before{background:var(--cyan)}
+.ev-cat--host::before{background:var(--amber)}
+.ev-cat--team::before,.ev-cat--sys::before{background:var(--cream)}
+.ev-row .ev-title{grid-column:1;margin-top:4px;font-size:16px;font-weight:700;line-height:1.5}
+.ev-plus{grid-column:2;grid-row:1 / span 2;width:28px;height:28px;border:1px solid var(--rule);background:linear-gradient(var(--red),var(--red)) center/10px 2px no-repeat,linear-gradient(var(--red),var(--red)) center/2px 10px no-repeat;transition:transform .35s var(--ease),border-color .25s}
+.ev-row[open] .ev-plus{transform:rotate(45deg)}
+.ev-row > summary:hover .ev-title{color:var(--red)}
+.ev-row > summary:hover .ev-plus{border-color:var(--red)}
+.ev-row .more-body{overflow:hidden}
+.ev-text{font-size:14px;line-height:1.85;color:var(--sub);max-width:36em}
+.ev-row .ev-text{padding-bottom:12px}
+.ev-teams{display:flex;flex-wrap:wrap;gap:6px;padding-bottom:14px}
+.ev-teams .tag{min-height:26px;font-size:11px;padding:0 10px}
+.ev-teams .tag:hover{border-color:var(--red)}
+
+.ev--hl{margin:14px 0}
+.ev--hl::before{background:var(--red);width:14px;height:14px;left:-35px;top:26px;box-shadow:0 0 0 6px rgba(255,70,85,.18)}
+.ev-card{position:relative;padding:22px 22px 18px;background:linear-gradient(135deg,rgba(255,70,85,.16),rgba(255,70,85,0) 55%),var(--card);clip-path:polygon(0 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%)}
+.ev-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--red);transform-origin:top}
+.js .ev--hl.rv .ev-card::before{transform:scaleY(0);transition:transform .9s var(--ease) .25s}
+.js .ev--hl.rv.in .ev-card::before{transform:none}
+.ev-key{display:block;margin-bottom:8px;font-size:11px;letter-spacing:.3em;color:var(--red)}
+.ev-main{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-top:6px}
+.ev--hl .ev-title{font-size:clamp(19px,2.3vw,24px);font-weight:900;line-height:1.4;letter-spacing:.01em}
+.ev-logo{flex:none;width:56px;height:56px;padding:6px;background:rgba(236,232,225,.06)}
+.ev-logo img{width:100%;height:100%;object-fit:contain}
+.ev--hl .ev-text{margin-top:10px;color:rgba(236,232,225,.8)}
+.ev--hl .ev-teams{margin-top:14px;padding-bottom:0}
+
+@media (min-width:960px){
+  .tl2{--lx:calc(50% - 1px)}
+  .tl2-lanes{display:grid;grid-template-columns:1fr 1fr;column-gap:72px;margin-bottom:20px;font-family:var(--f-display);font-size:13px;letter-spacing:.26em;color:var(--sub)}
+  .tl2-lanes span:first-child{text-align:right}
+  .yr{padding-left:0}
+  .yr + .yr{margin-top:88px}
+  .yr-head{display:flex;flex-direction:column;align-items:center;text-align:center;margin:0 auto 34px;max-width:560px}
+  .yr-head::before{display:none}
+  .yr-head{background:var(--bg);padding:8px 24px 6px}
+  .yr-sum{max-width:none}
+  .yr-evs{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:72px;align-items:start}
+  .yr-lane{display:flex;flex-direction:column;gap:6px;min-width:0}
+  .yr-lane--l{grid-column:1}
+  .yr-lane--r{grid-column:2}
+  .ev--r::before{left:-41px}
+  .ev--l::before{left:auto;right:-41px}
+  .ev--hl.ev--r::before{left:-43px}
+  .ev--hl.ev--l::before{left:auto;right:-43px}
+  .ev--l .ev-card{clip-path:polygon(0 0,100% 0,100% 100%,var(--cut) 100%,0 calc(100% - var(--cut)))}
+  .ev--l .ev-card::before{left:auto;right:0}
+}
+@media (prefers-reduced-motion:reduce){
+  .js .tl2::after{transform:none;transition:none}
+  .js .ev--hl.rv .ev-card::before{transform:none}
+  .ev-plus{transition:none}
+}
+@media print{.ynav,.hist-chips{display:none}}

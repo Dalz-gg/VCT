@@ -20,7 +20,7 @@ teams/pacific.html         Pacific パートナー8チーム
 teams/japan.html           日本チーム(ロスター状況で絞り込み)
 teams/<slug>.html          チーム詳細(タブ：概要 / 選手 / 実績 / ニュース)
 japan/index.html           日本予選(Kickoffまでの道の図、日程、招待チーム、Cupの枠)   ┐ data/japan.json
-japan/history.html         VCJの歴史(年ごとのカード、優勝回数)                       ┘
+japan/history.html         日本シーンの歴史(2020〜2027の年表。data/japan-history.json) ┘
 news/index.html            ニュース一覧(カテゴリで絞り込み)
 news/<id>.html             ニュース詳細、news/feed.xml(Atom)
 format.html / japan.html / news.html   旧URL。新ページへ移動する短いページ(meta refresh)
@@ -34,7 +34,8 @@ assets/js/site.js            共通JS(メニュー、スクロール表示、カ
 assets/img/site/             会場・都市などの写真(サイトロゴを置くなら logo.svg / logo.png)
 assets/img/teams/<slug>/     チームロゴ(logo.png)・チーム写真(hero.jpg)・選手写真(<ign小文字>.jpg)
 data/teams/<slug>.json       チームデータ
-data/japan.json              日本予選・VCJの歴史のデータ
+data/japan.json              日本予選のデータ(VCJの年ごとの記録 vcj_history も)
+data/japan-history.json      日本シーンの歴史(年表の出来事 events・年ごとの時代名 eras・数字 stats)
 data/format.json             大会システムのデータ(HOME の数字・Cup 2 の日程もここから)
 data/news/<日付>-<id>.json   ニュース(1件1ファイル)
 data/pacific-partners.json   Pacific パートナーの並び順
@@ -91,7 +92,7 @@ writeFile('format/season.html', layout(ctx, { title, desc, current: 'format', bo
 | 画像枠 | `.slot`、`.slot--16x9`、`.slot-team-logo`、`.slot-photo`、`.slot-logo`(ヘッダー) |
 | 開閉 | `details.more`、`.readmore`、`details.drawer`(最下部) |
 | その他 | `.tabs`、`.timeline`、`.chips[data-filter-group]`、`.facts`、`.tip`、`.tags`、`.status--rep / --tbd`、`.soon` |
-| 図・PHASE 2 | `.flow`、`.change-card`、`.link-card`、`.vs`/`.cmp`、`.cycles`/`.step-card`、`.venue-card`、`.event-card`、`.paths`/`.lane`、`.keep`、`.bars`、`.segs`、`.acc`、`.road`、`.date-tile`、`.callout`、`.year-track` |
+| 図・PHASE 2 | `.flow`、`.change-card`、`.link-card`、`.vs`/`.cmp`、`.cycles`/`.step-card`、`.venue-card`、`.event-card`、`.paths`/`.lane`、`.keep`、`.bars`、`.segs`、`.acc`、`.road`、`.date-tile`、`.callout`、`.year-track`、`.ynav`/`.tl2`/`.yr`/`.ev`(歴史の年表) |
 | 動き | `.ld`(読み込み時、`style="--i:n"`)、`.rv`(スクロール表示、`style="--d:n"`)。`prefers-reduced-motion` では停止、JSなしでも全部表示 |
 
 ## ロゴと写真の枠
