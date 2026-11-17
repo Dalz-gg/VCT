@@ -167,7 +167,7 @@
   },
   "images": {
     "hero": "assets/img/teams/zeta-division/hero.jpg",
-    "logo": null
+    "logo": "assets/img/teams/zeta-division/logo.png"
   },
   "image_credits": [
     {
@@ -176,6 +176,14 @@
       "author": "RuinDig/Yuki Uchida",
       "license": "CC BY 4.0",
       "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "file": "assets/img/teams/zeta-division/logo.png",
+      "source_url": null,
+      "author": "",
+      "license": "運営提供",
+      "license_url": null,
+      "provided_by_owner": true
     }
   ],
   "open_questions": [
